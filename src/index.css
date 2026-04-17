@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #1A1A1A;
+  background: #FAFAFA;
+  -webkit-font-smoothing: antialiased;
+}
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  border: none;
+  display: block;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-line rounded-lg;
+  }
+  .card-hover {
+    @apply transition-all hover:border-ink/30 hover:shadow-sm;
+  }
+  .pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-ink2;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-ink text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-black transition;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 bg-white border border-line text-ink px-4 py-2 rounded-md text-sm font-medium hover:border-ink/40 transition;
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-1 text-sm font-medium text-ink hover:opacity-70;
+  }
+  .input {
+    @apply w-full px-3 py-2 border border-line rounded-md text-sm bg-white focus:outline-none focus:border-ink/40;
+  }
+  .label {
+    @apply block text-sm font-medium text-ink2 mb-1.5;
+  }
+}
