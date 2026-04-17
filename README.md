@@ -1,16 +1,41 @@
-# React + Vite
+# ScholarStack App Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A prototype demo for the ScholarStack App Store — a platform where students browse/install AI-powered educational apps, developers submit and monitor apps, and admins review submissions.
 
-Currently, two official plugins are available:
+Built for a class presentation. All data is mocked (no backend).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- React 19 + Vite
+- Tailwind CSS
+- React Router
+- Recharts (dashboard charts)
+- Lucide React (icons)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/<your-username>/scholarstack-appstore.git
+cd scholarstack-appstore
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Then open `http://localhost:5173`.
+
+## Demo Flow
+
+1. **Landing** (`/`) — pick a role: Student, Developer, or Admin
+2. **Student** — browse the App Store, filter by category, view app details with permissions & model tier, install apps, and chat with an app featuring a **Request Trace** panel showing the full pipeline (auth → input filter → router → RAG → LLM → output filter)
+3. **Developer** — observability dashboard with latency/request charts, 4-step app submission wizard with tool schema editor and scope warnings, and app status tracking
+4. **Admin** — safety event dashboard, cost breakdown by model tier, and a review queue where you can inspect system prompts, eval results, and approve/reject apps
+
+## Architecture Concepts Demonstrated
+
+- **Identity & Permissions** — role-based views, OAuth-style scope requests
+- **Tool Calling** — OpenAPI JSON Schema tool declarations
+- **Model Routing** — Tier 1/2/3 routing based on task complexity
+- **RAG** — knowledge source retrieval shown in request trace
+- **Governance** — 3-step review pipeline (automated scan → human review → eval suite)
+- **Observability** — latency, error rate, safety events, cost tracking
+- **UX Flow** — end-to-end student experience from browse to chat
