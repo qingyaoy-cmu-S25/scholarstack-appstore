@@ -5,6 +5,8 @@ import StudentAppDetail from "./pages/student/AppDetail.jsx";
 import StudentMyApps from "./pages/student/MyApps.jsx";
 import StudentChat from "./pages/student/Chat.jsx";
 import VoiceTest from "./pages/student/VoiceTest.jsx";
+import DeepReview from "./pages/deepreview/DeepReview.jsx";
+import DeepReviewSession from "./pages/deepreview/Session.jsx";
 import DeveloperDashboard from "./pages/developer/Dashboard.jsx";
 import DeveloperSubmit from "./pages/developer/Submit.jsx";
 import DeveloperApps from "./pages/developer/MyApps.jsx";
@@ -23,6 +25,8 @@ export default function App() {
       <Route path="/student/apps" element={<StudentMyApps />} />
       <Route path="/student/apps/:appId/chat" element={<StudentChat />} />
       <Route path="/voice-test" element={<VoiceTest />} />
+
+      <Route path="/deepreview" element={<DeepReviewSession />} />
 
       <Route path="/developer" element={<Navigate to="/developer/dashboard" replace />} />
       <Route path="/developer/dashboard" element={<DeveloperDashboard />} />

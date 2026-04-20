@@ -6,9 +6,24 @@ export const CATEGORIES = [
   "Citation",
   "Code",
   "Language",
+  "Study",
 ];
 
 export const APPS = [
+  {
+    id: "deepreview",
+    name: "DeepReview",
+    desc: "Voice-powered AI study companion with real-time conversation",
+    category: "Study",
+    rating: 4.9,
+    users: "1.2k",
+    tier: 3,
+    color: "bg-ink",
+    initials: "DR",
+    developer: "ScholarStack Labs",
+    version: "1.0.0",
+    updated: "Apr 17, 2026",
+  },
   {
     id: "socratic-math",
     name: "Socratic Math Tutor",
@@ -152,6 +167,11 @@ export const APPS = [
 ];
 
 export const PERMISSIONS = {
+  "deepreview": [
+    { scope: "read:courses", desc: "Read your enrolled course list" },
+    { scope: "read:scholar_files", desc: "Read files you share with this app" },
+    { scope: "access:microphone", desc: "Access your microphone for voice conversation" },
+  ],
   "citation-wizard": [
     { scope: "read:courses", desc: "Read your enrolled course list" },
     { scope: "read:scholar_files", desc: "Read files you share with this app" },
@@ -164,6 +184,7 @@ export const PERMISSIONS = {
 };
 
 export const LONG_DESC = {
+  "deepreview": "DeepReview is a voice-powered AI study companion that uses real-time conversation to help you learn. Instead of typing, you talk — explain concepts out loud, answer questions verbally, and discuss ideas naturally. It uses the Socratic method to push you to think deeper, never giving direct answers. Built on OpenAI's Realtime API with Whisper transcription, every session is logged so you can review what you discussed.",
   "socratic-math": "Instead of handing you the answer, Socratic Math Tutor walks you through each step with targeted questions until you solve it yourself. It adapts to your course's notation, tracks which concepts you've mastered, and flags gaps in your reasoning — ideal for problem sets where the process matters more than the final number.",
   "citation-wizard": "Paste any URL, DOI, or ISBN and Citation Wizard instantly formats it in APA, MLA, or Chicago with proper punctuation, italics, and hanging indents. It builds a persistent library per course, exports to BibTeX, and auto-detects the style your syllabus expects.",
   "writing-coach": "Upload a draft essay and Writing Coach gives you structural feedback — thesis clarity, argument strength, evidence coverage, and paragraph cohesion. It never rewrites your sentences; it highlights weak spots and asks questions so your voice stays yours.",
@@ -177,6 +198,11 @@ export const LONG_DESC = {
 };
 
 export const APP_REVIEWS = {
+  "deepreview": [
+    { user: "Alex T.", stars: 5, text: "Explaining concepts out loud is way harder than typing — and that's exactly why it works. Caught gaps I didn't know I had." },
+    { user: "Priya M.", stars: 5, text: "The Socratic questioning is relentless in the best way. Felt like office hours with the toughest TA." },
+    { user: "Leo W.", stars: 4, text: "Voice quality is great and the transcripts are useful for review. Wish I could upload my own notes for it to quiz me on." },
+  ],
   "socratic-math": [
     { user: "Diego R.", stars: 5, text: "Finally a tutor that makes me think. I was stuck on systems of equations for a week and one session here cracked it open." },
     { user: "Amina S.", stars: 5, text: "The progress tracker is clutch for exam prep — you actually see which topics are weak instead of guessing." },

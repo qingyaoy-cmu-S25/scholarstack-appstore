@@ -14,6 +14,9 @@ const OPENAI_REALTIME_URL =
 wss.on("connection", (clientWs) => {
   console.log("[relay] client connected");
 
+  let openaiReady = false;
+  const pendingMessages = [];
+
   const openaiWs = new WebSocket(OPENAI_REALTIME_URL, {
     headers: {
       Authorization: `Bearer ${OPENAI_API_KEY}`,
@@ -23,25 +26,12 @@ wss.on("connection", (clientWs) => {
 
   openaiWs.on("open", () => {
     console.log("[relay] connected to OpenAI Realtime API");
+    openaiReady = true;
 
-    openaiWs.send(
-      JSON.stringify({
-        type: "session.update",
-        session: {
-          modalities: ["text", "audio"],
-          instructions:
-            "You are DeepReview, a friendly AI study companion for a college AI Engineering course. You speak in a conversational, encouraging tone. Keep responses concise — 2-3 sentences max. You are currently in a quick test session.",
-          voice: "alloy",
-          input_audio_transcription: { model: "whisper-1" },
-          turn_detection: {
-            type: "server_vad",
-            threshold: 0.5,
-            prefix_padding_ms: 300,
-            silence_duration_ms: 500,
-          },
-        },
-      })
-    );
+    for (const msg of pendingMessages) {
+      openaiWs.send(msg);
+    }
+    pendingMessages.length = 0;
   });
 
   openaiWs.on("message", (data) => {
@@ -61,8 +51,11 @@ wss.on("connection", (clientWs) => {
   });
 
   clientWs.on("message", (data) => {
-    if (openaiWs.readyState === WebSocket.OPEN) {
-      openaiWs.send(data.toString());
+    const msg = data.toString();
+    if (openaiReady) {
+      openaiWs.send(msg);
+    } else {
+      pendingMessages.push(msg);
     }
   });
 

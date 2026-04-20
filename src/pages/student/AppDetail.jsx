@@ -87,7 +87,7 @@ export default function StudentAppDetail() {
             <button
               onClick={() => {
                 if (!isInstalled) toggleInstall(app.id);
-                navigate(`/student/apps/${app.id}/chat`);
+                navigate(app.id === "deepreview" ? "/deepreview" : `/student/apps/${app.id}/chat`);
               }}
               className="btn-primary w-full mb-4"
             >
@@ -173,6 +173,39 @@ function AppPreview({ app, variant }) {
 }
 
 const PREVIEWS = {
+  "deepreview": [
+    <PreviewFrame key="1" title="DeepReview · Voice session">
+      <div className="space-y-1">
+        <div className="text-sub text-[8px] mb-0.5">Assistant</div>
+        <div className="border border-line rounded px-1.5 py-1 text-ink2">
+          What do you understand about attention mechanisms?
+        </div>
+        <div className="text-sub text-[8px] mb-0.5 text-right">User</div>
+        <div className="bg-gray-100 rounded px-1.5 py-1 text-ink2 text-right">
+          It's like... the model decides which parts of the input matter most?
+        </div>
+        <div className="text-sub text-[8px] mb-0.5">Assistant</div>
+        <div className="border border-line rounded px-1.5 py-1 text-ink2">
+          Good start. But how does it "decide"? What's the mechanism?
+        </div>
+      </div>
+    </PreviewFrame>,
+    <PreviewFrame key="2" title="DeepReview · Transcript">
+      <div className="space-y-0.5">
+        {[
+          { t: "Attention mechanisms", d: "Apr 17" },
+          { t: "Transformer architecture", d: "Apr 15" },
+          { t: "Embeddings & tokenization", d: "Apr 12" },
+          { t: "RAG pipelines", d: "Apr 10" },
+        ].map((s, i) => (
+          <div key={i} className="flex items-center justify-between border-b border-line pb-0.5">
+            <span className="text-ink2 font-medium">{s.t}</span>
+            <span className="text-sub">{s.d}</span>
+          </div>
+        ))}
+      </div>
+    </PreviewFrame>,
+  ],
   "writing-coach": [
     <PreviewFrame key="1" title="Writing Coach · Essay feedback">
       <div className="text-ink2 mb-1">
