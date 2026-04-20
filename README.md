@@ -2,7 +2,7 @@
 
 A prototype demo for the ScholarStack App Store — a platform where students browse/install AI-powered educational apps, developers submit and monitor apps, and admins review submissions.
 
-Built for a class presentation. All data is mocked (no backend).
+Includes **DeepReview**, a real-time voice AI study companion powered by OpenAI's Realtime API.
 
 ## Tech Stack
 
@@ -11,31 +11,84 @@ Built for a class presentation. All data is mocked (no backend).
 - React Router
 - Recharts (dashboard charts)
 - Lucide React (icons)
+- OpenAI Realtime API (voice conversation)
+- Node.js WebSocket relay server
 
 ## Getting Started
 
+### 1. Clone & install
+
 ```bash
-git clone https://github.com/<your-username>/scholarstack-appstore.git
+git clone https://github.com/qingyaoy-cmu-S25/scholarstack-appstore.git
 cd scholarstack-appstore
 npm install
+```
+
+### 2. Set up environment variables
+
+Create a `.env` file in the project root:
+
+```
+OPENAI_API_KEY=sk-proj-your-key-here
+```
+
+You need an OpenAI API key with access to the Realtime API. Get one at [platform.openai.com](https://platform.openai.com).
+
+### 3. Start the relay server
+
+The voice feature requires a WebSocket relay server (proxies audio between browser and OpenAI):
+
+```bash
+node server.js
+```
+
+You should see: `[relay] server running on http://localhost:8081`
+
+### 4. Start the frontend (in a separate terminal)
+
+```bash
 npm run dev
 ```
 
 Then open `http://localhost:5173`.
 
+### Running without the voice feature
+
+If you just want to demo the App Store (no voice), skip steps 2-3 and just run `npm run dev`. Everything except DeepReview's voice conversation will work.
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Role selector (Student / Developer / Admin) |
+| `/student/store` | App Store — browse, search, filter apps |
+| `/student/store/:appId` | App detail — permissions, reviews, install |
+| `/student/apps` | My installed apps |
+| `/student/apps/:appId/chat` | Chat interface with Request Trace panel |
+| `/deepreview` | DeepReview — real-time voice AI study companion |
+| `/developer/dashboard` | Developer dashboard — metrics, charts, errors |
+| `/developer/submit` | 4-step app submission wizard |
+| `/developer/apps` | Developer's published/in-review apps |
+| `/admin/dashboard` | Admin dashboard — safety events, cost breakdown |
+| `/admin/review` | Review queue with approve/reject |
+
 ## Demo Flow
 
-1. **Landing** (`/`) — pick a role: Student, Developer, or Admin
-2. **Student** — browse the App Store, filter by category, view app details with permissions & model tier, install apps, and chat with an app featuring a **Request Trace** panel showing the full pipeline (auth → input filter → router → RAG → LLM → output filter)
-3. **Developer** — observability dashboard with latency/request charts, 4-step app submission wizard with tool schema editor and scope warnings, and app status tracking
-4. **Admin** — safety event dashboard, cost breakdown by model tier, and a review queue where you can inspect system prompts, eval results, and approve/reject apps
+1. **Landing** (`/`) — pick a role
+2. **Student** — browse App Store → click DeepReview → install → open → voice conversation with AI tutor
+3. **Developer** — observability dashboard, submit app wizard, app status tracking
+4. **Admin** — safety events, cost breakdown, review queue with system prompt inspection
 
-## Architecture Concepts Demonstrated
+## Troubleshooting
 
-- **Identity & Permissions** — role-based views, OAuth-style scope requests
-- **Tool Calling** — OpenAPI JSON Schema tool declarations
-- **Model Routing** — Tier 1/2/3 routing based on task complexity
-- **RAG** — knowledge source retrieval shown in request trace
-- **Governance** — 3-step review pipeline (automated scan → human review → eval suite)
-- **Observability** — latency, error rate, safety events, cost tracking
-- **UX Flow** — end-to-end student experience from browse to chat
+**Voice not working?**
+- Make sure `node server.js` is running in a separate terminal
+- Make sure your `.env` file has a valid `OPENAI_API_KEY`
+- Allow microphone access when the browser prompts you
+- If you previously denied mic access: click the lock icon in the address bar → Microphone → Allow → refresh
+
+**Port 8081 already in use?**
+```bash
+lsof -ti:8081 | xargs kill
+node server.js
+```
