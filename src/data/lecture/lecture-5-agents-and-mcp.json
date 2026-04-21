@@ -1,0 +1,3891 @@
+{
+  "source_file": "lecture-5-agents-and-mcp.mp4",
+  "duration": 6936.117344,
+  "segments": [
+    {
+      "text": " Okay, let's go ahead and get started. It's 31 after the hour, and I had a few requests",
+      "start": 0.0,
+      "end": 10.84000015258789
+    },
+    {
+      "text": " for people to join late. I think there was some sort of an activity or an outing today.",
+      "start": 10.84000015258789,
+      "end": 15.880000114440918
+    },
+    {
+      "text": " I don't know exactly what that was, but why don't we go ahead and get started. So a preview",
+      "start": 15.880000114440918,
+      "end": 23.200000762939453
+    },
+    {
+      "text": " of what we're going to focus on today. So we've got a guest speaker coming for the second",
+      "start": 23.200000762939453,
+      "end": 30.18000030517578
+    },
+    {
+      "text": " half of the course. I'm very, very excited. He's from NVIDIA. So as we know, NVIDIA is",
+      "start": 30.18000030517578,
+      "end": 38.459999084472656
+    },
+    {
+      "text": " right at the center of this whole AI enablement and I'm very excited to have him be here with",
+      "start": 38.459999084472656,
+      "end": 46.79999923706055
+    },
+    {
+      "text": " us. So that's going to start at 4.30. So about an hour from now, we'll look to take a break",
+      "start": 46.79999923706055,
+      "end": 56.599998474121094
+    },
+    {
+      "text": " at like 4.20 or 4.25. And between now and then, I want to open the class and just kind",
+      "start": 56.599998474121094,
+      "end": 65.27999877929688
+    },
+    {
+      "text": " of have some general feedback and see how things are going. Then I'm going to do a lecture",
+      "start": 65.27999877929688,
+      "end": 70.95999908447266
+    },
+    {
+      "text": " for a little while and introduce the upcoming topics that we're going to focus on this week,",
+      "start": 70.95999908447266,
+      "end": 75.12000274658203
+    },
+    {
+      "text": " which is MCP and UCP, two protocols that are being utilized to communicate in the world",
+      "start": 75.12000274658203,
+      "end": 82.91999816894531
+    },
+    {
+      "text": " of AI. And then we're going to take, I don't know, 10 or 15 minutes to do a quiz just like",
+      "start": 82.91999816894531,
+      "end": 90.4800033569336
+    },
+    {
+      "text": " we did last week. And that's pretty much all that we're going to do before the guest speaker",
+      "start": 90.4800033569336,
+      "end": 96.87999725341797
+    },
+    {
+      "text": " arrives. So any questions on any of that? Okay, cool. Hey, Ifrah, can you hear me?",
+      "start": 96.87999725341797,
+      "end": 107.83999633789062
+    },
+    {
+      "text": " Yes. Okay. Are you able to turn video or not today? No, I will. Just give me like five minutes.",
+      "start": 110.08000183105469,
+      "end": 118.0
+    },
+    {
+      "text": " Yeah, take your time. Okay. So I wanted to open it up and see how things are going",
+      "start": 118.0,
+      "end": 123.36000061035156
+    },
+    {
+      "text": " with group assignments, with readings, with ScholarStack. So this is your opportunity to",
+      "start": 123.91999816894531,
+      "end": 133.67999267578125
+    },
+    {
+      "text": " kind of just share perspectives and have some discussion around how everything is coming along.",
+      "start": 133.67999267578125,
+      "end": 140.24000549316406
+    },
+    {
+      "text": " Before we go, before we get into that, you might have seen there was two things I want",
+      "start": 141.83999633789062,
+      "end": 147.75999450683594
+    },
+    {
+      "text": " to highlight. One was a survey that I sent out about ScholarStack. So I'm hoping everyone had",
+      "start": 147.75999450683594,
+      "end": 152.39999389648438
+    },
+    {
+      "text": " an opportunity to do that. It's probably less than five minutes to complete that. It's a Survey",
+      "start": 152.39999389648438,
+      "end": 156.47999572753906
+    },
+    {
+      "text": " Monkey survey. And then the other thing was an announcement about how I broke the assignments",
+      "start": 156.47999572753906,
+      "end": 163.83999633789062
+    },
+    {
+      "text": " into two. They were kind of bundled together. So I broke them into two to have additional clarity",
+      "start": 163.83999633789062,
+      "end": 170.39999389648438
+    },
+    {
+      "text": " around our assignments. So I don't have the calendar in front of me. Shreya, maybe you can",
+      "start": 170.39999389648438,
+      "end": 176.0
+    },
+    {
+      "text": " tell me if I'm correct. But I think we're going to have class presentations the next two weeks.",
+      "start": 176.0,
+      "end": 181.60000610351562
+    },
+    {
+      "text": " Is that right? Is that what we've got scheduled? Yes. Okay, great. So the meetings with me are",
+      "start": 181.60000610351562,
+      "end": 189.0399932861328
+    },
+    {
+      "text": " going to be this Friday, I believe is what we said. And so we sent out calendar invites for me.",
+      "start": 189.0399932861328,
+      "end": 196.32000732421875
+    },
+    {
+      "text": " So all of the teams need to meet with me with a group. And we'll go over any questions that",
+      "start": 196.8800048828125,
+      "end": 205.1199951171875
+    },
+    {
+      "text": " exist about the assignment. If there's any brainstorming that you want to do to have me",
+      "start": 205.1199951171875,
+      "end": 210.63999938964844
+    },
+    {
+      "text": " be a part of, I'm happy to do it to kind of act as a team member and work with you on your",
+      "start": 210.63999938964844,
+      "end": 217.1999969482422
+    },
+    {
+      "text": " assignment. Just as a reminder, the two assignments, the first one is to think architecturally and to",
+      "start": 217.1999969482422,
+      "end": 225.44000244140625
+    },
+    {
+      "text": " design an app store-like experience inside of ScholarStack. You're all familiar with ScholarStack",
+      "start": 225.44000244140625,
+      "end": 233.83999633789062
+    },
+    {
+      "text": " at this point. You've been using it for a few weeks. It's an AI native platform, which is",
+      "start": 233.83999633789062,
+      "end": 238.9600067138672
+    },
+    {
+      "text": " obviously what this class is all about. So you're going to put on your solution architecture hat.",
+      "start": 238.9600067138672,
+      "end": 244.63999938964844
+    },
+    {
+      "text": " Think about the tools and the capabilities we've discussed so far in class. Think about what you",
+      "start": 245.27999877929688,
+      "end": 251.44000244140625
+    },
+    {
+      "text": " know about other app stores, the most popular one being the Apple App Store, and how apps go into",
+      "start": 251.44000244140625,
+      "end": 257.44000244140625
+    },
+    {
+      "text": " the App Store are able to take advantage of capabilities that the App Store provides to them.",
+      "start": 257.44000244140625,
+      "end": 262.55999755859375
+    },
+    {
+      "text": " The one that's most obvious to me is GPS location. So your phone is tracking your",
+      "start": 262.55999755859375,
+      "end": 268.9599914550781
+    },
+    {
+      "text": " GPS location. If there's an app in the App Store that wants to take advantage of that capability,",
+      "start": 268.9599914550781,
+      "end": 274.4800109863281
+    },
+    {
+      "text": " whether that be kind of Uber or Lyft or a biking or a hiking application,",
+      "start": 275.0400085449219,
+      "end": 282.239990234375
+    },
+    {
+      "text": " whatever, that is one capability that can be passed to the app with permissions",
+      "start": 282.239990234375,
+      "end": 287.8399963378906
+    },
+    {
+      "text": " because it's in the App Store. And so I want you to apply that sort of",
+      "start": 288.4800109863281,
+      "end": 294.79998779296875
+    },
+    {
+      "text": " permissions-based thinking, knowing what the capabilities are within ScholarStack, the",
+      "start": 294.79998779296875,
+      "end": 300.7200012207031
+    },
+    {
+      "text": " different knowledge resources, the RAG materials, the LLM capabilities, and architect a",
+      "start": 300.7200012207031,
+      "end": 311.1199951171875
+    },
+    {
+      "text": " conceptual solution architecture for an App Store-like experience. And then the final",
+      "start": 311.1199951171875,
+      "end": 317.20001220703125
+    },
+    {
+      "text": " group exercise is going to be to design an architect, an app experience that could live",
+      "start": 317.9200134277344,
+      "end": 326.239990234375
+    },
+    {
+      "text": " in that App Store. So it only makes sense that we're constructing the App Store experience first",
+      "start": 326.239990234375,
+      "end": 331.3599853515625
+    },
+    {
+      "text": " because we need to understand the capabilities that are inherent in the system. And then we",
+      "start": 331.3599853515625,
+      "end": 336.1600036621094
+    },
+    {
+      "text": " can build an app to live in the App Store that can consume or take advantage of the",
+      "start": 336.1600036621094,
+      "end": 342.55999755859375
+    },
+    {
+      "text": " capabilities that are exposed through the App Store. So again, if there's any questions that",
+      "start": 343.760009765625,
+      "end": 349.20001220703125
+    },
+    {
+      "text": " you all have, you can meet with me. I will act as a member of your team. We can brainstorm and",
+      "start": 349.20001220703125,
+      "end": 354.55999755859375
+    },
+    {
+      "text": " think through things together in the meetings that I'm asking you all to set up. And then",
+      "start": 354.55999755859375,
+      "end": 359.67999267578125
+    },
+    {
+      "text": " you can, you know, obviously work within your teams to complete the assignment. And then in",
+      "start": 360.1600036621094,
+      "end": 365.2799987792969
+    },
+    {
+      "text": " our next two classes, we're going to have reserved time for the different teams to present.",
+      "start": 365.2799987792969,
+      "end": 370.55999755859375
+    },
+    {
+      "text": " And I think it has to be less than 10 minutes. You're able to use whatever visual communication",
+      "start": 371.2799987792969,
+      "end": 377.760009765625
+    },
+    {
+      "text": " tools you want. So if that's Miro, Lovable, obviously I like Lovable. I'm using it with my",
+      "start": 377.760009765625,
+      "end": 383.8399963378906
+    },
+    {
+      "text": " lecture slides here. I think Lovable is a great one. But it doesn't have to be those two. It could",
+      "start": 384.239990234375,
+      "end": 391.2799987792969
+    },
+    {
+      "text": " be anything else. You're certainly also free to use, you know, Google Slides or PowerPoint.",
+      "start": 391.2799987792969,
+      "end": 398.79998779296875
+    },
+    {
+      "text": " There's all sorts of new capabilities into those tools as well. So it's really you decide how you",
+      "start": 399.44000244140625,
+      "end": 405.9200134277344
+    },
+    {
+      "text": " want to communicate your deliverable in this assignment. So let me pause right there, see if",
+      "start": 405.9200134277344,
+      "end": 414.0799865722656
+    },
+    {
+      "text": " there's any questions on the assignment, the meeting with me, the presentations are going to",
+      "start": 414.0799865722656,
+      "end": 418.9599914550781
+    },
+    {
+      "text": " happen over the next two weeks. Any other reactions to ScholarStack, the readings, anything",
+      "start": 418.9599914550781,
+      "end": 428.0
+    },
+    {
+      "text": " at all? This is your opportunity to ask questions. So any questions at all?",
+      "start": 428.0,
+      "end": 431.44000244140625
+    },
+    {
+      "text": " For the App Store architecture, how descriptive or like in depth you want it to be? Is it",
+      "start": 439.1199951171875,
+      "end": 447.3599853515625
+    },
+    {
+      "text": " more so of like higher level? Like if we talk about RAG, how like how descriptive would you",
+      "start": 447.3599853515625,
+      "end": 452.9599914550781
+    },
+    {
+      "text": " want that to be if we implement that? Great question. I would suggest",
+      "start": 452.9599914550781,
+      "end": 459.20001220703125
+    },
+    {
+      "text": " medium level. I know that doesn't provide a whole lot of guidance, but you don't need to get down",
+      "start": 461.760009765625,
+      "end": 468.55999755859375
+    },
+    {
+      "text": " to bits and bytes, right? You don't have to, you're not designing this to be implemented.",
+      "start": 468.55999755859375,
+      "end": 475.2799987792969
+    },
+    {
+      "text": " But I would love for you to go as deep as you feel comfortable going. And that's going to be",
+      "start": 476.3999938964844,
+      "end": 481.9200134277344
+    },
+    {
+      "text": " different for different people. So I'm not going to score it harshly if it kind of is a bit shallow",
+      "start": 481.9200134277344,
+      "end": 491.3599853515625
+    },
+    {
+      "text": " on kind of technical design. But I would encourage you all to experiment with whatever your LLM of",
+      "start": 491.3599853515625,
+      "end": 500.32000732421875
+    },
+    {
+      "text": " choice is to learn more about that, right? So maybe put a prompt in the chat to say,",
+      "start": 500.32000732421875,
+      "end": 506.0
+    },
+    {
+      "text": " hey, I need to design something at a medium level of technical specification and see what",
+      "start": 506.0,
+      "end": 511.9200134277344
+    },
+    {
+      "text": " you get back. See what, you know, chat GPT talks to you about if you specify medium level.",
+      "start": 511.9200134277344,
+      "end": 517.6799926757812
+    },
+    {
+      "text": " Obviously, if it's kind of light on technical detail, it might not be so educational for you.",
+      "start": 518.8800048828125,
+      "end": 526.8800048828125
+    },
+    {
+      "text": " So I want you to push yourself to go beyond the topical level and push yourself to use new terms,",
+      "start": 526.8800048828125,
+      "end": 535.2000122070312
+    },
+    {
+      "text": " vocabulary, concepts that you might not be familiar with. Does that make sense? Great",
+      "start": 535.2000122070312,
+      "end": 542.1599731445312
+    },
+    {
+      "text": " question. And in our meetings, we can go further into that if you have further",
+      "start": 542.1599731445312,
+      "end": 546.5599975585938
+    },
+    {
+      "text": " questions along those lines. Any other questions?",
+      "start": 546.5599975585938,
+      "end": 550.0
+    },
+    {
+      "text": " Yona, Ifrah, any thoughts remotely? No, no question, Professor.",
+      "start": 554.47998046875,
+      "end": 560.719970703125
+    },
+    {
+      "text": " I just have a quick question. So for the first part, we're just doing an architectural flow",
+      "start": 560.8800048828125,
+      "end": 569.3599853515625
+    },
+    {
+      "text": " in a descriptive way, like we're not really designing. Because I'm confused when you say",
+      "start": 569.3599853515625,
+      "end": 575.0399780273438
+    },
+    {
+      "text": " you can use lovable or Miro for the white coated for the first part, because I thought for the",
+      "start": 575.0399780273438,
+      "end": 581.3599853515625
+    },
+    {
+      "text": " first one, we're just doing explaining how it will act like an app store.",
+      "start": 581.3599853515625,
+      "end": 586.4000244140625
+    },
+    {
+      "text": " Yeah, that's correct. But you might want to have a visual element to your explanation.",
+      "start": 586.9600219726562,
+      "end": 591.52001953125
+    },
+    {
+      "text": " So when you say visual element, it will be architectural diagrams and.",
+      "start": 593.4400024414062,
+      "end": 597.9199829101562
+    },
+    {
+      "text": " Potentially, yeah. Or just kind of capabilities, right, that are spread out visually on the screen.",
+      "start": 597.9199829101562,
+      "end": 605.9199829101562
+    },
+    {
+      "text": " It's it's it could take a number of different forms. And it's not it's not I wouldn't necessarily",
+      "start": 606.8800048828125,
+      "end": 613.52001953125
+    },
+    {
+      "text": " think of it as a flow for that one. It's really more of an explanation on how you're going to",
+      "start": 613.52001953125,
+      "end": 620.8800048828125
+    },
+    {
+      "text": " construct the system. And again, I would I would expect you to have a visual element.",
+      "start": 620.8800048828125,
+      "end": 629.4400024414062
+    },
+    {
+      "text": " The the system and again, I would I would experiment and test your understanding with",
+      "start": 629.9199829101562,
+      "end": 638.4000244140625
+    },
+    {
+      "text": " whatever LLM you're using and say, hey, I'm working on an architecture diagram for an app",
+      "start": 638.4000244140625,
+      "end": 643.9199829101562
+    },
+    {
+      "text": " store like experience. And then, you know, it'll say it'll either ask you questions or",
+      "start": 643.9199829101562,
+      "end": 648.9600219726562
+    },
+    {
+      "text": " it'll give proposals and then you can engage from there. But I want to I want to push,",
+      "start": 648.9600219726562,
+      "end": 655.760009765625
+    },
+    {
+      "text": " push you guys, challenge yourself, think like a solutions architect.",
+      "start": 655.760009765625,
+      "end": 660.9600219726562
+    },
+    {
+      "text": " But we're doing this in an environment where we're using AI and LLM.",
+      "start": 662.4000244140625,
+      "end": 666.6400146484375
+    },
+    {
+      "text": " So you're going to be obviously thinking about applying those concepts as well.",
+      "start": 667.2000122070312,
+      "end": 670.719970703125
+    },
+    {
+      "text": " OK, thank you. OK, so if there's no other questions,",
+      "start": 673.6799926757812,
+      "end": 680.47998046875
+    },
+    {
+      "text": " I would like to ask how how were the readings and how was the work inside of Scholarstack this week?",
+      "start": 681.280029296875,
+      "end": 687.9199829101562
+    },
+    {
+      "text": " Any comments on either of those two things? I'll tell you one thing I noticed when I review",
+      "start": 687.9199829101562,
+      "end": 693.4400024414062
+    },
+    {
+      "text": " the usage of Scholarstack is I see some people are referencing the source material",
+      "start": 693.4400024414062,
+      "end": 698.8800048828125
+    },
+    {
+      "text": " more than others. And I think that's interesting because maybe some people enjoy the chat",
+      "start": 699.52001953125,
+      "end": 705.52001953125
+    },
+    {
+      "text": " dialogue more and that's where they pull their knowledge out of the chat dialogue,",
+      "start": 705.52001953125,
+      "end": 709.760009765625
+    },
+    {
+      "text": " where some people maybe they enjoy going to the source material more and reading directly there.",
+      "start": 709.760009765625,
+      "end": 714.7999877929688
+    },
+    {
+      "text": " So. Kind of just curious if there's any comments on this week's exercise.",
+      "start": 717.6799926757812,
+      "end": 723.8400268554688
+    },
+    {
+      "text": " It was this we we we decided that the interview style was well received,",
+      "start": 723.8400268554688,
+      "end": 730.0800170898438
+    },
+    {
+      "text": " so we're going to stick with that style for the rest of the mini, where the practice exercise",
+      "start": 730.0800170898438,
+      "end": 736.47998046875
+    },
+    {
+      "text": " is you picking a company again to interview with and then doing a kind of showcase your",
+      "start": 737.1199951171875,
+      "end": 743.5999755859375
+    },
+    {
+      "text": " knowledge exercise with the interviewer to to to get good at talking about or explaining",
+      "start": 743.5999755859375,
+      "end": 752.4000244140625
+    },
+    {
+      "text": " your understanding of of key concepts. So any any thoughts on this week's?",
+      "start": 752.4000244140625,
+      "end": 759.8400268554688
+    },
+    {
+      "text": " Did we have any assignment? I thought we don't have anything for this week. Did I miss it?",
+      "start": 759.8400268554688,
+      "end": 764.0
+    },
+    {
+      "text": " Because I don't see it on canvas so I didn't get time to check.",
+      "start": 764.6400146484375,
+      "end": 768.3200073242188
+    },
+    {
+      "text": " Let me ask Shreya to chime in.",
+      "start": 770.1599731445312,
+      "end": 772.0
+    },
+    {
+      "text": " So I think it was directly on Scholarstack this week.",
+      "start": 776.0800170898438,
+      "end": 779.0399780273438
+    },
+    {
+      "text": " I'm not sure if I was able to publish it on canvas this week. Let me let me quickly check.",
+      "start": 781.3599853515625,
+      "end": 786.719970703125
+    },
+    {
+      "text": " Well, because I checked with a few other classmates and we all agreed that it is nothing due.",
+      "start": 787.52001953125,
+      "end": 794.239990234375
+    },
+    {
+      "text": " OK, I'm so sorry for that. I it was it's it's a cycle, right? Every Friday and Monday you have",
+      "start": 796.239990234375,
+      "end": 803.52001953125
+    },
+    {
+      "text": " two assignments due. So it wasn't updated on canvas this time, but it was there on Scholarstack",
+      "start": 803.52001953125,
+      "end": 809.6799926757812
+    },
+    {
+      "text": " for you guys to attempt. So let me intervene. So it seems like there was a small mistake",
+      "start": 809.6799926757812,
+      "end": 816.47998046875
+    },
+    {
+      "text": " made on both sides, right? So we will gladly extend the deadline because I have stated in",
+      "start": 816.47998046875,
+      "end": 826.1599731445312
+    },
+    {
+      "text": " the past it's repetitious. It's every week. And if Shreya forgot to put it into canvas and make",
+      "start": 826.1599731445312,
+      "end": 831.1199951171875
+    },
+    {
+      "text": " it official with a due date there, that's obviously on our side. That's a mistake that",
+      "start": 831.1199951171875,
+      "end": 835.5999755859375
+    },
+    {
+      "text": " I take responsibility for. So my apologies for that. In the future, if you have questions",
+      "start": 835.5999755859375,
+      "end": 843.3599853515625
+    },
+    {
+      "text": " about things due, also feel free to check with myself or Shreya because maybe there was a mistake",
+      "start": 843.3599853515625,
+      "end": 850.7999877929688
+    },
+    {
+      "text": " made on our side. So. So let's let's let's get that fixed. Ifra, what do you think is a new",
+      "start": 850.7999877929688,
+      "end": 861.8400268554688
+    },
+    {
+      "text": " reasonable deadline for both of those two things, given the fact that we",
+      "start": 861.8400268554688,
+      "end": 865.8400268554688
+    },
+    {
+      "text": " made a mistake? Do you think if we.",
+      "start": 866.47998046875,
+      "end": 868.47998046875
+    },
+    {
+      "text": " Extend. When were they historically due, Shreya? Can you remind me?",
+      "start": 870.4000244140625,
+      "end": 874.239990234375
+    },
+    {
+      "text": " Every Friday is the concept builder and next week, Monday is the practice exercise.",
+      "start": 875.6799926757812,
+      "end": 881.280029296875
+    },
+    {
+      "text": " So Friday. So I don't want to double up Friday. So maybe.",
+      "start": 881.280029296875,
+      "end": 885.1199951171875
+    },
+    {
+      "text": " Maybe two are due. Thursday, is that would that be OK if they're both?",
+      "start": 885.3599853515625,
+      "end": 893.6799926757812
+    },
+    {
+      "text": " We extend until Thursday for for the practice exercise and the concept builder, and then Friday",
+      "start": 895.2000122070312,
+      "end": 902.0
+    },
+    {
+      "text": " will start the next one. Or maybe we move Fridays until Monday. You said it was Friday and Tuesday,",
+      "start": 902.719970703125,
+      "end": 911.52001953125
+    },
+    {
+      "text": " Shreya? Friday and Monday. Oh, Friday and Monday. So let's move let's move the the latest one.",
+      "start": 911.52001953125,
+      "end": 920.0
+    },
+    {
+      "text": " To Monday and Tuesday. And then the old one until Friday, both of them until Friday.",
+      "start": 921.1199951171875,
+      "end": 930.5599975585938
+    },
+    {
+      "text": " Does that make that reasonable for everybody? OK. All right. Thanks for bringing that to my",
+      "start": 931.2000122070312,
+      "end": 937.0399780273438
+    },
+    {
+      "text": " attention, if I appreciate that. OK, so that's why there's no feedback on the concept builder",
+      "start": 937.0399780273438,
+      "end": 943.52001953125
+    },
+    {
+      "text": " or the practice exercises, because we didn't have it published properly. So that makes sense.",
+      "start": 943.52001953125,
+      "end": 948.6400146484375
+    },
+    {
+      "text": " OK, any other comments or questions on anything else before we get into this week's lecture?",
+      "start": 949.5999755859375,
+      "end": 956.7999877929688
+    },
+    {
+      "text": " Yeah. So I was also wondering, this was for week three. I remember the last announcement",
+      "start": 956.7999877929688,
+      "end": 971.52001953125
+    },
+    {
+      "text": " was like assignment two will be posted shortly, but I never saw it show up on campus for assignment",
+      "start": 971.52001953125,
+      "end": 978.3200073242188
+    },
+    {
+      "text": " two. Yeah, because for assignment one, it was extended to, I think, last Monday, but for",
+      "start": 978.9600219726562,
+      "end": 987.760009765625
+    },
+    {
+      "text": " assignment two. The two group work ones you mean? No, I think this was still the concept builder.",
+      "start": 987.760009765625,
+      "end": 995.2000122070312
+    },
+    {
+      "text": " And so, yeah, so last Monday was the concept builder and then assignment two, I guess,",
+      "start": 995.2000122070312,
+      "end": 1001.8400268554688
+    },
+    {
+      "text": " would have been the practice exercise, but I never saw assignment for that either.",
+      "start": 1001.8400268554688,
+      "end": 1006.239990234375
+    },
+    {
+      "text": " For week two? Three.",
+      "start": 1007.6799926757812,
+      "end": 1009.3599853515625
+    },
+    {
+      "text": " Guys, guys, so everything is updated on ScholarStack. I know we've been like posting",
+      "start": 1013.5999755859375,
+      "end": 1020.47998046875
+    },
+    {
+      "text": " assignments on Canvas as well, but everything is just up to date on ScholarStack and I follow my",
+      "start": 1020.47998046875,
+      "end": 1026.9599609375
+    },
+    {
+      "text": " timelines there as well. So if you do not see anything, just feel free to ping me or even if",
+      "start": 1026.9599609375,
+      "end": 1032.56005859375
+    },
+    {
+      "text": " you have any questions on following the instructions, you can ping me directly.",
+      "start": 1032.56005859375,
+      "end": 1037.0400390625
+    },
+    {
+      "text": " I did not post on Canvas and that is a mistake on my side. Apologies for that. But the things",
+      "start": 1038.3199462890625,
+      "end": 1046.47998046875
+    },
+    {
+      "text": " missing on Canvas are still there on ScholarStack. So just saying. Yeah, but we are responsible for",
+      "start": 1046.47998046875,
+      "end": 1053.43994140625
+    },
+    {
+      "text": " putting them on Canvas. Yes, yes, but either case, just try like pinging me again if you do",
+      "start": 1053.43994140625,
+      "end": 1060.4000244140625
+    },
+    {
+      "text": " not see anything on Canvas, if something is missing. Oh, sorry about that. Yeah, but we,",
+      "start": 1060.4000244140625,
+      "end": 1067.280029296875
+    },
+    {
+      "text": " you know, I'm not looking to be difficult or hard on anyone in this class, right? So,",
+      "start": 1067.280029296875,
+      "end": 1075.0400390625
+    },
+    {
+      "text": " you know, we will be gracious with deadlines. We just want you to learn and get the work done.",
+      "start": 1076.47998046875,
+      "end": 1082.1600341796875
+    },
+    {
+      "text": " So, I'm sorry for that mix up. Push, push your microphone button.",
+      "start": 1082.9599609375,
+      "end": 1089.5999755859375
+    },
+    {
+      "text": " Like, I asked the same question again, but there is no feedback. There's no what? Like,",
+      "start": 1099.760009765625,
+      "end": 1106.800048828125
+    },
+    {
+      "text": " there is no answer or feedback from... Oh, you're in, you're, are you in the",
+      "start": 1106.800048828125,
+      "end": 1111.43994140625
+    },
+    {
+      "text": " practice builder or concept builder? It's not responding. Yeah, like I tried it like",
+      "start": 1111.43994140625,
+      "end": 1119.6800537109375
+    },
+    {
+      "text": " two days before and I try again now, but it's still like nothing feedback.",
+      "start": 1119.6800537109375,
+      "end": 1128.800048828125
+    },
+    {
+      "text": " Okay, can you do me a favor and just take a screenshot and email it to me and I'll make sure",
+      "start": 1128.800048828125,
+      "end": 1133.280029296875
+    },
+    {
+      "text": " it gets fixed. Thank you for that as well. Yeah, one more. I did, I was working on the...",
+      "start": 1133.280029296875,
+      "end": 1139.280029296875
+    },
+    {
+      "text": " My feedback is I do like the coaching note. It's like, it tells me how I could basically",
+      "start": 1142.0,
+      "end": 1149.5999755859375
+    },
+    {
+      "text": " add something to my respond or something else to the center, which is very helpful",
+      "start": 1150.47998046875,
+      "end": 1154.239990234375
+    },
+    {
+      "text": " for me to like see the bigger picture for whatever question I'm answering. So, I did",
+      "start": 1154.9599609375,
+      "end": 1159.52001953125
+    },
+    {
+      "text": " enjoy that part. Amazing. Coaching note. Okay, I like that. That's great. Okay, anything else?",
+      "start": 1159.52001953125,
+      "end": 1167.9200439453125
+    },
+    {
+      "text": " Just a note. Sorry. Just a quick note. I know in my last email, I communicated that I",
+      "start": 1171.6800537109375,
+      "end": 1178.0799560546875
+    },
+    {
+      "text": " was not able to get in contact with my team member. I think me and King are group four,",
+      "start": 1178.0799560546875,
+      "end": 1183.9200439453125
+    },
+    {
+      "text": " and then Shreya, you moved me to another group, but then King just reached out to me two days ago",
+      "start": 1183.9200439453125,
+      "end": 1188.6400146484375
+    },
+    {
+      "text": " and he said that he is willing to work and he will be communicating. And we just had our first",
+      "start": 1188.6400146484375,
+      "end": 1193.43994140625
+    },
+    {
+      "text": " meeting. So, I think we're good there. You don't need to move me on Canvas now.",
+      "start": 1193.43994140625,
+      "end": 1197.199951171875
+    },
+    {
+      "text": " Okay, great update. Wonderful to hear it. Thank you for that.",
+      "start": 1199.6800537109375,
+      "end": 1202.4000244140625
+    },
+    {
+      "text": " So, Shreya can fix that. Okay, so let's dive into some lecture. And",
+      "start": 1204.0799560546875,
+      "end": 1210.0799560546875
+    },
+    {
+      "text": " Shreya, do you want to set up the quiz for like 4.15?",
+      "start": 1210.1600341796875,
+      "end": 1217.6800537109375
+    },
+    {
+      "text": " Professor, can we do the quiz first? I might have to jump into another meeting for just 15 minutes",
+      "start": 1221.9200439453125,
+      "end": 1229.43994140625
+    },
+    {
+      "text": " and that is scheduled for 4.15. So, I will be there in 4.15 to 4.30. So, can we do this?",
+      "start": 1229.43994140625,
+      "end": 1237.760009765625
+    },
+    {
+      "text": " The problem is there were some students who emailed me and then said they said they were",
+      "start": 1237.760009765625,
+      "end": 1241.6800537109375
+    },
+    {
+      "text": " going to be late. Were you on that trip? Did you go on a trip today? No. Okay, so there's some",
+      "start": 1241.6800537109375,
+      "end": 1246.8800048828125
+    },
+    {
+      "text": " students that are going to be walking in here later. Okay. And I want to make sure, but if you",
+      "start": 1246.8800048828125,
+      "end": 1253.52001953125
+    },
+    {
+      "text": " set it for 4.15. I can set it up for 4.15. That's fine. Okay, then it's fine, right? Yeah, but I will",
+      "start": 1253.52001953125,
+      "end": 1260.239990234375
+    },
+    {
+      "text": " not be there for that 15 minutes. That's okay. Well, you don't need to, right? Yeah. As long as",
+      "start": 1260.239990234375,
+      "end": 1265.760009765625
+    },
+    {
+      "text": " you have it set up. Okay. Yeah, just letting you know. Thank you. And you didn't change it after I",
+      "start": 1265.760009765625,
+      "end": 1273.280029296875
+    },
+    {
+      "text": " last looked at it, right? So, the configurations that I put in there",
+      "start": 1273.9200439453125,
+      "end": 1277.43994140625
+    },
+    {
+      "text": " in terms of the time limit, the shuffle, answer reveal, all of that, like you didn't change any",
+      "start": 1277.43994140625,
+      "end": 1283.1199951171875
+    },
+    {
+      "text": " of that, right? No, but there are two quizzes. So, which one do you want me to publish?",
+      "start": 1283.1199951171875,
+      "end": 1289.43994140625
+    },
+    {
+      "text": " One's 35 questions and one is 41.",
+      "start": 1290.4000244140625,
+      "end": 1292.4000244140625
+    },
+    {
+      "text": " 35. 35? Okay. Yeah. Okay. So, this week, can y'all see this screen here? Yeah. So, this week,",
+      "start": 1293.8399658203125,
+      "end": 1303.8399658203125
+    },
+    {
+      "text": " we're going to get into a topic that is not even available in most books because it's such a new",
+      "start": 1303.8399658203125,
+      "end": 1313.43994140625
+    },
+    {
+      "text": " topic. And there's one book that I'm going to post that is kind of like a pre-production",
+      "start": 1314.239990234375,
+      "end": 1322.6400146484375
+    },
+    {
+      "text": " O'Reilly book. It's not generally released yet. So, you know you're studying very current stuff",
+      "start": 1323.199951171875,
+      "end": 1331.8399658203125
+    },
+    {
+      "text": " when the books are not even out there yet. So, maybe MCP has books out, but UCP definitely not.",
+      "start": 1331.8399658203125,
+      "end": 1338.800048828125
+    },
+    {
+      "text": " And even the MCP book that I was reading was not published yet. It's kind of a pre-release version.",
+      "start": 1339.199951171875,
+      "end": 1343.5999755859375
+    },
+    {
+      "text": " So, before I get into this, I want to kind of start introducing this topic",
+      "start": 1344.4000244140625,
+      "end": 1349.280029296875
+    },
+    {
+      "text": " and see if we're all familiar with the concept of APIs. I want to make sure that we're grounded",
+      "start": 1349.8399658203125,
+      "end": 1359.280029296875
+    },
+    {
+      "text": " in our understanding of APIs. So, what's all of our general level of understanding with APIs?",
+      "start": 1359.280029296875,
+      "end": 1366.800048828125
+    },
+    {
+      "text": " How many folks would say they're familiar with it, but that's about it? In terms of kind of,",
+      "start": 1367.760009765625,
+      "end": 1373.8399658203125
+    },
+    {
+      "text": " I'm starting at the bottom and I'm going to go up. So, familiar with the concept of APIs?",
+      "start": 1373.8399658203125,
+      "end": 1377.8399658203125
+    },
+    {
+      "text": " And Yona, Ifrah, if you, so yeah, familiar? Yona? Yes. Okay. How many people are beyond familiar?",
+      "start": 1381.43994140625,
+      "end": 1394.3199462890625
+    },
+    {
+      "text": " They're very familiar. Maybe you've read API documentation or you've written an API.",
+      "start": 1394.9599609375,
+      "end": 1401.760009765625
+    },
+    {
+      "text": " How many folks are in that category? So, three. Okay. Yeah. Four. Okay. Okay. So, there's general",
+      "start": 1402.800048828125,
+      "end": 1410.800048828125
+    },
+    {
+      "text": " familiarity with APIs here is my read. So, a good way to kind of make the jump between API to these",
+      "start": 1410.800048828125,
+      "end": 1420.0799560546875
+    },
+    {
+      "text": " other kind of internet, I'm sorry, AI enabled protocols is when you write APIs,",
+      "start": 1420.0799560546875,
+      "end": 1425.3599853515625
+    },
+    {
+      "text": " it's the essence of working with a deterministic system. So, it's got a spec, a very detailed API",
+      "start": 1426.47998046875,
+      "end": 1435.199951171875
+    },
+    {
+      "text": " spec that you're going to read as a developer that tells you exactly what to pass in and what",
+      "start": 1435.199951171875,
+      "end": 1441.0400390625
+    },
+    {
+      "text": " you can expect to get back. We're all on board with that? Yeah? Okay. So, that's great. And that",
+      "start": 1441.0400390625,
+      "end": 1451.199951171875
+    },
+    {
+      "text": " has enabled a lot of amazing connections with a lot of amazing systems. So, anytime you need a",
+      "start": 1451.199951171875,
+      "end": 1459.43994140625
+    },
+    {
+      "text": " resource that's offered by another system, you ask, hey, do you have a publicly available API?",
+      "start": 1459.43994140625,
+      "end": 1464.8800048828125
+    },
+    {
+      "text": " Yes. Okay. Give me the spec. And depending on what you need, now you know exactly how to write a",
+      "start": 1464.9599609375,
+      "end": 1471.52001953125
+    },
+    {
+      "text": " syntax to connect with and to receive the information that you need for your system to do",
+      "start": 1471.52001953125,
+      "end": 1478.1600341796875
+    },
+    {
+      "text": " its job. So, you know, maybe that's weather. You're connecting to the weather app, right? So,",
+      "start": 1478.1600341796875,
+      "end": 1484.800048828125
+    },
+    {
+      "text": " you get their API spec. It's either open or it's got a key for security purposes. Maybe if it's,",
+      "start": 1484.800048828125,
+      "end": 1491.43994140625
+    },
+    {
+      "text": " you have to subscribe to it. You have a key. So, you register. Maybe you pay money. You get the key",
+      "start": 1491.43994140625,
+      "end": 1497.1199951171875
+    },
+    {
+      "text": " and you get the spec and you write your spec and now you can pass information back and forth. Or",
+      "start": 1497.1199951171875,
+      "end": 1501.43994140625
+    },
+    {
+      "text": " maybe it's one way. Maybe you're just requesting information from that source. And that has been",
+      "start": 1501.43994140625,
+      "end": 1507.3599853515625
+    },
+    {
+      "text": " amazing for systems over the last, I don't know, 15, 20 years, something like that.",
+      "start": 1507.3599853515625,
+      "end": 1514.0799560546875
+    },
+    {
+      "text": " The challenge when we move into non-deterministic systems like AI, where we've got agents who want",
+      "start": 1514.719970703125,
+      "end": 1524.47998046875
+    },
+    {
+      "text": " to kind of be autonomous and do things on their own, then writing APIs is kind of a burden for",
+      "start": 1524.47998046875,
+      "end": 1534.8800048828125
+    },
+    {
+      "text": " the scalable development of those systems. And because you want to connect with a lot of systems,",
+      "start": 1535.5999755859375,
+      "end": 1543.199951171875
+    },
+    {
+      "text": " if the host or the server is basically changing the API spec, then you also have to be updating",
+      "start": 1543.8399658203125,
+      "end": 1553.0400390625
+    },
+    {
+      "text": " your API spec on your side because it might get broken if you're not continually updating.",
+      "start": 1553.0400390625,
+      "end": 1559.760009765625
+    },
+    {
+      "text": " And so, the concept of these AI native protocols is such that it eases the burden of developers",
+      "start": 1560.3199462890625,
+      "end": 1567.8399658203125
+    },
+    {
+      "text": " when connecting to third-party systems. So, it allows non-deterministic systems like AI",
+      "start": 1567.8399658203125,
+      "end": 1576.4000244140625
+    },
+    {
+      "text": " to discover and become aware of the API-like capabilities of other systems.",
+      "start": 1577.199951171875,
+      "end": 1586.4000244140625
+    },
+    {
+      "text": " But it does not have the brittle programming specifications that the old API systems used to",
+      "start": 1586.9599609375,
+      "end": 1594.719970703125
+    },
+    {
+      "text": " have, or not old API, but just API systems in general. Therefore, using MCP, you can",
+      "start": 1594.719970703125,
+      "end": 1603.1199951171875
+    },
+    {
+      "text": " become aware of services. So, again, let's use kind of like weather channel. Let's say you're",
+      "start": 1604.1600341796875,
+      "end": 1608.47998046875
+    },
+    {
+      "text": " building an app and you want to include weather, right? The weather channel is a company that's",
+      "start": 1608.47998046875,
+      "end": 1613.280029296875
+    },
+    {
+      "text": " out there. Instead of writing a strict spec to their platform, you can just tell your system",
+      "start": 1613.280029296875,
+      "end": 1621.6800537109375
+    },
+    {
+      "text": " about the existence of an MCP server that's out there. And then your client will say,",
+      "start": 1621.6800537109375,
+      "end": 1630.6400146484375
+    },
+    {
+      "text": " hey, weather channel, are you still out there? And it's like, yes, I'm here. Hey, can I get",
+      "start": 1630.6400146484375,
+      "end": 1636.0799560546875
+    },
+    {
+      "text": " your capabilities, please? Tell me what knowledge that you have that I might want to take advantage",
+      "start": 1637.5999755859375,
+      "end": 1642.0
+    },
+    {
+      "text": " of. And then it shares the knowledge and it'll say, oh, and if you want to access any of this",
+      "start": 1642.0,
+      "end": 1648.56005859375
+    },
+    {
+      "text": " knowledge, here's the format that we'll require you to work in. So, the systems that are able to",
+      "start": 1648.56005859375,
+      "end": 1655.199951171875
+    },
+    {
+      "text": " basically communicate without the brittle, hard-coded kind of old-school if-then programming",
+      "start": 1655.199951171875,
+      "end": 1664.47998046875
+    },
+    {
+      "text": " environment that we've grown up with. So, that is just a general introduction of kind of why the",
+      "start": 1664.47998046875,
+      "end": 1674.0799560546875
+    },
+    {
+      "text": " need exists for these new systems and kind of how they differ from API systems in the past.",
+      "start": 1674.0799560546875,
+      "end": 1682.1600341796875
+    },
+    {
+      "text": " Let me take a pause there and see if there's any questions on any of that.",
+      "start": 1682.1600341796875,
+      "end": 1685.9200439453125
+    },
+    {
+      "text": " I will go into more detail with the slides, but that was just kind of like a general overview.",
+      "start": 1687.6800537109375,
+      "end": 1692.4000244140625
+    },
+    {
+      "text": " OK, so let's get into MCP first. And these two protocols, they've got their own history and",
+      "start": 1695.3599853515625,
+      "end": 1702.56005859375
+    },
+    {
+      "text": " they kind of came from their own places. MCP came from folks at Anthropic. A developer there was",
+      "start": 1702.56005859375,
+      "end": 1710.719970703125
+    },
+    {
+      "text": " kind of working on a project and he was experiencing frustration and he was thinking to himself,",
+      "start": 1710.719970703125,
+      "end": 1717.0400390625
+    },
+    {
+      "text": " hey, this brittle nature of kind of the old-school API model maybe is not so optimal for this new",
+      "start": 1717.8399658203125,
+      "end": 1726.0
+    },
+    {
+      "text": " world of agents who want to go out and accomplish tasks on their own and be rather autonomous.",
+      "start": 1726.0,
+      "end": 1731.8399658203125
+    },
+    {
+      "text": " And he was working with another protocol that was fresh in his mind and he basically took some",
+      "start": 1731.8399658203125,
+      "end": 1738.1600341796875
+    },
+    {
+      "text": " design techniques from that other protocol and applied it to this new challenge that he was",
+      "start": 1738.1600341796875,
+      "end": 1745.8399658203125
+    },
+    {
+      "text": " facing. And with another teammate at Anthropic, they started kind of tinkering and defining this",
+      "start": 1745.8399658203125,
+      "end": 1752.56005859375
+    },
+    {
+      "text": " new MCP protocol. Once they had defined it, they had a hackathon internally at Anthropic and they",
+      "start": 1752.56005859375,
+      "end": 1760.6400146484375
+    },
+    {
+      "text": " invited other teams to try it out. And there's other teams liked it as well and saw the promise",
+      "start": 1760.6400146484375,
+      "end": 1765.760009765625
+    },
+    {
+      "text": " there. Of course, when any time you kind of trial something, you're going to find some bugs and some",
+      "start": 1765.760009765625,
+      "end": 1771.280029296875
+    },
+    {
+      "text": " friction along the way. So they also kind of tested it at this hackathon and found out how",
+      "start": 1771.280029296875,
+      "end": 1778.3199462890625
+    },
+    {
+      "text": " they could improve it and make it better. But since it's been deployed, it has been widely accepted.",
+      "start": 1778.3199462890625,
+      "end": 1785.52001953125
+    },
+    {
+      "text": " There's a website that I'm going to put into your readings that is a MCP repository",
+      "start": 1786.0799560546875,
+      "end": 1792.3199462890625
+    },
+    {
+      "text": " where you can go there and see like all sorts of MCP servers that are available. And the",
+      "start": 1792.3199462890625,
+      "end": 1799.280029296875
+    },
+    {
+      "text": " capabilities and the resources are vast. So anybody who's got a system that they want to",
+      "start": 1799.280029296875,
+      "end": 1806.0
+    },
+    {
+      "text": " make available to others can publish their MCP availability in a few different directories that",
+      "start": 1806.0,
+      "end": 1813.280029296875
+    },
+    {
+      "text": " exist online. There's not just one, but there's a few. And then if then if you want others to",
+      "start": 1813.280029296875,
+      "end": 1819.280029296875
+    },
+    {
+      "text": " take advantage and use your MCP server, you just kind of publish what you know, some general",
+      "start": 1819.280029296875,
+      "end": 1826.4000244140625
+    },
+    {
+      "text": " availability about it. But again, you don't have to specify the exact specs because the specs, the",
+      "start": 1826.4000244140625,
+      "end": 1833.3599853515625
+    },
+    {
+      "text": " details of the of the request can be are discoverable when the client connects to the",
+      "start": 1834.9599609375,
+      "end": 1842.56005859375
+    },
+    {
+      "text": " server. And so basically the way it works in terms of architecture components is you'll have a host",
+      "start": 1842.56005859375,
+      "end": 1849.199951171875
+    },
+    {
+      "text": " system, which is the system that maybe I am building. OK, let's say you manage weather.com.",
+      "start": 1849.199951171875,
+      "end": 1855.199951171875
+    },
+    {
+      "text": " Right. But I'm building a I don't know, surfing app or a mountain biking app. But I need to know",
+      "start": 1855.199951171875,
+      "end": 1860.800048828125
+    },
+    {
+      "text": " about weather in my app. My application is called the host system. And in my host system, I will",
+      "start": 1860.800048828125,
+      "end": 1866.8800048828125
+    },
+    {
+      "text": " have the client that is an accessing your server requesting information. And those are the key",
+      "start": 1866.8800048828125,
+      "end": 1872.800048828125
+    },
+    {
+      "text": " architectural components of the system. So let's get into the slides a little bit more where we",
+      "start": 1872.800048828125,
+      "end": 1878.719970703125
+    },
+    {
+      "text": " can visualize some of this stuff. So. OK, so why MCP exists? We talked a bit about this multiple",
+      "start": 1878.719970703125,
+      "end": 1890.0799560546875
+    },
+    {
+      "text": " models, multiple tools. Everything is great, meaning in the old API world until you're trying",
+      "start": 1890.1600341796875,
+      "end": 1896.800048828125
+    },
+    {
+      "text": " to scale, then you've got some problems. And this is the the challenge that that that folks were",
+      "start": 1896.800048828125,
+      "end": 1904.47998046875
+    },
+    {
+      "text": " facing. And it was specifically about connecting to models. But it's now been broadened and it's",
+      "start": 1904.47998046875,
+      "end": 1909.9200439453125
+    },
+    {
+      "text": " not just about connecting to different elements. If you have multiple models and you're connected",
+      "start": 1909.9200439453125,
+      "end": 1915.52001953125
+    },
+    {
+      "text": " to multiple tools, then you have this problem that they call the M, you know, M times T.",
+      "start": 1915.52001953125,
+      "end": 1924.47998046875
+    },
+    {
+      "text": " So it's it's, you know, three times four is 12 connections that you then have to manage.",
+      "start": 1925.43994140625,
+      "end": 1930.6400146484375
+    },
+    {
+      "text": " And if there's any changes, you need to kind of dig into them and troubleshoot.",
+      "start": 1931.6800537109375,
+      "end": 1936.0799560546875
+    },
+    {
+      "text": " And you can see how this gets even more complicated when there's more tools and more",
+      "start": 1936.0799560546875,
+      "end": 1941.43994140625
+    },
+    {
+      "text": " elements out there. Right. So so this is what it looks like in the old API world where we've got",
+      "start": 1941.43994140625,
+      "end": 1947.6800537109375
+    },
+    {
+      "text": " 12 connections. And these are the characteristics down here. Repetition, you know, basically",
+      "start": 1947.6800537109375,
+      "end": 1953.1199951171875
+    },
+    {
+      "text": " rewriting API connections to many, many places. Complexity. It's fragile, hard to debug if there's",
+      "start": 1953.1199951171875,
+      "end": 1960.6400146484375
+    },
+    {
+      "text": " problems. OK, now watch what happens when I click on the MCP one here. It becomes more simple,",
+      "start": 1960.6400146484375,
+      "end": 1968.8800048828125
+    },
+    {
+      "text": " right? So it's easier to maintain. It's easier to scale. It's kind of self debugging because it",
+      "start": 1968.8800048828125,
+      "end": 1976.239990234375
+    },
+    {
+      "text": " can discover services on its own. So so it's widely adopted to be an improved improvement",
+      "start": 1976.239990234375,
+      "end": 1983.6800537109375
+    },
+    {
+      "text": " in terms of architecture interconnections when you're connecting various systems and tools.",
+      "start": 1983.6800537109375,
+      "end": 1990.4000244140625
+    },
+    {
+      "text": " So. Instead of M times and it became M plus and so instead of 12, now it's reduced to seven.",
+      "start": 1991.3599853515625,
+      "end": 2007.760009765625
+    },
+    {
+      "text": " So one interface giving you many integrations. And it standardizes how models are using tool.",
+      "start": 2008.47998046875,
+      "end": 2018.0
+    },
+    {
+      "text": " These are the architectural components that I spoke of earlier.",
+      "start": 2018.0,
+      "end": 2020.9599609375
+    },
+    {
+      "text": " The client is on your application, it's connecting to the server, and then the transport",
+      "start": 2023.1199951171875,
+      "end": 2029.3599853515625
+    },
+    {
+      "text": " is the specifications that talks about how the two are going to speak to each other.",
+      "start": 2029.3599853515625,
+      "end": 2034.0799560546875
+    },
+    {
+      "text": " And so it's kind of like this one to many connectivity capability. So.",
+      "start": 2035.52001953125,
+      "end": 2044.0799560546875
+    },
+    {
+      "text": " I like sequence diagrams when I'm doing system architecture. Sequence diagrams show like one",
+      "start": 2044.719970703125,
+      "end": 2053.1201171875
+    },
+    {
+      "text": " call to one place, the response, a call to another place, the response. So so this is the benefit of",
+      "start": 2053.1201171875,
+      "end": 2059.679931640625
+    },
+    {
+      "text": " a sequence diagram. And this screen here kind of showcases the first initial sequence. And",
+      "start": 2059.679931640625,
+      "end": 2066.800048828125
+    },
+    {
+      "text": " let me see if I can get it to repeat. Hold on. Let me go. Let me go forward. So the first",
+      "start": 2068.159912109375,
+      "end": 2072.9599609375
+    },
+    {
+      "text": " so the first call goes to the to the server and then comes back to the host. Did you see",
+      "start": 2073.199951171875,
+      "end": 2078.0
+    },
+    {
+      "text": " that animation there? So and it's and it's checking on capabilities, the available tools",
+      "start": 2078.0,
+      "end": 2084.9599609375
+    },
+    {
+      "text": " and the supported features. So that's really the first communication that takes place.",
+      "start": 2084.9599609375,
+      "end": 2089.43994140625
+    },
+    {
+      "text": " And how does that differ from APIs? In the API world, the developer needs to know",
+      "start": 2090.639892578125,
+      "end": 2098.080078125
+    },
+    {
+      "text": " about the tools and the capabilities when they write the API.",
+      "start": 2098.080078125,
+      "end": 2102.0
+    },
+    {
+      "text": " So it's a very different kind of interaction. That makes sense to everybody.",
+      "start": 2103.760009765625,
+      "end": 2109.679931640625
+    },
+    {
+      "text": " It'll make more sense when you kind of get into the readings today is just to introduce the topic",
+      "start": 2111.840087890625,
+      "end": 2115.679931640625
+    },
+    {
+      "text": " to you. OK, so that that is the initial initialization. That's the bubble highlighted",
+      "start": 2115.679931640625,
+      "end": 2122.39990234375
+    },
+    {
+      "text": " here. Then there's the operation. And the operation is the MCP client talking to the MCP",
+      "start": 2122.39990234375,
+      "end": 2130.239990234375
+    },
+    {
+      "text": " server, passing information back and forth. And then there's the disconnection. OK,",
+      "start": 2130.239990234375,
+      "end": 2137.0400390625
+    },
+    {
+      "text": " the host telling the server, I'm done and we can tear down the communication.",
+      "start": 2137.0400390625,
+      "end": 2141.919921875
+    },
+    {
+      "text": " So we talked a bit about the architecture where we've got the host, the server,",
+      "start": 2143.0400390625,
+      "end": 2148.9599609375
+    },
+    {
+      "text": " the client and the connection. And then this is the MCP lifecycle, right? These are the main",
+      "start": 2149.919921875,
+      "end": 2157.679931640625
+    },
+    {
+      "text": " activities that take place within the use of an MCP server. So those are two important",
+      "start": 2158.239990234375,
+      "end": 2165.0400390625
+    },
+    {
+      "text": " things for us to understand conceptually if we want to take advantage of these systems. OK.",
+      "start": 2165.0400390625,
+      "end": 2170.8798828125
+    },
+    {
+      "text": " OK, so MCP in action. So I want to walk through kind of what that sequence diagram",
+      "start": 2170.8798828125,
+      "end": 2180.9599609375
+    },
+    {
+      "text": " would look like for an example MCP interaction. So so I'm thinking about a travel agent,",
+      "start": 2181.52001953125,
+      "end": 2189.360107421875
+    },
+    {
+      "text": " not the old school travel agent, not a human being travel agent. But let's say I'm building",
+      "start": 2189.360107421875,
+      "end": 2195.60009765625
+    },
+    {
+      "text": " a travel agent and I want people to be able to kind of like find flights and do stuff like that.",
+      "start": 2195.60009765625,
+      "end": 2200.9599609375
+    },
+    {
+      "text": " Right. So if I've got a travel agent and and my user coming to my agent is going to tell me,",
+      "start": 2200.9599609375,
+      "end": 2209.60009765625
+    },
+    {
+      "text": " book me a flight to New York next Tuesday. OK, so that's the user prompt.",
+      "start": 2210.39990234375,
+      "end": 2215.60009765625
+    },
+    {
+      "text": " The next step, pre-configured MCP connections are ready. So so my host application",
+      "start": 2216.47998046875,
+      "end": 2224.9599609375
+    },
+    {
+      "text": " already knows what MCP servers exist. This is a very important thing about MCP servers.",
+      "start": 2226.080078125,
+      "end": 2233.199951171875
+    },
+    {
+      "text": " You cannot expect the host application or the client, the MCP client, to find the capabilities",
+      "start": 2233.199951171875,
+      "end": 2241.919921875
+    },
+    {
+      "text": " that exist in the world. That's not a problem that's solved yet. Maybe some of you will go",
+      "start": 2241.919921875,
+      "end": 2247.679931640625
+    },
+    {
+      "text": " start that company and solve that problem. But today, as the developer, I have to at least",
+      "start": 2247.679931640625,
+      "end": 2253.919921875
+    },
+    {
+      "text": " tell my host system the weather channel is out there. That's a place where you can go",
+      "start": 2254.56005859375,
+      "end": 2261.52001953125
+    },
+    {
+      "text": " to get information or in this case, Expedia or Travelocity or Google Flights.",
+      "start": 2261.52001953125,
+      "end": 2268.8798828125
+    },
+    {
+      "text": " Right. You have to tell tell your system that these capabilities exist at a specific place.",
+      "start": 2268.8798828125,
+      "end": 2274.9599609375
+    },
+    {
+      "text": " So that's what we need to tell our host application. So it's pretty good. That's",
+      "start": 2274.9599609375,
+      "end": 2278.800048828125
+    },
+    {
+      "text": " why it says pre-configured are ready to go. It knows which servers it's got access to",
+      "start": 2278.800048828125,
+      "end": 2284.639892578125
+    },
+    {
+      "text": " for different use cases. Right. It talks about travel, calendar, email.",
+      "start": 2284.639892578125,
+      "end": 2288.39990234375
+    },
+    {
+      "text": " And so the first step, the MCP client connects and negotiates capabilities. So that was the first",
+      "start": 2289.52001953125,
+      "end": 2295.360107421875
+    },
+    {
+      "text": " initialization step that we talked about in terms of the three activities.",
+      "start": 2295.360107421875,
+      "end": 2301.360107421875
+    },
+    {
+      "text": " And it's just reaching out. I always like to think of it as two humans talking to each other.",
+      "start": 2301.360107421875,
+      "end": 2306.0
+    },
+    {
+      "text": " So it's me calling you on the phone and say, hey, what kind of services do you have available?",
+      "start": 2306.0,
+      "end": 2310.39990234375
+    },
+    {
+      "text": " OK, let's say I want to use your services. How do you want me to communicate with you?",
+      "start": 2311.199951171875,
+      "end": 2315.360107421875
+    },
+    {
+      "text": " Right. Just think of human conversation and apply it to the machine world.",
+      "start": 2316.47998046875,
+      "end": 2321.280029296875
+    },
+    {
+      "text": " And that's how it's working. OK, so negotiate capability using the MCP lifecycle,",
+      "start": 2322.159912109375,
+      "end": 2330.320068359375
+    },
+    {
+      "text": " which we talked about. Right. Next. Agent discovers the available tools.",
+      "start": 2330.320068359375,
+      "end": 2337.1201171875
+    },
+    {
+      "text": " So you tell me here's here's what I have available X, Y and Z. What do you want?",
+      "start": 2337.760009765625,
+      "end": 2343.0400390625
+    },
+    {
+      "text": " You want to search flights? You want to create events and email? Well,",
+      "start": 2343.0400390625,
+      "end": 2346.56005859375
+    },
+    {
+      "text": " let's just talk about searching flights right now. Then the model, the non-deterministic LLM,",
+      "start": 2346.56005859375,
+      "end": 2354.0
+    },
+    {
+      "text": " chooses the path forward based on the goal it's looking to accomplish. Right. And this gets",
+      "start": 2355.280029296875,
+      "end": 2361.52001953125
+    },
+    {
+      "text": " this is this is where we get the term agent versus a simple chatbot. When you engage with",
+      "start": 2362.080078125,
+      "end": 2369.679931640625
+    },
+    {
+      "text": " Claude or Gemini or chat, GPT. That's not a gentic, right? It's not trying to take you to",
+      "start": 2370.239990234375,
+      "end": 2378.8798828125
+    },
+    {
+      "text": " a destination. It's kind of like our practice exercise that is an agent. It's got a destination",
+      "start": 2378.8798828125,
+      "end": 2385.60009765625
+    },
+    {
+      "text": " and a journey. It's pulling you down. Right. So agents usually have some sort of goal in",
+      "start": 2385.60009765625,
+      "end": 2391.52001953125
+    },
+    {
+      "text": " mind that they're working towards. OK, so the model is going to select the course of action",
+      "start": 2391.52001953125,
+      "end": 2396.159912109375
+    },
+    {
+      "text": " based on its goals and based on the capability that the MCP server has made available.",
+      "start": 2397.0400390625,
+      "end": 2403.60009765625
+    },
+    {
+      "text": " OK, next, the client invokes the travel tool through MCP to the server's brokering request.",
+      "start": 2404.9599609375,
+      "end": 2411.52001953125
+    },
+    {
+      "text": " So this is where we're starting to get deep into our sequence diagram,",
+      "start": 2411.52001953125,
+      "end": 2415.760009765625
+    },
+    {
+      "text": " passing things back and forth. And I will emphasize structured results,",
+      "start": 2415.760009765625,
+      "end": 2422.639892578125
+    },
+    {
+      "text": " because even though we're not we're not doing an API style communication,",
+      "start": 2423.60009765625,
+      "end": 2428.320068359375
+    },
+    {
+      "text": " even within an MCP server exchange, we're still going to have some structure.",
+      "start": 2429.0400390625,
+      "end": 2433.43994140625
+    },
+    {
+      "text": " It's going to say, here's how here's my services. Here's how I want you to ask me to use my",
+      "start": 2434.47998046875,
+      "end": 2439.760009765625
+    },
+    {
+      "text": " services. OK, so structure still exists. It's just not hard coded.",
+      "start": 2439.760009765625,
+      "end": 2444.9599609375
+    },
+    {
+      "text": " OK, let's keep going. Agent confirms or proceeds according to the policy.",
+      "start": 2444.9599609375,
+      "end": 2451.1201171875
+    },
+    {
+      "text": " The agent orchestrates any follow on action. Right. So the agent is reasoning. Again,",
+      "start": 2453.679931640625,
+      "end": 2459.840087890625
+    },
+    {
+      "text": " this is a big, big delta from where we were in the old days. It's not just all if then.",
+      "start": 2459.840087890625,
+      "end": 2464.639892578125
+    },
+    {
+      "text": " Right. Those are deterministic systems. The agent's reasoning and deciding,",
+      "start": 2465.840087890625,
+      "end": 2471.60009765625
+    },
+    {
+      "text": " do I need follow up actions or am I sufficient with what I have now?",
+      "start": 2471.60009765625,
+      "end": 2475.1201171875
+    },
+    {
+      "text": " Maybe maybe the response is not going to allow the agent to complete its task.",
+      "start": 2475.760009765625,
+      "end": 2482.8798828125
+    },
+    {
+      "text": " So then the agent has to think and reason, what should I do now?",
+      "start": 2484.800048828125,
+      "end": 2489.43994140625
+    },
+    {
+      "text": " Again, that's that's the superpower that I allows us when we're building systems,",
+      "start": 2491.280029296875,
+      "end": 2496.239990234375
+    },
+    {
+      "text": " is got reasoning capability. It might decide. Oh, if Expedia doesn't have the right thing,",
+      "start": 2496.239990234375,
+      "end": 2504.159912109375
+    },
+    {
+      "text": " I'll go to Travelocity. And that's the beauty of combining a deterministic flow with a",
+      "start": 2504.159912109375,
+      "end": 2510.320068359375
+    },
+    {
+      "text": " non-deterministic system that's got reasoning. So you could say, hey, first, always check Expedia.",
+      "start": 2510.320068359375,
+      "end": 2515.760009765625
+    },
+    {
+      "text": " Or maybe it's first if we're going to Florida, always check Expedia. But if we're going to go",
+      "start": 2516.719970703125,
+      "end": 2522.239990234375
+    },
+    {
+      "text": " to California, check somebody else. That's how we get both determinism and non-deterministic",
+      "start": 2522.239990234375,
+      "end": 2531.52001953125
+    },
+    {
+      "text": " reasoning. I mean, both of these kind of system design capabilities hold their own value.",
+      "start": 2531.52001953125,
+      "end": 2539.43994140625
+    },
+    {
+      "text": " When we combine them together is when it gets really exciting and really amazing.",
+      "start": 2540.239990234375,
+      "end": 2544.320068359375
+    },
+    {
+      "text": " OK, and then back on the user side, the user just sees one coherent assistant. The user doesn't know",
+      "start": 2545.280029296875,
+      "end": 2553.280029296875
+    },
+    {
+      "text": " all the stuff that's happening behind the scenes. And when we when we get to the class where we're",
+      "start": 2553.280029296875,
+      "end": 2558.080078125
+    },
+    {
+      "text": " talking about agentic engineering, so agent to agent communication, we're going to start to get",
+      "start": 2558.080078125,
+      "end": 2566.0
+    },
+    {
+      "text": " into all of the possibilities exist because we can have an agent kick off three different processes.",
+      "start": 2566.0,
+      "end": 2574.159912109375
+    },
+    {
+      "text": " Could pass information to three different MCP servers, have have processes running,",
+      "start": 2575.1201171875,
+      "end": 2580.56005859375
+    },
+    {
+      "text": " and then the information comes back. And then the agent reasons based on what it got back.",
+      "start": 2580.56005859375,
+      "end": 2586.320068359375
+    },
+    {
+      "text": " And then it might kick off 100 processes at 100 other MCP servers, or it might call 100 other",
+      "start": 2586.320068359375,
+      "end": 2593.280029296875
+    },
+    {
+      "text": " agents. Right, so now we start to really grasp the power of the possibility with what we can do",
+      "start": 2593.280029296875,
+      "end": 2601.840087890625
+    },
+    {
+      "text": " with these systems. OK, I'm just keep an eye on the time and. Published, yeah.",
+      "start": 2601.840087890625,
+      "end": 2610.320068359375
+    },
+    {
+      "text": " Let me just showcase a couple other things we're not going to get to in our lecture today,",
+      "start": 2612.9599609375,
+      "end": 2617.52001953125
+    },
+    {
+      "text": " but I want you to be aware of. So in the notes here, I have published a sequence diagram",
+      "start": 2617.52001953125,
+      "end": 2623.679931640625
+    },
+    {
+      "text": " that you can all look at that talks about booking a flight to New York and you can see",
+      "start": 2624.39990234375,
+      "end": 2630.8798828125
+    },
+    {
+      "text": " the travel agent, the host system, the MCP client, the MCP server, the travel booking tool.",
+      "start": 2630.8798828125,
+      "end": 2637.840087890625
+    },
+    {
+      "text": " And then towards the end at the bottom here, you can see how the results are passed to the calendar",
+      "start": 2638.719970703125,
+      "end": 2645.0400390625
+    },
+    {
+      "text": " tool and the email tool. And we can imagine what that is, right? You book the flight. If it's",
+      "start": 2645.0400390625,
+      "end": 2650.159912109375
+    },
+    {
+      "text": " successful, it's placing it on your calendar and it's sending you an email, right? It could also",
+      "start": 2650.159912109375,
+      "end": 2655.679931640625
+    },
+    {
+      "text": " send you a Slack message. You could call you on the phone, right? Depending on what else we bake",
+      "start": 2655.679931640625,
+      "end": 2660.080078125
+    },
+    {
+      "text": " into the sequence flow. But again, I love sequence flows. And if if you're an engineer",
+      "start": 2660.080078125,
+      "end": 2666.159912109375
+    },
+    {
+      "text": " and you want specific information from your product manager, use a sequence flow. If you're",
+      "start": 2667.199951171875,
+      "end": 2672.9599609375
+    },
+    {
+      "text": " a PM and you want to hash things out with your engineer, use a sequence flow. I was I once read",
+      "start": 2672.9599609375,
+      "end": 2678.56005859375
+    },
+    {
+      "text": " that the biggest cause of of failure in software development is communication.",
+      "start": 2678.56005859375,
+      "end": 2686.0
+    },
+    {
+      "text": " Which is a bit surprising, you'd think it would be something technical, right?",
+      "start": 2686.9599609375,
+      "end": 2689.60009765625
+    },
+    {
+      "text": " It's not technical, it's just basic human to human communication. And it's even more important",
+      "start": 2690.39990234375,
+      "end": 2695.679931640625
+    },
+    {
+      "text": " when things start to get complicated. The sequence flows are a great tool to use.",
+      "start": 2695.679931640625,
+      "end": 2701.0400390625
+    },
+    {
+      "text": " So take a look at this. I've got one more narrative flow here, similar to this MCP in action.",
+      "start": 2701.0400390625,
+      "end": 2707.760009765625
+    },
+    {
+      "text": " This one just has more detail. So you can walk through the same flow with more detail.",
+      "start": 2707.760009765625,
+      "end": 2713.679931640625
+    },
+    {
+      "text": " With more detail. And then UCP is a similar protocol, except it's designed for commerce.",
+      "start": 2713.760009765625,
+      "end": 2723.280029296875
+    },
+    {
+      "text": " So buying things. So MCP is more about just kind of information.",
+      "start": 2724.719970703125,
+      "end": 2729.760009765625
+    },
+    {
+      "text": " Commerce is its own unique animal. So, so UCP is like MCP in many respects.",
+      "start": 2731.43994140625,
+      "end": 2740.239990234375
+    },
+    {
+      "text": " So if you understand MCP, the jump to UCP is easy. UCP was developed by Shopify and Google.",
+      "start": 2740.239990234375,
+      "end": 2747.360107421875
+    },
+    {
+      "text": " They wanted to be able to power agentic commerce. And so, so you can kind of read more about that",
+      "start": 2749.0400390625,
+      "end": 2757.360107421875
+    },
+    {
+      "text": " in the readings. And, you know, and you can also click through this, we've got we've got a flow.",
+      "start": 2757.360107421875,
+      "end": 2763.1201171875
+    },
+    {
+      "text": " And then similar to the last one, we've got kind of an animated sequence architecture or",
+      "start": 2763.679931640625,
+      "end": 2771.1201171875
+    },
+    {
+      "text": " sequence diagram that kind of showcases how it all works together. So. Any quick questions?",
+      "start": 2771.1201171875,
+      "end": 2781.199951171875
+    },
+    {
+      "text": " I just have a quick question. So when when you said there are a set of rules, for instance,",
+      "start": 2782.719970703125,
+      "end": 2789.199951171875
+    },
+    {
+      "text": " you know, if this is the fly, if I'm going to California, use this, this app,",
+      "start": 2789.199951171875,
+      "end": 2794.080078125
+    },
+    {
+      "text": " if I'm going somewhere else. So those rules are set within the MCP server?",
+      "start": 2794.080078125,
+      "end": 2799.679931640625
+    },
+    {
+      "text": " No, those rules were just me giving a theoretical example of how I might design a system.",
+      "start": 2800.800048828125,
+      "end": 2807.760009765625
+    },
+    {
+      "text": " And so, so that has to do with how I want my system to operate and how I want my system to",
+      "start": 2809.280029296875,
+      "end": 2816.719970703125
+    },
+    {
+      "text": " take advantage of an MCP or a UCP server. So. Can we customize the MCP server or that's just",
+      "start": 2816.719970703125,
+      "end": 2825.919921875
+    },
+    {
+      "text": " a layer in between? Say it again, please. So are we able to like customize or, you know,",
+      "start": 2825.919921875,
+      "end": 2834.39990234375
+    },
+    {
+      "text": " set those rules within a server when we're designing it or that's just a layer like,",
+      "start": 2834.39990234375,
+      "end": 2838.8798828125
+    },
+    {
+      "text": " you know, how we do it with APIs? So the the MCP protocol will provide",
+      "start": 2838.8798828125,
+      "end": 2845.919921875
+    },
+    {
+      "text": " specifications for how you implement the protocol, right? How you design your well,",
+      "start": 2847.280029296875,
+      "end": 2854.239990234375
+    },
+    {
+      "text": " it depends what side you're on. Are you are you the weather channel offering up information",
+      "start": 2854.239990234375,
+      "end": 2859.199951171875
+    },
+    {
+      "text": " or are you the mountain biking app asking for information? Yeah. There's two sides to the",
+      "start": 2859.199951171875,
+      "end": 2865.840087890625
+    },
+    {
+      "text": " puzzle. So the one asking for the information is the host system that implements the client.",
+      "start": 2865.840087890625,
+      "end": 2872.800048828125
+    },
+    {
+      "text": " And the client is communicating with the server. So the protocol and I encourage all of you,",
+      "start": 2874.47998046875,
+      "end": 2880.320068359375
+    },
+    {
+      "text": " actually, I'll post the protocol, right? You should read like you don't have to memorize it",
+      "start": 2880.320068359375,
+      "end": 2885.0400390625
+    },
+    {
+      "text": " all, but get in there and look around and read it a bit and see some of the detail that's in there.",
+      "start": 2885.0400390625,
+      "end": 2890.800048828125
+    },
+    {
+      "text": " But it's a standard protocol.",
+      "start": 2890.9599609375,
+      "end": 2892.47998046875
+    },
+    {
+      "text": " And then you just kind of build your server according to the protocol and then other people",
+      "start": 2895.1201171875,
+      "end": 2899.1201171875
+    },
+    {
+      "text": " can take advantage of your server. You could you could make it very basic. I could just have",
+      "start": 2899.1201171875,
+      "end": 2903.280029296875
+    },
+    {
+      "text": " one or two functionalities. You know. But does that answer the question, Ifrah? Yes,",
+      "start": 2903.280029296875,
+      "end": 2911.199951171875
+    },
+    {
+      "text": " that was helpful. Thank you. But but, you know, going back to this question, if it's like I want",
+      "start": 2911.199951171875,
+      "end": 2917.60009765625
+    },
+    {
+      "text": " if it's like I want Travelocity first and Expedia second, that's for the system designer",
+      "start": 2918.0,
+      "end": 2925.60009765625
+    },
+    {
+      "text": " to specify. And so so I could say and then and then you can also kind of combine MCP and UCP.",
+      "start": 2926.239990234375,
+      "end": 2933.840087890625
+    },
+    {
+      "text": " Right. So check all the flights that are out there. Then if you're going to buy something,",
+      "start": 2933.840087890625,
+      "end": 2939.199951171875
+    },
+    {
+      "text": " use the UCP protocol that maybe United Airlines has made available. I don't know. I don't know",
+      "start": 2940.080078125,
+      "end": 2946.719970703125
+    },
+    {
+      "text": " if United has a UCP flow yet or a capability. If you're a curious person in this class,",
+      "start": 2946.719970703125,
+      "end": 2955.0400390625
+    },
+    {
+      "text": " that's a great question. You know, go home tonight and ask Chad TPT. Hey, which which",
+      "start": 2955.0400390625,
+      "end": 2961.52001953125
+    },
+    {
+      "text": " major airlines have built capability on UCP or even MCP? Right. That's a fun a fun thing to",
+      "start": 2961.52001953125,
+      "end": 2971.199951171875
+    },
+    {
+      "text": " do a little research on. OK, so what I would love to do now, can we are we going to have access",
+      "start": 2971.199951171875,
+      "end": 2980.0
+    },
+    {
+      "text": " to this to to Claude to sorry, Lovable or to the slide that you're going over? Yes, you already do.",
+      "start": 2980.0,
+      "end": 2989.52001953125
+    },
+    {
+      "text": " This is available in ScholarStack. And so anytime I update my slides.",
+      "start": 2990.639892578125,
+      "end": 2996.800048828125
+    },
+    {
+      "text": " It's there, it's like a Web page and it's already there. So you go into ScholarStack.",
+      "start": 2996.800048828125,
+      "end": 3003.199951171875
+    },
+    {
+      "text": " I believe it's under course copilot. OK, you you should be able to find",
+      "start": 3004.800048828125,
+      "end": 3010.0
+    },
+    {
+      "text": " these slides and it will render inside of ScholarStack. I think you can also render",
+      "start": 3011.360107421875,
+      "end": 3017.60009765625
+    },
+    {
+      "text": " it in an external browser if you want. OK, sounds good. Thank you. Great question.",
+      "start": 3017.60009765625,
+      "end": 3022.8798828125
+    },
+    {
+      "text": " OK, so what I want to do now is take the quiz. So I'm going to give you exactly 10 minutes.",
+      "start": 3022.8798828125,
+      "end": 3029.679931640625
+    },
+    {
+      "text": " I would ask everybody in the room to start. And I'm going to start the timer right now.",
+      "start": 3030.239990234375,
+      "end": 3037.60009765625
+    },
+    {
+      "text": " This one is longer. So don't worry if you don't complete it. OK, I want you to just do your best.",
+      "start": 3037.60009765625,
+      "end": 3045.199951171875
+    },
+    {
+      "text": " And as you know, you can always. Redo this if you get anything wrong.",
+      "start": 3045.199951171875,
+      "end": 3052.800048828125
+    },
+    {
+      "text": " And this quiz is a little bit different in that",
+      "start": 3056.8798828125,
+      "end": 3059.1201171875
+    },
+    {
+      "text": " you cannot go backwards if it's going to present one question at a time.",
+      "start": 3059.919921875,
+      "end": 3063.360107421875
+    },
+    {
+      "text": " And you cannot go backwards, you can only go forwards.",
+      "start": 3066.56005859375,
+      "end": 3069.0400390625
+    },
+    {
+      "text": " Shreya, how long is it going to exist for? It's 10 minutes, right?",
+      "start": 3069.0400390625,
+      "end": 3076.9599609375
+    },
+    {
+      "text": " Yeah, OK. So please start as soon as you can. It's actually seven minutes. Oh, oh.",
+      "start": 3078.639892578125,
+      "end": 3088.47998046875
+    },
+    {
+      "text": " Seven minutes left. Oh, so it had a. OK, well, get going.",
+      "start": 3090.320068359375,
+      "end": 3094.639892578125
+    },
+    {
+      "text": " OK.",
+      "start": 3129.0400390625,
+      "end": 3131.0400390625
+    },
+    {
+      "text": " Those of you who are online, this is your knowledge, not any LLM knowledge.",
+      "start": 3143.679931640625,
+      "end": 3149.199951171875
+    },
+    {
+      "text": " And again, don't worry if you don't know the answer,",
+      "start": 3153.199951171875,
+      "end": 3156.0
+    },
+    {
+      "text": " because you're going to have the opportunity later in the course to get the answer",
+      "start": 3156.639892578125,
+      "end": 3160.56005859375
+    },
+    {
+      "text": " and correct it in the future. So this is really just for you to gauge your own understanding.",
+      "start": 3161.280029296875,
+      "end": 3168.080078125
+    },
+    {
+      "text": " Don't worry about using an LLM to answer these questions. This is your brain only.",
+      "start": 3169.840087890625,
+      "end": 3176.56005859375
+    },
+    {
+      "text": " I would suggest move quickly through it. If you don't know the answer, just skip it.",
+      "start": 3181.360107421875,
+      "end": 3185.840087890625
+    },
+    {
+      "text": " I mean, you can guess, of course.",
+      "start": 3186.639892578125,
+      "end": 3188.639892578125
+    },
+    {
+      "text": " But try and get through as many questions as you can.",
+      "start": 3192.159912109375,
+      "end": 3195.840087890625
+    },
+    {
+      "text": " What does it pop up there when you answer the question? What does that pop up?",
+      "start": 3246.0,
+      "end": 3251.840087890625
+    },
+    {
+      "text": " Oh, it keeps coming up over and over. OK.",
+      "start": 3276.0,
+      "end": 3279.840087890625
+    },
+    {
+      "text": " OK.",
+      "start": 3336.0,
+      "end": 3338.320068359375
+    },
+    {
+      "text": " OK.",
+      "start": 3366.0,
+      "end": 3368.0
+    },
+    {
+      "text": " OK.",
+      "start": 3396.0,
+      "end": 3398.0
+    },
+    {
+      "text": " OK.",
+      "start": 3426.0,
+      "end": 3428.0
+    },
+    {
+      "text": " OK.",
+      "start": 3456.0,
+      "end": 3458.0
+    },
+    {
+      "text": " Mae'r perthynasau hwnnw'n rhai o'r perthynasau ymlaen.",
+      "start": 3498.117344,
+      "end": 3502.117344
+    },
+    {
+      "text": " Mae'r perthynasau yma'n llawer o'r perthynasau rhaid i ni eu cymryd.",
+      "start": 3505.117344,
+      "end": 3510.117344
+    },
+    {
+      "text": " Mae'r perthynasau yma'n llawer o'r perthynasau rhaid i ni eu cymryd.",
+      "start": 3522.117344,
+      "end": 3526.117344
+    },
+    {
+      "text": " Pros wyt tenio frau y diwylliannair ddarparu ar gyfer y saith yn bhwysis unwaith eto.",
+      "start": 3527.117344,
+      "end": 3535.117344
+    },
+    {
+      "text": " Mae'r rhain rydych chi'n cytuno yma?",
+      "start": 3541.117344,
+      "end": 3543.117344
+    },
+    {
+      "text": " Ie? Gwych, diolch.",
+      "start": 3544.117344,
+      "end": 3545.117344
+    },
+    {
+      "text": " Mae'n enw, dur.",
+      "start": 3546.117344,
+      "end": 3547.117344
+    },
+    {
+      "text": " Hoffwn ni ffwrddo yn ni flawd,",
+      "start": 3548.117344,
+      "end": 3549.117344
+    },
+    {
+      "text": " pan photographer chi synthetic stamped your photo.",
+      "start": 3550.117344,
+      "end": 3552.117344
+    },
+    {
+      "text": " Bydd y cyfrifiadurau yma ar hyn o bryd.",
+      "start": 3552.117344,
+      "end": 3554.117344
+    },
+    {
+      "text": " Bydd y cyfrifiadurau yma ar hyn o bryd.",
+      "start": 3582.117344,
+      "end": 3584.117344
+    },
+    {
+      "text": " Hello.",
+      "start": 3792.117344,
+      "end": 3796.117344
+    },
+    {
+      "text": " I see.",
+      "start": 3796.117344,
+      "end": 3798.117344
+    },
+    {
+      "text": " Oh yes.",
+      "start": 3798.117344,
+      "end": 3799.117344
+    },
+    {
+      "text": " Nice.",
+      "start": 3799.117344,
+      "end": 3812.117344
+    },
+    {
+      "text": " Okay, let's go ahead and get started.",
+      "start": 3812.117344,
+      "end": 3815.117344
+    },
+    {
+      "text": " Today I'm very pleased to have Vaneeth here with us.",
+      "start": 3815.117344,
+      "end": 3820.117344
+    },
+    {
+      "text": " And you, you spent some time at CMU. Yes, I did. Yeah, same campus, same room. Oh, exactly. Yeah, which program.",
+      "start": 3820.117344,
+      "end": 3830.117344
+    },
+    {
+      "text": " Okay, so ECE.",
+      "start": 3831.117344,
+      "end": 3833.117344
+    },
+    {
+      "text": " Specialized in AI acceleration, the whole stack of acceleration. So, my journey began here.",
+      "start": 3833.117344,
+      "end": 3839.117344
+    },
+    {
+      "text": " Six years ago now.",
+      "start": 3839.117344,
+      "end": 3841.117344
+    },
+    {
+      "text": " It was 2019 when I graduated from CMU.",
+      "start": 3841.117344,
+      "end": 3844.117344
+    },
+    {
+      "text": " So are any of you ECE, or is everybody kind of, oh you guys are ECE? Nice.",
+      "start": 3844.117344,
+      "end": 3849.117344
+    },
+    {
+      "text": " Same, same degree?",
+      "start": 3849.117344,
+      "end": 3853.117344
+    },
+    {
+      "text": " I see, I see. Yeah, yeah. So I think the, there is the software engineering program, and the ECE, ECE program within ECE.",
+      "start": 3853.117344,
+      "end": 3861.117344
+    },
+    {
+      "text": " And I did the second one. Oh, the ECE inside of. And it's, I think it shut down in this campus.",
+      "start": 3861.117344,
+      "end": 3867.117344
+    },
+    {
+      "text": " I was probably the last batch.",
+      "start": 3867.117344,
+      "end": 3873.117344
+    },
+    {
+      "text": " Oh yeah, yeah, they don't have in the Silicon Valley anymore. Sad, but.",
+      "start": 3873.117344,
+      "end": 3877.117344
+    },
+    {
+      "text": " So they produced you and they said we cannot, we can never be this good, so we're going to shut the program.",
+      "start": 3877.117344,
+      "end": 3884.117344
+    },
+    {
+      "text": " No, no, I mean, I'm humbled, I'm glad that I could be here.",
+      "start": 3884.117344,
+      "end": 3891.117344
+    },
+    {
+      "text": " Yeah, I've had a lot of, you know, I call them seniors but alumni in general, right, come during my time and,",
+      "start": 3891.117344,
+      "end": 3899.117344
+    },
+    {
+      "text": " and is the wisdom nuggets that they share that actually helps that helped me a lot, at least.",
+      "start": 3899.117344,
+      "end": 3904.117344
+    },
+    {
+      "text": " So I was glad to come just share some of them with you guys.",
+      "start": 3904.117344,
+      "end": 3908.117344
+    },
+    {
+      "text": " Great. Great. How was your time in the program.",
+      "start": 3908.117344,
+      "end": 3912.117344
+    },
+    {
+      "text": " Oh I enjoyed it I loved it.",
+      "start": 3912.117344,
+      "end": 3914.117344
+    },
+    {
+      "text": " I wanted to apply to Pittsburgh but I am not the person who takes cold easily.",
+      "start": 3914.117344,
+      "end": 3919.117344
+    },
+    {
+      "text": " So I decided to apply to the Silicon Valley campus.",
+      "start": 3919.117344,
+      "end": 3922.117344
+    },
+    {
+      "text": " I enjoyed it thoroughly. The part that I like the most here is it's a small group of people very close knit so I made some, I can strongly say I made some good friends for life, and I am very thankful to this campus for that.",
+      "start": 3923.117344,
+      "end": 3937.117344
+    },
+    {
+      "text": " And the good thing about Silicon Valley campus at least is that most of your friends would have found jobs in and around Bay Area and the networking effects is pretty strong, although the campus itself is is not quite say visible on the map.",
+      "start": 3937.117344,
+      "end": 3952.117344
+    },
+    {
+      "text": " Yeah, but but the network effects is strong and I highly recommend that you make use of that in your, your journey.",
+      "start": 3952.117344,
+      "end": 3957.117344
+    },
+    {
+      "text": " It's a good point because like if you go to Pittsburgh, you know, the graduates from Pittsburgh could go to Austin or New York or Chicago, some to San Jose right, but if you're here.",
+      "start": 3957.117344,
+      "end": 3971.117344
+    },
+    {
+      "text": " I think the students once they graduate are likely to stay around here. Exactly. So it's a really good point.",
+      "start": 3971.117344,
+      "end": 3977.117344
+    },
+    {
+      "text": " I did my master's in Pittsburgh, and my friends are all over the place because nobody stays in Pittsburgh, you know, I mean I shouldn't say nobody was very few people.",
+      "start": 3978.117344,
+      "end": 3987.117344
+    },
+    {
+      "text": " Yeah, stay in Pittsburgh, but the people who still love Pittsburgh. Yeah, they're like, I don't want to be anywhere but to buy a house.",
+      "start": 3987.117344,
+      "end": 4000.117344
+    },
+    {
+      "text": " Well, thanks for being here. And I thought we'd start very briefly with. Well, I told you about this class. So this this is a new class, actually.",
+      "start": 4000.117344,
+      "end": 4012.117344
+    },
+    {
+      "text": " And, you know, we're studying. I wrote to you what we're studying. And, and the really the goal of this class is so that these students are equipped to not only interview well, right, that's their most immediate need.",
+      "start": 4012.117344,
+      "end": 4028.117344
+    },
+    {
+      "text": " Right. And have intelligent conversations about building AI enabled systems. But but to be contributing members of the AI community. Right.",
+      "start": 4028.117344,
+      "end": 4038.117344
+    },
+    {
+      "text": " So so I always talk about there's a few people who are doing the pre training and the training.",
+      "start": 4038.117344,
+      "end": 4045.117344
+    },
+    {
+      "text": " Then everybody else is building systems on top of models. Yeah. Right. And so this class is really about how to how to make how to make use of a model to build an application on top of it.",
+      "start": 4045.117344,
+      "end": 4057.117344
+    },
+    {
+      "text": " Today, we're talking about MCP and UCP to kind of new protocols that are relevant to building on top of AI. But in the past, we've talked about evals, prompt engineering, model adaptation, rag, fine tuning, stuff like that.",
+      "start": 4057.117344,
+      "end": 4075.117344
+    },
+    {
+      "text": " And so why not to start, why don't you kind of talk, talk to us about when in your career, when did you first start working on AI projects? How far back does that go? And tell us about not your whole career, but the career that relates to AI and how did that unfold?",
+      "start": 4075.117344,
+      "end": 4094.117344
+    },
+    {
+      "text": " Awesome. Yeah, that's a great question. First, I hope they took a look at your product today. Yeah, yeah, yeah. They're using it. Oh, fantastic. Yeah. Oh, what a great way. Awesome. Yeah. So I'm a huge fan of that. We should talk about that more in detail. Yeah, I would love to.",
+      "start": 4094.117344,
+      "end": 4110.117344
+    },
+    {
+      "text": " That is a very good example of a product thinking, right? Like, it doesn't always have to be coming up with new models from scratch. A little bit of background about myself. So I've been doing AI since 2018. Now, since my time at Carnegie Mellon, as I said, I specialize in a acceleration stack, the stack that basically, you know, helps you train inference and deploy models at scale, right?",
+      "start": 4110.117344,
+      "end": 4136.117344
+    },
+    {
+      "text": " My first job was at Samba Nova Systems. Not sure if many of you are aware here, it's a full stack AI acceleration company, they sell software, the hardware, the cloud, the entire layer, just like Nvidia does, but it's a startup. So I was part of their compiler software engineering team there. So my job was to work with the product team, you know, work with the research team, work with the hardware team, and marry the advantages of our product together in one place, but at the compiler level, right?",
+      "start": 4137.117344,
+      "end": 4163.117344
+    },
+    {
+      "text": " So that you can think of that like a bird's eye view on how the whole stack evolves to basically, that was my first understanding into like latency, throughput, cost, right, and a total cost of ownership, TCO, right?",
+      "start": 4163.117344,
+      "end": 4183.117344
+    },
+    {
+      "text": " Like you need to understand how to build AI systems from the higher level to actually go and like build depth somewhere. So that particular my first job at Samba Nova was really helpful for me to learn all of that.",
+      "start": 4183.117344,
+      "end": 4209.117344
+    },
+    {
+      "text": " So having been a computer architect in that team, I learned a lot about how Google thinks about TPUs, right? Or, if I have to put it even more at a higher level, how do you think about building hardware products, right? Hardware products are products too, they also deserve some love, they also deserve some co-design per se, you take user feedback and you make it better.",
+      "start": 4210.117344,
+      "end": 4234.117344
+    },
+    {
+      "text": " TPUs are an excellent example of it. I learned a lot about how the software and hardware co-design happens to meet the needs of Google's own AI use, right? Google itself has like YouTube, search, ads, and they had customers beyond that, like Snapchat, Cohere, etc. They all use TPUs. And how do you take all of that?",
+      "start": 4234.117344,
+      "end": 4251.117344
+    },
+    {
+      "text": " But not just learn the hardware side of it, but also understand why they care about that feature. And is there a better way? Sometimes we need to educate our users back that, hey, you know what you're thinking about, this is right, but tell me your outcome, so that I'll give you a better way to reach them. Better cost, better cost and better TCO.",
+      "start": 4251.117344,
+      "end": 4269.117344
+    },
+    {
+      "text": " So, I really enjoyed, although that particular job's primary goal was not that, I really enjoyed doing that piece of my job. So, post that, I realized that I have built sufficient knowledge in compiler engineering, excellent knowledge in computer architecture, and so on. The only remaining piece was the application layer for me. I was always a coder, I was always a programmer, but EC is always my first love, so spent some time there.",
+      "start": 4269.117344,
+      "end": 4293.117344
+    },
+    {
+      "text": " But then I realized, like, the new, what do I say, differentiation is going to happen in the application layer, how well enterprises apply AI for their own use cases. So, I now work as a senior solutions architect at NVIDIA, right? You might be wondering what is an SA role at NVIDIA?",
+      "start": 4293.117344,
+      "end": 4311.117344
+    },
+    {
+      "text": " Typically, SA role is very popular in cloud companies like AWS, GCP, etc. Their job is to listen to customer use cases and build something with pre-existing managed services on Google or AWS. With NVIDIA, it's very different. I would actually say I act like an AI consultant plus the guy who codes as well at NVIDIA, right?",
+      "start": 4311.117344,
+      "end": 4332.117344
+    },
+    {
+      "text": " So, when enterprises come to us, in the sense, my specific team focuses on that. So, we have enterprise partners, take the big names, you know, players like Salesforce, ServiceNow, all the big names. They come to us with their JNI use cases and seek NVIDIA's advisory and guidance and preferably our know-how in how to build this stack from scratch.",
+      "start": 4333.117344,
+      "end": 4353.117344
+    },
+    {
+      "text": " I act as an SA in some of those engagements. And those use cases span various different sites. As you mentioned, some of the topics that was covered here, it can be simple prompt engineering all the way to like, you know, open class and demo class.",
+      "start": 4353.117344,
+      "end": 4367.117344
+    },
+    {
+      "text": " So, I would love, I mean, let's keep it open. I would love it to be for it to be a question and answer session along with David in case you have any. I can answer one by one. Obviously, there's so much to talk about in this space.",
+      "start": 4367.117344,
+      "end": 4379.117344
+    },
+    {
+      "text": " But overall, I have learned this space from a startup's perspective, my first job from Google's perspective and given their rigor on how they approach things. And now NVIDIA's perspective where they do things at speed, at scale, right? So, I have multiple different company perspectives on how to solve this problem. I'll marry all of that into my answer and hopefully.",
+      "start": 4379.117344,
+      "end": 4403.117344
+    },
+    {
+      "text": " Amazing. I'll start off with a question. So, what can you talk about a customer that you're working with now and how are you helping them? Like something that's like super fresh in your mind.",
+      "start": 4404.117344,
+      "end": 4420.117344
+    },
+    {
+      "text": " Like, I don't know, it could be an airline, it could be, I don't know, what do you, are you guys vertical? Do you have verticals or? Yes, yes. Okay, so what's your vertical?",
+      "start": 4420.117344,
+      "end": 4432.117344
+    },
+    {
+      "text": " We do have verticals. And I come from a specialized vertical called Enterprise ISVs. ISV stands for Infrastructure Supply Vendors. And my vertical specifically focuses on software companies only. We have different verticals for airline, transportation, telecom, and so on.",
+      "start": 4432.117344,
+      "end": 4449.117344
+    },
+    {
+      "text": " Coming to your question on the customer that I'm working with, without naming names. So, they are the largest data backup company in the world.",
+      "start": 4450.117344,
+      "end": 4457.117344
+    },
+    {
+      "text": " Data backup. Okay, we can all guess, right?",
+      "start": 4458.117344,
+      "end": 4460.117344
+    },
+    {
+      "text": " Think, think, think, you know, veritas and stuff like that, right? So, what is their primary, their primary job, or like what their task for is to take enterprise data and create a backup for it on their on-prem servers, right?",
+      "start": 4460.117344,
+      "end": 4476.117344
+    },
+    {
+      "text": " For example, one of their customers is a government client. And in government, there's like a lot of data, right? You'll have what you call procurement sheets, you'll have, you know, agreements with vendors, you will have to, what do you call that?",
+      "start": 4477.117344,
+      "end": 4492.117344
+    },
+    {
+      "text": " Tenders, right? You have tender orders, and so on, purchase orders and beyond. So, you need a place where you can save all of it. But once they, once they go out of life in your current work, you need a place to backup that all, right?",
+      "start": 4493.117344,
+      "end": 4508.117344
+    },
+    {
+      "text": " And this is not like our laptops, where it's just a couple of GB, maybe, but they have data in like terabytes and petabytes of scale. So, you need to back it up fast, in the sense they're KPI, right? They're the key metric that they follow is like, what is the cost? And basically, dollar spent to save a terabyte of data per second, right?",
+      "start": 4509.117344,
+      "end": 4529.117344
+    },
+    {
+      "text": " Like they take all of these three metrics to build a competitive solution in the market. What they have realized is, imagine if you're in your own life, right? If you had a backup of everything that you did in your past, and had AI access to all of that, imagine the amount of insights you can uncover.",
+      "start": 4530.117344,
+      "end": 4548.117344
+    },
+    {
+      "text": " Oh, yeah.",
+      "start": 4548.117344,
+      "end": 4550.117344
+    },
+    {
+      "text": " So, in the case of the government customer I'm talking about, let's say they want to make some amendments to their Water Supply Act or something like that. Typically, what happens is, they'll have a policy or a committee team, they sit together in a room or maybe debated in a, you know, parliament floor or something like that and come up with solutions.",
+      "start": 4578.117344,
+      "end": 4598.117344
+    },
+    {
+      "text": " But for all of this, you need to go back in time and see what was history, what mistakes may read and so on. And having an AI on top of your data backlog would be like a great help there. So, my specific task over there was to build this entire solution for them from scratch.",
+      "start": 4599.117344,
+      "end": 4616.117344
+    },
+    {
+      "text": " So, they come to us with, you know, insights on what specific features they want. For example, it began with simple rag, right? You know, just like fetching the context, which is already there in the backup solution, and then put a UX around it.",
+      "start": 4616.117344,
+      "end": 4632.117344
+    },
+    {
+      "text": " What they quickly noticed is, since it's an on-prem product, the capex required is high, right? So, if the government or someone is going to invest in this, they'll have to invest on the GPUs, the software, etc. It's not like a chargeable subscription where you can buy for $20. It's going to be very pricey.",
+      "start": 4633.117344,
+      "end": 4649.117344
+    },
+    {
+      "text": " What they quickly realized is they need to build a solution that is at least cheap to enter with, right? It's inexpensive, and it's easier for someone to procure and try out. But the expectation is like as good as chargeable.",
+      "start": 4649.117344,
+      "end": 4666.117344
+    },
+    {
+      "text": " So, when people are asking questions, a good example is when we prepared the rag solution, we prepared it for answering questions from a PDF document, right? Let's say all the meeting data that was there. But what we did not expect was they were asking questions like, how many meetings was David part of in the last 10 years?",
+      "start": 4666.117344,
+      "end": 4687.117344
+    },
+    {
+      "text": " That's not a semantic rag query. You cannot just capture a matching chunk from another document and respond. Would someone like to take a stab on how would you solve that problem? Okay, there are no right answers. It's fine.",
+      "start": 4688.117344,
+      "end": 4703.117344
+    },
+    {
+      "text": " Diagnose that problem one more time so that we can think about it. Give us a more foundational understanding.",
+      "start": 4704.117344,
+      "end": 4714.117344
+    },
+    {
+      "text": " Sure, yeah. So, I mean, as you all might be aware of rag already, right? So, you have a corpus of documents, PDFs, PPTs, whatever that is. You basically use an embedding model. The embedding model has the knowledge of how to take that information, chunk it into smaller pieces, and store it into a vector database.",
+      "start": 4715.117344,
+      "end": 4734.117344
+    },
+    {
+      "text": " This is not like your typical SQL database. Vector database is specialized in handling embedding vectors. So, you process all of that. When the user question comes, you take the user question, pass it again to the same embedding model, and see which vectors match in the embedding dimension space.",
+      "start": 4734.117344,
+      "end": 4750.117344
+    },
+    {
+      "text": " That kind of tells you or you hope that whichever vectors match with this question is the answer that they're looking for.",
+      "start": 4750.117344,
+      "end": 4759.117344
+    },
+    {
+      "text": " But such a setup would be helpful if the answer I'm looking for is already present in the chunks in the PDF. No PDF will tell you how many times David was part of the meetings in the last 10 years.",
+      "start": 4759.117344,
+      "end": 4772.117344
+    },
+    {
+      "text": " This style of a query is called as an aggregation query. It's not a query where you just like see something from a textbook and then answer, right? So, you need to think about this not from traditional rag. So, they were baffled because they did not set expectations.",
+      "start": 4772.117344,
+      "end": 4788.117344
+    },
+    {
+      "text": " I mean, I would rather rephrase that. They were shocked by the expectations their customer had when they were trying to interact with a chatbot. Ultimately, if a chatbot with a chatbot being powered by OpenAI is very different from a chatbot being provided on on-prem setup with its own constraints, because you have cost, latency, and other constraints to care about, they were baffled by it.",
+      "start": 4788.117344,
+      "end": 4808.117344
+    },
+    {
+      "text": " And it's an open problem we're solving right now. They're coming back to me and saying, hey, dude, like this is the budget, we are not going to budge a dollar about it. But we want the latency to be like in two, three seconds, not max. And can we have tool calling? Can we have reasoning? Can we have what is agentic workflows?",
+      "start": 4808.117344,
+      "end": 4828.117344
+    },
+    {
+      "text": " Okay, I need to go back.",
+      "start": 4829.117344,
+      "end": 4831.117344
+    },
+    {
+      "text": " Let me call my sales guy for another SOW.",
+      "start": 4831.117344,
+      "end": 4834.117344
+    },
+    {
+      "text": " Yeah, yeah, I mean, and the thing about this job is, although I'm a solutions architect, I'm technically responsible for the technical side. At NVIDIA, we work like we have a culture where account manager, they say the product, the engineer, we all sit and solve the problem together.",
+      "start": 4834.117344,
+      "end": 4853.117344
+    },
+    {
+      "text": " So I have to ensure all of the stakeholders are also pretty well updated on all of this, and their own, what do I say, you know, like opinions are considered and incentives are met. That's a very difficult problem to solve for while you're also solving the technical problem that I shared with you. But I hope that was enough.",
+      "start": 4853.117344,
+      "end": 4873.117344
+    },
+    {
+      "text": " Great. So going back to that problem, I'm just trying to think, how, how does one architect the solution to that? Let me guess, like, as I think through this, I think you have to almost reprocess the data to get the answer, so that it's chunk accessible, right? Because the data is not, the data is not there in an explicit format.",
+      "start": 4873.117344,
+      "end": 4900.117344
+    },
+    {
+      "text": " I guess my first question would be, how, how, where would we figure out the answer? Like, how many meetings David was in? Like, if it's nowhere there, then.",
+      "start": 4900.117344,
+      "end": 4911.117344
+    },
+    {
+      "text": " I know, right? Yeah.",
+      "start": 4911.117344,
+      "end": 4913.117344
+    },
+    {
+      "text": " How do you, I mean, maybe you tell the user, I'm sorry, that that answer is not in the, it's like asking a RAG system, like, how do I get to the moon, but the RAG system is just trained on, like, local things.",
+      "start": 4913.117344,
+      "end": 4927.117344
+    },
+    {
+      "text": " You know, it's like, the answer is just not there. You are right. You are right.",
+      "start": 4927.117344,
+      "end": 4932.117344
+    },
+    {
+      "text": " Yeah, I would, I would love to answer that. But in case if someone wants to. Yeah. Yeah, go ahead. Just to make it fun. Great. Yeah. Go ahead, push, push your button on the answer.",
+      "start": 4932.117344,
+      "end": 4942.117344
+    },
+    {
+      "text": " How would you do it?",
+      "start": 4942.117344,
+      "end": 4944.117344
+    },
+    {
+      "text": " I think you mentioned there's a buffer, right? So I'm thinking maybe drag all the information into the buffer and then we process that.",
+      "start": 4944.117344,
+      "end": 4953.117344
+    },
+    {
+      "text": " Right, all the information into the buffer. So you're saying whatever chunks we retrieve this right, save it in one space and like perform some kind of post processing on it and then answer the question, right? Okay, that's a good, good place to start.",
+      "start": 4953.117344,
+      "end": 4967.117344
+    },
+    {
+      "text": " If my attendance at meetings is not in the purchasing flow, right? Like, it's, it's impossible because the information is not there. You have to do tool calling. That's how you do it, right?",
+      "start": 4967.117344,
+      "end": 4979.117344
+    },
+    {
+      "text": " Yeah, so in some of the documents, they had meeting nodes and it had attendee names, right?",
+      "start": 4979.117344,
+      "end": 4986.117344
+    },
+    {
+      "text": " So let's say David attended some of those meetings. And thing is, if David attended a meeting, he would talk one or two times and his name would appear multiple times in the same document.",
+      "start": 4986.117344,
+      "end": 4996.117344
+    },
+    {
+      "text": " If you just do a simple semantic rag search where you're just fetching all the jobs that match to David, then it would double count him for the same meeting because it will consider every independent instance of David appearing in the chunk as a different meeting.",
+      "start": 4996.117344,
+      "end": 5013.117344
+    },
+    {
+      "text": " So, since the solution to this, I'll just give it out. The solution to this is you we are evolving into a new domain which you probably are aware of is called agentic rag, right? So you need, you need some kind of reasoning system that breaks down this question and understands how many meetings is David part of? Okay, first, who is David?",
+      "start": 5013.117344,
+      "end": 5033.117344
+    },
+    {
+      "text": " What does meeting mean? What does how many mean? Do I have to ask a follow up question? If not, do I have all the necessary answer I need? Now, what are the tools that are available? So one way that we thought of solving this, not thought of in a sense like initial evaluations working really well is we developed some kind of like a chain of thought plus reasoning agent on top of that, and made the agent gave it a tool to the agent saying, hey, you know, for aggregation queries, here is a good tool for you to use and solve.",
+      "start": 5033.117344,
+      "end": 5062.117344
+    },
+    {
+      "text": " The solution, obviously, is not that complex. But once you start going into production with this, your costs will change, the number of tokens you produce will change the throughput you're trying to meet the number of users you will be able to support because you're doing something more now will change.",
+      "start": 5062.117344,
+      "end": 5078.117344
+    },
+    {
+      "text": " And there's no guarantee that data drift happens. And tomorrow, if a customer comes and asks another question, like, hey, this time, it's not meeting, no, it's something else. And if your system does not generalize to that customer, even us, right? We will be we will be okay with one or two bad answers from chat GPT after the day like, I'm gonna do it myself. Imagine this in enterprise level, right? And they're paying money for it. In fact, a lot of it. So they have to be successful, right?",
+      "start": 5078.117344,
+      "end": 5106.117344
+    },
+    {
+      "text": " So all of that pressure, including making their end customer successful also comes to this. So that's the both the fun and awesome.",
+      "start": 5106.117344,
+      "end": 5117.117344
+    },
+    {
+      "text": " There's a lot of lessons in there, right? One, one lesson there is expectation setting, right? So when you're selling a project, saying, like, here's what we're building, here's what it's capable of doing, right, we can evolve it in the future as new capabilities evolve. I mean, once you get stuff into a vector database, and I'm seeing this with scholar stack, once you get a bunch of documents in a vector database, then you can start doing AI things with those documents.",
+      "start": 5117.117344,
+      "end": 5146.117344
+    },
+    {
+      "text": " Right. And then the use cases just start to really, like, unfold. And so the first step is kind of get the core elements in place. Then when new requests come in, you say, oh, well, we could apply this, we could be tool calling.",
+      "start": 5147.117344,
+      "end": 5162.117344
+    },
+    {
+      "text": " Today, we're just talking about MCP service. Right. So MCP might be a great way to solve this too. Yeah, I mean, MCP is, from my perspective, it's tool calling where the tool calling is a little bit undefined, right?",
+      "start": 5162.117344,
+      "end": 5177.117344
+    },
+    {
+      "text": " So you need to discover what capabilities another system might have. So you connect through MCP. Do you guys do a lot of MCP stuff?",
+      "start": 5177.117344,
+      "end": 5185.117344
+    },
+    {
+      "text": " Yes, we do. Do you want to talk about any of that? Yes, I would love to talk about that. So,",
+      "start": 5186.117344,
+      "end": 5193.117344
+    },
+    {
+      "text": " agentic workflows benefit a lot from all of these different abstractions that we have. If LLM is good analogy, I don't know, people would hate me for saying this. If LLM is a brain, then these tools and MCPs are the arms, right? You need, you need this, you need to give a harness to the LLM to interact with the digital world.",
+      "start": 5193.117344,
+      "end": 5212.117344
+    },
+    {
+      "text": " And if you actually put some robotic arms, it becomes like a physical AI. But these are digital arms to the LLM model, right? So, now, these arms could be of very different capabilities, right, even for our own body, right? Like each finger has a different strength it brings to the table.",
+      "start": 5213.117344,
+      "end": 5231.117344
+    },
+    {
+      "text": " And in the same way, tool calling, APIs, MCPs, they all bring different strengths, right? So, tool calling, we typically, when we use tool calling, it's typically a script that's predefined, that you just need to trigger, runs a set of code, and comes back. That's like the basic definition.",
+      "start": 5231.117344,
+      "end": 5250.117344
+    },
+    {
+      "text": " So, API-like?",
+      "start": 5250.117344,
+      "end": 5274.117344
+    },
+    {
+      "text": " And then you have APIs. A lot of enterprise customers have APIs to begin with. The best place to start AI for them is to just let AI talk to these APIs and see what it can do. And that's why most of products today basically have the same interface that they have with a chatbot on the right, right? That's the easiest start you can have.",
+      "start": 5275.117344,
+      "end": 5294.117344
+    },
+    {
+      "text": " And since there's also the PM aspect to this class, I'm letting you know, that's typically the first case study of sorts, they'll brainstorm with you as an AI PM, when you go to the interviews, they'll talk about, okay, this is a product, let's put a chatbot around it, right? And they'll see, they'll think how much of technical depth you have, how much of product depth you have. And I can talk about that in length, but pinning that aside, right?",
+      "start": 5294.117344,
+      "end": 5321.117344
+    },
+    {
+      "text": " So, we have tools, then we have API layers. Sometimes you need an MCP, right? The problem with API is there could be too many. Take Snowflake or take Salesforce, for example, it could have hundreds and hundreds of different APIs. Having your model know about all of the APIs, and if you start actually putting instructions for it in the context window, it will blow it up.",
+      "start": 5321.117344,
+      "end": 5345.117344
+    },
+    {
+      "text": " So, you need to build MCP servers, which are basically abstractions around these APIs typically, but it could also involve some of the tools I mentioned as one of the functions within the MCP server, whose main job is to take a query in natural language, find the corresponding function for it within the MCP server, and give it back.",
+      "start": 5345.117344,
+      "end": 5366.117344
+    },
+    {
+      "text": " So, now, the onus of knowing what call to do, what API call to do, what tool call to do, it's no longer on the model, it's on the MCP servers facing model, which were a little misplacing that. We have moved far away from, we have moved past that too, by the way, now we are in the world of retrieval based drag, I'm not sure if you're aware of it.",
+      "start": 5367.117344,
+      "end": 5388.117344
+    },
+    {
+      "text": " So, if you take Cloud, for example, there are MCPs, there are plugins and all, but if you actually want to work with a particular piece of software or library, but you don't have access to it, Cloud sometimes does a great job if you just drop the documentation link to that library, it can go manually parse, fetch, and get back.",
+      "start": 5388.117344,
+      "end": 5407.117344
+    },
+    {
+      "text": " So, that is called retrieval based model context fetching. There are advantages and disadvantages to all of this, but as an SA, I'm supposed to know all of this, know the pros and cons, and consult and advise the best possible solution for the problem in that moment.",
+      "start": 5407.117344,
+      "end": 5424.117344
+    },
+    {
+      "text": " And if it's the latest solution, I should also be ready to consult on that. So, that's where the challenge of my job is.",
+      "start": 5424.117344,
+      "end": 5432.117344
+    },
+    {
+      "text": " Any questions?",
+      "start": 5432.117344,
+      "end": 5436.117344
+    },
+    {
+      "text": " How about UCP? Have you come across any UCP work yet?",
+      "start": 5436.117344,
+      "end": 5440.117344
+    },
+    {
+      "text": " So, I haven't, I haven't. I would love to know more about UCP.",
+      "start": 5440.117344,
+      "end": 5446.117344
+    },
+    {
+      "text": " Okay, well, we, today we talked about MCP, and once you understand kind of like the rationale behind MCP, the more recently we've got UCP, which my understanding was Google and Shopify getting together and thinking about agenda.",
+      "start": 5447.117344,
+      "end": 5463.117344
+    },
+    {
+      "text": " Yeah.",
+      "start": 5463.117344,
+      "end": 5465.117344
+    },
+    {
+      "text": " So, so how can we allow agents to transact, right, not just discover, but finish, you know, a transaction.",
+      "start": 5465.117344,
+      "end": 5473.117344
+    },
+    {
+      "text": " Yeah.",
+      "start": 5473.117344,
+      "end": 5474.117344
+    },
+    {
+      "text": " So, curious if you've seen any of that yet.",
+      "start": 5474.117344,
+      "end": 5477.117344
+    },
+    {
+      "text": " So I, I'm pretty sure some of my counterparts in the retail world must have seen this already.",
+      "start": 5477.117344,
+      "end": 5484.117344
+    },
+    {
+      "text": " And that's why, you know, I constantly keep in touch with my colleagues and learn from them too from their use cases from the customers they're working with because we're all in this together.",
+      "start": 5484.117344,
+      "end": 5493.117344
+    },
+    {
+      "text": " The only difference is I get to experience this more firsthand but you know both you and me right we are all learning this together the space is evolving right in front of us.",
+      "start": 5493.117344,
+      "end": 5502.117344
+    },
+    {
+      "text": " Coming to UCP I think it's a brilliant brilliant move.",
+      "start": 5502.117344,
+      "end": 5506.117344
+    },
+    {
+      "text": " And in general, I would like to give some wisdom nugget on how software systems evolve, right.",
+      "start": 5506.117344,
+      "end": 5513.117344
+    },
+    {
+      "text": " First, you will have a technological invention of sorts, which is what this Alex net moment that we all talk about right, ResNet, AlexNet, all of that AI model.",
+      "start": 5513.117344,
+      "end": 5523.117344
+    },
+    {
+      "text": " Then you have a phase where it matures into a stack that can scale, right, the transformer and attention layer was that peak point.",
+      "start": 5523.117344,
+      "end": 5533.117344
+    },
+    {
+      "text": " Once scale happens, there'll be one guy, there'll be one guy will be the first mover, and he will do one thing very importantly, which is called standardization.",
+      "start": 5533.117344,
+      "end": 5544.117344
+    },
+    {
+      "text": " Whoever standardizes and build the platform.",
+      "start": 5544.117344,
+      "end": 5549.117344
+    },
+    {
+      "text": " Anytime you want to build a product platform, build a standard.",
+      "start": 5549.117344,
+      "end": 5553.117344
+    },
+    {
+      "text": " Now based on this, I would like to hear from you all just again like because interaction is always fun. What is the thing that open AI standardized.",
+      "start": 5553.117344,
+      "end": 5561.117344
+    },
+    {
+      "text": " When, when they came into the AI world.",
+      "start": 5561.117344,
+      "end": 5567.117344
+    },
+    {
+      "text": " So to ask back the questions, I guess, like, do not stop. I mean, I'm just thinking in the perspective of business that when we talk to open AI first chat, chat GPT during that time I could see that it don't want to stop the conversation.",
+      "start": 5567.117344,
+      "end": 5585.117344
+    },
+    {
+      "text": " It will keep on asking you so that could be a guardrail or thing that you know to engage the person to learn more so maybe I think that could be a standardized thing.",
+      "start": 5585.117344,
+      "end": 5595.117344
+    },
+    {
+      "text": " So that's like a UI standard, right. Yeah, so that's from the UI perspective. So yeah, definitely chat GPT kind of set a standard on how the UI should behave so we'll definitely have something else.",
+      "start": 5595.117344,
+      "end": 5609.117344
+    },
+    {
+      "text": " Yes, I'm thinking okay let's keep going. Yeah. What else. I have an idea.",
+      "start": 5609.117344,
+      "end": 5614.117344
+    },
+    {
+      "text": " Closer to the software side.",
+      "start": 5615.117344,
+      "end": 5617.117344
+    },
+    {
+      "text": " Based on other things you know about opening has not just",
+      "start": 5617.117344,
+      "end": 5632.117344
+    },
+    {
+      "text": " Oh no, I didn't I didn't mean from that perspective. So, I'm, I'm talking about standardization from the perspective of how do I put it like making something common, so that the rest of the ecosystem can just use this common piece and evolve on top of it.",
+      "start": 5632.117344,
+      "end": 5652.117344
+    },
+    {
+      "text": " Right. So, I, you want to go ahead.",
+      "start": 5652.117344,
+      "end": 5656.117344
+    },
+    {
+      "text": " Anybody else I want to see if there's any other LLM models.",
+      "start": 5656.117344,
+      "end": 5661.117344
+    },
+    {
+      "text": " Open source LLM models. Yeah, we can make an argument but that's not the answer I was going for. Thank you.",
+      "start": 5661.117344,
+      "end": 5671.117344
+    },
+    {
+      "text": " Uh huh. Okay, more detail, more.",
+      "start": 5671.117344,
+      "end": 5675.117344
+    },
+    {
+      "text": " Yes, that's what I was gonna say.",
+      "start": 5675.117344,
+      "end": 5678.117344
+    },
+    {
+      "text": " That's a great answer your name.",
+      "start": 5678.117344,
+      "end": 5680.117344
+    },
+    {
+      "text": " Nice, nice. Awesome. Great job. So, open AI API spec.",
+      "start": 5681.117344,
+      "end": 5687.117344
+    },
+    {
+      "text": " The spec is what they need. You might be wondering, I'm coming up with a spec on how to call the open API, like, for what man.",
+      "start": 5687.117344,
+      "end": 5698.117344
+    },
+    {
+      "text": " Once you define the spec.",
+      "start": 5699.117344,
+      "end": 5701.117344
+    },
+    {
+      "text": " You can first let all the players, build something on top of you on your on your platform, right. So, the moment, opening I launched the spec, they had GPT marketplace, they had a lot of connectors include and it would actually evolve the space very quickly.",
+      "start": 5701.117344,
+      "end": 5718.117344
+    },
+    {
+      "text": " And the best part. What many of us don't know is opening a significant chunk of revenue comes from the API, not from the chat GPT.",
+      "start": 5718.117344,
+      "end": 5726.117344
+    },
+    {
+      "text": " Because API gets wired through Azure as Azure opening a service, which then is used by enterprises to power the chatbots that we see in other platforms outside of opening, like maybe booking.com, something that I'm not saying they're using it.",
+      "start": 5726.117344,
+      "end": 5741.117344
+    },
+    {
+      "text": " But you can see right as a PM.",
+      "start": 5742.117344,
+      "end": 5745.117344
+    },
+    {
+      "text": " You should think about products today is not only about UI, and in fact I would argue UI is gone, and gone the sense is not necessary anymore. I present to you cloud code, you might have heard of it, some of you have used as well.",
+      "start": 5745.117344,
+      "end": 5759.117344
+    },
+    {
+      "text": " It's a tool that runs on the terminal.",
+      "start": 5759.117344,
+      "end": 5763.117344
+    },
+    {
+      "text": " But it's great. It does the job.",
+      "start": 5763.117344,
+      "end": 5766.117344
+    },
+    {
+      "text": " You can just natural prompted presenter it'll do the job for you doesn't matter if it's on a CLI anymore, or UI UX anymore.",
+      "start": 5766.117344,
+      "end": 5773.117344
+    },
+    {
+      "text": " You have to understand what is the core value I'm bringing with my product. OpenAI's core product is not chat GPT.",
+      "start": 5773.117344,
+      "end": 5782.117344
+    },
+    {
+      "text": " It is the model, and the harness on how to talk to the model, they might rename something into something else tomorrow, as long as the experience remains the same, they'll build the same traction back and if not more.",
+      "start": 5783.117344,
+      "end": 5795.117344
+    },
+    {
+      "text": " Right, so we'll have to start thinking, one or two levels lower about AI problems, it's not just about UI UX anymore.",
+      "start": 5795.117344,
+      "end": 5802.117344
+    },
+    {
+      "text": " That's great wisdom to kind of share with the class it's, it's what I, it's, it reminds me of platform thinking exactly platform strategy. Yeah, right like if you're a business.",
+      "start": 5802.117344,
+      "end": 5815.117344
+    },
+    {
+      "text": " How are you building your platform. And I'll share with you, one of the assignments that we're doing in this class that relates to scholar stack is their next assignment is to develop an app store architecture for scholar stack.",
+      "start": 5815.117344,
+      "end": 5831.117344
+    },
+    {
+      "text": " Oh, nice. Such that other folks can build apps inside of scholar stack and leverage it as a platform.",
+      "start": 5831.117344,
+      "end": 5838.117344
+    },
+    {
+      "text": " So that's going to kind of drive this type of thinking, beautiful, beautiful.",
+      "start": 5839.117344,
+      "end": 5843.117344
+    },
+    {
+      "text": " Right in time. Yeah, so platform thinking guys is very important. There are two major AI platforms today OpenAI and Anthropic.",
+      "start": 5843.117344,
+      "end": 5851.117344
+    },
+    {
+      "text": " And since OpenAI standardized API spec, Anthropic had to sanitize something and what did they sanitize.",
+      "start": 5851.117344,
+      "end": 5858.117344
+    },
+    {
+      "text": " Any takers on that? Oh Anthropic? Yeah.",
+      "start": 5858.117344,
+      "end": 5861.117344
+    },
+    {
+      "text": " Well, they were behind MCP. Exactly. So they were like, okay, fine if you sanitize API on how to use the model.",
+      "start": 5861.117344,
+      "end": 5870.117344
+    },
+    {
+      "text": " Hmm, where do I build my platform on? Okay.",
+      "start": 5870.117344,
+      "end": 5873.117344
+    },
+    {
+      "text": " But it's not enough to build a model you need to infuse the right context into it. So they define something called SMCP, by the way, if you go to Twitter world and if you're in the like the top 1% circles of this.",
+      "start": 5873.117344,
+      "end": 5884.117344
+    },
+    {
+      "text": " They keep complaining how insecure MCP is and so on and so forth. But it's a great concept. It helped move the needle.",
+      "start": 5884.117344,
+      "end": 5893.117344
+    },
+    {
+      "text": " And that's another thing we need to learn from AI companies and AI need to say. It doesn't have to be perfect. It just has to move the needle.",
+      "start": 5893.117344,
+      "end": 5900.117344
+    },
+    {
+      "text": " Don't strive for perfection. In fact, AI will help you reach there if you want to, but you can actually be lean now.",
+      "start": 5900.117344,
+      "end": 5908.117344
+    },
+    {
+      "text": " You can be lean, you can throw MVPs out there faster, right? You can, you can test your waters quicker.",
+      "start": 5908.117344,
+      "end": 5914.117344
+    },
+    {
+      "text": " And if you're getting criticism, if someone is complaining, it's okay, because working on features, implementing bugs, fixing it has become easier.",
+      "start": 5914.117344,
+      "end": 5924.117344
+    },
+    {
+      "text": " Now, the the bottleneck has shifted from implementing to thinking of what to implement itself and doing a good job with that.",
+      "start": 5924.117344,
+      "end": 5932.117344
+    },
+    {
+      "text": " So I know I kind of digress there. But yeah, so anthropic standardized MCPs. So whenever I'm looking for the next big AI company, right, I look at what they are pitching to standardize on.",
+      "start": 5932.117344,
+      "end": 5943.117344
+    },
+    {
+      "text": " That's where PayPal and Google standardized on UCP. I think it's Universal Commerce Protocol.",
+      "start": 5943.117344,
+      "end": 5952.117344
+    },
+    {
+      "text": " Shopify. But they had like seven founding members. So maybe PayPal was there too.",
+      "start": 5952.117344,
+      "end": 5958.117344
+    },
+    {
+      "text": " Yeah, I remember the PayPal. Yeah, like Wayfair. Wayfair was one of the companies like a bunch of folks that want it to be a smooth experience.",
+      "start": 5958.117344,
+      "end": 5968.117344
+    },
+    {
+      "text": " And they want to drive transaction. Yeah. But yeah, I'm glad we are talking about this.",
+      "start": 5968.117344,
+      "end": 5975.117344
+    },
+    {
+      "text": " Great, great thinking. Okay. What other questions online? We're open to you chiming in as well. We haven't forgotten about you.",
+      "start": 5975.117344,
+      "end": 5990.117344
+    },
+    {
+      "text": " Yeah. Don't be shy. You guys have learned a lot in this class.",
+      "start": 5990.117344,
+      "end": 5999.117344
+    },
+    {
+      "text": " It's okay. Open up. I'm just...",
+      "start": 6000.117344,
+      "end": 6003.117344
+    },
+    {
+      "text": " He's seen a lot of great things from a solution architecture perspective. So you could ask him, have you seen, what have you seen the latest and greatest in terms of prompt engineering?",
+      "start": 6003.117344,
+      "end": 6013.117344
+    },
+    {
+      "text": " Like, do you have any interesting things to talk about there? Think about all the stuff that we've studied and learned about.",
+      "start": 6013.117344,
+      "end": 6021.117344
+    },
+    {
+      "text": " I feel it's dumb, but I don't think it is. So please just open up. I would love to just, I came here to talk with you all as well, not to just give a one sided lecture.",
+      "start": 6021.117344,
+      "end": 6032.117344
+    },
+    {
+      "text": " I've seen people working via cloud code. And sometimes when these tools generate things for you, without even thinking, you click on yes, yes, yes, yes, yes, and they generate something beautiful, which you are not able to fix back.",
+      "start": 6033.117344,
+      "end": 6053.117344
+    },
+    {
+      "text": " So I think debugging is very difficult right now in the code generated via these tools. So what is your take on AI creating production ready applications in the future, or it's just going to be kind of prototyping and basic code generation?",
+      "start": 6054.117344,
+      "end": 6076.117344
+    },
+    {
+      "text": " I think because all the code ideas and logic is yours anyways, like when you are implementing big picture features.",
+      "start": 6076.117344,
+      "end": 6084.117344
+    },
+    {
+      "text": " That's a very good question. That's a question that we kind of, you know, tread carefully with enterprises as well.",
+      "start": 6084.117344,
+      "end": 6092.117344
+    },
+    {
+      "text": " So, yes.",
+      "start": 6093.117344,
+      "end": 6095.117344
+    },
+    {
+      "text": " I mean, like with every accident, there's a break.",
+      "start": 6095.117344,
+      "end": 6098.117344
+    },
+    {
+      "text": " And, and it's, it's also important that you learn how to break. That's, that's my answer. Right. Coming to a question on the production side, cloud code itself, and many of the anthropic engineers admitted it, that they use cloud code to better cloud code.",
+      "start": 6098.117344,
+      "end": 6114.117344
+    },
+    {
+      "text": " And that is the biggest production example that I can share with you. I think going to production is not the concern. The concern is, or at least the bottleneck has now shifted from thinking about how to develop a feature to thinking about how to test it end to end, in detail, and keep it secure.",
+      "start": 6115.117344,
+      "end": 6134.117344
+    },
+    {
+      "text": " As long as once we shift our thinking to the direction we no longer be worried about what code is writing, as long as your tests pass.",
+      "start": 6134.117344,
+      "end": 6140.117344
+    },
+    {
+      "text": " And you can be very rigorous about your test, it doesn't have to be simple feature checks, it could be integration checks, it could be security checks, it could be vulnerability checks, you throw anything at it.",
+      "start": 6140.117344,
+      "end": 6149.117344
+    },
+    {
+      "text": " AI because it's not human, it doesn't have emotions, it doesn't have any of this problem, you just keep churning tokens until it solves the test for you.",
+      "start": 6149.117344,
+      "end": 6156.117344
+    },
+    {
+      "text": " So, I have seen a bunch of conversations in the elite circles, where they're talking about how maybe testing, software testing specifically itself will evolve to meet the demands of the new AI world.",
+      "start": 6156.117344,
+      "end": 6168.117344
+    },
+    {
+      "text": " How we can maybe, even me for example, when I write something to cloud code, I, more than the prompt, I keep the constraints very clear.",
+      "start": 6168.117344,
+      "end": 6177.117344
+    },
+    {
+      "text": " What you should do, what you should not do, how much of what is expected from you, how much of what's not expected from you. Once you set that right, almost always, it has benefited me, even if it hasn't, even if it hasn't.",
+      "start": 6177.117344,
+      "end": 6189.117344
+    },
+    {
+      "text": " If you prompt it right, it is always only going to save time for you.",
+      "start": 6189.117344,
+      "end": 6193.117344
+    },
+    {
+      "text": " You can go step by step module by module, there is a certain term for this. I'm forgetting this but like spec based development is what they're calling it nowadays so you can go spec by spec you can have a folder have sub folders, and each folder have like a cloud MD for it.",
+      "start": 6193.117344,
+      "end": 6209.117344
+    },
+    {
+      "text": " So, have another cloud MD for it, write tests for all of it. It's the same thing that you would do with human driven development too. When you are coding or giving a problem at such small levels, the code won't bloat to the level where it won't be hard for you to do that.",
+      "start": 6209.117344,
+      "end": 6224.117344
+    },
+    {
+      "text": " The things that we do with like you know like with white coding tools like you know lovable or something like that yeah those are hard but their use case is different, you want to one shot an app or a dashboard or something.",
+      "start": 6224.117344,
+      "end": 6235.117344
+    },
+    {
+      "text": " So in order to build enterprise based production systems, AI and coding is not going to go anywhere. It's just the testing is going to become more prominent, checking whether it is secure or not is going to become more prominent and spec driven development, basically taking it slow and steady becomes more prominent.",
+      "start": 6235.117344,
+      "end": 6254.117344
+    },
+    {
+      "text": " I organized a hackathon here so I created a website. I'm not a coder by the way. I created a website via cursor, and literally I was talking to Claude or I think Gemina and I told him to help me write, you know initially like you know .src to like you know all the folders I don't understand the meaning but I was like okay we need to have this, this, this.",
+      "start": 6255.117344,
+      "end": 6278.117344
+    },
+    {
+      "text": " And it turned out really well and then I published it on I think Cloudflare and all that stuff. But during hackathons when I have to do the same thing quickly, then it messes up. Like you know the reiteration is something that I have felt that I get stuck with.",
+      "start": 6278.117344,
+      "end": 6299.117344
+    },
+    {
+      "text": " If I am focused, it helps great. But if I think like you know this thing have brain, I think yes it have, but it requires your attention so your constraint is something I really agree on. So my question is, how do you define these constraints like you know, when you're prompting something do you say don't do this, don't do this, don't do this like initially like how do you prompt that?",
+      "start": 6300.117344,
+      "end": 6322.117344
+    },
+    {
+      "text": " So, I'll tell you my working style for different people it could be different.",
+      "start": 6323.117344,
+      "end": 6328.117344
+    },
+    {
+      "text": " There are three phases I go through. Right. First is anytime I have a technical problem that's presented to me and Claude, Claude code specifically we are brainstorming, and I love Claude's personality, not that I'm plugging in here but close class from I think I can say but I love Claude's personality a lot.",
+      "start": 6328.117344,
+      "end": 6345.117344
+    },
+    {
+      "text": " So I brainstorm with Claude.",
+      "start": 6346.117344,
+      "end": 6348.117344
+    },
+    {
+      "text": " Why a brainstorm is because two reasons. One, I want to cover my gaps, where, where certain problems and certain tests use case that I don't know.",
+      "start": 6348.117344,
+      "end": 6356.117344
+    },
+    {
+      "text": " And I genuinely believe Claude can think of better cases that I believe in it, I'm ready to accept that what it cannot do is decision making which I'm good at.",
+      "start": 6356.117344,
+      "end": 6364.117344
+    },
+    {
+      "text": " Right, so we should know where what our strengths are. We are good at decision making we should not let it do the decisions for us. It is good at checking probabilities so we should let it do that.",
+      "start": 6364.117344,
+      "end": 6373.117344
+    },
+    {
+      "text": " So brainstorm. The second reason why I do that is a build a beautiful context.",
+      "start": 6373.117344,
+      "end": 6378.117344
+    },
+    {
+      "text": " When I talk to it.",
+      "start": 6378.117344,
+      "end": 6380.117344
+    },
+    {
+      "text": " And especially the clouds personality is really good at understanding the intent of what you're trying to achieve. Now with all of that conversation. I learned about the constraints that I want to do here, it learns about what I want to achieve.",
+      "start": 6380.117344,
+      "end": 6393.117344
+    },
+    {
+      "text": " Then I say, now go right up Claude MD yourself.",
+      "start": 6393.117344,
+      "end": 6397.117344
+    },
+    {
+      "text": " I don't write Claude MD. I asked you to write Claude. And it knows how well to prompt itself so I'm not going to be, you know, like, claim that okay.",
+      "start": 6397.117344,
+      "end": 6408.117344
+    },
+    {
+      "text": " Once it generates, then I take another pass at it.",
+      "start": 6408.117344,
+      "end": 6411.117344
+    },
+    {
+      "text": " And I'm looking at it like a child prodigy, if I have to put it that way. I am I am a master of a certain domain, let's say, I'm not saying I am but and then I'm looking at a child prodigy.",
+      "start": 6411.117344,
+      "end": 6422.117344
+    },
+    {
+      "text": " Child prodigy is smart, it's great, but you know it's like horses without blinds. So I'm just trying to talk to it, teach it, understand what I want to get from it, and learn from it too because it's prodigy, it has some unique ways of doing things.",
+      "start": 6422.117344,
+      "end": 6435.117344
+    },
+    {
+      "text": " So I learned that to then make the cloud MD generate, then do a pass around it. And that's it done.",
+      "start": 6435.117344,
+      "end": 6442.117344
+    },
+    {
+      "text": " Around that phase, right, I do shift enter, shift enter in cloud code basically puts it in plan mode. I always once my brainstorming session is over, I switch to plan mode.",
+      "start": 6442.117344,
+      "end": 6453.117344
+    },
+    {
+      "text": " I want now cloud to basically dream and think about what we have conversed and then generate the cloud MD or then generate the plan on how it wants to execute.",
+      "start": 6453.117344,
+      "end": 6461.117344
+    },
+    {
+      "text": " What is this plan mode? Yes. So there are two modes. I don't use cloud as my go to. So is this a cloud unique mode?",
+      "start": 6461.117344,
+      "end": 6470.117344
+    },
+    {
+      "text": " Honestly, I've not been using other platforms. Yeah, so we don't you don't know what. Yeah, okay.",
+      "start": 6470.117344,
+      "end": 6475.117344
+    },
+    {
+      "text": " Tell me about that. I don't know what that is. That's a great, great question. Right. So,",
+      "start": 6475.117344,
+      "end": 6482.117344
+    },
+    {
+      "text": " you said shift something? Yeah, shift enter the shortcut. But the key is right like cloud is the model.",
+      "start": 6482.117344,
+      "end": 6490.117344
+    },
+    {
+      "text": " Cloud Opus on it is the model.",
+      "start": 6490.117344,
+      "end": 6493.117344
+    },
+    {
+      "text": " Cloud code is a CLI tool that is basically acting as a harness. Harness meaning like a Python script with a very good understanding of how to prompt cloud and get back the response.",
+      "start": 6493.117344,
+      "end": 6504.117344
+    },
+    {
+      "text": " Now, there are two important modes in cloud code that you should be aware of. There are a lot of different tools, but two important ones.",
+      "start": 6504.117344,
+      "end": 6511.117344
+    },
+    {
+      "text": " One is plan mode and the other is agent mode. In plan mode, what cloud does is only plans.",
+      "start": 6511.117344,
+      "end": 6517.117344
+    },
+    {
+      "text": " Based on whatever conversations we've had until that point, and my constraints on the problem that I can think of, I ask cloud.",
+      "start": 6518.117344,
+      "end": 6526.117344
+    },
+    {
+      "text": " And I also be brutally honest about my intent to cloud is very good understanding human intent and try it out.",
+      "start": 6526.117344,
+      "end": 6532.117344
+    },
+    {
+      "text": " Instead of saying I want a website to solve this. You can ask cloud. I want to build something to show my hackathon participant of all the ongoing projects.",
+      "start": 6532.117344,
+      "end": 6542.117344
+    },
+    {
+      "text": " It might actually suggest you something better. Yeah.",
+      "start": 6542.117344,
+      "end": 6546.117344
+    },
+    {
+      "text": " It might like website. I don't think so. You can do simple like a Google. I didn't think of that.",
+      "start": 6546.117344,
+      "end": 6552.117344
+    },
+    {
+      "text": " So, the world has moved. We have moved from asking AI to do tasks.",
+      "start": 6552.117344,
+      "end": 6558.117344
+    },
+    {
+      "text": " Now we are asking you to do outcomes. But what I make it do is understand my intent. After that, everything falls in place for me.",
+      "start": 6558.117344,
+      "end": 6566.117344
+    },
+    {
+      "text": " I'm not saying it's 90 percent, 100 percent to 90 percent, but everything falls in place. At least what our mistakes is doing.",
+      "start": 6566.117344,
+      "end": 6571.117344
+    },
+    {
+      "text": " It is doing with my intent in mind and not its own intent in mind. And that's the piece that we need to understand.",
+      "start": 6571.117344,
+      "end": 6576.117344
+    },
+    {
+      "text": " And all of that learning, all of the processing, if I have to say in the compute world happens in the plan mode.",
+      "start": 6576.117344,
+      "end": 6583.117344
+    },
+    {
+      "text": " So the plan mode, what cloud is doing is reasoning for lots and lots of tokens, right?",
+      "start": 6583.117344,
+      "end": 6588.117344
+    },
+    {
+      "text": " Like this is the intent of the user. This is the constraints. How do I think about solving this problem?",
+      "start": 6588.117344,
+      "end": 6592.117344
+    },
+    {
+      "text": " Should I use this stack? Should I use that stack? They also say they don't have cost or like this, that, etc.",
+      "start": 6592.117344,
+      "end": 6598.117344
+    },
+    {
+      "text": " And the reason why constraint is important is for this reason, too, because if I put it in plan mode, it should have a boundary to plan.",
+      "start": 6598.117344,
+      "end": 6605.117344
+    },
+    {
+      "text": " If I ask you to build a laptop, the first question you will ask me is like, what is the cost?",
+      "start": 6605.117344,
+      "end": 6610.117344
+    },
+    {
+      "text": " Right. Which what can I use? Aluminum? Can I use uranium? You know, what's the constraints here?",
+      "start": 6610.117344,
+      "end": 6616.117344
+    },
+    {
+      "text": " So and in plan mode, cloud does a fantastic job of asking you follow up questions.",
+      "start": 6617.117344,
+      "end": 6623.117344
+    },
+    {
+      "text": " That's very, very important. In plan mode, it asks you follow up question. Follow up question again has two important things.",
+      "start": 6623.117344,
+      "end": 6629.117344
+    },
+    {
+      "text": " First, I become smarter. I'm no longer dumb. I'm like, oh, OK, I missed that.",
+      "start": 6629.117344,
+      "end": 6633.117344
+    },
+    {
+      "text": " Take that. Two, I know that it understood what I'm asking. That is important for me.",
+      "start": 6633.117344,
+      "end": 6639.117344
+    },
+    {
+      "text": " Whether you have understood my intent or not also gets clarified when it asks the follow up question.",
+      "start": 6639.117344,
+      "end": 6644.117344
+    },
+    {
+      "text": " There is a product lesson there, too. Follow up question is a beautiful user interaction style, very simple concept.",
+      "start": 6644.117344,
+      "end": 6651.117344
+    },
+    {
+      "text": " But when you're talking to each other, the best way we actually bond is when the follow up question comes from you and I respond to that.",
+      "start": 6651.117344,
+      "end": 6657.117344
+    },
+    {
+      "text": " Then you have the aha moment. I have both understand that we both understand each other.",
+      "start": 6657.117344,
+      "end": 6661.117344
+    },
+    {
+      "text": " Such a simple thing that was introduced by cloud. But that's game changing.",
+      "start": 6661.117344,
+      "end": 6665.117344
+    },
+    {
+      "text": " So sometimes product features are very simple, as simple as that. But they're amazing.",
+      "start": 6665.117344,
+      "end": 6669.117344
+    },
+    {
+      "text": " They're amazing. So these are the reasons. This is my style. And then I switch to agent mode.",
+      "start": 6669.117344,
+      "end": 6673.117344
+    },
+    {
+      "text": " Agent mode is full on execution. Zero to one. And.",
+      "start": 6673.117344,
+      "end": 6686.117344
+    },
+    {
+      "text": " Oh, nice. Take a look at that. Cool.",
+      "start": 6686.117344,
+      "end": 6689.117344
+    },
+    {
+      "text": " Yeah, a plan will plan will be amazing for a study.",
+      "start": 6689.117344,
+      "end": 6693.117344
+    },
+    {
+      "text": " I love the concept of follow up. Do you have a question to that?",
+      "start": 6693.117344,
+      "end": 6705.117344
+    },
+    {
+      "text": " I.",
+      "start": 6706.117344,
+      "end": 6709.117344
+    },
+    {
+      "text": " Do I ask.",
+      "start": 6709.117344,
+      "end": 6713.117344
+    },
+    {
+      "text": " I just I just gave.",
+      "start": 6713.117344,
+      "end": 6719.117344
+    },
+    {
+      "text": " And if you ask if you need anything, just let me know.",
+      "start": 6719.117344,
+      "end": 6724.117344
+    },
+    {
+      "text": " And sometimes after that, I will use this as a formation to generate a prompt and I feed it to the clock.",
+      "start": 6725.117344,
+      "end": 6733.117344
+    },
+    {
+      "text": " And sometimes you pass all the test case in one time.",
+      "start": 6733.117344,
+      "end": 6737.117344
+    },
+    {
+      "text": " Yeah, yeah, exactly.",
+      "start": 6737.117344,
+      "end": 6740.117344
+    },
+    {
+      "text": " OK, last last two questions. One is here. And then if anybody else has one, we'll do one more.",
+      "start": 6741.117344,
+      "end": 6746.117344
+    },
+    {
+      "text": " Go ahead.",
+      "start": 6746.117344,
+      "end": 6765.117344
+    },
+    {
+      "text": " I seems like misunderstanding a lot. And then I have to correct it.",
+      "start": 6765.117344,
+      "end": 6770.117344
+    },
+    {
+      "text": " Like every like first thing I let's generate that it generates and I need to correct the plan very carefully.",
+      "start": 6770.117344,
+      "end": 6778.117344
+    },
+    {
+      "text": " And when it goes to code, I still have to layer to layer to correct it.",
+      "start": 6778.117344,
+      "end": 6783.117344
+    },
+    {
+      "text": " Is it copilot?",
+      "start": 6783.117344,
+      "end": 6786.117344
+    },
+    {
+      "text": " What's the underlying model that's powering the compiler?",
+      "start": 6786.117344,
+      "end": 6789.117344
+    },
+    {
+      "text": " I'm not familiar with copilot. That's like the Microsoft, right?",
+      "start": 6790.117344,
+      "end": 6795.117344
+    },
+    {
+      "text": " Yeah, the GitHub.",
+      "start": 6795.117344,
+      "end": 6802.117344
+    },
+    {
+      "text": " Cloud. OK, OK. Using cloud as well. Yes. Yeah.",
+      "start": 6802.117344,
+      "end": 6806.117344
+    },
+    {
+      "text": " I mean, I would like to know more about your use case to comment on that. But yeah, it's possible.",
+      "start": 6806.117344,
+      "end": 6811.117344
+    },
+    {
+      "text": " Again, I look at.",
+      "start": 6811.117344,
+      "end": 6814.117344
+    },
+    {
+      "text": " I look I look at as a means to reach somewhere.",
+      "start": 6814.117344,
+      "end": 6818.117344
+    },
+    {
+      "text": " And if you use it right, you can go fast. And if your use case doesn't fall there, it's OK.",
+      "start": 6818.117344,
+      "end": 6823.117344
+    },
+    {
+      "text": " You don't have to always rely on me. But is an augmentation tool. That's why when people say it will replace jobs.",
+      "start": 6823.117344,
+      "end": 6829.117344
+    },
+    {
+      "text": " In my opinion, it can't because ultimately someone has to say what what is it.",
+      "start": 6829.117344,
+      "end": 6835.117344
+    },
+    {
+      "text": " Yes or no. Do you want is a decision. Some decision has to be taken.",
+      "start": 6835.117344,
+      "end": 6839.117344
+    },
+    {
+      "text": " Right.",
+      "start": 6839.117344,
+      "end": 6843.117344
+    },
+    {
+      "text": " So, yeah, coming coming to your point. Yeah. Do you want to elaborate on the use case? I'm curious to know.",
+      "start": 6843.117344,
+      "end": 6854.117344
+    },
+    {
+      "text": " Database retrieval and the cloud gets very good at database layer.",
+      "start": 6854.117344,
+      "end": 6860.117344
+    },
+    {
+      "text": " But then why? Why? Why? As a use case is that, for example, someone in a web app has a status.",
+      "start": 6860.117344,
+      "end": 6870.117344
+    },
+    {
+      "text": " And when he or she changed the status to emergency.",
+      "start": 6870.117344,
+      "end": 6875.117344
+    },
+    {
+      "text": " Hold that thought. We need to clear the room because there's another class. But if you're open to it, we could chat about it in the front area.",
+      "start": 6875.117344,
+      "end": 6881.117344
+    },
+    {
+      "text": " Can we do one quick photo before we.",
+      "start": 6881.117344,
+      "end": 6886.117344
+    },
+    {
+      "text": " Stay where you are right here.",
+      "start": 6886.117344,
+      "end": 6904.117344
+    },
+    {
+      "text": " So folks online don't don't go anywhere.",
+      "start": 6904.117344,
+      "end": 6922.117344
+    },
+    {
+      "text": " All right. So if you want to chat, let's go to the front area where the doors are.",
+      "start": 6922.117344,
+      "end": 6928.117344
+    },
+    {
+      "text": " We can have some more chat there, but let's have a round of applause.",
+      "start": 6928.117344,
+      "end": 6936.117344
+    }
+  ]
+}

@@ -1,0 +1,6136 @@
+{
+  "source_file": "lecture-3-embeddings-and-evaluation.mp4",
+  "duration": 6933.320029296875,
+  "segments": [
+    {
+      "text": " Can the folks online hear me okay?",
+      "start": 0.0,
+      "end": 6.0
+    },
+    {
+      "text": " Yes, I can hear you well.",
+      "start": 6.0,
+      "end": 10.0
+    },
+    {
+      "text": " Great, thank you very much.",
+      "start": 10.0,
+      "end": 13.0
+    },
+    {
+      "text": " So why don't we go ahead and get started.",
+      "start": 13.0,
+      "end": 15.0
+    },
+    {
+      "text": " First of all, welcome.",
+      "start": 15.0,
+      "end": 17.0
+    },
+    {
+      "text": " I'm excited today for a couple reasons.",
+      "start": 17.0,
+      "end": 22.0
+    },
+    {
+      "text": " Number one, we've got a guest speaker.",
+      "start": 22.0,
+      "end": 24.0
+    },
+    {
+      "text": " Do any of you know Shyamala?",
+      "start": 24.0,
+      "end": 27.0
+    },
+    {
+      "text": " She teaches another class.",
+      "start": 27.0,
+      "end": 29.0
+    },
+    {
+      "text": " I think she's teaching like a UX class.",
+      "start": 29.0,
+      "end": 32.0
+    },
+    {
+      "text": " Do you have her?",
+      "start": 32.0,
+      "end": 34.0
+    },
+    {
+      "text": " Oh, cool.",
+      "start": 34.0,
+      "end": 35.0
+    },
+    {
+      "text": " Okay, well, she's going to be our guest speaker today.",
+      "start": 35.0,
+      "end": 38.0
+    },
+    {
+      "text": " And she works at NVIDIA.",
+      "start": 38.0,
+      "end": 40.0
+    },
+    {
+      "text": " And she knows a lot about the topic that we're going to be discussing about",
+      "start": 40.0,
+      "end": 45.0
+    },
+    {
+      "text": " because she helps her customers achieve model adaptation in these ways on a",
+      "start": 45.0,
+      "end": 50.0
+    },
+    {
+      "text": " regular basis.",
+      "start": 50.0,
+      "end": 52.0
+    },
+    {
+      "text": " But she's going to come at 3.30.",
+      "start": 52.0,
+      "end": 54.0
+    },
+    {
+      "text": " Before that, I just wanted to kick off and showcase this video.",
+      "start": 54.0,
+      "end": 58.0
+    },
+    {
+      "text": " I was at the NVIDIA annual conference last week,",
+      "start": 58.0,
+      "end": 62.0
+    },
+    {
+      "text": " and I wanted just to give you guys a taste of what it looked like and what",
+      "start": 62.0,
+      "end": 66.0
+    },
+    {
+      "text": " was going on there.",
+      "start": 66.0,
+      "end": 70.0
+    },
+    {
+      "text": " So that was just one smaller room.",
+      "start": 96.0,
+      "end": 109.0
+    },
+    {
+      "text": " And really that was just to kind of give you a taste of the buzz and the",
+      "start": 109.0,
+      "end": 114.0
+    },
+    {
+      "text": " vibe there.",
+      "start": 114.0,
+      "end": 116.0
+    },
+    {
+      "text": " It was a massive conference.",
+      "start": 116.0,
+      "end": 119.0
+    },
+    {
+      "text": " And it's just basically another proof point about how exciting this AI space",
+      "start": 119.0,
+      "end": 125.0
+    },
+    {
+      "text": " is.",
+      "start": 125.0,
+      "end": 126.0
+    },
+    {
+      "text": " If you were not already convinced, and I was already convinced,",
+      "start": 126.0,
+      "end": 128.0
+    },
+    {
+      "text": " but when I went to this conference, once again, I was like, oh, my gosh,",
+      "start": 128.0,
+      "end": 132.0
+    },
+    {
+      "text": " there's so much activity, so much going on.",
+      "start": 132.0,
+      "end": 136.0
+    },
+    {
+      "text": " That little section that you just saw was the NVIDIA Inception startup area.",
+      "start": 136.0,
+      "end": 143.0
+    },
+    {
+      "text": " Inception is their program, their accelerator for startups.",
+      "start": 143.0,
+      "end": 147.0
+    },
+    {
+      "text": " And so those were all small company booths designed to kind of showcase",
+      "start": 147.0,
+      "end": 153.0
+    },
+    {
+      "text": " their solutions.",
+      "start": 153.0,
+      "end": 155.0
+    },
+    {
+      "text": " But there was other halls for the exhibit where there were big companies like",
+      "start": 155.0,
+      "end": 162.0
+    },
+    {
+      "text": " Oracle and Microsoft and Deloitte and Accenture and all these companies just",
+      "start": 162.0,
+      "end": 167.0
+    },
+    {
+      "text": " showcasing such amazing capabilities.",
+      "start": 167.0,
+      "end": 171.0
+    },
+    {
+      "text": " The other interesting thing about this conference was not only were there",
+      "start": 171.0,
+      "end": 175.0
+    },
+    {
+      "text": " application layer companies, but they were companies that are lower in the tech",
+      "start": 175.0,
+      "end": 181.0
+    },
+    {
+      "text": " stack.",
+      "start": 181.0,
+      "end": 182.0
+    },
+    {
+      "text": " So I often like to talk about the tech stack in terms of the OSI model.",
+      "start": 182.0,
+      "end": 186.0
+    },
+    {
+      "text": " An OSI model talks about like application layer at the top and then physical",
+      "start": 186.0,
+      "end": 190.0
+    },
+    {
+      "text": " layer at the bottom and all the different kind of layers that are in between.",
+      "start": 190.0,
+      "end": 194.0
+    },
+    {
+      "text": " So there were companies showcasing at this conference that had a hardware,",
+      "start": 194.0,
+      "end": 199.0
+    },
+    {
+      "text": " like plugs, you know, like plugs that you plug racks into the wall and cooling",
+      "start": 199.0,
+      "end": 204.0
+    },
+    {
+      "text": " systems for, you know, again, racks, because it all starts with NVIDIA chips",
+      "start": 204.0,
+      "end": 210.0
+    },
+    {
+      "text": " in data centers, taking a lot of energy to run them 24-7,",
+      "start": 210.0,
+      "end": 215.0
+    },
+    {
+      "text": " computing billions and billions of things.",
+      "start": 215.0,
+      "end": 218.0
+    },
+    {
+      "text": " And so it starts with energy, cooling systems are a big thing, rack systems.",
+      "start": 218.0,
+      "end": 225.0
+    },
+    {
+      "text": " So basically this conference had everything from the physical layer,",
+      "start": 225.0,
+      "end": 230.0
+    },
+    {
+      "text": " the lowest layer, the physical layer, all the way up to the application layer,",
+      "start": 230.0,
+      "end": 235.0
+    },
+    {
+      "text": " and even on top of the application layer,",
+      "start": 235.0,
+      "end": 237.0
+    },
+    {
+      "text": " maybe fix the consultants that helps companies do the, you know,",
+      "start": 237.0,
+      "end": 242.0
+    },
+    {
+      "text": " the application layer.",
+      "start": 242.0,
+      "end": 243.0
+    },
+    {
+      "text": " So it was really cool.",
+      "start": 243.0,
+      "end": 244.0
+    },
+    {
+      "text": " I would urge all of you to take some time and look online.",
+      "start": 244.0,
+      "end": 250.0
+    },
+    {
+      "text": " I think they post all of the videos free of charge after the conference.",
+      "start": 250.0,
+      "end": 255.0
+    },
+    {
+      "text": " If they're not free of charge, tell me,",
+      "start": 255.0,
+      "end": 257.0
+    },
+    {
+      "text": " because I think I might have like a code that you can use to kind of watch",
+      "start": 257.0,
+      "end": 260.0
+    },
+    {
+      "text": " some of them.",
+      "start": 260.0,
+      "end": 261.0
+    },
+    {
+      "text": " But I would encourage you to look at all the different presentations that took",
+      "start": 261.0,
+      "end": 264.0
+    },
+    {
+      "text": " place there and just pick one and watch it and maybe just watch, you know,",
+      "start": 264.0,
+      "end": 269.0
+    },
+    {
+      "text": " the first half of it.",
+      "start": 269.0,
+      "end": 270.0
+    },
+    {
+      "text": " I'm not asking for a lot,",
+      "start": 270.0,
+      "end": 271.0
+    },
+    {
+      "text": " but I think that there's a lot of amazing content.",
+      "start": 271.0,
+      "end": 274.0
+    },
+    {
+      "text": " When I was browsing all the sessions deciding which day I wanted to visit,",
+      "start": 274.0,
+      "end": 277.0
+    },
+    {
+      "text": " I was like, oh my gosh, like, you know, how do I pick?",
+      "start": 277.0,
+      "end": 281.0
+    },
+    {
+      "text": " There's just so many interesting things.",
+      "start": 281.0,
+      "end": 283.0
+    },
+    {
+      "text": " So I went last Thursday and I attended some educational things as well,",
+      "start": 283.0,
+      "end": 288.0
+    },
+    {
+      "text": " and it was super cool.",
+      "start": 288.0,
+      "end": 289.0
+    },
+    {
+      "text": " Also, did you all see who is going to be the commencement speaker for Carnegie",
+      "start": 290.0,
+      "end": 295.0
+    },
+    {
+      "text": " Mellon in 2026?",
+      "start": 295.0,
+      "end": 299.0
+    },
+    {
+      "text": " Jensen.",
+      "start": 299.0,
+      "end": 300.0
+    },
+    {
+      "text": " Yeah.",
+      "start": 300.0,
+      "end": 301.0
+    },
+    {
+      "text": " So that's exciting, too.",
+      "start": 301.0,
+      "end": 303.0
+    },
+    {
+      "text": " Right.",
+      "start": 303.0,
+      "end": 304.0
+    },
+    {
+      "text": " So our school is very closely associated with this AI movement.",
+      "start": 304.0,
+      "end": 309.0
+    },
+    {
+      "text": " And not surprising.",
+      "start": 309.0,
+      "end": 312.0
+    },
+    {
+      "text": " It's a great highlight for us as a school that he is coming to speak.",
+      "start": 312.0,
+      "end": 319.0
+    },
+    {
+      "text": " So it speaks highly of our students and our research and our prestige as a",
+      "start": 319.0,
+      "end": 323.0
+    },
+    {
+      "text": " university to have the CEO of NVIDIA, because I'm sure every school has invited him.",
+      "start": 323.0,
+      "end": 328.0
+    },
+    {
+      "text": " Right.",
+      "start": 328.0,
+      "end": 329.0
+    },
+    {
+      "text": " Like his company is, I think, the most valuable company in the world.",
+      "start": 329.0,
+      "end": 333.0
+    },
+    {
+      "text": " He's one of the richest five people in the world, maybe right now.",
+      "start": 333.0,
+      "end": 338.0
+    },
+    {
+      "text": " You know, he's a big deal.",
+      "start": 338.0,
+      "end": 339.0
+    },
+    {
+      "text": " Everybody wants him.",
+      "start": 339.0,
+      "end": 341.0
+    },
+    {
+      "text": " And so the fact that he's coming to Carnegie Mellon to give his commencement",
+      "start": 341.0,
+      "end": 343.0
+    },
+    {
+      "text": " speech is really cool.",
+      "start": 343.0,
+      "end": 346.0
+    },
+    {
+      "text": " And it actually has me thinking maybe I should go to Pittsburgh just so I could",
+      "start": 346.0,
+      "end": 349.0
+    },
+    {
+      "text": " be there in person.",
+      "start": 349.0,
+      "end": 350.0
+    },
+    {
+      "text": " That would be cool.",
+      "start": 350.0,
+      "end": 351.0
+    },
+    {
+      "text": " And, you know, you guys could do a trip if you want also.",
+      "start": 351.0,
+      "end": 356.0
+    },
+    {
+      "text": " But anyway, I just wanted to highlight that.",
+      "start": 356.0,
+      "end": 358.0
+    },
+    {
+      "text": " And, again, our guest speaker today is from NVIDIA.",
+      "start": 358.0,
+      "end": 362.0
+    },
+    {
+      "text": " So we'll get more into NVIDIA with her talk today as well.",
+      "start": 362.0,
+      "end": 366.0
+    },
+    {
+      "text": " Any questions on any of that?",
+      "start": 366.0,
+      "end": 371.0
+    },
+    {
+      "text": " Okay.",
+      "start": 371.0,
+      "end": 372.0
+    },
+    {
+      "text": " So before we get into any lecture, let me just give you an overview today.",
+      "start": 372.0,
+      "end": 375.0
+    },
+    {
+      "text": " I told you Shamla is going to be here at 3.30.",
+      "start": 375.0,
+      "end": 379.0
+    },
+    {
+      "text": " We'll take a break at like 3.20, stretch our legs, walk around, you know.",
+      "start": 379.0,
+      "end": 385.0
+    },
+    {
+      "text": " And then between now and then I want to cover a few different things.",
+      "start": 385.0,
+      "end": 390.0
+    },
+    {
+      "text": " I want to talk just generally speaking about the class, where we are,",
+      "start": 390.0,
+      "end": 395.0
+    },
+    {
+      "text": " the assignments that are upcoming, the success or the challenges that some of",
+      "start": 395.0,
+      "end": 401.0
+    },
+    {
+      "text": " you might be having with ScholarStack.",
+      "start": 401.0,
+      "end": 404.0
+    },
+    {
+      "text": " So I want to have just an open discussion about a few things.",
+      "start": 404.0,
+      "end": 407.0
+    },
+    {
+      "text": " Also a bit about the group work that is in the future that's going to be coming",
+      "start": 407.0,
+      "end": 411.0
+    },
+    {
+      "text": " up very soon and the structure for the rest of the class.",
+      "start": 411.0,
+      "end": 414.0
+    },
+    {
+      "text": " So I want to talk about that first.",
+      "start": 414.0,
+      "end": 417.0
+    },
+    {
+      "text": " And then I want to do a brief lecture on RAG to introduce some RAG material to you.",
+      "start": 417.0,
+      "end": 425.0
+    },
+    {
+      "text": " And I think that's pretty much all of what I wanted to cover.",
+      "start": 425.0,
+      "end": 430.0
+    },
+    {
+      "text": " In case you're wondering about a quiz, I made a decision this week we're going",
+      "start": 430.0,
+      "end": 433.0
+    },
+    {
+      "text": " to do the quiz as homework.",
+      "start": 433.0,
+      "end": 435.0
+    },
+    {
+      "text": " So we'll release that tonight.",
+      "start": 435.0,
+      "end": 438.0
+    },
+    {
+      "text": " So if anyone's disappointed about not having an opportunity to take a quiz today,",
+      "start": 438.0,
+      "end": 443.0
+    },
+    {
+      "text": " I'm sorry, but you can do it on your own later tonight.",
+      "start": 443.0,
+      "end": 447.0
+    },
+    {
+      "text": " Does that sound good?",
+      "start": 447.0,
+      "end": 449.0
+    },
+    {
+      "text": " Okay.",
+      "start": 449.0,
+      "end": 450.0
+    },
+    {
+      "text": " So open discussion.",
+      "start": 450.0,
+      "end": 451.0
+    },
+    {
+      "text": " I want to hear from you.",
+      "start": 451.0,
+      "end": 454.0
+    },
+    {
+      "text": " How are things going just generally?",
+      "start": 454.0,
+      "end": 458.0
+    },
+    {
+      "text": " A few different things that you can ask questions about or comment on.",
+      "start": 458.0,
+      "end": 462.0
+    },
+    {
+      "text": " Number one, group work.",
+      "start": 462.0,
+      "end": 463.0
+    },
+    {
+      "text": " Have the teams come together?",
+      "start": 463.0,
+      "end": 466.0
+    },
+    {
+      "text": " Have you met with your teammates?",
+      "start": 466.0,
+      "end": 467.0
+    },
+    {
+      "text": " Have you not?",
+      "start": 467.0,
+      "end": 468.0
+    },
+    {
+      "text": " I want to get a feel for that.",
+      "start": 468.0,
+      "end": 470.0
+    },
+    {
+      "text": " At some point, I want to schedule meetings with the teams so I can meet with folks",
+      "start": 470.0,
+      "end": 475.0
+    },
+    {
+      "text": " in a small group setting.",
+      "start": 475.0,
+      "end": 478.0
+    },
+    {
+      "text": " That's one thing you could comment on.",
+      "start": 478.0,
+      "end": 480.0
+    },
+    {
+      "text": " The other one is around ScholarStack.",
+      "start": 480.0,
+      "end": 482.0
+    },
+    {
+      "text": " I would like to know how people enjoyed this week's practice exercise,",
+      "start": 482.0,
+      "end": 486.0
+    },
+    {
+      "text": " which is where you had to pick a company and do a system design style interview",
+      "start": 486.0,
+      "end": 490.0
+    },
+    {
+      "text": " back and forth with the chat agent.",
+      "start": 490.0,
+      "end": 492.0
+    },
+    {
+      "text": " I would like to have feedback, see how that went.",
+      "start": 492.0,
+      "end": 496.0
+    },
+    {
+      "text": " And then also going back to the group work,",
+      "start": 496.0,
+      "end": 499.0
+    },
+    {
+      "text": " I want to chat a bit about the future group assignments that we've got that are",
+      "start": 499.0,
+      "end": 503.0
+    },
+    {
+      "text": " kind of in the future.",
+      "start": 503.0,
+      "end": 505.0
+    },
+    {
+      "text": " I believe there are two of them.",
+      "start": 505.0,
+      "end": 506.0
+    },
+    {
+      "text": " I want to make sure that they're well understood and see if there's any",
+      "start": 506.0,
+      "end": 509.0
+    },
+    {
+      "text": " questions.",
+      "start": 509.0,
+      "end": 510.0
+    },
+    {
+      "text": " So before I start calling on folks,",
+      "start": 510.0,
+      "end": 512.0
+    },
+    {
+      "text": " any volunteers that want to ask any questions or offer any feedback",
+      "start": 512.0,
+      "end": 517.0
+    },
+    {
+      "text": " or contributions?",
+      "start": 517.0,
+      "end": 526.0
+    },
+    {
+      "text": " I really have feedback.",
+      "start": 526.0,
+      "end": 528.0
+    },
+    {
+      "text": " I was just going to say I really enjoyed this past homework,",
+      "start": 528.0,
+      "end": 531.0
+    },
+    {
+      "text": " having the interview style.",
+      "start": 531.0,
+      "end": 533.0
+    },
+    {
+      "text": " I think it helped solidify the concepts more and also helped me advance my",
+      "start": 533.0,
+      "end": 538.0
+    },
+    {
+      "text": " engineering techniques of how to make them better.",
+      "start": 538.0,
+      "end": 541.0
+    },
+    {
+      "text": " Because even though I knew of the one where you signed a role,",
+      "start": 541.0,
+      "end": 544.0
+    },
+    {
+      "text": " I didn't really apply that.",
+      "start": 544.0,
+      "end": 546.0
+    },
+    {
+      "text": " And I didn't really think much of also providing example output for the",
+      "start": 546.0,
+      "end": 550.0
+    },
+    {
+      "text": " prompt.",
+      "start": 550.0,
+      "end": 551.0
+    },
+    {
+      "text": " So I think that was very helpful.",
+      "start": 551.0,
+      "end": 553.0
+    },
+    {
+      "text": " Amazing.",
+      "start": 553.0,
+      "end": 556.0
+    },
+    {
+      "text": " What I find when I use tools in a similar fashion is I realize, oh,",
+      "start": 556.0,
+      "end": 564.0
+    },
+    {
+      "text": " I'm really just familiar with this concept.",
+      "start": 564.0,
+      "end": 567.0
+    },
+    {
+      "text": " I don't really have a detailed understanding.",
+      "start": 567.0,
+      "end": 569.0
+    },
+    {
+      "text": " And the more I push myself to go deeper, then it's kind of revealed to me.",
+      "start": 569.0,
+      "end": 575.0
+    },
+    {
+      "text": " Oh, wow.",
+      "start": 575.0,
+      "end": 576.0
+    },
+    {
+      "text": " And actually one of the future visions I have for ScholarStack is to have a",
+      "start": 576.0,
+      "end": 579.0
+    },
+    {
+      "text": " 3D rendering for a class around concepts.",
+      "start": 579.0,
+      "end": 585.0
+    },
+    {
+      "text": " So think about in a 2D fashion, right,",
+      "start": 585.0,
+      "end": 588.0
+    },
+    {
+      "text": " where we've got embeddings and vector databases and prompt engineering,",
+      "start": 588.0,
+      "end": 592.0
+    },
+    {
+      "text": " RAG, Lora, model adaptation, you know, all these concepts.",
+      "start": 592.0,
+      "end": 597.0
+    },
+    {
+      "text": " And now imagine all of those concepts having a 3D element to them so that you",
+      "start": 597.0,
+      "end": 602.0
+    },
+    {
+      "text": " can visualize the depth of understanding and the depth of comprehension,",
+      "start": 602.0,
+      "end": 607.0
+    },
+    {
+      "text": " not only that you have, but maybe that you seek to have.",
+      "start": 607.0,
+      "end": 612.0
+    },
+    {
+      "text": " So you can kind of understand where you are in terms of the full depth of one",
+      "start": 612.0,
+      "end": 616.0
+    },
+    {
+      "text": " of those concepts.",
+      "start": 616.0,
+      "end": 617.0
+    },
+    {
+      "text": " So that's kind of like a future concept that I'm working on right now.",
+      "start": 617.0,
+      "end": 620.0
+    },
+    {
+      "text": " And I want to be able to allow the students to select a few key concepts to go",
+      "start": 620.0,
+      "end": 628.0
+    },
+    {
+      "text": " deep and a few key concepts to go halfway and a few key concepts where they're",
+      "start": 628.0,
+      "end": 633.0
+    },
+    {
+      "text": " just going to gain familiarity.",
+      "start": 633.0,
+      "end": 635.0
+    },
+    {
+      "text": " Because we can't all be experts in everything.",
+      "start": 635.0,
+      "end": 638.0
+    },
+    {
+      "text": " We just don't have the time in the class to do that.",
+      "start": 638.0,
+      "end": 641.0
+    },
+    {
+      "text": " But I would like for the class to be able to choose where you want to go deep",
+      "start": 641.0,
+      "end": 646.0
+    },
+    {
+      "text": " and have some self-guided exploration into those areas.",
+      "start": 646.0,
+      "end": 649.0
+    },
+    {
+      "text": " So that's kind of like what I'm thinking down the road for ScholarStack in terms",
+      "start": 649.0,
+      "end": 654.0
+    },
+    {
+      "text": " of class design.",
+      "start": 654.0,
+      "end": 655.0
+    },
+    {
+      "text": " But thank you for those comments.",
+      "start": 655.0,
+      "end": 657.0
+    },
+    {
+      "text": " That's really helpful.",
+      "start": 657.0,
+      "end": 658.0
+    },
+    {
+      "text": " Do others feel a similar way?",
+      "start": 658.0,
+      "end": 660.0
+    },
+    {
+      "text": " Can anyone else build on top of that and give more context?",
+      "start": 660.0,
+      "end": 664.0
+    },
+    {
+      "text": " So, I mean, initially I was a bit skeptical that, you know,",
+      "start": 664.0,
+      "end": 669.0
+    },
+    {
+      "text": " I will choose a company, what will it ask me?",
+      "start": 669.0,
+      "end": 671.0
+    },
+    {
+      "text": " I'm like, okay, you know, it could be something very basic.",
+      "start": 671.0,
+      "end": 675.0
+    },
+    {
+      "text": " Then I chose Amazon.",
+      "start": 675.0,
+      "end": 678.0
+    },
+    {
+      "text": " Then it asked me, okay.",
+      "start": 678.0,
+      "end": 680.0
+    },
+    {
+      "text": " It tried to understand my rationale behind having Amazon.",
+      "start": 680.0,
+      "end": 685.0
+    },
+    {
+      "text": " And then I said e-commerce website.",
+      "start": 685.0,
+      "end": 688.0
+    },
+    {
+      "text": " Then it was like, okay.",
+      "start": 688.0,
+      "end": 689.0
+    },
+    {
+      "text": " So then in e-commerce, what exactly?",
+      "start": 689.0,
+      "end": 692.0
+    },
+    {
+      "text": " Then I said, I don't know, give me the option.",
+      "start": 692.0,
+      "end": 694.0
+    },
+    {
+      "text": " It says like recommendation system or three more options.",
+      "start": 694.0,
+      "end": 698.0
+    },
+    {
+      "text": " I said, okay, recommendation system.",
+      "start": 698.0,
+      "end": 700.0
+    },
+    {
+      "text": " And then it made me design that recommendation system.",
+      "start": 700.0,
+      "end": 703.0
+    },
+    {
+      "text": " I created some junk initially.",
+      "start": 703.0,
+      "end": 707.0
+    },
+    {
+      "text": " But at the end of it, my prompt was looking, oh, my God, I created it.",
+      "start": 707.0,
+      "end": 712.0
+    },
+    {
+      "text": " So I was amazed.",
+      "start": 713.0,
+      "end": 714.0
+    },
+    {
+      "text": " Like, to be honest, I'm like what maximum it can ask me.",
+      "start": 714.0,
+      "end": 719.0
+    },
+    {
+      "text": " But I am like, you know, respect.",
+      "start": 719.0,
+      "end": 722.0
+    },
+    {
+      "text": " Awesome.",
+      "start": 722.0,
+      "end": 723.0
+    },
+    {
+      "text": " Great, great.",
+      "start": 723.0,
+      "end": 724.0
+    },
+    {
+      "text": " I love that story.",
+      "start": 724.0,
+      "end": 725.0
+    },
+    {
+      "text": " And, you know, of course I can see the conversations,",
+      "start": 725.0,
+      "end": 728.0
+    },
+    {
+      "text": " but I don't look into every single one.",
+      "start": 728.0,
+      "end": 730.0
+    },
+    {
+      "text": " So I'm happy to hear about some of the experiences that folks are having.",
+      "start": 730.0,
+      "end": 735.0
+    },
+    {
+      "text": " Sure, right here.",
+      "start": 735.0,
+      "end": 737.0
+    },
+    {
+      "text": " Push the button so everyone can hear online.",
+      "start": 737.0,
+      "end": 740.0
+    },
+    {
+      "text": " I find there is some conflict in the chat while I try to chat about the concept.",
+      "start": 740.0,
+      "end": 748.0
+    },
+    {
+      "text": " Like, why ask the AI, like, why ask AI about, like,",
+      "start": 748.0,
+      "end": 758.0
+    },
+    {
+      "text": " ask AI to check itself whether or not it is 100% correct.",
+      "start": 758.0,
+      "end": 763.0
+    },
+    {
+      "text": " And then AI replied to me that I should ask, like, the AI itself about it",
+      "start": 763.0,
+      "end": 769.0
+    },
+    {
+      "text": " instead of just say it is wrong.",
+      "start": 769.0,
+      "end": 771.0
+    },
+    {
+      "text": " Because if I just say it is wrong, it might generally something good",
+      "start": 771.0,
+      "end": 775.0
+    },
+    {
+      "text": " and then degrade the quality.",
+      "start": 775.0,
+      "end": 778.0
+    },
+    {
+      "text": " And then I ask again why I ask, like, why I ask the AI it is,",
+      "start": 778.0,
+      "end": 785.0
+    },
+    {
+      "text": " it is like, like, ask AI the question to let AI check itself.",
+      "start": 785.0,
+      "end": 790.0
+    },
+    {
+      "text": " And then why AI returned it is 100% correct always.",
+      "start": 790.0,
+      "end": 796.0
+    },
+    {
+      "text": " And then the model just answered me that AI is, like, AI is basically tend to,",
+      "start": 796.0,
+      "end": 808.0
+    },
+    {
+      "text": " tend to, like, what's, such, is, they are often overconfident and can act as,",
+      "start": 808.0,
+      "end": 819.0
+    },
+    {
+      "text": " meaning they tend to agree with whatever just said,",
+      "start": 819.0,
+      "end": 823.0
+    },
+    {
+      "text": " including their own previous answers.",
+      "start": 823.0,
+      "end": 826.0
+    },
+    {
+      "text": " So I think this is conflicting with its previous idea that I should ask AI about,",
+      "start": 826.0,
+      "end": 831.0
+    },
+    {
+      "text": " like, to let AI check itself.",
+      "start": 831.0,
+      "end": 833.0
+    },
+    {
+      "text": " But now it says it's, it's, like, agree with its own previous answers.",
+      "start": 833.0,
+      "end": 839.0
+    },
+    {
+      "text": " So I'm not super sure which one is more correct.",
+      "start": 839.0,
+      "end": 843.0
+    },
+    {
+      "text": " And, like, and also I have this trouble when I ask AI to check itself,",
+      "start": 843.0,
+      "end": 848.0
+    },
+    {
+      "text": " AI will always say 100%, 100% it's correct.",
+      "start": 848.0,
+      "end": 852.0
+    },
+    {
+      "text": " But actually it's not.",
+      "start": 852.0,
+      "end": 853.0
+    },
+    {
+      "text": " So actually I have also have a question on this.",
+      "start": 853.0,
+      "end": 856.0
+    },
+    {
+      "text": " Great.",
+      "start": 856.0,
+      "end": 857.0
+    },
+    {
+      "text": " Well, my suggestion or my ask of you is take a screenshot and send it to me so I can,",
+      "start": 857.0,
+      "end": 862.0
+    },
+    {
+      "text": " I can look at that.",
+      "start": 862.0,
+      "end": 863.0
+    },
+    {
+      "text": " But that's quite interesting.",
+      "start": 863.0,
+      "end": 864.0
+    },
+    {
+      "text": " Also, I want to remind everyone of the feedback button,",
+      "start": 864.0,
+      "end": 867.0
+    },
+    {
+      "text": " the option that's in the top right of the app.",
+      "start": 867.0,
+      "end": 871.0
+    },
+    {
+      "text": " Also, of course, you can always do a video or a screen grab and email it to me as well,",
+      "start": 871.0,
+      "end": 877.0
+    },
+    {
+      "text": " if there's any questions or if you see any strange behavior or anything like that.",
+      "start": 877.0,
+      "end": 882.0
+    },
+    {
+      "text": " Okay, cool.",
+      "start": 882.0,
+      "end": 883.0
+    },
+    {
+      "text": " Any other?",
+      "start": 883.0,
+      "end": 884.0
+    },
+    {
+      "text": " Oh, one other thing I was thinking about is I wanted to test the AI's multilingual capabilities.",
+      "start": 884.0,
+      "end": 892.0
+    },
+    {
+      "text": " I've seen some students who have switched into Chinese.",
+      "start": 892.0,
+      "end": 895.0
+    },
+    {
+      "text": " And I think that's super cool.",
+      "start": 895.0,
+      "end": 897.0
+    },
+    {
+      "text": " I like seeing that.",
+      "start": 897.0,
+      "end": 898.0
+    },
+    {
+      "text": " And I've actually asked my developer to,",
+      "start": 898.0,
+      "end": 900.0
+    },
+    {
+      "text": " to develop a tool so I can see what,",
+      "start": 900.0,
+      "end": 903.0
+    },
+    {
+      "text": " what is being said, because when it switches into Chinese, obviously I don't,",
+      "start": 903.0,
+      "end": 907.0
+    },
+    {
+      "text": " I don't speak Chinese.",
+      "start": 907.0,
+      "end": 908.0
+    },
+    {
+      "text": " And so I'm actually, that's an interesting feature that I'm asking for.",
+      "start": 908.0,
+      "end": 912.0
+    },
+    {
+      "text": " But I wanted, one of the things I've been thinking about is when doing quizzes,",
+      "start": 912.0,
+      "end": 917.0
+    },
+    {
+      "text": " especially quizzes that are timed, I'm not testing English.",
+      "start": 917.0,
+      "end": 922.0
+    },
+    {
+      "text": " I'm testing your knowledge about a specific topic.",
+      "start": 922.0,
+      "end": 925.0
+    },
+    {
+      "text": " Right.",
+      "start": 925.0,
+      "end": 926.0
+    },
+    {
+      "text": " Maybe it's prompting.",
+      "start": 926.0,
+      "end": 927.0
+    },
+    {
+      "text": " So what I thought this week, I wanted to actually ask the class,",
+      "start": 927.0,
+      "end": 931.0
+    },
+    {
+      "text": " is there anyone who would like to take a quiz in their native language?",
+      "start": 931.0,
+      "end": 937.0
+    },
+    {
+      "text": " So I'm going to have ScholarStack.",
+      "start": 937.0,
+      "end": 940.0
+    },
+    {
+      "text": " I've already tested it.",
+      "start": 940.0,
+      "end": 941.0
+    },
+    {
+      "text": " It can do this.",
+      "start": 941.0,
+      "end": 942.0
+    },
+    {
+      "text": " I'm going to have ScholarStack generate a quiz in,",
+      "start": 942.0,
+      "end": 945.0
+    },
+    {
+      "text": " in multiple languages upon student request.",
+      "start": 945.0,
+      "end": 950.0
+    },
+    {
+      "text": " And if anybody wants to take a request in a language other than,",
+      "start": 950.0,
+      "end": 953.0
+    },
+    {
+      "text": " I'm sorry,",
+      "start": 953.0,
+      "end": 954.0
+    },
+    {
+      "text": " if anyone wants to take a quiz in a language other than English,",
+      "start": 954.0,
+      "end": 958.0
+    },
+    {
+      "text": " you can let me know.",
+      "start": 958.0,
+      "end": 960.0
+    },
+    {
+      "text": " And I will insert the quiz into your Canvas,",
+      "start": 960.0,
+      "end": 964.0
+    },
+    {
+      "text": " and then you can take it in a different language.",
+      "start": 964.0,
+      "end": 966.0
+    },
+    {
+      "text": " So you don't have to tell me now, but shoot me a message.",
+      "start": 966.0,
+      "end": 970.0
+    },
+    {
+      "text": " Just shoot me an email and tell me if this is of interest to you.",
+      "start": 970.0,
+      "end": 974.0
+    },
+    {
+      "text": " Because I'm interested in exploring this as a possibility.",
+      "start": 974.0,
+      "end": 979.0
+    },
+    {
+      "text": " I think it's a very interesting possibility.",
+      "start": 979.0,
+      "end": 982.0
+    },
+    {
+      "text": " I've already exported a quiz into Canvas in Chinese, and I was not sure.",
+      "start": 982.0,
+      "end": 987.0
+    },
+    {
+      "text": " I've seen the Chinese in the chat bot, but I haven't been, I haven't,",
+      "start": 987.0,
+      "end": 991.0
+    },
+    {
+      "text": " I didn't know if it would work in Canvas, and I exported it,",
+      "start": 991.0,
+      "end": 994.0
+    },
+    {
+      "text": " and the characters show up just fine.",
+      "start": 994.0,
+      "end": 996.0
+    },
+    {
+      "text": " So I think it's pretty cool.",
+      "start": 996.0,
+      "end": 997.0
+    },
+    {
+      "text": " So if anybody wants that, let me know.",
+      "start": 997.0,
+      "end": 1000.0
+    },
+    {
+      "text": " I think it's an interesting thing to explore is this multilingual capability.",
+      "start": 1000.0,
+      "end": 1004.0
+    },
+    {
+      "text": " Any questions on that?",
+      "start": 1004.0,
+      "end": 1008.0
+    },
+    {
+      "text": " This week we're going to do the quiz at home.",
+      "start": 1008.0,
+      "end": 1010.0
+    },
+    {
+      "text": " Next week I might bring it back to class.",
+      "start": 1010.0,
+      "end": 1013.0
+    },
+    {
+      "text": " I don't know.",
+      "start": 1013.0,
+      "end": 1014.0
+    },
+    {
+      "text": " I'll let you know.",
+      "start": 1014.0,
+      "end": 1015.0
+    },
+    {
+      "text": " So there's no surprise next week.",
+      "start": 1016.0,
+      "end": 1019.0
+    },
+    {
+      "text": " Once again, anything wrong on the quiz, you can take it in your last quiz.",
+      "start": 1019.0,
+      "end": 1024.0
+    },
+    {
+      "text": " So basically in your last quiz,",
+      "start": 1024.0,
+      "end": 1026.0
+    },
+    {
+      "text": " I will insert any other questions that you got wrong throughout the mini,",
+      "start": 1026.0,
+      "end": 1031.0
+    },
+    {
+      "text": " and you have another crack at answering them.",
+      "start": 1031.0,
+      "end": 1034.0
+    },
+    {
+      "text": " And if you answer them correctly then, it will replace your negative score.",
+      "start": 1034.0,
+      "end": 1039.0
+    },
+    {
+      "text": " So you all have the possibility to get a perfect score on every quiz.",
+      "start": 1039.0,
+      "end": 1042.0
+    },
+    {
+      "text": " Sound good?",
+      "start": 1042.0,
+      "end": 1044.0
+    },
+    {
+      "text": " Because, once again, the concept I want to drive home in this class,",
+      "start": 1044.0,
+      "end": 1048.0
+    },
+    {
+      "text": " and the concept I'm also driving with ScholarStack,",
+      "start": 1048.0,
+      "end": 1051.0
+    },
+    {
+      "text": " is I want humans to take cues from how machines learn.",
+      "start": 1051.0,
+      "end": 1058.0
+    },
+    {
+      "text": " So as we're learning in this class, machines learn by repetitive prediction.",
+      "start": 1058.0,
+      "end": 1065.0
+    },
+    {
+      "text": " Right?",
+      "start": 1065.0,
+      "end": 1066.0
+    },
+    {
+      "text": " They have a sentence.",
+      "start": 1066.0,
+      "end": 1068.0
+    },
+    {
+      "text": " They predict the sentence in the beginning when their weights are randomly assigned.",
+      "start": 1068.0,
+      "end": 1073.0
+    },
+    {
+      "text": " They get it wrong all the time.",
+      "start": 1073.0,
+      "end": 1075.0
+    },
+    {
+      "text": " And they're not emotionally upset because they're machines.",
+      "start": 1075.0,
+      "end": 1078.0
+    },
+    {
+      "text": " Right?",
+      "start": 1078.0,
+      "end": 1079.0
+    },
+    {
+      "text": " Nobody's upset that they fail a quiz in the beginning,",
+      "start": 1079.0,
+      "end": 1082.0
+    },
+    {
+      "text": " because that's the expectation is to not know anything.",
+      "start": 1082.0,
+      "end": 1085.0
+    },
+    {
+      "text": " And then they work hard,",
+      "start": 1085.0,
+      "end": 1087.0
+    },
+    {
+      "text": " and they train themselves with these NVIDIA GPUs,",
+      "start": 1087.0,
+      "end": 1090.0
+    },
+    {
+      "text": " and they go through training.",
+      "start": 1090.0,
+      "end": 1091.0
+    },
+    {
+      "text": " Right?",
+      "start": 1091.0,
+      "end": 1092.0
+    },
+    {
+      "text": " And over time, every time they're wrong,",
+      "start": 1092.0,
+      "end": 1094.0
+    },
+    {
+      "text": " the system's telling them how wrong they are,",
+      "start": 1094.0,
+      "end": 1097.0
+    },
+    {
+      "text": " measuring the loss,",
+      "start": 1097.0,
+      "end": 1098.0
+    },
+    {
+      "text": " and then pointing them in the right direction.",
+      "start": 1098.0,
+      "end": 1101.0
+    },
+    {
+      "text": " Right?",
+      "start": 1101.0,
+      "end": 1102.0
+    },
+    {
+      "text": " Telling the sentence to be more right the next time.",
+      "start": 1102.0,
+      "end": 1105.0
+    },
+    {
+      "text": " Is it telling them how to be perfect the next time?",
+      "start": 1105.0,
+      "end": 1107.0
+    },
+    {
+      "text": " No.",
+      "start": 1107.0,
+      "end": 1108.0
+    },
+    {
+      "text": " And that's the cue we can take from learning.",
+      "start": 1108.0,
+      "end": 1111.0
+    },
+    {
+      "text": " We don't have to be perfect.",
+      "start": 1111.0,
+      "end": 1113.0
+    },
+    {
+      "text": " We just need to keep trying repeatedly.",
+      "start": 1113.0,
+      "end": 1115.0
+    },
+    {
+      "text": " Expose our model.",
+      "start": 1115.0,
+      "end": 1117.0
+    },
+    {
+      "text": " For us, it's a mental model.",
+      "start": 1117.0,
+      "end": 1118.0
+    },
+    {
+      "text": " It's a conceptual understanding of topics.",
+      "start": 1118.0,
+      "end": 1120.0
+    },
+    {
+      "text": " For the machines, it's, you know, you're exposing your prediction capability.",
+      "start": 1120.0,
+      "end": 1125.0
+    },
+    {
+      "text": " Right?",
+      "start": 1125.0,
+      "end": 1126.0
+    },
+    {
+      "text": " And if we as humans follow this path and do it enough,",
+      "start": 1126.0,
+      "end": 1131.0
+    },
+    {
+      "text": " we get a little bit better each time.",
+      "start": 1131.0,
+      "end": 1133.0
+    },
+    {
+      "text": " We gain confidence as we go until we reach a point where additional training",
+      "start": 1133.0,
+      "end": 1138.0
+    },
+    {
+      "text": " doesn't bring additional knowledge.",
+      "start": 1138.0,
+      "end": 1141.0
+    },
+    {
+      "text": " And that's when we know we stop.",
+      "start": 1141.0,
+      "end": 1142.0
+    },
+    {
+      "text": " And that's the same with pre-training with these LLMs.",
+      "start": 1142.0,
+      "end": 1145.0
+    },
+    {
+      "text": " Once they reach convergence,",
+      "start": 1145.0,
+      "end": 1147.0
+    },
+    {
+      "text": " it's the point where additional training is not really doing much,",
+      "start": 1147.0,
+      "end": 1150.0
+    },
+    {
+      "text": " and then they can stop training.",
+      "start": 1150.0,
+      "end": 1152.0
+    },
+    {
+      "text": " So just keep that in mind as we work through these materials.",
+      "start": 1152.0,
+      "end": 1156.0
+    },
+    {
+      "text": " I want you to not fear getting things wrong.",
+      "start": 1156.0,
+      "end": 1160.0
+    },
+    {
+      "text": " I just want repetition.",
+      "start": 1160.0,
+      "end": 1161.0
+    },
+    {
+      "text": " So just keep asking the chatbot about concepts, about questions.",
+      "start": 1161.0,
+      "end": 1166.0
+    },
+    {
+      "text": " Showcase your model.",
+      "start": 1166.0,
+      "end": 1167.0
+    },
+    {
+      "text": " What I often do when I work with, you know, LLMs is I'll say, okay,",
+      "start": 1167.0,
+      "end": 1171.0
+    },
+    {
+      "text": " so here's how I understand it, blah, blah, blah, blah, blah.",
+      "start": 1171.0,
+      "end": 1174.0
+    },
+    {
+      "text": " And it's like, you're halfway there.",
+      "start": 1174.0,
+      "end": 1176.0
+    },
+    {
+      "text": " Let me correct a little bit.",
+      "start": 1176.0,
+      "end": 1178.0
+    },
+    {
+      "text": " And it kind of helps me correct.",
+      "start": 1178.0,
+      "end": 1180.0
+    },
+    {
+      "text": " So I encourage you to kind of follow that process in your engagement as well.",
+      "start": 1180.0,
+      "end": 1185.0
+    },
+    {
+      "text": " Okay.",
+      "start": 1185.0,
+      "end": 1186.0
+    },
+    {
+      "text": " Online folks, I want to hear from you.",
+      "start": 1186.0,
+      "end": 1189.0
+    },
+    {
+      "text": " So anything could be interactions with ScholarStack,",
+      "start": 1189.0,
+      "end": 1193.0
+    },
+    {
+      "text": " could be questions about assignments,",
+      "start": 1193.0,
+      "end": 1195.0
+    },
+    {
+      "text": " could be questions about material that we've covered or, you know, group work,",
+      "start": 1195.0,
+      "end": 1200.0
+    },
+    {
+      "text": " anything at all.",
+      "start": 1200.0,
+      "end": 1202.0
+    },
+    {
+      "text": " I can go first.",
+      "start": 1202.0,
+      "end": 1204.0
+    },
+    {
+      "text": " Like one of the students in class pointed out,",
+      "start": 1204.0,
+      "end": 1207.0
+    },
+    {
+      "text": " it was a very good learning experience,",
+      "start": 1207.0,
+      "end": 1209.0
+    },
+    {
+      "text": " and I tried to customize just to, you know,",
+      "start": 1209.0,
+      "end": 1213.0
+    },
+    {
+      "text": " test the AI based on my experience interviewing some of those companies.",
+      "start": 1213.0,
+      "end": 1218.0
+    },
+    {
+      "text": " And I think it did really well.",
+      "start": 1218.0,
+      "end": 1220.0
+    },
+    {
+      "text": " And also what I really enjoyed is that, like you said, I had the concept,",
+      "start": 1220.0,
+      "end": 1224.0
+    },
+    {
+      "text": " but I just wanted to learn more, and I kept prompting it,",
+      "start": 1224.0,
+      "end": 1227.0
+    },
+    {
+      "text": " and it was giving me that.",
+      "start": 1227.0,
+      "end": 1228.0
+    },
+    {
+      "text": " So I feel a lot more confident about context engineering, prompt system",
+      "start": 1228.0,
+      "end": 1232.0
+    },
+    {
+      "text": " engineering.",
+      "start": 1232.0,
+      "end": 1234.0
+    },
+    {
+      "text": " One thing that I would love for the AI to have, again,",
+      "start": 1234.0,
+      "end": 1237.0
+    },
+    {
+      "text": " is because I'm a visual person, I tried prompting it again about diagrams,",
+      "start": 1237.0,
+      "end": 1242.0
+    },
+    {
+      "text": " and it could not produce that.",
+      "start": 1242.0,
+      "end": 1244.0
+    },
+    {
+      "text": " So that's the feedback that I already left.",
+      "start": 1244.0,
+      "end": 1247.0
+    },
+    {
+      "text": " Amazing.",
+      "start": 1247.0,
+      "end": 1248.0
+    },
+    {
+      "text": " Great.",
+      "start": 1248.0,
+      "end": 1249.0
+    },
+    {
+      "text": " I will note, I looked at one exchange, you know, in the system,",
+      "start": 1249.0,
+      "end": 1257.0
+    },
+    {
+      "text": " and it looked to me as if somebody had another LLM window open next to them,",
+      "start": 1257.0,
+      "end": 1263.0
+    },
+    {
+      "text": " and they were getting the correct answer and putting the correct answer into the",
+      "start": 1263.0,
+      "end": 1268.0
+    },
+    {
+      "text": " ScholarStack AI window because the answer I observed was like had bullets,",
+      "start": 1268.0,
+      "end": 1274.0
+    },
+    {
+      "text": " and it was like longer than one would normally type or even articulate.",
+      "start": 1274.0,
+      "end": 1280.0
+    },
+    {
+      "text": " So I want to encourage people, like, this is your opportunity to learn.",
+      "start": 1280.0,
+      "end": 1286.0
+    },
+    {
+      "text": " You're not graded on how many steps it takes you to complete the assignment.",
+      "start": 1286.0,
+      "end": 1290.0
+    },
+    {
+      "text": " It could take you 100 steps to complete.",
+      "start": 1290.0,
+      "end": 1292.0
+    },
+    {
+      "text": " If that's the case, it just means you're exploring the world on your own terms,",
+      "start": 1292.0,
+      "end": 1297.0
+    },
+    {
+      "text": " and you're learning along your journey, right?",
+      "start": 1297.0,
+      "end": 1300.0
+    },
+    {
+      "text": " So there's no need to get it right with the first prompt, right?",
+      "start": 1300.0,
+      "end": 1305.0
+    },
+    {
+      "text": " Like it's a safe space.",
+      "start": 1305.0,
+      "end": 1307.0
+    },
+    {
+      "text": " Just articulate.",
+      "start": 1307.0,
+      "end": 1309.0
+    },
+    {
+      "text": " I like to talk to them, right?",
+      "start": 1309.0,
+      "end": 1311.0
+    },
+    {
+      "text": " So are you guys mostly verbally doing verbal input?",
+      "start": 1311.0,
+      "end": 1316.0
+    },
+    {
+      "text": " I'm kind of curious what's the input mode.",
+      "start": 1316.0,
+      "end": 1318.0
+    },
+    {
+      "text": " Are you typing?",
+      "start": 1318.0,
+      "end": 1319.0
+    },
+    {
+      "text": " You're typing.",
+      "start": 1319.0,
+      "end": 1320.0
+    },
+    {
+      "text": " What are you doing?",
+      "start": 1320.0,
+      "end": 1321.0
+    },
+    {
+      "text": " Typing.",
+      "start": 1321.0,
+      "end": 1322.0
+    },
+    {
+      "text": " Type?",
+      "start": 1322.0,
+      "end": 1323.0
+    },
+    {
+      "text": " Really?",
+      "start": 1323.0,
+      "end": 1328.0
+    },
+    {
+      "text": " Are you typing in when you do ScholarStack or you're talking?",
+      "start": 1328.0,
+      "end": 1336.0
+    },
+    {
+      "text": " Oh, you're a visitor.",
+      "start": 1336.0,
+      "end": 1337.0
+    },
+    {
+      "text": " I'm sorry.",
+      "start": 1337.0,
+      "end": 1338.0
+    },
+    {
+      "text": " All right, well, welcome.",
+      "start": 1338.0,
+      "end": 1340.0
+    },
+    {
+      "text": " Okay, for those online, show of hands, how many are typing when you input?",
+      "start": 1340.0,
+      "end": 1347.0
+    },
+    {
+      "text": " Yona?",
+      "start": 1347.0,
+      "end": 1351.0
+    },
+    {
+      "text": " You're typing?",
+      "start": 1351.0,
+      "end": 1354.0
+    },
+    {
+      "text": " Why is people not verbalizing?",
+      "start": 1354.0,
+      "end": 1356.0
+    },
+    {
+      "text": " You're such fast typers you can type just as fast as you can talk?",
+      "start": 1356.0,
+      "end": 1360.0
+    },
+    {
+      "text": " Really?",
+      "start": 1360.0,
+      "end": 1361.0
+    },
+    {
+      "text": " I think we're just so used to, like, typing generally from a long time ago",
+      "start": 1361.0,
+      "end": 1365.0
+    },
+    {
+      "text": " that it's just a new habit now that we have to develop now using these other tools.",
+      "start": 1365.0,
+      "end": 1371.0
+    },
+    {
+      "text": " Huh.",
+      "start": 1371.0,
+      "end": 1375.0
+    },
+    {
+      "text": " Like the thoughts are well-structured when we type.",
+      "start": 1375.0,
+      "end": 1380.0
+    },
+    {
+      "text": " When we speak, it's\u2026",
+      "start": 1380.0,
+      "end": 1384.0
+    },
+    {
+      "text": " Not structured.",
+      "start": 1384.0,
+      "end": 1386.0
+    },
+    {
+      "text": " Yeah.",
+      "start": 1386.0,
+      "end": 1391.0
+    },
+    {
+      "text": " What's the big of saying that?",
+      "start": 1391.0,
+      "end": 1399.0
+    },
+    {
+      "text": " But you don't have to correct the grammar.",
+      "start": 1399.0,
+      "end": 1401.0
+    },
+    {
+      "text": " That's the thing.",
+      "start": 1401.0,
+      "end": 1402.0
+    },
+    {
+      "text": " Like the LLM will understand you.",
+      "start": 1402.0,
+      "end": 1408.0
+    },
+    {
+      "text": " I would encourage you, experiment with speaking because here's the thing.",
+      "start": 1408.0,
+      "end": 1414.0
+    },
+    {
+      "text": " On your interviews, you're not going to type, right?",
+      "start": 1414.0,
+      "end": 1418.0
+    },
+    {
+      "text": " So you have to get used to verbalizing your answers.",
+      "start": 1418.0,
+      "end": 1424.0
+    },
+    {
+      "text": " So I would encourage you just to try it.",
+      "start": 1424.0,
+      "end": 1426.0
+    },
+    {
+      "text": " Yes, question.",
+      "start": 1426.0,
+      "end": 1433.0
+    },
+    {
+      "text": " I feel like, so if I was asked, like, a single, maybe the question, just ask a very simple one,",
+      "start": 1433.0,
+      "end": 1441.0
+    },
+    {
+      "text": " and, like, I can say that.",
+      "start": 1441.0,
+      "end": 1443.0
+    },
+    {
+      "text": " It's very easy.",
+      "start": 1443.0,
+      "end": 1444.0
+    },
+    {
+      "text": " But, like, if the question asks for a general question, like, it takes multiple steps",
+      "start": 1444.0,
+      "end": 1450.0
+    },
+    {
+      "text": " or it has many elements I have to type so I can know, okay, what I have to talk about.",
+      "start": 1450.0,
+      "end": 1456.0
+    },
+    {
+      "text": " And instead of talking, I might forget, like, what I covered before.",
+      "start": 1456.0,
+      "end": 1461.0
+    },
+    {
+      "text": " Okay, good insight.",
+      "start": 1461.0,
+      "end": 1462.0
+    },
+    {
+      "text": " Yeah.",
+      "start": 1462.0,
+      "end": 1465.0
+    },
+    {
+      "text": " Yeah.",
+      "start": 1465.0,
+      "end": 1467.0
+    },
+    {
+      "text": " So since part of, like, the exercise was always you choose, I think, a prompt engineering technique, like,",
+      "start": 1467.0,
+      "end": 1474.0
+    },
+    {
+      "text": " you shot and then you have to give, like, the example.",
+      "start": 1474.0,
+      "end": 1478.0
+    },
+    {
+      "text": " Since mine, I don't know how you would verbalize, I guess, the structure of how it should look like when you talk to it,",
+      "start": 1478.0,
+      "end": 1486.0
+    },
+    {
+      "text": " because it was, like, this section should have these subsections.",
+      "start": 1486.0,
+      "end": 1490.0
+    },
+    {
+      "text": " It's, like, I wonder how you would even speak that.",
+      "start": 1490.0,
+      "end": 1493.0
+    },
+    {
+      "text": " So I guess even in that case it's hard to, like, try to speak to it.",
+      "start": 1493.0,
+      "end": 1498.0
+    },
+    {
+      "text": " Good point.",
+      "start": 1498.0,
+      "end": 1499.0
+    },
+    {
+      "text": " Yeah, very good point.",
+      "start": 1499.0,
+      "end": 1500.0
+    },
+    {
+      "text": " There was another hand up.",
+      "start": 1500.0,
+      "end": 1505.0
+    },
+    {
+      "text": " I'm curious how you implemented the retrieval part, like, when it's retrieving from the knowledge base.",
+      "start": 1505.0,
+      "end": 1514.0
+    },
+    {
+      "text": " You mean, like, all of the decisions that were made in terms of the configuration of how the retriever is working?",
+      "start": 1514.0,
+      "end": 1521.0
+    },
+    {
+      "text": " Yeah.",
+      "start": 1521.0,
+      "end": 1522.0
+    },
+    {
+      "text": " Like, just on a high level, like, how is it retrieving?",
+      "start": 1522.0,
+      "end": 1525.0
+    },
+    {
+      "text": " Is it just a vector search or are you doing, like, different kind of algorithms?",
+      "start": 1525.0,
+      "end": 1530.0
+    },
+    {
+      "text": " This is a great leading question for today's lecture, because in today's lecture,",
+      "start": 1530.0,
+      "end": 1536.0
+    },
+    {
+      "text": " we talk about some of the some of the solution architecture related decisions that are made when you're implementing rag.",
+      "start": 1536.0,
+      "end": 1543.0
+    },
+    {
+      "text": " And rag has an architectural, the primary architectural component to rag is the retriever.",
+      "start": 1543.0,
+      "end": 1550.0
+    },
+    {
+      "text": " And the retriever handles basically indexing and retrieval.",
+      "start": 1550.0,
+      "end": 1554.0
+    },
+    {
+      "text": " Indexing is the preparation step.",
+      "start": 1554.0,
+      "end": 1556.0
+    },
+    {
+      "text": " So when things are uploaded to a vector database, it's indexing and then putting them and chunking them and getting them ready for retrieval.",
+      "start": 1556.0,
+      "end": 1563.0
+    },
+    {
+      "text": " So it's the organization of material into the database.",
+      "start": 1563.0,
+      "end": 1566.0
+    },
+    {
+      "text": " And then the other step is during runtime retrieval, pulling them back.",
+      "start": 1566.0,
+      "end": 1570.0
+    },
+    {
+      "text": " And so in the lecture today, we're going to talk about some of the solution architecture decisions that need to be made when configuring a rag system,",
+      "start": 1570.0,
+      "end": 1578.0
+    },
+    {
+      "text": " along with lots of pros and cons.",
+      "start": 1578.0,
+      "end": 1580.0
+    },
+    {
+      "text": " And I really want you to be thinking about a lot of different concepts when you're when you're contemplating with all of these different model adaptation techniques,",
+      "start": 1580.0,
+      "end": 1588.0
+    },
+    {
+      "text": " whether it's fine tuning, Laura rag or others.",
+      "start": 1588.0,
+      "end": 1591.0
+    },
+    {
+      "text": " So that's a great leading question. We're going to get into that.",
+      "start": 1591.0,
+      "end": 1594.0
+    },
+    {
+      "text": " And in terms of scholar stack, I actually don't know all of the exact configurations.",
+      "start": 1594.0,
+      "end": 1602.0
+    },
+    {
+      "text": " And I will ask and we can either post it online or we can discuss it next week.",
+      "start": 1602.0,
+      "end": 1609.0
+    },
+    {
+      "text": " But it's a really good question. OK, let me let's talk just briefly a little bit about the upcoming group work.",
+      "start": 1609.0,
+      "end": 1618.0
+    },
+    {
+      "text": " I want to make sure that we're all on the same page.",
+      "start": 1618.0,
+      "end": 1621.0
+    },
+    {
+      "text": " We understand the expectations.",
+      "start": 1621.0,
+      "end": 1625.0
+    },
+    {
+      "text": " And I also was wondering and I was reflecting if we wanted to do also a hands on assignment and actually build something,",
+      "start": 1625.0,
+      "end": 1635.0
+    },
+    {
+      "text": " because that that's kind of a fun exercise, too.",
+      "start": 1635.0,
+      "end": 1639.0
+    },
+    {
+      "text": " But sometimes I get a little bit overly ambitious with my classes and I ask for too much work.",
+      "start": 1639.0,
+      "end": 1645.0
+    },
+    {
+      "text": " So Carnegie Mellon is supposed to be a tough school, but we don't want it to make our students miserable.",
+      "start": 1645.0,
+      "end": 1651.0
+    },
+    {
+      "text": " Right. So I wanted to. So let me come back to that, actually.",
+      "start": 1651.0,
+      "end": 1658.0
+    },
+    {
+      "text": " But I want to gauge the understanding of the group work.",
+      "start": 1658.0,
+      "end": 1664.0
+    },
+    {
+      "text": " So so right now I want folks to expose their model. Right.",
+      "start": 1664.0,
+      "end": 1669.0
+    },
+    {
+      "text": " Going back to how how we learn. Can somebody articulate to me without reading their understanding of the group work that's in front of us still in class?",
+      "start": 1669.0,
+      "end": 1679.0
+    },
+    {
+      "text": " Any volunteers to to do that, to summarize or to verbalize the group work?",
+      "start": 1679.0,
+      "end": 1688.0
+    },
+    {
+      "text": " Have you all looked ahead in the syllabus to understand what's what's coming in terms of group work?",
+      "start": 1688.0,
+      "end": 1694.0
+    },
+    {
+      "text": " OK, let me start back. Has anyone organized their group into a real meeting?",
+      "start": 1694.0,
+      "end": 1698.0
+    },
+    {
+      "text": " Have you all met with your groups? Anyone? None of the groups have met.",
+      "start": 1698.0,
+      "end": 1704.0
+    },
+    {
+      "text": " OK, let me back up even more. Do you know who your groups are?",
+      "start": 1704.0,
+      "end": 1709.0
+    },
+    {
+      "text": " OK, does anybody not know who's in their group? You all have been assigned.",
+      "start": 1709.0,
+      "end": 1715.0
+    },
+    {
+      "text": " Everybody's in a group and it's all you're organized from that organizational perspective.",
+      "start": 1715.0,
+      "end": 1721.0
+    },
+    {
+      "text": " Right. It's just me, I think, because I do have access to the course canvas at some point.",
+      "start": 1721.0,
+      "end": 1726.0
+    },
+    {
+      "text": " But because I'm always logging in using an invitation instead of the course showing up there.",
+      "start": 1726.0,
+      "end": 1733.0
+    },
+    {
+      "text": " It doesn't it doesn't show me who my teammates are, even though I was added to group one.",
+      "start": 1733.0,
+      "end": 1740.0
+    },
+    {
+      "text": " OK. And I think this is because of the delay of the form that I had to complete for the register.",
+      "start": 1740.0,
+      "end": 1747.0
+    },
+    {
+      "text": " And we talked offline about. OK, Shreya, can you help with that?",
+      "start": 1747.0,
+      "end": 1752.0
+    },
+    {
+      "text": " Can you maybe just email Yona and CC her teammates so that she's properly connected?",
+      "start": 1752.0,
+      "end": 1760.0
+    },
+    {
+      "text": " Yes, professor. I can see her on canvas. I'm not sure why she's not able to see the course,",
+      "start": 1760.0,
+      "end": 1766.0
+    },
+    {
+      "text": " but definitely I can help you can get connected with your teammates. OK, great.",
+      "start": 1766.0,
+      "end": 1771.0
+    },
+    {
+      "text": " So you a screenshot of what? Yeah, that'd be helpful. Thanks, Yona.",
+      "start": 1772.0,
+      "end": 1779.0
+    },
+    {
+      "text": " So so has anybody read ahead in terms of what the expectations for the group work?",
+      "start": 1779.0,
+      "end": 1785.0
+    },
+    {
+      "text": " I'm assuming nobody knows what's coming. Anyone.",
+      "start": 1785.0,
+      "end": 1793.0
+    },
+    {
+      "text": " Dreya, do you know what the group work is? Yes, professor, I do.",
+      "start": 1793.0,
+      "end": 1800.0
+    },
+    {
+      "text": " You want to give a briefing? No, I think you're the perfect person to introduce.",
+      "start": 1800.0,
+      "end": 1807.0
+    },
+    {
+      "text": " OK, so there's two components to the group work. And and somebody correct me if I'm wrong.",
+      "start": 1807.0,
+      "end": 1814.0
+    },
+    {
+      "text": " I pull up your canvas page right now and take a look because I want to make sure I remember it correctly.",
+      "start": 1814.0,
+      "end": 1822.0
+    },
+    {
+      "text": " It's it should be under assignments, I think. Please, somebody check and let me know.",
+      "start": 1822.0,
+      "end": 1829.0
+    },
+    {
+      "text": " It's in the syllabus right now. Not a separate assignment. OK.",
+      "start": 1829.0,
+      "end": 1837.0
+    },
+    {
+      "text": " So it's not. Can somebody confirm that it's not an assignment?",
+      "start": 1837.0,
+      "end": 1842.0
+    },
+    {
+      "text": " You do scholar app store. Yes. OK. All right. Good.",
+      "start": 1842.0,
+      "end": 1847.0
+    },
+    {
+      "text": " So so there's there's I think there's two parts to it. Number one.",
+      "start": 1847.0,
+      "end": 1853.0
+    },
+    {
+      "text": " And again, if please check me on this. Number one, I think it's the group needs to define an additional use case for scholar stack.",
+      "start": 1853.0,
+      "end": 1867.0
+    },
+    {
+      "text": " Right. So it's basically think of and think about a new app.",
+      "start": 1867.0,
+      "end": 1872.0
+    },
+    {
+      "text": " Right. Think about the Apple App Store, about how you download apps. Right. So think if we implemented an app store or scholar stack,",
+      "start": 1872.0,
+      "end": 1881.0
+    },
+    {
+      "text": " what would be one really good app that you could put in there, either for students or for the professor?",
+      "start": 1881.0,
+      "end": 1887.0
+    },
+    {
+      "text": " Right. Some some combination of functionality. So you have to think about what a scholar stack.",
+      "start": 1887.0,
+      "end": 1893.0
+    },
+    {
+      "text": " What are the capabilities of scholar stack? Right. What are the capabilities of a phone?",
+      "start": 1893.0,
+      "end": 1898.0
+    },
+    {
+      "text": " Well, we've got GPS. Right. We've got wireless connectivity. We've got a screen.",
+      "start": 1898.0,
+      "end": 1905.0
+    },
+    {
+      "text": " For every app you use on here, Google Maps is taking advantage of the screen to show you where you are.",
+      "start": 1905.0,
+      "end": 1910.0
+    },
+    {
+      "text": " Satellite view. You can overload satellite. Right. So the phone's got capabilities that the developers then take advantage of to publish apps.",
+      "start": 1910.0,
+      "end": 1917.0
+    },
+    {
+      "text": " Right. So think about the capabilities of scholar stack. We've got the LLM. We've got the vector database.",
+      "start": 1918.0,
+      "end": 1925.0
+    },
+    {
+      "text": " We've got the course materials in there. The books, the readings. We've got our classmates loaded in there.",
+      "start": 1925.0,
+      "end": 1931.0
+    },
+    {
+      "text": " We've got the professor. We've got a connection to the Internet.",
+      "start": 1931.0,
+      "end": 1936.0
+    },
+    {
+      "text": " And then we start to think about, OK, well, what are the capabilities beyond that? Right.",
+      "start": 1936.0,
+      "end": 1941.0
+    },
+    {
+      "text": " We've got rag. We've got tool calling, which we've not really talked about much yet, but that's a capability.",
+      "start": 1941.0,
+      "end": 1949.0
+    },
+    {
+      "text": " Right. You can call a tool. And I want you to brainstorm an app that could be useful for scholar stack.",
+      "start": 1949.0,
+      "end": 1956.0
+    },
+    {
+      "text": " Basically, an extension of the functionality. And I think I think the second assignment is to architect the app store.",
+      "start": 1956.0,
+      "end": 1967.0
+    },
+    {
+      "text": " How would we architect an app store inside of scholar stack to let anyone take advantage of scholar stack functionality and put apps into the store?",
+      "start": 1967.0,
+      "end": 1979.0
+    },
+    {
+      "text": " Do I get that right, Ifrah? Yep. Did I miss anything?",
+      "start": 1979.0,
+      "end": 1986.0
+    },
+    {
+      "text": " Doesn't sound like it. There's two parts.",
+      "start": 1986.0,
+      "end": 1988.0
+    },
+    {
+      "text": " The one is the architecture coming up with the feature and then the next one, which you said, another app that can be added as an extension.",
+      "start": 1988.0,
+      "end": 1996.0
+    },
+    {
+      "text": " Yeah. And so then what we're going to do is we're going to vote on the best app after we all present our apps.",
+      "start": 1996.0,
+      "end": 2003.0
+    },
+    {
+      "text": " We're going to vote on one of them. And I'm going to ask my engineering team to implement that app.",
+      "start": 2003.0,
+      "end": 2009.0
+    },
+    {
+      "text": " And then we're going to see the capability come live. So any questions on that?",
+      "start": 2009.0,
+      "end": 2017.0
+    },
+    {
+      "text": " I have a question. Yeah. So a specific app that runs within that architecture will scholar stack will have an app store of its own.",
+      "start": 2017.0,
+      "end": 2030.0
+    },
+    {
+      "text": " Like that is to be determined. So maybe. OK.",
+      "start": 2030.0,
+      "end": 2035.0
+    },
+    {
+      "text": " So once we define the app, we do not necessarily have an app store.",
+      "start": 2035.0,
+      "end": 2042.0
+    },
+    {
+      "text": " We don't need an app store to run it. My developer can just build the functionality into the application. Right.",
+      "start": 2042.0,
+      "end": 2050.0
+    },
+    {
+      "text": " But I want you thinking conceptually about an app store concept when you when you build that or when you define define that app. Right.",
+      "start": 2050.0,
+      "end": 2058.0
+    },
+    {
+      "text": " Whether or not we ultimately implement an app store architecture model to be determined.",
+      "start": 2058.0,
+      "end": 2082.0
+    },
+    {
+      "text": " Yeah. So. So the first one where you're just thinking about functionality. Right.",
+      "start": 2082.0,
+      "end": 2091.0
+    },
+    {
+      "text": " That's just kind of like brainstorming about future functionality that that will run on AI architecture. Right.",
+      "start": 2091.0,
+      "end": 2100.0
+    },
+    {
+      "text": " So in this class, we're learning about AI engineering, how to build on top of LLM.",
+      "start": 2100.0,
+      "end": 2105.0
+    },
+    {
+      "text": " So I want you just to think about, OK, what cool functionality can I extend in a platform?",
+      "start": 2105.0,
+      "end": 2113.0
+    },
+    {
+      "text": " It's going to leverage kind of AI capabilities. So AI capabilities could be, you know, rag capabilities could be prompt capabilities could be LLM capabilities.",
+      "start": 2113.0,
+      "end": 2122.0
+    },
+    {
+      "text": " Right. That's all the stuff we're learning about. So the first one designing the app is really just based on functionality.",
+      "start": 2122.0,
+      "end": 2129.0
+    },
+    {
+      "text": " The next one really gets into architecture. Like when you think about an app store, you have to think like, OK, how am I going to expose services?",
+      "start": 2129.0,
+      "end": 2138.0
+    },
+    {
+      "text": " How does Apple expose GPS to developers? Right.",
+      "start": 2138.0,
+      "end": 2144.0
+    },
+    {
+      "text": " How does Apple expose screen capabilities to developers? Right.",
+      "start": 2144.0,
+      "end": 2150.0
+    },
+    {
+      "text": " Then we need to start thinking more technically and architecturally in terms of how we're building.",
+      "start": 2150.0,
+      "end": 2159.0
+    },
+    {
+      "text": " Makes sense. Correct me if I'm wrong, but the way I ordered these is the first is like design the app and the second is design the app store.",
+      "start": 2159.0,
+      "end": 2167.0
+    },
+    {
+      "text": " Right. Is that the way it's showing up in Canvas?",
+      "start": 2167.0,
+      "end": 2179.0
+    },
+    {
+      "text": " Yeah, architect the specific app, right. It's first. But architecture of a specific app.",
+      "start": 2179.0,
+      "end": 2189.0
+    },
+    {
+      "text": " Here, let me let me pull up. Can somebody else.",
+      "start": 2189.0,
+      "end": 2195.0
+    },
+    {
+      "text": " So first architecture and then this app design. Oh, architecture is first of the app store.",
+      "start": 2195.0,
+      "end": 2204.0
+    },
+    {
+      "text": " Yeah. OK. And then you're building an app to run in your app store.",
+      "start": 2204.0,
+      "end": 2209.0
+    },
+    {
+      "text": " That sort of thing. OK, then I was I take I make it made a mistake. So it's the opposite.",
+      "start": 2209.0,
+      "end": 2213.0
+    },
+    {
+      "text": " So you're going to architect the app store first. Right. Think about the concept of an app store.",
+      "start": 2213.0,
+      "end": 2218.0
+    },
+    {
+      "text": " And then think about what is an app that can run in the concept that your team came up with.",
+      "start": 2218.0,
+      "end": 2228.0
+    },
+    {
+      "text": " Yes. Push the button down. I have a question that the user can upload their own material.",
+      "start": 2228.0,
+      "end": 2235.0
+    },
+    {
+      "text": " Right. Only this is your idea. No, I have a question.",
+      "start": 2235.0,
+      "end": 2239.0
+    },
+    {
+      "text": " This is a question. OK, go ahead. Can you upload their own material and then use just use the functionality of scholar app or it has to be all down in scholar app?",
+      "start": 2239.0,
+      "end": 2254.0
+    },
+    {
+      "text": " You mean, can can you as a user upload your material if you're maybe if your professor is not participating?",
+      "start": 2254.0,
+      "end": 2261.0
+    },
+    {
+      "text": " Is that what you mean? Because you said that we want to utilize scholars text functionality.",
+      "start": 2261.0,
+      "end": 2269.0
+    },
+    {
+      "text": " And I'm thinking that that's the functionality, meaning that like the basic machine learning functionality or it has to be all the content already inside.",
+      "start": 2269.0,
+      "end": 2280.0
+    },
+    {
+      "text": " Well, you can think broadly about all of the above. Yeah.",
+      "start": 2281.0,
+      "end": 2287.0
+    },
+    {
+      "text": " So it doesn't have to be related to this class. Right. Like doesn't have to be related to the books or the readings that we're doing in this class.",
+      "start": 2287.0,
+      "end": 2294.0
+    },
+    {
+      "text": " But but right now, you know, in this class, we've got multiple chat bots that we're using. Right.",
+      "start": 2294.0,
+      "end": 2300.0
+    },
+    {
+      "text": " We've got material up there. We've got LLM connectivity.",
+      "start": 2300.0,
+      "end": 2306.0
+    },
+    {
+      "text": " We've got lots of LLM to choose from. You can do a frontier model reasoning with high levels of reason or you can do a flash style.",
+      "start": 2306.0,
+      "end": 2314.0
+    },
+    {
+      "text": " That's what we're using, a flash one. But your capabilities are what you should think about.",
+      "start": 2314.0,
+      "end": 2320.0
+    },
+    {
+      "text": " So we've got LLM capabilities, got things in a vector database. We've got rag capabilities.",
+      "start": 2320.0,
+      "end": 2324.0
+    },
+    {
+      "text": " We've got all the students. We've got all the emails. We've got messaging. It could be social.",
+      "start": 2324.0,
+      "end": 2329.0
+    },
+    {
+      "text": " You could do some sort of social productivity extension or app.",
+      "start": 2329.0,
+      "end": 2335.0
+    },
+    {
+      "text": " But maybe I know where you all can see each other's questions or vote on.",
+      "start": 2335.0,
+      "end": 2342.0
+    },
+    {
+      "text": " I don't know. Just be brilliant students like you already are.",
+      "start": 2342.0,
+      "end": 2347.0
+    },
+    {
+      "text": " But brainstorming like what's what else do you want? Makes sense.",
+      "start": 2347.0,
+      "end": 2353.0
+    },
+    {
+      "text": " So similar to her question, I just wanted to confirm that you are not expecting us to replicate Scholarstack and build on top of that.",
+      "start": 2354.0,
+      "end": 2362.0
+    },
+    {
+      "text": " Right. You want us to build an independent extension or a feature or functionality which can be applied to Scholarstack.",
+      "start": 2362.0,
+      "end": 2371.0
+    },
+    {
+      "text": " Right. Well, so the the assignment, again, I was corrected.",
+      "start": 2371.0,
+      "end": 2377.0
+    },
+    {
+      "text": " The first one is to think about an app store concept. So if you're going to build an app store inside of Scholarstack.",
+      "start": 2377.0,
+      "end": 2385.0
+    },
+    {
+      "text": " How would you do it? Right. Like what what resources would the developers have access to?",
+      "start": 2385.0,
+      "end": 2392.0
+    },
+    {
+      "text": " What capabilities would you expose? So the more capabilities you expose, the more creative outcomes that they can build upon.",
+      "start": 2392.0,
+      "end": 2400.0
+    },
+    {
+      "text": " Right. So the first one is. I wouldn't say it's building on top of Scholarstack.",
+      "start": 2400.0,
+      "end": 2407.0
+    },
+    {
+      "text": " I would say it's building. It's re-architecting inside of Scholarstack to allow for third party innovation.",
+      "start": 2407.0,
+      "end": 2423.0
+    },
+    {
+      "text": " Could be an integration. Right. Yeah, it could be it could be an integration with Twitter.",
+      "start": 2423.0,
+      "end": 2436.0
+    },
+    {
+      "text": " You know, an app that basically takes all of your conversation and broadcast it to Twitter.",
+      "start": 2436.0,
+      "end": 2443.0
+    },
+    {
+      "text": " I don't know, like. There's the great thing about building with A.I. tools these days is there's so many permutations of things you can do.",
+      "start": 2443.0,
+      "end": 2454.0
+    },
+    {
+      "text": " Combine it with all the A.P.I. capabilities that historically exist. Right.",
+      "start": 2454.0,
+      "end": 2460.0
+    },
+    {
+      "text": " Plus A.I. capability. That's why there's such an explosion of innovation right now, because there's all of the smart entrepreneurs are figuring out all these new things that you can do.",
+      "start": 2460.0,
+      "end": 2472.0
+    },
+    {
+      "text": " And that's why it's really exciting to be young these days and be learning this material, because you all will be able to do mind blowing things in the future,",
+      "start": 2472.0,
+      "end": 2483.0
+    },
+    {
+      "text": " because you're embracing this knowledge at a young age and you've got your whole career ahead of you to experiment and to grow, to grow on it with, you know.",
+      "start": 2483.0,
+      "end": 2495.0
+    },
+    {
+      "text": " OK, any other questions? We can have more questions next week as well.",
+      "start": 2495.0,
+      "end": 2500.0
+    },
+    {
+      "text": " So, you know, the assignments are not due yet. I just wanted to have a little bit of a conversation to kind of get the sparks going in your brain and to get you all thinking about this.",
+      "start": 2500.0,
+      "end": 2512.0
+    },
+    {
+      "text": " I would highly recommend meeting as a group so that you can kind of do some more detailed analysis and you can start to think through.",
+      "start": 2512.0,
+      "end": 2521.0
+    },
+    {
+      "text": " And when you start to think through, you can have more questions and then you can either email me, you can email Shreya or you can bring your questions next week.",
+      "start": 2521.0,
+      "end": 2529.0
+    },
+    {
+      "text": " Sound good. OK, so last question is, do we want to do a hands on project and actually build something, because much of this class is a bit conceptual.",
+      "start": 2529.0,
+      "end": 2540.0
+    },
+    {
+      "text": " We're covering a lot of material in this class. There's a lot. And we have to be realistic around how much time we have in a minute.",
+      "start": 2540.0,
+      "end": 2550.0
+    },
+    {
+      "text": " So while I generally believe it's sometimes really cool to build something and have like a tangible working prototype or a product, we also just need to keep in mind time limitations.",
+      "start": 2550.0,
+      "end": 2561.0
+    },
+    {
+      "text": " Right. So we've got these two assignments upcoming. You know, you now know how it works week to week.",
+      "start": 2561.0,
+      "end": 2570.0
+    },
+    {
+      "text": " Right. We've got repeatability built into this class. We've got a concept builder every week.",
+      "start": 2570.0,
+      "end": 2574.0
+    },
+    {
+      "text": " We've got a practice practice exercise every week. You have your readings to do.",
+      "start": 2574.0,
+      "end": 2580.0
+    },
+    {
+      "text": " We have a quiz each week. We haven't had any assignments outside of that yet, but we've got two main assignments for the class group to group work assignments.",
+      "start": 2580.0,
+      "end": 2593.0
+    },
+    {
+      "text": " The question is, do we want to add a build something assignment?",
+      "start": 2594.0,
+      "end": 2598.0
+    },
+    {
+      "text": " I was one of one of the folks that I was working on building the curriculum.",
+      "start": 2598.0,
+      "end": 2603.0
+    },
+    {
+      "text": " We were chatting about OpenClaw and how cool that new technology is.",
+      "start": 2603.0,
+      "end": 2609.0
+    },
+    {
+      "text": " Right. Running running LLM kind of locally and that's got access to your desktop and it can do things.",
+      "start": 2609.0,
+      "end": 2615.0
+    },
+    {
+      "text": " That was an example of one thing that we could potentially build.",
+      "start": 2615.0,
+      "end": 2619.0
+    },
+    {
+      "text": " I think it's really cool to build things with like voice apps these days, like voice capabilities, voice AI.",
+      "start": 2619.0,
+      "end": 2625.0
+    },
+    {
+      "text": " Eleven Labs has amazing technology that you can build stuff on.",
+      "start": 2625.0,
+      "end": 2629.0
+    },
+    {
+      "text": " So. Show of hands, who wants to add a project to the class?",
+      "start": 2629.0,
+      "end": 2637.0
+    },
+    {
+      "text": " It's going to be a hands on thing. Yeah. Question before you vote.",
+      "start": 2637.0,
+      "end": 2641.0
+    },
+    {
+      "text": " She wants to clarify. So.",
+      "start": 2641.0,
+      "end": 2655.0
+    },
+    {
+      "text": " Oh, extra credit. That's a good idea. OK, I like that.",
+      "start": 2655.0,
+      "end": 2660.0
+    },
+    {
+      "text": " Sorry, what was that? What was the question you said? Is it required or like optional for extra credit?",
+      "start": 2660.0,
+      "end": 2667.0
+    },
+    {
+      "text": " So when you say hands on project made by lovable or actual coding and all that stuff.",
+      "start": 2667.0,
+      "end": 2673.0
+    },
+    {
+      "text": " Oh, that's another great one. So hands on product project like should it just be a mock up, right?",
+      "start": 2673.0,
+      "end": 2679.0
+    },
+    {
+      "text": " A lovable mock up. So visual representation. I like that, too.",
+      "start": 2679.0,
+      "end": 2683.0
+    },
+    {
+      "text": " OK, what other questions? Maybe we could just leave it open to to the extent of the students,",
+      "start": 2683.0,
+      "end": 2690.0
+    },
+    {
+      "text": " like depending how in depth they just would want to go with a project lovable versus something real and much deeper.",
+      "start": 2690.0,
+      "end": 2699.0
+    },
+    {
+      "text": " And no, no, I'm right. I like that. OK, what else?",
+      "start": 2699.0,
+      "end": 2706.0
+    },
+    {
+      "text": " Do we already have a presentation or would this be like something you would have a class time to present?",
+      "start": 2706.0,
+      "end": 2713.0
+    },
+    {
+      "text": " Like is that would that be the structure of the project or we would just turn it in and then you separately review it?",
+      "start": 2713.0,
+      "end": 2719.0
+    },
+    {
+      "text": " Undetermined right now. But we will have class time for presentations because we're going to present some of these projects.",
+      "start": 2719.0,
+      "end": 2726.0
+    },
+    {
+      "text": " So we will have some class time for presentation so we could add it on to that potentially.",
+      "start": 2726.0,
+      "end": 2732.0
+    },
+    {
+      "text": " My vote is for the lovable or some sort of, you know, live mock up, because when we see your lovable every week, it feels good.",
+      "start": 2733.0,
+      "end": 2743.0
+    },
+    {
+      "text": " So and, you know, coding and all that stuff can take people into a dead end loop.",
+      "start": 2743.0,
+      "end": 2750.0
+    },
+    {
+      "text": " And we, I think, have coders as well. And they will go maniac. Oh, my God, this is this has to be fixed and all that stuff.",
+      "start": 2750.0,
+      "end": 2757.0
+    },
+    {
+      "text": " So we have people from MSM as well as I see here. So I think any prototyping tool should be good.",
+      "start": 2757.0,
+      "end": 2765.0
+    },
+    {
+      "text": " Like and also our prompt engineering can be tested there as well.",
+      "start": 2765.0,
+      "end": 2769.0
+    },
+    {
+      "text": " We can share the prompts we have been using to create what it is.",
+      "start": 2769.0,
+      "end": 2774.0
+    },
+    {
+      "text": " Great. OK, I think this is good input. Let me let me sleep on it and I'll come back with more detail.",
+      "start": 2774.0,
+      "end": 2781.0
+    },
+    {
+      "text": " OK, so in the time we have left, let me walk through some introduction to rag just to set our conceptual understanding.",
+      "start": 2781.0,
+      "end": 2791.0
+    },
+    {
+      "text": " And Shamala, I don't know how deep she's going to go into rag.",
+      "start": 2791.0,
+      "end": 2796.0
+    },
+    {
+      "text": " She's going to give like a lecture. It's not going to be just a fireside chat style.",
+      "start": 2796.0,
+      "end": 2801.0
+    },
+    {
+      "text": " I think she's going to do a lecture. She's going to join remotely because she broke her ankle at the GTC conference.",
+      "start": 2801.0,
+      "end": 2808.0
+    },
+    {
+      "text": " But I wanted to do a little chat on rag and I'll post this as well so you can look at it on your own.",
+      "start": 2808.0,
+      "end": 2815.0
+    },
+    {
+      "text": " So let's let's dive in real quick. So I just want to frame a couple of things.",
+      "start": 2815.0,
+      "end": 2820.0
+    },
+    {
+      "text": " OK, so I want to show hands on this question. If context windows get big enough.",
+      "start": 2820.0,
+      "end": 2827.0
+    },
+    {
+      "text": " Right. So we know that context window capabilities are growing. Right.",
+      "start": 2827.0,
+      "end": 2833.0
+    },
+    {
+      "text": " That's happening. Right. So if context windows get big enough.",
+      "start": 2833.0,
+      "end": 2838.0
+    },
+    {
+      "text": " We won't need rag anymore. So in order to answer this question, you need to know what you're talking about.",
+      "start": 2838.0,
+      "end": 2846.0
+    },
+    {
+      "text": " You need to know some concepts. This is a great question for if I was interviewing somebody, I would ask this question in an interview.",
+      "start": 2846.0,
+      "end": 2854.0
+    },
+    {
+      "text": " And then see what what the interview candidate states. So I want to know a show of hands.",
+      "start": 2854.0,
+      "end": 2863.0
+    },
+    {
+      "text": " Ready. Take a look. So how many people say.",
+      "start": 2863.0,
+      "end": 2870.0
+    },
+    {
+      "text": " And you have to vote one or the other. Again, this is commit. This is commit.",
+      "start": 2870.0,
+      "end": 2875.0
+    },
+    {
+      "text": " Right. Show. Show your model. And maybe you're wrong. Maybe you're right. We're not. This is not for grading.",
+      "start": 2875.0,
+      "end": 2880.0
+    },
+    {
+      "text": " OK, if a context window gets big enough, we will not need rag anymore. Who's voting for that?",
+      "start": 2880.0,
+      "end": 2891.0
+    },
+    {
+      "text": " OK, I see one hand. OK. And let's pose the second one. Who says no?",
+      "start": 2891.0,
+      "end": 2902.0
+    },
+    {
+      "text": " OK. So I would like to hear someone articulate why they think the answer is no.",
+      "start": 2902.0,
+      "end": 2911.0
+    },
+    {
+      "text": " So show your work. If you raised your hand and said no. Tell me why.",
+      "start": 2911.0,
+      "end": 2920.0
+    },
+    {
+      "text": " I would like to try. I think despite the context window being big enough, it really depends on what kind of input you give.",
+      "start": 2920.0,
+      "end": 2928.0
+    },
+    {
+      "text": " Sometimes it can be very broad, like different people, different users can give different kinds of prompts.",
+      "start": 2928.0,
+      "end": 2934.0
+    },
+    {
+      "text": " And, you know, the AI model might or might not be able to justify an answer with that.",
+      "start": 2934.0,
+      "end": 2942.0
+    },
+    {
+      "text": " So it really depends on what kind of prompt is being given and it restricts the kind of prompt it can restrict the AI model.",
+      "start": 2942.0,
+      "end": 2950.0
+    },
+    {
+      "text": " I think that is only required. Yeah. And to add on that, I think it will it will never be as good as the actual.",
+      "start": 2950.0,
+      "end": 2959.0
+    },
+    {
+      "text": " There is a limit of how much the context window will get big enough, but the rag will always be, I think, up to date in terms of the accuracy in this case.",
+      "start": 2959.0,
+      "end": 2971.0
+    },
+    {
+      "text": " Good. OK, thank you for the input. So there's a lot that goes on behind this question.",
+      "start": 2971.0,
+      "end": 2978.0
+    },
+    {
+      "text": " This is not a simple question. This is a multilayered answer to this question.",
+      "start": 2978.0,
+      "end": 2983.0
+    },
+    {
+      "text": " So one of the points that was made, maybe there's too much information going in.",
+      "start": 2983.0,
+      "end": 2992.0
+    },
+    {
+      "text": " And so part of the benefit of rag is choosing the right information to put into the prompt.",
+      "start": 2992.0,
+      "end": 3001.0
+    },
+    {
+      "text": " So even if you can throw all the information in.",
+      "start": 3001.0,
+      "end": 3006.0
+    },
+    {
+      "text": " There's benefits to choosing what information you put in, so active selection of information rather than random throwing everything for a couple of reasons.",
+      "start": 3006.0,
+      "end": 3018.0
+    },
+    {
+      "text": " Number one, think about cost. OK, tell me how cost is affected.",
+      "start": 3018.0,
+      "end": 3025.0
+    },
+    {
+      "text": " Hi, Shyamala. Hello. Nice to see you. Likewise.",
+      "start": 3025.0,
+      "end": 3031.0
+    },
+    {
+      "text": " OK, is it OK if you're going to start in 10 minutes? No worries. OK, yeah.",
+      "start": 3031.0,
+      "end": 3037.0
+    },
+    {
+      "text": " Feel free to hang around or yeah, or go silent. OK, so cost.",
+      "start": 3037.0,
+      "end": 3043.0
+    },
+    {
+      "text": " We know billing of LLM takes place. How? How do LLM handle billing?",
+      "start": 3043.0,
+      "end": 3052.0
+    },
+    {
+      "text": " What's the measure of kind of value, if you will? No good usage.",
+      "start": 3052.0,
+      "end": 3060.0
+    },
+    {
+      "text": " Usage, but how do they measure usage? But. Tokenization is that not a token?",
+      "start": 3060.0,
+      "end": 3068.0
+    },
+    {
+      "text": " Yeah. Token use. Right. Tokens in tokens out. OK, so we need to be thoughtful of our token usage.",
+      "start": 3068.0,
+      "end": 3075.0
+    },
+    {
+      "text": " You can easily rack up a big bill using frontier models, especially if you're lazy and you're using the whole token window.",
+      "start": 3075.0,
+      "end": 3085.0
+    },
+    {
+      "text": " Right. But if you're smart and you think intuitively and intentionally about what you really need in that context window, then you can save money.",
+      "start": 3085.0,
+      "end": 3096.0
+    },
+    {
+      "text": " OK, the other thing is there. It was a concept that we learned about last week in terms of when you put stuff into the context window.",
+      "start": 3096.0,
+      "end": 3106.0
+    },
+    {
+      "text": " Sometimes either side of the context window gets more attention than what's inside the middle.",
+      "start": 3106.0,
+      "end": 3113.0
+    },
+    {
+      "text": " So if we load up the context window, maybe some stuff in the middle is going to get ignored or not get as much focus as we want it to do or to get.",
+      "start": 3113.0,
+      "end": 3122.0
+    },
+    {
+      "text": " Whereas if we're using rag, we can be intentional and we only put in what we want to put in. OK, so that is also a consideration.",
+      "start": 3122.0,
+      "end": 3131.0
+    },
+    {
+      "text": " So this question is really designed to get you thinking about the different dynamics that are in that are in play when we use.",
+      "start": 3131.0,
+      "end": 3143.0
+    },
+    {
+      "text": " So one big dynamic is context window and how we're going to use context window.",
+      "start": 3143.0,
+      "end": 3147.0
+    },
+    {
+      "text": " Context window relates to which element we're choosing. Because different elements have different context windows.",
+      "start": 3147.0,
+      "end": 3153.0
+    },
+    {
+      "text": " Also, cost per token is different for different elements. Right.",
+      "start": 3153.0,
+      "end": 3158.0
+    },
+    {
+      "text": " So it's like when you're the solution architect of a system, you need to be thinking about a lot.",
+      "start": 3158.0,
+      "end": 3166.0
+    },
+    {
+      "text": " And I don't care if you're the solution architect, the engineer or the product manager.",
+      "start": 3166.0,
+      "end": 3170.0
+    },
+    {
+      "text": " These days, those roles are blurring and they all need to be aware of all of these things, because as a PM, you don't want to just say, oh, just throw everything into the context window.",
+      "start": 3170.0,
+      "end": 3181.0
+    },
+    {
+      "text": " It's it's huge. No, that's not a thoughtful PM.",
+      "start": 3181.0,
+      "end": 3185.0
+    },
+    {
+      "text": " If you're going to say that. OK, so this is a great question to kind of get us going.",
+      "start": 3185.0,
+      "end": 3194.0
+    },
+    {
+      "text": " I'm going to just introduce a bunch of stuff in here and I'm going to let you guys go through this lovable on your own.",
+      "start": 3194.0,
+      "end": 3201.0
+    },
+    {
+      "text": " And so we can have unfiltered content. We can have rag filtered content.",
+      "start": 3201.0,
+      "end": 3206.0
+    },
+    {
+      "text": " We can have poor retrieval and we can have bad rag. So it's not just rag. Yes or no.",
+      "start": 3206.0,
+      "end": 3212.0
+    },
+    {
+      "text": " It's if rag. Yes. What makes good rag and what makes bad rag.",
+      "start": 3212.0,
+      "end": 3217.0
+    },
+    {
+      "text": " Right. And this gets to the question that was asked earlier about how a scholar stack configured to use rag.",
+      "start": 3217.0,
+      "end": 3223.0
+    },
+    {
+      "text": " What are the configurations around solution architecture that guide scholar stack use of rag material in the prompt?",
+      "start": 3223.0,
+      "end": 3231.0
+    },
+    {
+      "text": " And I'm going to I'm going to get back to you on that. So, you know, browse through this lovable.",
+      "start": 3231.0,
+      "end": 3237.0
+    },
+    {
+      "text": " And it's really about exposing different ideas and exposing the decisions that one needs to make when architecting a system.",
+      "start": 3237.0,
+      "end": 3248.0
+    },
+    {
+      "text": " So this one is all about the context window is a scarce attention. Rag is the attention allocator.",
+      "start": 3248.0,
+      "end": 3254.0
+    },
+    {
+      "text": " Again, if we if we're actively intentional about what we put in there, that's going to that's going to be better for many reasons.",
+      "start": 3254.0,
+      "end": 3263.0
+    },
+    {
+      "text": " This one talks about small context, large context, you know, the different options in terms of cost.",
+      "start": 3263.0,
+      "end": 3270.0
+    },
+    {
+      "text": " Latency also super important, especially if you're doing voice.",
+      "start": 3270.0,
+      "end": 3274.0
+    },
+    {
+      "text": " Right. You don't have time. You need something back quickly. Right. Also, latency is going to drive you to maybe using a flash model.",
+      "start": 3274.0,
+      "end": 3281.0
+    },
+    {
+      "text": " Flash models are going to inherently have a smaller context window. Right.",
+      "start": 3281.0,
+      "end": 3286.0
+    },
+    {
+      "text": " So we have to think. So it's all about trade off and.",
+      "start": 3286.0,
+      "end": 3294.0
+    },
+    {
+      "text": " So, you know, ending up here, it's saying rag doesn't exist because contact lenses are small.",
+      "start": 3294.0,
+      "end": 3300.0
+    },
+    {
+      "text": " Rag exists because relevance matters. Right. So then this is just the first kind of link here, rag versus content.",
+      "start": 3300.0,
+      "end": 3308.0
+    },
+    {
+      "text": " Then we've got stuff about the rag architecture, orchestration patterns, the retriever function.",
+      "start": 3308.0,
+      "end": 3315.0
+    },
+    {
+      "text": " It gets into the question that was asked earlier around how do we configure the retriever and then architecture decisions.",
+      "start": 3315.0,
+      "end": 3324.0
+    },
+    {
+      "text": " Right. What are what are the different decisions that you need to be making when you're choosing to use a rag system?",
+      "start": 3324.0,
+      "end": 3332.0
+    },
+    {
+      "text": " Everything from retrieval methods.",
+      "start": 3332.0,
+      "end": 3339.0
+    },
+    {
+      "text": " You know, there's a lot of really great decisions that you get into. So I want to take a pause there.",
+      "start": 3339.0,
+      "end": 3346.0
+    },
+    {
+      "text": " This will be available through Scholarstack for you guys to look at.",
+      "start": 3346.0,
+      "end": 3350.0
+    },
+    {
+      "text": " I encourage you to work through. It's got a lot of toggle switches.",
+      "start": 3350.0,
+      "end": 3355.0
+    },
+    {
+      "text": " And if you select this, it'll kind of showcase the pros and the cons of different selections.",
+      "start": 3355.0,
+      "end": 3360.0
+    },
+    {
+      "text": " That's this. When I built this, I really wanted you to think about trade offs.",
+      "start": 3360.0,
+      "end": 3366.0
+    },
+    {
+      "text": " It's all about trade offs when you're picking rag or no rag or within rag, good rag and bad rag.",
+      "start": 3366.0,
+      "end": 3373.0
+    },
+    {
+      "text": " Or highly optimized rag. So it's about your use case.",
+      "start": 3374.0,
+      "end": 3378.0
+    },
+    {
+      "text": " It's about cost. It's about a number of different things.",
+      "start": 3378.0,
+      "end": 3383.0
+    },
+    {
+      "text": " So that's just a bit of an intro on rag. We're going to talk about more things today.",
+      "start": 3383.0,
+      "end": 3387.0
+    },
+    {
+      "text": " If you have questions on this, Shamla is a total expert and she'll be a great person.",
+      "start": 3387.0,
+      "end": 3395.0
+    },
+    {
+      "text": " And I think we'll save toward towards the end. We're going to do a little bit of Q&A.",
+      "start": 3395.0,
+      "end": 3399.0
+    },
+    {
+      "text": " But right now, why don't we take a break? Stretch your legs. Go get a drink.",
+      "start": 3399.0,
+      "end": 3404.0
+    },
+    {
+      "text": " Come back in five minutes and then we'll get started with Shamla. OK.",
+      "start": 3404.0,
+      "end": 3409.0
+    },
+    {
+      "text": " Push, push your button. You have access to this.",
+      "start": 3409.0,
+      "end": 3414.0
+    },
+    {
+      "text": " Yeah, it should be on Scholarstack already. If you go to the bottom right.",
+      "start": 3414.0,
+      "end": 3421.0
+    },
+    {
+      "text": " Where the resources are. It should be available for you there.",
+      "start": 3421.0,
+      "end": 3431.0
+    },
+    {
+      "text": " I forget what it's called. Maybe course materials.",
+      "start": 3431.0,
+      "end": 3436.0
+    },
+    {
+      "text": " Professor, it's when you go to the course copilot.",
+      "start": 3436.0,
+      "end": 3440.0
+    },
+    {
+      "text": " Oh, it's under course copilot. And then you see the course material on the left bottom side.",
+      "start": 3440.0,
+      "end": 3446.0
+    },
+    {
+      "text": " You got it. I also posted the link as an announcement.",
+      "start": 3446.0,
+      "end": 3455.0
+    },
+    {
+      "text": " And the link is going to be the same. So go to Canvas, look under announcements.",
+      "start": 3455.0,
+      "end": 3459.0
+    },
+    {
+      "text": " The link is the same. All the weeks should be under the main link.",
+      "start": 3459.0,
+      "end": 3466.0
+    },
+    {
+      "text": " So it's got week one, week two, week three. OK.",
+      "start": 3466.0,
+      "end": 3471.0
+    },
+    {
+      "text": " So, quick break, and then come back, and then I'll introduce Shyamala.",
+      "start": 3471.04,
+      "end": 3476.800000228882
+    },
+    {
+      "text": " So, two more minutes.",
+      "start": 3741.04,
+      "end": 3760.8799963378906
+    },
+    {
+      "text": " Let's get started at 435, everyone.",
+      "start": 3760.8799963378906,
+      "end": 3763.4200048828125
+    },
+    {
+      "text": " Two more minutes.",
+      "start": 3763.4200048828125,
+      "end": 3764.4200048828125
+    },
+    {
+      "text": " Let's get started at 435.",
+      "start": 3764.4200048828125,
+      "end": 3782.9399938964843
+    },
+    {
+      "text": " 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.",
+      "start": 3782.9399938964843,
+      "end": 3800.319998779297
+    },
+    {
+      "text": " 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.",
+      "start": 3800.319998779297,
+      "end": 3820.319998779297
+    },
+    {
+      "text": " 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.",
+      "start": 3830.319998779297,
+      "end": 3855.319998779297
+    },
+    {
+      "text": " Okay, if everyone can come back and come back online, we'll get started.",
+      "start": 3855.319998779297,
+      "end": 3863.319998779297
+    },
+    {
+      "text": " So, today I'm really grateful and very, very happy that Shyamala has agreed to come back and visit with us.",
+      "start": 3866.319998779297,
+      "end": 3877.319998779297
+    },
+    {
+      "text": " She is a real expert in this space, and I'm always learning from her when she talks about anything related to AI.",
+      "start": 3877.319998779297,
+      "end": 3886.319998779297
+    },
+    {
+      "text": " She's a professor here, and she's also an employee at NVIDIA.",
+      "start": 3886.319998779297,
+      "end": 3891.319998779297
+    },
+    {
+      "text": " So, Shyamala, what I did to start off the course was I showed a short video from the NVIDIA conference that I had taken on my phone",
+      "start": 3891.319998779297,
+      "end": 3900.319998779297
+    },
+    {
+      "text": " just to give the students some feeling around the amazing atmosphere that was there.",
+      "start": 3900.319998779297,
+      "end": 3908.319998779297
+    },
+    {
+      "text": " So many visitors and from so many different aspects of AI.",
+      "start": 3908.319998779297,
+      "end": 3913.319998779297
+    },
+    {
+      "text": " And what I was hoping that you could do when you start off today is maybe talk about that conference from your perspective.",
+      "start": 3913.319998779297,
+      "end": 3920.319998779297
+    },
+    {
+      "text": " You know, you wrote to me and said you had a lot of customer meetings.",
+      "start": 3920.319998779297,
+      "end": 3923.319998779297
+    },
+    {
+      "text": " Whatever you're able to share from your experience from that show, you don't have to share the bad part where you hurt your ankle.",
+      "start": 3923.319998779297,
+      "end": 3932.319998779297
+    },
+    {
+      "text": " I'm so sorry to hear about that.",
+      "start": 3932.319998779297,
+      "end": 3936.319998779297
+    },
+    {
+      "text": " And that's why Shyamala is joining us remotely as she hurt her ankle at the show, which is an unfortunate consequence,",
+      "start": 3936.319998779297,
+      "end": 3943.319998779297
+    },
+    {
+      "text": " because she was running between customer meetings, right?",
+      "start": 3943.319998779297,
+      "end": 3946.319998779297
+    },
+    {
+      "text": " Oh, yeah. I had like 30 plus customer meetings.",
+      "start": 3946.319998779297,
+      "end": 3949.319998779297
+    },
+    {
+      "text": " It's been crazy, but I love that part of my job, too.",
+      "start": 3949.319998779297,
+      "end": 3954.319998779297
+    },
+    {
+      "text": " Yeah. So if you don't mind, start off talking to us about your and your experience at the conference.",
+      "start": 3954.319998779297,
+      "end": 3962.319998779297
+    },
+    {
+      "text": " And and then do you want to do your presentation similar to how you did for the seminar?",
+      "start": 3962.319998779297,
+      "end": 3970.319998779297
+    },
+    {
+      "text": " Yeah, yeah, yeah. I would I would love to do that. And I can talk about my experience.",
+      "start": 3970.319998779297,
+      "end": 3975.319998779297
+    },
+    {
+      "text": " Is there a way to also see the other students in the class?",
+      "start": 3975.319998779297,
+      "end": 3978.319998779297
+    },
+    {
+      "text": " So it would be better because I like to keep my lectures interactive.",
+      "start": 3978.319998779297,
+      "end": 3982.319998779297
+    },
+    {
+      "text": " So it would really help. Awesome. Awesome. Yeah. OK, did you get it?",
+      "start": 3982.319998779297,
+      "end": 3986.320029296875
+    },
+    {
+      "text": " Is it all squared away now? Yes, it is. So let me start sharing.",
+      "start": 3986.320029296875,
+      "end": 3994.320029296875
+    },
+    {
+      "text": " OK, so hello, everyone. David already did my introduction.",
+      "start": 3994.320029296875,
+      "end": 3999.320029296875
+    },
+    {
+      "text": " So I'm the product manager at NVIDIA and I lead the roadmap for the NVIDIA NEMOTRON models,",
+      "start": 4000.320029296875,
+      "end": 4007.320029296875
+    },
+    {
+      "text": " specifically the NEMOTRON safety models. I did the NEMOTRON LLM models in the past.",
+      "start": 4007.320029296875,
+      "end": 4012.320029296875
+    },
+    {
+      "text": " Now I'm focusing more on the safety and my major focus is on the sovereign AI side of things now that everything has to be sovereign.",
+      "start": 4012.320029296875,
+      "end": 4021.320029296875
+    },
+    {
+      "text": " So that's where my focus is. So that being said, a little bit about GTC before we move forward.",
+      "start": 4021.320029296875,
+      "end": 4028.320029296875
+    },
+    {
+      "text": " GTC is our flagship conference, which happens multiple times a year.",
+      "start": 4029.320029296875,
+      "end": 4036.320029296875
+    },
+    {
+      "text": " The San Jose one is one of the many conferences that we have in GTC.",
+      "start": 4036.320029296875,
+      "end": 4042.320029296875
+    },
+    {
+      "text": " We also have the GTC San Jose, GTC DC. We have GTC Paris.",
+      "start": 4042.320029296875,
+      "end": 4047.320029296875
+    },
+    {
+      "text": " We have GTC India, which was the India AI Impact Summit.",
+      "start": 4047.320029296875,
+      "end": 4050.320029296875
+    },
+    {
+      "text": " It was a small part and I was fortunate enough to go there and meet a lot of government officials from around the world,",
+      "start": 4050.320029296875,
+      "end": 4059.320029296875
+    },
+    {
+      "text": " which was really nice and a lot of key folks from the tech industry.",
+      "start": 4059.320029296875,
+      "end": 4063.320029296875
+    },
+    {
+      "text": " So my part of the job is talking to a lot of customers, a lot of CEOs from around the world.",
+      "start": 4063.320029296875,
+      "end": 4068.320029296875
+    },
+    {
+      "text": " So I get to talk with all the big tech CEOs.",
+      "start": 4068.320029296875,
+      "end": 4072.320029296875
+    },
+    {
+      "text": " That's amazing. Part of my job. But because we are building these foundation models in terms of how should we build our next language model?",
+      "start": 4072.320029296875,
+      "end": 4082.320029296875
+    },
+    {
+      "text": " So how should we build our next safety model? Because AI is moving so fast.",
+      "start": 4082.320029296875,
+      "end": 4089.320029296875
+    },
+    {
+      "text": " What started with just Alexa and rule based have significantly become big.",
+      "start": 4089.320029296875,
+      "end": 4095.320029296875
+    },
+    {
+      "text": " Now we have LLMs and now LLMs have reasoning and LLM have so much more to do.",
+      "start": 4095.320029296875,
+      "end": 4102.320029296875
+    },
+    {
+      "text": " And now we also have the autonomous agents, which is able to do everything.",
+      "start": 4102.320029296875,
+      "end": 4107.320029296875
+    },
+    {
+      "text": " I've automated my whole tasks, my whole workflow in terms of my day to day job.",
+      "start": 4107.320029296875,
+      "end": 4113.320029296875
+    },
+    {
+      "text": " So that being said, GTC basically is a showcase of all the capabilities and great things NVIDIA is doing in terms of AI.",
+      "start": 4113.320029296875,
+      "end": 4122.320029296875
+    },
+    {
+      "text": " But at the same time, we also have we showcase all the great things our partners are doing, adopting our technology.",
+      "start": 4122.320029296875,
+      "end": 4129.320029296875
+    },
+    {
+      "text": " For example, NEMOTRON. So NEMOTRON is nothing. It's a bunch of models that we have in large language models,",
+      "start": 4129.320029296875,
+      "end": 4135.320029296875
+    },
+    {
+      "text": " small language model, vision language model, physical AI, speech and safety.",
+      "start": 4135.320029296875,
+      "end": 4140.320029296875
+    },
+    {
+      "text": " But also the data sets, the tools that we use, the library. So we have a lot of tools.",
+      "start": 4140.320029296875,
+      "end": 4145.320029296875
+    },
+    {
+      "text": " So all the things that we are going to talk about today basically require some sort of frameworks or tools to train the model or align the model.",
+      "start": 4145.320029296875,
+      "end": 4154.320029296875
+    },
+    {
+      "text": " And that's what basically we also offer. And our customers use our frameworks.",
+      "start": 4154.320029296875,
+      "end": 4159.320029296875
+    },
+    {
+      "text": " They use our tools. They use our data sets. They use our models.",
+      "start": 4159.320029296875,
+      "end": 4164.320029296875
+    },
+    {
+      "text": " To build their own solutions. And basically, that's what we do at GTC.",
+      "start": 4164.320029296875,
+      "end": 4170.320029296875
+    },
+    {
+      "text": " Usually there's a demo section where a lot of showcase happens.",
+      "start": 4170.320029296875,
+      "end": 4174.320029296875
+    },
+    {
+      "text": " And then there is a customer meeting section where we talk to customers about their needs,",
+      "start": 4174.320029296875,
+      "end": 4179.320029296875
+    },
+    {
+      "text": " their requirements, because that's an important part of being a product manager.",
+      "start": 4179.320029296875,
+      "end": 4183.320029296875
+    },
+    {
+      "text": " You have to constantly keep talking to your partners, understand what their needs are, what their requirements are,",
+      "start": 4183.320029296875,
+      "end": 4188.320029296875
+    },
+    {
+      "text": " work with them so that you can build your roadmap, give them the solution.",
+      "start": 4188.320029296875,
+      "end": 4192.320029296875
+    },
+    {
+      "text": " So that's how we usually like doing it. And that's why we kind of joke around.",
+      "start": 4192.320029296875,
+      "end": 4197.320029296875
+    },
+    {
+      "text": " So when I joined NVIDIA and I asked the VP of product, what's the five year roadmap for your product?",
+      "start": 4197.320029296875,
+      "end": 4205.320029296875
+    },
+    {
+      "text": " She was like, we work with GTC to GTC. Now I understand five years into NVIDIA.",
+      "start": 4205.320029296875,
+      "end": 4210.320029296875
+    },
+    {
+      "text": " Now I understand why they mentioned that, because things move so quickly and so fast in the AI space.",
+      "start": 4210.320029296875,
+      "end": 4217.320029296875
+    },
+    {
+      "text": " That we work with our partners, understand their requirements.",
+      "start": 4217.320029296875,
+      "end": 4221.320029296875
+    },
+    {
+      "text": " We sense and respond. And based on that, we build our next set of the roadmap.",
+      "start": 4221.320029296875,
+      "end": 4225.320029296875
+    },
+    {
+      "text": " What would be more relevant and get early adopters. Whatever we build, we don't launch it early on.",
+      "start": 4225.320029296875,
+      "end": 4232.320029296875
+    },
+    {
+      "text": " We usually do an early access. And that's where these customers become our levers,",
+      "start": 4232.320029296875,
+      "end": 4237.320029296875
+    },
+    {
+      "text": " because they will do the early access, give us enough feedback so we can improve the product.",
+      "start": 4237.320029296875,
+      "end": 4242.320029296875
+    },
+    {
+      "text": " And then we do the GAs at these big conferences. A lot of announcements happened.",
+      "start": 4242.320029296875,
+      "end": 4247.320029296875
+    },
+    {
+      "text": " Jensen announced a lot of great things. He announced our next GPU, Vera Rubin,",
+      "start": 4247.320029296875,
+      "end": 4255.320029296875
+    },
+    {
+      "text": " and how it fits into the overall text, the whole workflow.",
+      "start": 4255.320029296875,
+      "end": 4259.320029296875
+    },
+    {
+      "text": " He spoke about the five layer cake for AI, the different layers, which starts from energy to the infrastructure,",
+      "start": 4259.320029296875,
+      "end": 4269.320029296875
+    },
+    {
+      "text": " to the compute itself and to the applications, to the models and the application.",
+      "start": 4269.320029296875,
+      "end": 4275.320029296875
+    },
+    {
+      "text": " So he spoke about those five layers. So I try to engage with partners at all of those different layers,",
+      "start": 4275.320029296875,
+      "end": 4282.320029296875
+    },
+    {
+      "text": " because in the end, our goal is enabling as many partners as possible.",
+      "start": 4282.320029296875,
+      "end": 4286.320029296875
+    },
+    {
+      "text": " So there's more compute, compute usage, more infrastructure usage. There's more things happening.",
+      "start": 4286.320029296875,
+      "end": 4292.320029296875
+    },
+    {
+      "text": " So that's why NVIDIA keeps their strategy of open sourcing so that our customers are able to build better models",
+      "start": 4292.320029296875,
+      "end": 4300.320029296875
+    },
+    {
+      "text": " than what we have. We are giving them. So that's what we like to call it.",
+      "start": 4300.320029296875,
+      "end": 4304.320029296875
+    },
+    {
+      "text": " We give you A plus model, make it A plus plus. So that's what our customers do.",
+      "start": 4304.320029296875,
+      "end": 4308.320029296875
+    },
+    {
+      "text": " So, yeah, my meetings were all about these things and building up and racking up the next set of roadmap items.",
+      "start": 4308.320029296875,
+      "end": 4320.320029296875
+    },
+    {
+      "text": " Moving on. I'm also the author of these two books.",
+      "start": 4320.320029296875,
+      "end": 4325.320029296875
+    },
+    {
+      "text": " So one of them is the Emotionally Engaged Digital Assistant, which is a technical book,",
+      "start": 4325.320029296875,
+      "end": 4331.320029296875
+    },
+    {
+      "text": " which is all about how we can make the book more human centered, because my background is in user centered design.",
+      "start": 4331.320029296875,
+      "end": 4339.320029296875
+    },
+    {
+      "text": " I teach three courses at CMU and two of them are related to user centered design, user research.",
+      "start": 4339.320029296875,
+      "end": 4346.320029296875
+    },
+    {
+      "text": " The third one is more on the AI product strategy and prototyping.",
+      "start": 4346.320029296875,
+      "end": 4351.320029296875
+    },
+    {
+      "text": " But then my whole goal is making AI more human centered.",
+      "start": 4351.320029296875,
+      "end": 4355.320029296875
+    },
+    {
+      "text": " So it's able to understand the accents, introduces the buyers.",
+      "start": 4355.320029296875,
+      "end": 4358.320029296875
+    },
+    {
+      "text": " It is safety by design, privacy by design, and it caters to all kinds of users.",
+      "start": 4358.320029296875,
+      "end": 4364.320029296875
+    },
+    {
+      "text": " And the other one is my memoir. It's all about my life and my journey so far.",
+      "start": 4364.320029296875,
+      "end": 4370.320029296875
+    },
+    {
+      "text": " Moving on, I've also won a lot of awards and recognitions. I'm not going to go too deeper into it.",
+      "start": 4370.320029296875,
+      "end": 4376.320029296875
+    },
+    {
+      "text": " But, yeah, I've won a couple of awards in the past and have been fortunate enough to be recognized as one of the leaders in the AI.",
+      "start": 4376.320029296875,
+      "end": 4384.320029296875
+    },
+    {
+      "text": " Today, we are not here to talk about any of those, but we are here to talk about model adaptation.",
+      "start": 4384.320029296875,
+      "end": 4389.320029296875
+    },
+    {
+      "text": " So I know when I joined, David was showing some things about drag.",
+      "start": 4389.320029296875,
+      "end": 4394.320029296875
+    },
+    {
+      "text": " So I love your idea of lovable, something I think like was really interactive and really, you know, for students to understand the concept.",
+      "start": 4394.320029296875,
+      "end": 4403.320029296875
+    },
+    {
+      "text": " It's really helpful. So today we are going to look into model adaptation.",
+      "start": 4403.320029296875,
+      "end": 4410.320029296875
+    },
+    {
+      "text": " We'll understand what model adaptation actually means.",
+      "start": 4410.320029296875,
+      "end": 4413.320029296875
+    },
+    {
+      "text": " And we look into the different approaches for model adaptation, which is fine tuning, LORA and RAG.",
+      "start": 4413.320029296875,
+      "end": 4419.320029296875
+    },
+    {
+      "text": " And then we'll also look into the comparison, the limitations and a little bit more deeper into each of these adaptation techniques.",
+      "start": 4419.320029296875,
+      "end": 4428.320029296875
+    },
+    {
+      "text": " But before we start, can anyone tell me what does adaptation actually mean? What is model adaptation?",
+      "start": 4428.320029296875,
+      "end": 4439.320029296875
+    },
+    {
+      "text": " Any guesses? No. Designed for specific use, use situation.",
+      "start": 4439.320029296875,
+      "end": 4452.320029296875
+    },
+    {
+      "text": " Can you turn on your mic? I'm barely able to push the button to the light goes on.",
+      "start": 4452.320029296875,
+      "end": 4456.320029296875
+    },
+    {
+      "text": " There you go. Hello. I think maybe it's time for specific use situation, like from a more general model.",
+      "start": 4456.320029296875,
+      "end": 4466.320029296875
+    },
+    {
+      "text": " Model adaptation. Yeah. So model adaptation is basically it's a process of modifying a pre-trained model.",
+      "start": 4466.320029296875,
+      "end": 4474.320029296875
+    },
+    {
+      "text": " So, again, these terminologies are important. So make sure that you understand there is something called pre-trained model.",
+      "start": 4474.320029296875,
+      "end": 4482.320029296875
+    },
+    {
+      "text": " So think about pre-trained model as you have done your high school.",
+      "start": 4482.320029296875,
+      "end": 4487.320029296875
+    },
+    {
+      "text": " That is pre-training. OK, that's the pre-trained where you've learned everything a little bit.",
+      "start": 4487.320029296875,
+      "end": 4493.320029296875
+    },
+    {
+      "text": " You are very raw. OK, and now you have to polish yourself.",
+      "start": 4493.320029296875,
+      "end": 4498.320029296875
+    },
+    {
+      "text": " What would you do? That's basically what is model adaptation.",
+      "start": 4498.320029296875,
+      "end": 4501.320029296875
+    },
+    {
+      "text": " You take a very pre-trained raw model, which is very, very raw.",
+      "start": 4501.320029296875,
+      "end": 4505.320029296875
+    },
+    {
+      "text": " It's trained with a lot of data, but it is not specialized in a specific task or domain.",
+      "start": 4505.320029296875,
+      "end": 4511.320029296875
+    },
+    {
+      "text": " And that is where you are going to start applying the different adaptation techniques.",
+      "start": 4511.320029296875,
+      "end": 4516.320029296875
+    },
+    {
+      "text": " And you're going to make this model better at doing a specific task or a domain.",
+      "start": 4516.320029296875,
+      "end": 4523.320029296875
+    },
+    {
+      "text": " Now, basically, model adaptation is the purpose of model adaptation is, like I said, think about like high school students, very raw.",
+      "start": 4523.320029296875,
+      "end": 4534.320029296875
+    },
+    {
+      "text": " At high school, you decide like, OK, now I want to become a doctor or I want to become a lawyer.",
+      "start": 4534.320029296875,
+      "end": 4538.320029296875
+    },
+    {
+      "text": " I want to become something else. And then what do you do? You learn more about those things.",
+      "start": 4538.320029296875,
+      "end": 4542.320029296875
+    },
+    {
+      "text": " You apply more knowledge related to that particular. You take more courses or you join the college with that specialization.",
+      "start": 4542.320029296875,
+      "end": 4549.320029296875
+    },
+    {
+      "text": " That's what is happening here. The model adaptation purposes, you are applying general purpose models, new knowledge.",
+      "start": 4549.320029296875,
+      "end": 4558.320029296875
+    },
+    {
+      "text": " So you are applying new domains, new knowledge into it.",
+      "start": 4558.320029296875,
+      "end": 4561.320029296875
+    },
+    {
+      "text": " It could be medical, legal, e-commerce, or it could be anything which is specialized that you want your model to do.",
+      "start": 4561.320029296875,
+      "end": 4568.320029296875
+    },
+    {
+      "text": " And then the model adaptation is basically incorporating new data, which is not available during initial training.",
+      "start": 4568.320029296875,
+      "end": 4575.320029296875
+    },
+    {
+      "text": " So at initial training, you first make a very, very pre-trained version of the model.",
+      "start": 4575.320029296875,
+      "end": 4579.320029296875
+    },
+    {
+      "text": " But then you have to then you later decide decide like I work with a lot of partners and I work with partners from because of the sovereign.",
+      "start": 4579.320029296875,
+      "end": 4588.320029296875
+    },
+    {
+      "text": " I work with regional partners.",
+      "start": 4588.320029296875,
+      "end": 4591.320029296875
+    },
+    {
+      "text": " NPCI was one such which is like National Payments Corporation of India, which is the biggest finance institute in India governed by the Reserve Bank.",
+      "start": 4592.320029296875,
+      "end": 4602.320029296875
+    },
+    {
+      "text": " And they wanted to build a finance model. What they decided to do is take one of our Nemotron model.",
+      "start": 4602.320029296875,
+      "end": 4609.320029296875
+    },
+    {
+      "text": " They started with Mistral first. So the base Mistral model. But then later on, they moved to the Nemotron model.",
+      "start": 4609.320029296875,
+      "end": 4615.320029296875
+    },
+    {
+      "text": " So they took a base Mistral model and they said, like, OK, now I want to apply the finance specific data to it.",
+      "start": 4615.320029296875,
+      "end": 4622.320029296875
+    },
+    {
+      "text": " But again, finance is huge. You cannot do everything in finance.",
+      "start": 4622.320029296875,
+      "end": 4625.320029296875
+    },
+    {
+      "text": " So they specifically selected the grievance as a use case. And they said, like, I want to train my model with finance grievance.",
+      "start": 4625.320029296875,
+      "end": 4633.320029296875
+    },
+    {
+      "text": " So anyone if they ask anything related to finance, specifically around like my account is not working or what's happening with, you know,",
+      "start": 4633.320029296875,
+      "end": 4643.320029296875
+    },
+    {
+      "text": " the credit balance and things like that, anything related to the UPI payments or anything, the model was trained with it.",
+      "start": 4643.320029296875,
+      "end": 4652.320029296875
+    },
+    {
+      "text": " That is basically what model adaptation does. It gets better at performing a certain task and then it helps us.",
+      "start": 4652.320029296875,
+      "end": 4661.320029296875
+    },
+    {
+      "text": " So, again, this is a thing. Why is it that you first do high school and then you go to college and then you do your master's or PhD?",
+      "start": 4661.320029296875,
+      "end": 4669.320029296875
+    },
+    {
+      "text": " Why don't you learn everything? Like if you if your intent, you know, very early on is to become a doctor.",
+      "start": 4669.320029296875,
+      "end": 4675.320029296875
+    },
+    {
+      "text": " Why isn't that you, you know, study medical right from the beginning?",
+      "start": 4675.320029296875,
+      "end": 4679.320029296875
+    },
+    {
+      "text": " There's a reason. Because medical will cost a lot and it's overwhelming for you to learn everything at once.",
+      "start": 4679.320029296875,
+      "end": 4686.320029296875
+    },
+    {
+      "text": " That's exactly how it happens with the models as well, because in the beginning itself, the model is trained with a lot of data.",
+      "start": 4686.320029296875,
+      "end": 4693.320029296875
+    },
+    {
+      "text": " So if you try to add specialized knowledge during that early training phase, your models would fail or your model will start hallucinating more.",
+      "start": 4693.320029296875,
+      "end": 4703.320029296875
+    },
+    {
+      "text": " And we'll talk about hallucination and other things as well.",
+      "start": 4703.320029296875,
+      "end": 4706.320029296875
+    },
+    {
+      "text": " That is the reason to reduce the computational resources or any any kind of nuances which happens early on when you are training the model.",
+      "start": 4706.320029296875,
+      "end": 4714.320029296875
+    },
+    {
+      "text": " Adaptation is done because it's easier to adapt the model gradually than trying to do everything at once.",
+      "start": 4714.320029296875,
+      "end": 4724.320029296875
+    },
+    {
+      "text": " Now, it is important because it reduces the computational cost of training the model from the scratch.",
+      "start": 4724.320029296875,
+      "end": 4732.320029296875
+    },
+    {
+      "text": " Then the other thing is it is important because it leverages the existing knowledge, because you already have some basic knowledge.",
+      "start": 4732.320029296875,
+      "end": 4739.320029296875
+    },
+    {
+      "text": " And now adding on additional knowledge is much more easier from time, effort, money, every standpoint and compute standpoint,",
+      "start": 4739.320029296875,
+      "end": 4747.320029296875
+    },
+    {
+      "text": " which is the biggest, biggest bottleneck for many customers trying to train their model.",
+      "start": 4747.320029296875,
+      "end": 4751.320029296875
+    },
+    {
+      "text": " And it also helps improve performance on niche tasks which have limited data.",
+      "start": 4751.320029296875,
+      "end": 4757.320029296875
+    },
+    {
+      "text": " I work on sovereign. I work with low resource languages, low resource domains a lot.",
+      "start": 4757.320029296875,
+      "end": 4762.320029296875
+    },
+    {
+      "text": " And that is where model adaptation helps us a lot.",
+      "start": 4762.320029296875,
+      "end": 4767.320029296875
+    },
+    {
+      "text": " Now, Shamala, can I interrupt for a sec? I am not familiar with the concept or the term sovereign AI.",
+      "start": 4767.320029296875,
+      "end": 4775.320029296875
+    },
+    {
+      "text": " Can you take a minute to explain what that is? Yeah, yeah.",
+      "start": 4775.320029296875,
+      "end": 4779.320029296875
+    },
+    {
+      "text": " So sovereign AI. So, yeah, good question.",
+      "start": 4779.320029296875,
+      "end": 4782.320029296875
+    },
+    {
+      "text": " Basically, what happens is when if you look at Lama or if you look at the Nemotron model itself,",
+      "start": 4782.320029296875,
+      "end": 4789.320029296875
+    },
+    {
+      "text": " or if you look at the chat GPT's open AI model or cloud model,",
+      "start": 4789.320029296875,
+      "end": 4794.320029296875
+    },
+    {
+      "text": " anthropic cloud model, if you look at any of these SOTA models are, you know,",
+      "start": 4794.320029296875,
+      "end": 4801.320029296875
+    },
+    {
+      "text": " so-called SOTA model builders, which are like needle movers,",
+      "start": 4801.320029296875,
+      "end": 4807.320029296875
+    },
+    {
+      "text": " their models are trained with English as the first language.",
+      "start": 4807.320029296875,
+      "end": 4811.320029296875
+    },
+    {
+      "text": " They have been evaluated for English specific things and they have been trained with the U.S. language data.",
+      "start": 4812.320029296875,
+      "end": 4821.320029296875
+    },
+    {
+      "text": " A lot of data which came from the books or which came from the particular segment. Right.",
+      "start": 4821.320029296875,
+      "end": 4829.320029296875
+    },
+    {
+      "text": " And also the compute is here. Now, what has started to happen is because of the geopolitical nature",
+      "start": 4829.320029296875,
+      "end": 4836.320029296875
+    },
+    {
+      "text": " and the geopolitical tensions that are happening all around the world,",
+      "start": 4836.320029296875,
+      "end": 4841.320029296875
+    },
+    {
+      "text": " every nation have realized we cannot give our entire region or country's control to someone else in the U.S.",
+      "start": 4841.320029296875,
+      "end": 4849.320029296875
+    },
+    {
+      "text": " to take care of it from inference standpoint. Let's say, like, I want to use chat GPT for my copilot.",
+      "start": 4849.320029296875,
+      "end": 4856.320029296875
+    },
+    {
+      "text": " Governments will not want to do that. So what the nations have realized is they want to have their own regional power.",
+      "start": 4856.320029296875,
+      "end": 4864.320029296875
+    },
+    {
+      "text": " They want to control the data. They want to control the compute.",
+      "start": 4864.320029296875,
+      "end": 4868.320029296875
+    },
+    {
+      "text": " They want to control the models. They want to control the application.",
+      "start": 4868.320029296875,
+      "end": 4872.320029296875
+    },
+    {
+      "text": " They want to control the knowledge and everything coming along with it in their own region.",
+      "start": 4872.320029296875,
+      "end": 4879.320029296875
+    },
+    {
+      "text": " This is basically what is called sovereign AI.",
+      "start": 4879.320029296875,
+      "end": 4883.320029296875
+    },
+    {
+      "text": " Well, like how we have the sovereignty, nation sovereignty, the same way for AI also.",
+      "start": 4883.320029296875,
+      "end": 4889.320029296875
+    },
+    {
+      "text": " Regions want to control their own sovereignty and they want to build everything in-house.",
+      "start": 4889.320029296875,
+      "end": 4895.320029296875
+    },
+    {
+      "text": " And that is what's happening. So what what is a good country that's leading the way forward in this area?",
+      "start": 4895.320029296875,
+      "end": 4904.320029296875
+    },
+    {
+      "text": " China. OK, so so China in China, if you're going to build an application on top of AI,",
+      "start": 4904.320029296875,
+      "end": 4913.320029296875
+    },
+    {
+      "text": " then one of your options is a sovereign model that you can access via API, just like in the United States,",
+      "start": 4913.320029296875,
+      "end": 4920.320029296875
+    },
+    {
+      "text": " how we would access Claude or Gemini or open AI via API.",
+      "start": 4920.320029296875,
+      "end": 4926.320029296875
+    },
+    {
+      "text": " Is that how it's working? So, yeah. So let me give an example.",
+      "start": 4926.320029296875,
+      "end": 4930.320029296875
+    },
+    {
+      "text": " China have twin model, deep seek model. All the SOTA models are coming from China.",
+      "start": 4930.320029296875,
+      "end": 4935.320029296875
+    },
+    {
+      "text": " That's one example. India have SOTA models. There's Sarvam and there's also the Nani model.",
+      "start": 4935.320029296875,
+      "end": 4943.320029296875
+    },
+    {
+      "text": " There's also the Bharat Jain model. Now, what has started to happen?",
+      "start": 4943.320029296875,
+      "end": 4946.320029296875
+    },
+    {
+      "text": " Even Japan have a lot of great models coming up. Sakana is one such example.",
+      "start": 4946.320029296875,
+      "end": 4952.320029296875
+    },
+    {
+      "text": " And Vietnam. I'm working with a lot more partners around the globe for building their own models.",
+      "start": 4952.320029296875,
+      "end": 4959.320029296875
+    },
+    {
+      "text": " Now, let's take an example of MPCI right in India.",
+      "start": 4959.320029296875,
+      "end": 4964.320029296875
+    },
+    {
+      "text": " We work with MPCI, National Payments Corporation of India.",
+      "start": 4964.320029296875,
+      "end": 4967.320029296875
+    },
+    {
+      "text": " They took our base model and they trained a whole new model.",
+      "start": 4967.320029296875,
+      "end": 4971.320029296875
+    },
+    {
+      "text": " They adapted a whole new model and they created a finance model, which is called FIMI,",
+      "start": 4971.320029296875,
+      "end": 4977.320029296875
+    },
+    {
+      "text": " financial in this model and of India or something.",
+      "start": 4977.320029296875,
+      "end": 4983.320029296875
+    },
+    {
+      "text": " I don't remember the whole form, this paper out there about FIMI and how it was trained,",
+      "start": 4983.320029296875,
+      "end": 4987.320029296875
+    },
+    {
+      "text": " if you are interested to learn more. But they built a finance model.",
+      "start": 4987.320029296875,
+      "end": 4991.320029296875
+    },
+    {
+      "text": " Now, this model will be deployed in all the banks, 300 plus banks in India.",
+      "start": 4991.320029296875,
+      "end": 4998.320029296875
+    },
+    {
+      "text": " So one, the model is deployed in all the banks for the grievance use case.",
+      "start": 4998.320029296875,
+      "end": 5004.320029296875
+    },
+    {
+      "text": " This model will be used by millions of users who are the users of those banks.",
+      "start": 5004.320029296875,
+      "end": 5010.320029296875
+    },
+    {
+      "text": " So there's a population scale. So what's happening is India is not giving control to someone in U.S.",
+      "start": 5010.320029296875,
+      "end": 5016.320029296875
+    },
+    {
+      "text": " like ChatGPT or OpenAI or cloud or anyone saying like you be my model builder and model provider.",
+      "start": 5016.320029296875,
+      "end": 5023.320029296875
+    },
+    {
+      "text": " And then, you know, you control the whole thing. Instead, India took control.",
+      "start": 5023.320029296875,
+      "end": 5026.320029296875
+    },
+    {
+      "text": " And what they are doing is they're taking care of everything in-house, including the compute.",
+      "start": 5026.320029296875,
+      "end": 5032.320029296875
+    },
+    {
+      "text": " They have spent billions partnering with a lot of cloud providers.",
+      "start": 5032.320029296875,
+      "end": 5036.320029296875
+    },
+    {
+      "text": " And then they've built their whole data center and stack in-house in India.",
+      "start": 5036.320029296875,
+      "end": 5041.320029296875
+    },
+    {
+      "text": " Amazing. That is what is called sovereign AI. And that's one good example.",
+      "start": 5041.320029296875,
+      "end": 5046.320029296875
+    },
+    {
+      "text": " And usually government backing is there. They are building consortiums so that they have like a bunch of model builders",
+      "start": 5046.320029296875,
+      "end": 5053.320029296875
+    },
+    {
+      "text": " or leading model builders or GSIs, the solution GSIs like Accenture, TCS, Tech Mahindra,",
+      "start": 5053.320029296875,
+      "end": 5061.320029296875
+    },
+    {
+      "text": " these kind of companies or ServiceNow who are the application builder.",
+      "start": 5061.320029296875,
+      "end": 5066.320029296875
+    },
+    {
+      "text": " So over the top of the model building layer, the application layer comes where GSIs are helping them.",
+      "start": 5066.320029296875,
+      "end": 5072.320029296875
+    },
+    {
+      "text": " Amazing. Thanks for that. Yeah. So any other questions?",
+      "start": 5072.320029296875,
+      "end": 5078.320029296875
+    },
+    {
+      "text": " So, professor, I'd like to understand it in simple terms, just like every company have their own models.",
+      "start": 5078.320029296875,
+      "end": 5085.320029296875
+    },
+    {
+      "text": " They train them on their own data and they take control of it.",
+      "start": 5085.320029296875,
+      "end": 5088.320029296875
+    },
+    {
+      "text": " Similarly, sovereign AI is something the countries are taking control of it.",
+      "start": 5088.320029296875,
+      "end": 5093.320029296875
+    },
+    {
+      "text": " So it's just a small and big version, if I'm not wrong.",
+      "start": 5093.320029296875,
+      "end": 5096.320029296875
+    },
+    {
+      "text": " That's right. The country is taking control of it. The local government is taking control of it.",
+      "start": 5096.320029296875,
+      "end": 5102.320029296875
+    },
+    {
+      "text": " They are investing a lot. They are making sure like these companies are working with government and partnering with them.",
+      "start": 5102.320029296875,
+      "end": 5108.320029296875
+    },
+    {
+      "text": " So there's huge funding. If a company have to do it themselves, it's going to take a lot of time.",
+      "start": 5108.320029296875,
+      "end": 5113.320029296875
+    },
+    {
+      "text": " But sovereignty is actually reducing that friction.",
+      "start": 5113.320029296875,
+      "end": 5117.320029296875
+    },
+    {
+      "text": " Yeah, but then it's also the consortium model that you mentioned, right?",
+      "start": 5117.320029296875,
+      "end": 5122.320029296875
+    },
+    {
+      "text": " So within India, the banking vertical has gotten together and done something on their own.",
+      "start": 5122.320029296875,
+      "end": 5129.320029296875
+    },
+    {
+      "text": " So it's different flavors of adaptation, I guess.",
+      "start": 5129.320029296875,
+      "end": 5134.320029296875
+    },
+    {
+      "text": " Yeah, there are multiple consortiums working together and then they are helping.",
+      "start": 5134.320029296875,
+      "end": 5138.320029296875
+    },
+    {
+      "text": " So, for example, right now, another thing happening is consortium is coming together to build language models with 22, 23 plus Indic languages.",
+      "start": 5138.320029296875,
+      "end": 5147.320029296875
+    },
+    {
+      "text": " Of course, there are 50 plus Indic languages, but you also have to choose languages.",
+      "start": 5147.320029296875,
+      "end": 5152.320029296875
+    },
+    {
+      "text": " And, you know, I heard you speaking about tokens.",
+      "start": 5152.320029296875,
+      "end": 5156.320029296875
+    },
+    {
+      "text": " So you also have to choose and prioritize languages based on the token.",
+      "start": 5156.320029296875,
+      "end": 5160.320029296875
+    },
+    {
+      "text": " The more model queries you make, the more token you use and the more inference happens and the more compute the companies make money out of that.",
+      "start": 5160.320029296875,
+      "end": 5171.320029296875
+    },
+    {
+      "text": " There's a whole flywheel of how all of these things work together.",
+      "start": 5171.320029296875,
+      "end": 5175.320029296875
+    },
+    {
+      "text": " One other question. I don't know if it comes later in your presentation, but I think would be great for these students to hear from you.",
+      "start": 5175.320029296875,
+      "end": 5184.320029296875
+    },
+    {
+      "text": " And that is the difference between open weight models and open source models and then proprietary models.",
+      "start": 5184.320029296875,
+      "end": 5192.320029296875
+    },
+    {
+      "text": " I love it. I think so. I had something. I don't know.",
+      "start": 5192.320029296875,
+      "end": 5196.320029296875
+    },
+    {
+      "text": " Or maybe in some other slide. So I can quickly talk about it. These are three different things.",
+      "start": 5196.320029296875,
+      "end": 5201.320029296875
+    },
+    {
+      "text": " Right. When you talk about open weight models, the weights are open, which means that the model might have an open weight.",
+      "start": 5201.320029296875,
+      "end": 5210.320029296875
+    },
+    {
+      "text": " Lama is a great example of open weight model. Right. Where Lama model is open.",
+      "start": 5210.320029296875,
+      "end": 5216.320029296875
+    },
+    {
+      "text": " Anyone is able to take and do anything on the top of that model.",
+      "start": 5216.320029296875,
+      "end": 5219.320029296875
+    },
+    {
+      "text": " They are able to say, like, OK, I'm going to train the model and make it better.",
+      "start": 5219.320029296875,
+      "end": 5224.320029296875
+    },
+    {
+      "text": " And I'm going to adapt the model. I'm going to make a finance version of it.",
+      "start": 5224.320029296875,
+      "end": 5228.320029296875
+    },
+    {
+      "text": " So open weight models gives you the opportunity to adapt on the top of it.",
+      "start": 5228.320029296875,
+      "end": 5234.320029296875
+    },
+    {
+      "text": " Open source. But the nuance of open weight is most of the open weights model usually would have the license, which is a little.",
+      "start": 5234.320029296875,
+      "end": 5244.320029296875
+    },
+    {
+      "text": " For example, the Lama license says, like, OK, take my model, do whatever you want to do with my model.",
+      "start": 5244.320029296875,
+      "end": 5249.320029296875
+    },
+    {
+      "text": " Create a derivative of it. Adapt it for any use case you want.",
+      "start": 5249.320029296875,
+      "end": 5252.320029296875
+    },
+    {
+      "text": " However, when you have trained the model, you have to give me credit.",
+      "start": 5252.320029296875,
+      "end": 5259.320029296875
+    },
+    {
+      "text": " So that is why you go and search hugging face and you will see hundreds of model with Lama as a prefix,",
+      "start": 5259.320029296875,
+      "end": 5266.320029296875
+    },
+    {
+      "text": " because Lama requires you or Meta requires you to add the prefix as a credit.",
+      "start": 5266.320029296875,
+      "end": 5272.320029296875
+    },
+    {
+      "text": " So that is not open source. It is an open weight model.",
+      "start": 5272.320029296875,
+      "end": 5277.320029296875
+    },
+    {
+      "text": " Now, the challenge with that is many companies would not want to do it.",
+      "start": 5277.320029296875,
+      "end": 5282.320029296875
+    },
+    {
+      "text": " Like why should I give credit to someone else? Because, you know, most of the partners I work with,",
+      "start": 5282.320029296875,
+      "end": 5287.320029296875
+    },
+    {
+      "text": " they are working on federal use cases or they are working on like their enterprise use cases.",
+      "start": 5287.320029296875,
+      "end": 5293.320029296875
+    },
+    {
+      "text": " And they want to make sure they have full control over what they are doing and they don't have to linger around the naming.",
+      "start": 5293.320029296875,
+      "end": 5299.320029296875
+    },
+    {
+      "text": " And that is why open weights are great, but comes with its own limitation.",
+      "start": 5299.320029296875,
+      "end": 5304.320029296875
+    },
+    {
+      "text": " Now, the other is open source. Open source means you do whatever you want.",
+      "start": 5304.320029296875,
+      "end": 5309.320029296875
+    },
+    {
+      "text": " We don't want any credit. NVIDIA Nemotron is one such example.",
+      "start": 5309.320029296875,
+      "end": 5313.320029296875
+    },
+    {
+      "text": " You have Quinn models which have now become open source. You have DeepSeek model which has now become open source.",
+      "start": 5313.320029296875,
+      "end": 5319.320029296875
+    },
+    {
+      "text": " So open source means I've built something great. I'm giving it to you.",
+      "start": 5319.320029296875,
+      "end": 5324.320029296875
+    },
+    {
+      "text": " You do whatever with it. You build on the top of it. You adapt it. You train it.",
+      "start": 5324.320029296875,
+      "end": 5328.320029296875
+    },
+    {
+      "text": " You make a better version of it or you do whatever or just use it as is.",
+      "start": 5328.320029296875,
+      "end": 5334.320029296875
+    },
+    {
+      "text": " I don't want any credit. You can name it whatever you want.",
+      "start": 5334.320029296875,
+      "end": 5338.320029296875
+    },
+    {
+      "text": " I don't even want people to know like, OK, under the hood, you use my model. If you want to give credit, sure.",
+      "start": 5338.320029296875,
+      "end": 5344.320029296875
+    },
+    {
+      "text": " So those are very, very open. Community is able to take and do more innovation on the top of it.",
+      "start": 5344.320029296875,
+      "end": 5350.320029296875
+    },
+    {
+      "text": " And open source is where a lot of model adaptation happens with minimal friction.",
+      "start": 5350.320029296875,
+      "end": 5358.320029296875
+    },
+    {
+      "text": " Of course, Nemotron is a great example. If you look at Quinn or DeepSeek, they are open source.",
+      "start": 5358.320029296875,
+      "end": 5363.320029296875
+    },
+    {
+      "text": " However, they come from a region where we have geopolitical issues.",
+      "start": 5363.320029296875,
+      "end": 5368.320029296875
+    },
+    {
+      "text": " Lot of defense and government use cases here, specifically in US.",
+      "start": 5368.320029296875,
+      "end": 5373.320029296875
+    },
+    {
+      "text": " They would not be open to take a Quinn model and train it and then use it in-house because how the model was trained becomes a challenge.",
+      "start": 5373.320029296875,
+      "end": 5381.320029296875
+    },
+    {
+      "text": " And there's like a lot of things which happens internally as well.",
+      "start": 5381.320029296875,
+      "end": 5385.320029296875
+    },
+    {
+      "text": " Like if you take a China model and you want to use it in US, there's import export issues.",
+      "start": 5385.320029296875,
+      "end": 5393.320029296875
+    },
+    {
+      "text": " You have to make sure that although there's no like physical import export of the goods happening, but even with models, you have such nuances.",
+      "start": 5393.320029296875,
+      "end": 5401.320029296875
+    },
+    {
+      "text": " So that's why open source also have some limitation depending on the residency of the model and how and where it was trained,",
+      "start": 5401.320029296875,
+      "end": 5408.320029296875
+    },
+    {
+      "text": " which hardware it was trained and a lot of things.",
+      "start": 5408.320029296875,
+      "end": 5412.320029296875
+    },
+    {
+      "text": " But open source basically allows you to go deeper and train the model further.",
+      "start": 5412.320029296875,
+      "end": 5416.320029296875
+    },
+    {
+      "text": " Now, the proprietary model are basically, this is my model. I will not give you this model for anything except for inference.",
+      "start": 5416.320029296875,
+      "end": 5426.320029296875
+    },
+    {
+      "text": " If you want to use my model for anything else, I will work with you on a separate permission and separate pricing.",
+      "start": 5426.320029296875,
+      "end": 5434.320029296875
+    },
+    {
+      "text": " Claude, ChatGPT, these are ChatGPT under the hood uses OpenAI.",
+      "start": 5434.320029296875,
+      "end": 5439.320029296875
+    },
+    {
+      "text": " Most of the OpenAI models and then you also have the other models from the vision language model like Bria and all.",
+      "start": 5439.320029296875,
+      "end": 5446.320029296875
+    },
+    {
+      "text": " These are all proprietary models.",
+      "start": 5446.320029296875,
+      "end": 5448.320029296875
+    },
+    {
+      "text": " So what they do is they built a SOTA model.",
+      "start": 5448.320029296875,
+      "end": 5451.320029296875
+    },
+    {
+      "text": " SOTA is like state of the art.",
+      "start": 5451.320029296875,
+      "end": 5453.320029296875
+    },
+    {
+      "text": " They built a SOTA model.",
+      "start": 5453.320029296875,
+      "end": 5455.320029296875
+    },
+    {
+      "text": " And now what they are doing is they are getting that model through an application layer like ChatGPT.",
+      "start": 5455.320029296875,
+      "end": 5462.320029296875
+    },
+    {
+      "text": " Or Claude have their own version of their Claude inference platform.",
+      "start": 5462.320029296875,
+      "end": 5467.320029296875
+    },
+    {
+      "text": " Or Bria would have their own inference platform.",
+      "start": 5467.320029296875,
+      "end": 5470.320029296875
+    },
+    {
+      "text": " So they would cater or a lot of these other companies which are doing like video generation or avatar generation,",
+      "start": 5470.320029296875,
+      "end": 5481.320029296875
+    },
+    {
+      "text": " they have under the hood a proprietary model.",
+      "start": 5481.320029296875,
+      "end": 5484.320029296875
+    },
+    {
+      "text": " So they don't want the model to go out, but they are catering the application to you and getting charged or getting paid based on the inference.",
+      "start": 5484.320029296875,
+      "end": 5494.320029296875
+    },
+    {
+      "text": " How much you are inferencing, how much query you are doing, how many tokens and that.",
+      "start": 5494.320029296875,
+      "end": 5501.320029296875
+    },
+    {
+      "text": " Brilliant.",
+      "start": 5501.320029296875,
+      "end": 5503.320029296875
+    },
+    {
+      "text": " It reminds me of the recent articles that I have read about Anthropic and Claude and their interaction with the U.S. military.",
+      "start": 5503.320029296875,
+      "end": 5515.320029296875
+    },
+    {
+      "text": " Because they are offering a proprietary model, but the U.S. military wanted to have more control and more visibility into the internal operations of that model.",
+      "start": 5515.320029296875,
+      "end": 5527.320029296875
+    },
+    {
+      "text": " And Claude pushed back and said, no, we are not going to do that.",
+      "start": 5527.320029296875,
+      "end": 5530.320029296875
+    },
+    {
+      "text": " So that was a very interesting kind of current events example of what can happen in a proprietary model use case,",
+      "start": 5530.320029296875,
+      "end": 5538.320029296875
+    },
+    {
+      "text": " even from a very powerful customer, which is the U.S. government.",
+      "start": 5538.320029296875,
+      "end": 5541.320029296875
+    },
+    {
+      "text": " Yeah, because the thing is, again, a lot of nuances comes into play when you are talking about proprietary model.",
+      "start": 5541.320029296875,
+      "end": 5550.320029296875
+    },
+    {
+      "text": " If you have an open source model, you have to, by law, tell what data set you have used, what methodology you have used for training.",
+      "start": 5550.320029296875,
+      "end": 5560.320029296875
+    },
+    {
+      "text": " How did you evaluate the model? What was the evaluation benchmarks you have used?",
+      "start": 5560.320029296875,
+      "end": 5565.320029296875
+    },
+    {
+      "text": " However, with a proprietary model, it's a black box.",
+      "start": 5565.320029296875,
+      "end": 5571.320029296875
+    },
+    {
+      "text": " They will not reveal any of the information, how they have trained or what techniques were used, what data set was used, what evaluation frameworks were used.",
+      "start": 5571.320029296875,
+      "end": 5579.320029296875
+    },
+    {
+      "text": " None of those things. And they will say, we have a SOTA model.",
+      "start": 5579.320029296875,
+      "end": 5583.320029296875
+    },
+    {
+      "text": " So under the hood, they might be using something which is not permissible.",
+      "start": 5583.320029296875,
+      "end": 5587.320029296875
+    },
+    {
+      "text": " There might be issues, right? We don't know.",
+      "start": 5587.320029296875,
+      "end": 5589.320029296875
+    },
+    {
+      "text": " Because it's a black box, it comes with a lot of issues.",
+      "start": 5589.320029296875,
+      "end": 5593.320029296875
+    },
+    {
+      "text": " And in defense or federal use cases, that could be an issue because, you know, under the hood, you don't know what exactly is happening.",
+      "start": 5593.320029296875,
+      "end": 5600.320029296875
+    },
+    {
+      "text": " So it's very tricky to work with black box.",
+      "start": 5600.320029296875,
+      "end": 5604.320029296875
+    },
+    {
+      "text": " Great, great way to explain it. Wonderful.",
+      "start": 5604.320029296875,
+      "end": 5608.320029296875
+    },
+    {
+      "text": " OK, I don't want to sidetrack too much from the presentation, but thanks for entertaining those questions.",
+      "start": 5608.320029296875,
+      "end": 5614.320029296875
+    },
+    {
+      "text": " Yeah, no worries at all. So coming back to the model adaptation, there are three different layers or types of model adaptation.",
+      "start": 5614.320029296875,
+      "end": 5623.320029296875
+    },
+    {
+      "text": " One is fine tuning. Now, fine tuning comes with two different flavors.",
+      "start": 5623.320029296875,
+      "end": 5628.320029296875
+    },
+    {
+      "text": " One is the CPT, which is called continuous pre-training, where you are improving the model's knowledge.",
+      "start": 5628.320029296875,
+      "end": 5636.320029296875
+    },
+    {
+      "text": " Then the second is the supervised fine tuning, where you are adapting the model or aligning the model.",
+      "start": 5636.320029296875,
+      "end": 5644.320029296875
+    },
+    {
+      "text": " Let me put it that way, because you are adapting the model with all of these techniques.",
+      "start": 5644.320029296875,
+      "end": 5649.320029296875
+    },
+    {
+      "text": " But during the SFT, you are aligning the model further.",
+      "start": 5649.320029296875,
+      "end": 5653.320029296875
+    },
+    {
+      "text": " So think about it like you are giving your model a better behavior.",
+      "start": 5653.320029296875,
+      "end": 5657.320029296875
+    },
+    {
+      "text": " Like you should talk like this. You should speak like this.",
+      "start": 5657.320029296875,
+      "end": 5660.320029296875
+    },
+    {
+      "text": " If I ask you anything related to finance, stick to these topics and answer this way.",
+      "start": 5660.320029296875,
+      "end": 5665.320029296875
+    },
+    {
+      "text": " So, you know, you're giving it a little bit more polished behavior.",
+      "start": 5665.320029296875,
+      "end": 5669.320029296875
+    },
+    {
+      "text": " That's what happens in the SFT. Now, then there is the LoRa adaptation technique.",
+      "start": 5669.320029296875,
+      "end": 5677.320029296875
+    },
+    {
+      "text": " So LoRa basically is low rank adaptation.",
+      "start": 5677.320029296875,
+      "end": 5680.320029296875
+    },
+    {
+      "text": " So LoRa have different ranking system and we'll talk about it later on.",
+      "start": 5680.320029296875,
+      "end": 5684.320029296875
+    },
+    {
+      "text": " But LoRa basically is a ranking system.",
+      "start": 5684.320029296875,
+      "end": 5687.320029296875
+    },
+    {
+      "text": " And what you are doing is instead of taking the whole model and going through a whole fine tuning,",
+      "start": 5687.320029296875,
+      "end": 5695.320029296875
+    },
+    {
+      "text": " you are going to add a little bit of efficiency layer on the top of LoRa.",
+      "start": 5695.320029296875,
+      "end": 5699.320029296875
+    },
+    {
+      "text": " So you are going to take a small bit of the model and then you are going to adapt the model.",
+      "start": 5699.320029296875,
+      "end": 5706.320029296875
+    },
+    {
+      "text": " And the third one is basically called the retrieval augmentation generation RAG.",
+      "start": 5706.320029296875,
+      "end": 5712.320029296875
+    },
+    {
+      "text": " Now, you don't want to train the model. You don't have resources.",
+      "start": 5712.320029296875,
+      "end": 5715.320029296875
+    },
+    {
+      "text": " You don't have data set. You don't have a lot of things.",
+      "start": 5715.320029296875,
+      "end": 5717.320029296875
+    },
+    {
+      "text": " But what you have is your own in-house company information, a lot of information, a lot of data.",
+      "start": 5717.320029296875,
+      "end": 5724.320029296875
+    },
+    {
+      "text": " What you can do is connect your model to the external knowledge base and then say like, OK, answer these questions.",
+      "start": 5724.320029296875,
+      "end": 5732.320029296875
+    },
+    {
+      "text": " Think about it. Owner's manual in the car. You don't have to train a new model for owner's manual.",
+      "start": 5732.320029296875,
+      "end": 5738.320029296875
+    },
+    {
+      "text": " You connect it with the vehicle's owner's manual and say like answer any related questions.",
+      "start": 5738.320029296875,
+      "end": 5744.320029296875
+    },
+    {
+      "text": " If the user asks about any of these owner manual related question, answer it.",
+      "start": 5744.320029296875,
+      "end": 5749.320029296875
+    },
+    {
+      "text": " So what the model would do is just answer about that and do nothing below or beyond that.",
+      "start": 5749.320029296875,
+      "end": 5755.320029296875
+    },
+    {
+      "text": " So that's what is called RAG. Let me put this in a simpler example so you understand it.",
+      "start": 5755.320029296875,
+      "end": 5762.320029296875
+    },
+    {
+      "text": " OK, you have fine tuning. You have the CPT. Right. So think about it.",
+      "start": 5762.320029296875,
+      "end": 5769.320029296875
+    },
+    {
+      "text": " If you want to train a doctor, what you will do, CPT is like reading medical textbook.",
+      "start": 5769.320029296875,
+      "end": 5775.320029296875
+    },
+    {
+      "text": " Now, this is something you'll have to continuously keep doing.",
+      "start": 5775.320029296875,
+      "end": 5778.320029296875
+    },
+    {
+      "text": " You will have to continuously keep doing because medical terminology keeps changing or something else have changed.",
+      "start": 5778.320029296875,
+      "end": 5784.320029296875
+    },
+    {
+      "text": " So as a doctor or someone who's training for a doctor will continuously keep reading the medical books and they will do the specialized,",
+      "start": 5784.320029296875,
+      "end": 5793.320029296875
+    },
+    {
+      "text": " you know, whatever medical in the medical like they will do MBBS or whatever they are planning for.",
+      "start": 5793.320029296875,
+      "end": 5803.320029296875
+    },
+    {
+      "text": " But throughout, they will read a lot of information. That's how they are getting the knowledge and information about it.",
+      "start": 5803.320029296875,
+      "end": 5809.320029296875
+    },
+    {
+      "text": " SFT is now they are going to practice with labeled cases. So, you know, they have residencies.",
+      "start": 5809.320029296875,
+      "end": 5815.320029296875
+    },
+    {
+      "text": " So in residency, when they go and they practice with the patients, that's how they gain the actual knowledge,",
+      "start": 5815.320029296875,
+      "end": 5821.320029296875
+    },
+    {
+      "text": " practical knowledge of it. SFT is more around that.",
+      "start": 5821.320029296875,
+      "end": 5824.320029296875
+    },
+    {
+      "text": " Like they will be practicing with labeled cases for their particular domain or whatever their specialization is.",
+      "start": 5824.320029296875,
+      "end": 5833.320029296875
+    },
+    {
+      "text": " Now, think about Laura is taking a quick course on Udemy or Coursera or somewhere about some medical specialization.",
+      "start": 5833.320029296875,
+      "end": 5844.320029296875
+    },
+    {
+      "text": " Rag in this case is going to Google, going to chat GPT, looking up things in real.",
+      "start": 5844.320029296875,
+      "end": 5849.320029296875
+    },
+    {
+      "text": " That is right. Any questions? OK, so moving on.",
+      "start": 5849.320029296875,
+      "end": 5858.320029296875
+    },
+    {
+      "text": " These are the three techniques. And let's see when they are used.",
+      "start": 5858.320029296875,
+      "end": 5862.320029296875
+    },
+    {
+      "text": " So fine tuning is basically updating the model parameters.",
+      "start": 5862.320029296875,
+      "end": 5867.320029296875
+    },
+    {
+      "text": " And we'll also talk about what parameters are. But fine tuning is basically taking the model,",
+      "start": 5867.320029296875,
+      "end": 5872.320029296875
+    },
+    {
+      "text": " updating its parameters through the continued training on a new data set.",
+      "start": 5872.320029296875,
+      "end": 5877.320029296875
+    },
+    {
+      "text": " Now, like I said, it could be continuous retraining or it could be the supervised fine tuning.",
+      "start": 5877.320029296875,
+      "end": 5882.320029296875
+    },
+    {
+      "text": " You can have either of those techniques. But in both of those techniques,",
+      "start": 5882.320029296875,
+      "end": 5886.320029296875
+    },
+    {
+      "text": " you have a data set and you are updating the parameters of the model.",
+      "start": 5886.320029296875,
+      "end": 5892.320029296875
+    },
+    {
+      "text": " Usually in fine tuning, the GPU usage is high, the memory and time, everything is high.",
+      "start": 5892.320029296875,
+      "end": 5897.320029296875
+    },
+    {
+      "text": " It's very costly affair. So if your stakes are high, you really want to like the NPCI use case that I was saying,",
+      "start": 5897.320029296875,
+      "end": 5905.320029296875
+    },
+    {
+      "text": " you would want to go with fine tuning. Then if let's say like you don't want to change the whole model,",
+      "start": 5905.320029296875,
+      "end": 5912.320029296875
+    },
+    {
+      "text": " but you want to just take a model and update a little bit, you will use the Lora adaptation.",
+      "start": 5912.320029296875,
+      "end": 5919.320029296875
+    },
+    {
+      "text": " So let's say I don't want to build a whole finance model.",
+      "start": 5919.320029296875,
+      "end": 5924.320029296875
+    },
+    {
+      "text": " But what I want to do is I want my model, which is already a LLM model, to get better at creative writing.",
+      "start": 5924.320029296875,
+      "end": 5933.320029296875
+    },
+    {
+      "text": " So I don't have to train a whole model with creative writing module and do fine tuning on the top of it.",
+      "start": 5933.320029296875,
+      "end": 5939.320029296875
+    },
+    {
+      "text": " I can just do Lora adaptation, low rank adaptation to it and say like, OK, you know,",
+      "start": 5939.320029296875,
+      "end": 5944.320029296875
+    },
+    {
+      "text": " just make my LLM a little bit better with creative writing.",
+      "start": 5944.320029296875,
+      "end": 5948.320029296875
+    },
+    {
+      "text": " And here are some data sets. Here are some examples. So that's what you are doing.",
+      "start": 5948.320029296875,
+      "end": 5953.320029296875
+    },
+    {
+      "text": " Lora is a little bit cheaper compared to fine tuning when it comes to training the model.",
+      "start": 5953.320029296875,
+      "end": 5961.320029296875
+    },
+    {
+      "text": " It's faster. It uses less memory and have a limited like low GPU usage as well.",
+      "start": 5961.320029296875,
+      "end": 5968.320029296875
+    },
+    {
+      "text": " Then is the RAG. Like I said, it is called the PEFT Parameter Efficient Fine Tuning Technique,",
+      "start": 5968.320029296875,
+      "end": 5975.320029296875
+    },
+    {
+      "text": " PEFT, P-E-F-T, where you are not changing anything.",
+      "start": 5975.320029296875,
+      "end": 5980.320029296875
+    },
+    {
+      "text": " You're just, you know, putting together a data set and saying like, OK, just just talk about this.",
+      "start": 5980.320029296875,
+      "end": 5986.320029296875
+    },
+    {
+      "text": " Nothing beyond that. So you are training with a specialized kind of use cases.",
+      "start": 5986.320029296875,
+      "end": 5992.320029296875
+    },
+    {
+      "text": " Here's a quick cheat sheet. If you want to take a screenshot, you can take it.",
+      "start": 5992.320029296875,
+      "end": 5996.320029296875
+    },
+    {
+      "text": " Fine tuning, when you are fine tuning the model, you are changing the weights completely.",
+      "start": 5996.320029296875,
+      "end": 6002.320029296875
+    },
+    {
+      "text": " When you are doing Lora, you are adding a small delta to your weights.",
+      "start": 6002.320029296875,
+      "end": 6006.320029296875
+    },
+    {
+      "text": " So your weights are not changing drastically. Your weights still remain the same.",
+      "start": 6006.320029296875,
+      "end": 6011.320029296875
+    },
+    {
+      "text": " Just that you're going to have a little bit of additional variance to it.",
+      "start": 6011.320029296875,
+      "end": 6015.320029296875
+    },
+    {
+      "text": " And then RAG, there is no weight change, only the input changes, the change input.",
+      "start": 6015.320029296875,
+      "end": 6021.320029296875
+    },
+    {
+      "text": " You change the context. Today you're talking about the owner's manual.",
+      "start": 6021.320029296875,
+      "end": 6025.320029296875
+    },
+    {
+      "text": " Tomorrow, if you change that owner's manual to something related to the medical manual,",
+      "start": 6025.320029296875,
+      "end": 6030.320029296875
+    },
+    {
+      "text": " it will start talking about the medical manual. So you are able to plug and switch in RAG use case.",
+      "start": 6030.320029296875,
+      "end": 6036.320029296875
+    },
+    {
+      "text": " But in fine tuning, if you want your model to talk about medical,",
+      "start": 6036.320029296875,
+      "end": 6042.320029296875
+    },
+    {
+      "text": " you still have to go through the same training process, have new data set and go through that whole thing.",
+      "start": 6042.320029296875,
+      "end": 6049.320029296875
+    },
+    {
+      "text": " Now, cost comparison. When you look at the model training, the cost comparison for each of these,",
+      "start": 6050.320029296875,
+      "end": 6058.320029296875
+    },
+    {
+      "text": " the fine tuning basically is very costly. It takes a lot of effort to train the model, but it's also costly.",
+      "start": 6058.320029296875,
+      "end": 6067.320029296875
+    },
+    {
+      "text": " Because you have to remember one thing when you're training the model, model training comes.",
+      "start": 6067.320029296875,
+      "end": 6072.320029296875
+    },
+    {
+      "text": " So in order to train the model, you need compute. In order to do the SFT, you need compute.",
+      "start": 6072.320029296875,
+      "end": 6078.320029296875
+    },
+    {
+      "text": " In order to do CPT, you need compute. In order to run the model at inference, you need compute.",
+      "start": 6078.320029296875,
+      "end": 6083.320029296875
+    },
+    {
+      "text": " So at every stage, even to store the data sets that have to be used to train the model,",
+      "start": 6083.320029296875,
+      "end": 6089.320029296875
+    },
+    {
+      "text": " you need that data set and you need the compute. And computer is like not just a GPU.",
+      "start": 6089.320029296875,
+      "end": 6095.320029296875
+    },
+    {
+      "text": " You're talking about how like maybe you're talking about 10 nodes or 20 nodes.",
+      "start": 6095.320029296875,
+      "end": 6100.320029296875
+    },
+    {
+      "text": " Each node is 8 GPUs. So there's like a whole workflow or work system that you'll have to put together with GPUs, CPUs,",
+      "start": 6100.320029296875,
+      "end": 6111.320029296875
+    },
+    {
+      "text": " cooling system, everything in place, even to train the model.",
+      "start": 6111.320029296875,
+      "end": 6115.320029296875
+    },
+    {
+      "text": " And that is where usually what happens is some companies will put it in-house or some companies will actually work with NCP,",
+      "start": 6115.320029296875,
+      "end": 6126.320029296875
+    },
+    {
+      "text": " which is a cloud provider. NCPs are NVIDIA cloud providers who are working with us.",
+      "start": 6126.320029296875,
+      "end": 6131.320029296875
+    },
+    {
+      "text": " They've already purchased a lot of GPUs from us and they have put together their own data center.",
+      "start": 6131.320029296875,
+      "end": 6137.320029296875
+    },
+    {
+      "text": " And what they are doing is let's say a company comes and they say, like, OK, I want to train the model.",
+      "start": 6137.320029296875,
+      "end": 6142.320029296875
+    },
+    {
+      "text": " So what they will do is they'll say, like, how many nodes do you need?",
+      "start": 6142.320029296875,
+      "end": 6145.320029296875
+    },
+    {
+      "text": " And if the company says like, OK, I need 20 GPUs, 8 nodes or 10 nodes or whatever nodes based on that number.",
+      "start": 6145.320029296875,
+      "end": 6152.320029296875
+    },
+    {
+      "text": " And again, all of that changes based on what GPU you're using.",
+      "start": 6152.320029296875,
+      "end": 6157.320029296875
+    },
+    {
+      "text": " There's A100, there's H100, there's L40s, there are GB200s, there are GB100s.",
+      "start": 6157.320029296875,
+      "end": 6164.320029296875
+    },
+    {
+      "text": " Now we also have the newer ones which are coming up.",
+      "start": 6164.320029296875,
+      "end": 6167.320029296875
+    },
+    {
+      "text": " So there's like different GPUs and they all vary depending on the size of the model.",
+      "start": 6167.320029296875,
+      "end": 6173.320029296875
+    },
+    {
+      "text": " For a smaller model, 8B, 10B, L40 would be better.",
+      "start": 6173.320029296875,
+      "end": 6179.320029296875
+    },
+    {
+      "text": " But if you have a bigger model, 30B or so, you might need an A100, H100 kind of model.",
+      "start": 6179.320029296875,
+      "end": 6185.320029296875
+    },
+    {
+      "text": " So the GPU sizing also varies based on like the model weight.",
+      "start": 6185.320029296875,
+      "end": 6191.320029296875
+    },
+    {
+      "text": " So again, depending on what you are fine tuning for, if you decide to fine tune on a smaller model,",
+      "start": 6191.320029296875,
+      "end": 6197.320029296875
+    },
+    {
+      "text": " then you will have to bear the cost of that particular.",
+      "start": 6197.320029296875,
+      "end": 6202.320029296875
+    },
+    {
+      "text": " But the companies will work with cloud providers and they will either rent out the GPUs for that particular period.",
+      "start": 6202.320029296875,
+      "end": 6212.320029296875
+    },
+    {
+      "text": " It could be two weeks, four weeks, six weeks. So there's like different models.",
+      "start": 6212.320029296875,
+      "end": 6216.320029296875
+    },
+    {
+      "text": " But training a model requires a lot of background work.",
+      "start": 6216.320029296875,
+      "end": 6221.320029296875
+    },
+    {
+      "text": " It's not like today I decided to train the model and that's it.",
+      "start": 6221.320029296875,
+      "end": 6224.320029296875
+    },
+    {
+      "text": " You also have to think about the data set. Your data set will not be handy all the time.",
+      "start": 6224.320029296875,
+      "end": 6229.320029296875
+    },
+    {
+      "text": " So you have to think about like, OK, I want to train with the finance data.",
+      "start": 6229.320029296875,
+      "end": 6232.320029296875
+    },
+    {
+      "text": " How are we getting that data? Or I want to train the model with Hindi as the language.",
+      "start": 6232.320029296875,
+      "end": 6237.320029296875
+    },
+    {
+      "text": " Or I want to train the model with, let's say, French or German or Polish language or Punjabi.",
+      "start": 6237.320029296875,
+      "end": 6250.320029296875
+    },
+    {
+      "text": " If any of those kind of languages, where is that data coming from?",
+      "start": 6250.320029296875,
+      "end": 6254.320029296875
+    },
+    {
+      "text": " Some of these are low resources languages, which means you will also have to collect the data set,",
+      "start": 6254.320029296875,
+      "end": 6260.320029296875
+    },
+    {
+      "text": " which is time consuming, which will also require time.",
+      "start": 6260.320029296875,
+      "end": 6263.320029296875
+    },
+    {
+      "text": " Because if you are collecting it through human, then there is a different effort.",
+      "start": 6263.320029296875,
+      "end": 6268.320029296875
+    },
+    {
+      "text": " But if you are collecting it through, let's say, synthetic data generation,",
+      "start": 6268.320029296875,
+      "end": 6275.320029296875
+    },
+    {
+      "text": " which is synthetic generation of the data, not the real world, but synthetic generation,",
+      "start": 6275.320029296875,
+      "end": 6281.320029296875
+    },
+    {
+      "text": " then there's compute as well to even train the model or generate the synthetic data.",
+      "start": 6281.320029296875,
+      "end": 6286.320029296875
+    },
+    {
+      "text": " So fine tuning all in all is very costly. Inferencing of the fine tune model is also costly.",
+      "start": 6286.320029296875,
+      "end": 6293.320029296875
+    },
+    {
+      "text": " The latency is low because at the training level itself,",
+      "start": 6293.320029296875,
+      "end": 6296.320029296875
+    },
+    {
+      "text": " you are optimizing the model for throughput, accuracy, everything.",
+      "start": 6296.320029296875,
+      "end": 6303.320029296875
+    },
+    {
+      "text": " So that's why the latency would be low. That means like it will be very fast at inference.",
+      "start": 6303.320029296875,
+      "end": 6309.320029296875
+    },
+    {
+      "text": " But then the infrastructure will be simple or complex depending on how you are putting things together.",
+      "start": 6309.320029296875,
+      "end": 6318.320029296875
+    },
+    {
+      "text": " If you are renting it out, it might be simpler.",
+      "start": 6318.320029296875,
+      "end": 6321.320029296875
+    },
+    {
+      "text": " But if you decide to have your own data center,",
+      "start": 6321.320029296875,
+      "end": 6324.320029296875
+    },
+    {
+      "text": " that might become complex because then you have to think about the whole orchestration and everything.",
+      "start": 6324.320029296875,
+      "end": 6331.320029296875
+    },
+    {
+      "text": " Lower fine tuning, the training cost is cheaper. Comparatively, inference cost is cheaper.",
+      "start": 6331.320029296875,
+      "end": 6336.320029296875
+    },
+    {
+      "text": " Latency is low because you are working with a base model which was already trained for inference.",
+      "start": 6336.320029296875,
+      "end": 6344.320029296875
+    },
+    {
+      "text": " And also the infra here would be simple.",
+      "start": 6344.320029296875,
+      "end": 6347.320029296875
+    },
+    {
+      "text": " RAG is very simple because there is minimal training cost. You don't need anything to train.",
+      "start": 6347.320029296875,
+      "end": 6353.320029296875
+    },
+    {
+      "text": " All you need is the best model, connecting it with your whole knowledge source",
+      "start": 6353.320029296875,
+      "end": 6357.320029296875
+    },
+    {
+      "text": " and just a little bit of orchestration layers in between.",
+      "start": 6357.320029296875,
+      "end": 6361.320029296875
+    },
+    {
+      "text": " The inference cost would be higher because people will be using at the application layer.",
+      "start": 6361.320029296875,
+      "end": 6366.320029296875
+    },
+    {
+      "text": " People will be using the model at the application layer.",
+      "start": 6366.320029296875,
+      "end": 6369.320029296875
+    },
+    {
+      "text": " So depending on how many users you have, if you have millions of users using your RAG based system,",
+      "start": 6369.320029296875,
+      "end": 6375.320029296875
+    },
+    {
+      "text": " the inference cost would become higher because it's all about the tokens, how many tokens this is generating.",
+      "start": 6375.320029296875,
+      "end": 6383.320029296875
+    },
+    {
+      "text": " The latency could be high because no optimization is being done.",
+      "start": 6383.320029296875,
+      "end": 6388.320029296875
+    },
+    {
+      "text": " You are connecting a bunch of models and data sets and vector database and LLMs and other things together.",
+      "start": 6388.320029296875,
+      "end": 6396.320029296875
+    },
+    {
+      "text": " So, of course, that becomes that makes the application heavier.",
+      "start": 6396.320029296875,
+      "end": 6400.320029296875
+    },
+    {
+      "text": " So there could be higher latencies. And because a lot of these things are working together,",
+      "start": 6400.320029296875,
+      "end": 6405.320029296875
+    },
+    {
+      "text": " the infra itself could be complex as well.",
+      "start": 6405.320029296875,
+      "end": 6409.320029296875
+    },
+    {
+      "text": " One question that I have on this is, is it true?",
+      "start": 6409.320029296875,
+      "end": 6414.320029296875
+    },
+    {
+      "text": " Well, one trend that I see in industry is more companies.",
+      "start": 6414.320029296875,
+      "end": 6418.320029296875
+    },
+    {
+      "text": " And as you talked about earlier, sovereign nations are starting to train their own models.",
+      "start": 6418.320029296875,
+      "end": 6424.320029296875
+    },
+    {
+      "text": " So there's there's an increasing amount of bifurcation of model use, right?",
+      "start": 6424.320029296875,
+      "end": 6429.320029296875
+    },
+    {
+      "text": " Like more niche models used for niche purposes all over the world for a lot of variety of reasons.",
+      "start": 6429.320029296875,
+      "end": 6435.320029296875
+    },
+    {
+      "text": " Is it true for let's take one company that want to build their own model?",
+      "start": 6435.320029296875,
+      "end": 6441.320029296875
+    },
+    {
+      "text": " Is it true that they could deploy all of these model adaptation techniques all like just basically on on their own schedule?",
+      "start": 6441.320029296875,
+      "end": 6451.320029296875
+    },
+    {
+      "text": " So, for example, they're going to do pre-training. They're going to pre-train their own model.",
+      "start": 6451.320029296875,
+      "end": 6456.320029296875
+    },
+    {
+      "text": " Maybe they do that once a year. Then maybe they have a strategy to do fine tuning once a quarter.",
+      "start": 6456.320029296875,
+      "end": 6462.320029296875
+    },
+    {
+      "text": " And then maybe they have a strategy to do Laura twice a month.",
+      "start": 6462.320029296875,
+      "end": 6466.320029296875
+    },
+    {
+      "text": " And then once maybe they have a rag strategy where they're going to do rag that's evaluated every month as well.",
+      "start": 6466.320029296875,
+      "end": 6473.320029296875
+    },
+    {
+      "text": " Is that a possible outcome that companies would have a strategy for for all of these capabilities when they're using one of their own models?",
+      "start": 6473.320029296875,
+      "end": 6483.320029296875
+    },
+    {
+      "text": " You can mix and match the technique, but there will not be a schedule cadence.",
+      "start": 6483.320029296875,
+      "end": 6487.320029296875
+    },
+    {
+      "text": " Most of the companies, unless they are the open AIs or the anthropics of the world, would not want to build a model from the scratch.",
+      "start": 6487.320029296875,
+      "end": 6499.320029296875
+    },
+    {
+      "text": " So pre-training is not going to happen with unless you are a model builder, even the model builders.",
+      "start": 6499.320029296875,
+      "end": 6507.320029296875
+    },
+    {
+      "text": " So even when we started, our Nemotron models were based on quen.",
+      "start": 6507.320029296875,
+      "end": 6514.320029296875
+    },
+    {
+      "text": " We did not start from zero. We started from something. Right. Because starting from zero is a lot more time consuming.",
+      "start": 6514.320029296875,
+      "end": 6523.320029296875
+    },
+    {
+      "text": " Like, can you guess how much would be the cost of training one model pre-training?",
+      "start": 6523.320029296875,
+      "end": 6528.320029296875
+    },
+    {
+      "text": " I'm not talking about fine tuning or any of the things, but can you guess what would be the cost?",
+      "start": 6528.320029296875,
+      "end": 6533.320029296875
+    },
+    {
+      "text": " Well, I'm thinking that this is a trick question because it costs different amounts for training different parameter sized models.",
+      "start": 6533.320029296875,
+      "end": 6540.320029296875
+    },
+    {
+      "text": " Isn't that right? It is, but on an average, let's talk about the Nemotron model on an average to train.",
+      "start": 6540.320029296875,
+      "end": 6548.320029296875
+    },
+    {
+      "text": " And we have three variants of Nemotron model. We have the ultra super and we have the nano.",
+      "start": 6548.320029296875,
+      "end": 6554.320029296875
+    },
+    {
+      "text": " Nano is a smallest model and it can be any anywhere from 20 billion and below.",
+      "start": 6554.320029296875,
+      "end": 6561.320029296875
+    },
+    {
+      "text": " That is the nano. It could be 5 billion, 2 billion, 1 billion.",
+      "start": 6561.320029296875,
+      "end": 6564.320029296875
+    },
+    {
+      "text": " And those are SLMs or it could be up to like 20 billion. Right.",
+      "start": 6564.320029296875,
+      "end": 6569.320029296875
+    },
+    {
+      "text": " To train a nano model, we almost spent like 30, 40 million.",
+      "start": 6569.320029296875,
+      "end": 6575.320029296875
+    },
+    {
+      "text": " Wow. Yeah. Just to train one model from the scratch.",
+      "start": 6575.320029296875,
+      "end": 6579.320029296875
+    },
+    {
+      "text": " So companies would not want to do that because first of all, I'm spending 30, 40 billion on just pre-training a model because it's very costly.",
+      "start": 6579.320029296875,
+      "end": 6589.320029296875
+    },
+    {
+      "text": " If you really want to train a model from the scratch, there's a lot of effort which is required in the background.",
+      "start": 6589.320029296875,
+      "end": 6595.320029296875
+    },
+    {
+      "text": " So only the sovereign models are really doing. So it's only it's really only the big companies like like Anthropic, chat,",
+      "start": 6595.320029296875,
+      "end": 6602.320029296875
+    },
+    {
+      "text": " OpenAI, Google and a few sovereign nation models that are really starting from scratch. Right.",
+      "start": 6602.320029296875,
+      "end": 6609.320029296875
+    },
+    {
+      "text": " Yeah. Only a few sovereign model. And the strategy is as much as possible.",
+      "start": 6609.320029296875,
+      "end": 6615.320029296875
+    },
+    {
+      "text": " Do the fine tuning. Adaptation is more easier to train the model. That is what I was saying in the beginning.",
+      "start": 6615.320029296875,
+      "end": 6621.320029296875
+    },
+    {
+      "text": " Right. Like it's easier to train a model once it is in a certain stage because it's already aligned to a certain extent.",
+      "start": 6621.320029296875,
+      "end": 6629.320029296875
+    },
+    {
+      "text": " Even if it is a base model, it has some knowledge. We're not starting from zero.",
+      "start": 6629.320029296875,
+      "end": 6634.320029296875
+    },
+    {
+      "text": " Yeah. About it. Like, you know, getting a puppy, day zero puppy versus, you know, getting a bigger dog.",
+      "start": 6634.320029296875,
+      "end": 6643.320029296875
+    },
+    {
+      "text": " And it's potty trained already. The potty training and everything. Good point.",
+      "start": 6643.320029296875,
+      "end": 6650.320029296875
+    },
+    {
+      "text": " Hey, I'm just looking at my watch and Shyamala, with your wealth of knowledge, we could keep you here all night long, I think.",
+      "start": 6650.320029296875,
+      "end": 6658.320029296875
+    },
+    {
+      "text": " But we do have to clear the room and I'm sure you've got other things to do as well.",
+      "start": 6659.320029296875,
+      "end": 6663.320029296875
+    },
+    {
+      "text": " I wanted to open it up for the class to see if there's any questions.",
+      "start": 6663.320029296875,
+      "end": 6669.320029296875
+    },
+    {
+      "text": " And then maybe you could send me your slides and I'll make. How many slides did we not get to?",
+      "start": 6669.320029296875,
+      "end": 6674.320029296875
+    },
+    {
+      "text": " Oh, I have a lot of slides. I went deeper into each of the techniques and, you know, like other things as well.",
+      "start": 6674.320029296875,
+      "end": 6680.320029296875
+    },
+    {
+      "text": " But, yeah, I mean, definitely happy to share the decks. Yeah, we can post it.",
+      "start": 6680.320029296875,
+      "end": 6685.320029296875
+    },
+    {
+      "text": " Can we have Shyamala again? There's a request. Can we have you again?",
+      "start": 6685.320029296875,
+      "end": 6691.320029296875
+    },
+    {
+      "text": " Sure. Sure. Happy to. It's like mind blowing.",
+      "start": 6691.320029296875,
+      "end": 6696.320029296875
+    },
+    {
+      "text": " I know it's so good. OK, so any questions for today?",
+      "start": 6696.320029296875,
+      "end": 6700.320029296875
+    },
+    {
+      "text": " Because soon Ravi is going to come in here and want to take over the room. Any other questions?",
+      "start": 6700.320029296875,
+      "end": 6708.320029296875
+    },
+    {
+      "text": " Professor, I have a question. It's regarding the GPU H100 and B200.",
+      "start": 6708.320029296875,
+      "end": 6715.320029296875
+    },
+    {
+      "text": " I was reading it somewhere that these GPUs are will be the new reason of a war.",
+      "start": 6715.320029296875,
+      "end": 6723.320029296875
+    },
+    {
+      "text": " So is that true? Like because I know like there are a lot of resources and metals are required to create these.",
+      "start": 6723.320029296875,
+      "end": 6732.320029296875
+    },
+    {
+      "text": " And are the big companies fighting for these like or it's just rumor?",
+      "start": 6732.320029296875,
+      "end": 6738.320029296875
+    },
+    {
+      "text": " Well, I see big companies. So here's the thing, right? Like big companies are not fighting for the GPUs as such.",
+      "start": 6738.320029296875,
+      "end": 6745.320029296875
+    },
+    {
+      "text": " But here's the thing. Right now, Nvidia's GPU is at par. Like, you know, we are 10 years ahead.",
+      "start": 6745.320029296875,
+      "end": 6751.320029296875
+    },
+    {
+      "text": " If you talk about the GPUs. So the war is such that other companies want to reduce their cost.",
+      "start": 6751.320029296875,
+      "end": 6759.320029296875
+    },
+    {
+      "text": " And they are like, OK, because, of course, you know, Nvidia GPU is everywhere.",
+      "start": 6759.320029296875,
+      "end": 6763.320029296875
+    },
+    {
+      "text": " And even for them to train, they need like a lot of.",
+      "start": 6763.320029296875,
+      "end": 6767.320029296875
+    },
+    {
+      "text": " So there's like billions of dollars they are investing for their own infrastructure every time they have to train the model.",
+      "start": 6767.320029296875,
+      "end": 6774.320029296875
+    },
+    {
+      "text": " So every time Meta is training their model, Chad GPT, OpenAI is training their model.",
+      "start": 6774.320029296875,
+      "end": 6780.320029296875
+    },
+    {
+      "text": " Claude is training their model. Whoever is training the model, Nvidia is becoming rich.",
+      "start": 6780.320029296875,
+      "end": 6785.320029296875
+    },
+    {
+      "text": " Right. That is why there is a little bit of like, how can we reduce this costly?",
+      "start": 6785.320029296875,
+      "end": 6792.320029296875
+    },
+    {
+      "text": " Can we train and have our own GPUs in-house kind of things that are happening?",
+      "start": 6792.320029296875,
+      "end": 6798.320029296875
+    },
+    {
+      "text": " But even for that, there's a lot of demand and supply.",
+      "start": 6798.320029296875,
+      "end": 6801.320029296875
+    },
+    {
+      "text": " Like you said, like GPUs itself requires a lot of specialized things like it's a chip,",
+      "start": 6801.320029296875,
+      "end": 6806.320029296875
+    },
+    {
+      "text": " but the chip requires some hardware or some some specialized materials.",
+      "start": 6806.320029296875,
+      "end": 6812.320029296875
+    },
+    {
+      "text": " And those materials come from other parts of the world with all the things that is happening.",
+      "start": 6812.320029296875,
+      "end": 6817.320029296875
+    },
+    {
+      "text": " Not because this is all supply chain challenges.",
+      "start": 6817.320029296875,
+      "end": 6821.320029296875
+    },
+    {
+      "text": " When you are training these GPU, when you are building these GPUs here, we are not producing everything from the scratch,",
+      "start": 6821.320029296875,
+      "end": 6828.320029296875
+    },
+    {
+      "text": " but we are taking the raw materials from all over the world. That is where the challenges.",
+      "start": 6828.320029296875,
+      "end": 6836.320029296875
+    },
+    {
+      "text": " Thank you. OK, what I would like to do is get a picture together.",
+      "start": 6836.320029296875,
+      "end": 6841.320029296875
+    },
+    {
+      "text": " So can the students come up to the front? We've got Shyamala on the screen here.",
+      "start": 6841.320029296875,
+      "end": 6846.320029296875
+    },
+    {
+      "text": " Maybe our guests can take the picture. And if you're online, please turn your camera on so we can see we can see you and get in the photo.",
+      "start": 6846.320029296875,
+      "end": 6855.320029296875
+    },
+    {
+      "text": " So so when you when you all come up, make sure you don't cover up any of the students that are there in the picture.",
+      "start": 6855.320029296875,
+      "end": 6861.320029296875
+    },
+    {
+      "text": " Can you take a picture?",
+      "start": 6861.320029296875,
+      "end": 6865.320029296875
+    },
+    {
+      "text": " Shyamala, thank you so much.",
+      "start": 6891.320029296875,
+      "end": 6920.320029296875
+    },
+    {
+      "text": " Can we get a round of applause for Shyamala?",
+      "start": 6921.320029296875,
+      "end": 6924.320029296875
+    },
+    {
+      "text": " Yeah, we're so grateful. You're such a wealth of knowledge and we're really, really grateful to have you here.",
+      "start": 6924.320029296875,
+      "end": 6929.320029296875
+    },
+    {
+      "text": " Thanks so much for joining. And thanks to all the students for attending today.",
+      "start": 6929.320029296875,
+      "end": 6932.320029296875
+    },
+    {
+      "text": " I'll see you all next week.",
+      "start": 6932.320029296875,
+      "end": 6933.320029296875
+    }
+  ]
+}

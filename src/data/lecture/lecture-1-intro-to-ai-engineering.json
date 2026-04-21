@@ -1,0 +1,5146 @@
+{
+  "source_file": "lecture-1-intro-to-ai-engineering.mp4",
+  "duration": 3336.2900390625,
+  "segments": [
+    {
+      "text": " Has that been five minutes?",
+      "start": 0.8399999737739563,
+      "end": 2.200000047683716
+    },
+    {
+      "text": " Okay, we're gonna get started again here.",
+      "start": 8.640000343322754,
+      "end": 10.880000114440918
+    },
+    {
+      "text": " So now we can do a normal start to our class.",
+      "start": 10.880000114440918,
+      "end": 15.880000114440918
+    },
+    {
+      "text": " So welcome to AI Engineering Fundamentals.",
+      "start": 17.0,
+      "end": 20.280000686645508
+    },
+    {
+      "text": " I'm super excited to teach this class.",
+      "start": 21.760000228881836,
+      "end": 23.579999923706055
+    },
+    {
+      "text": " This was a class that was kind of dreamt up",
+      "start": 23.579999923706055,
+      "end": 28.440000534057617
+    },
+    {
+      "text": " over the past year because as a faculty,",
+      "start": 28.440000534057617,
+      "end": 31.719999313354492
+    },
+    {
+      "text": " we kind of looked at the classes that we were teaching",
+      "start": 31.719999313354492,
+      "end": 35.36000061035156
+    },
+    {
+      "text": " and we thought about what do our students need to know",
+      "start": 35.36000061035156,
+      "end": 39.36000061035156
+    },
+    {
+      "text": " to be effective contributors in this kind of AI economy.",
+      "start": 39.36000061035156,
+      "end": 44.36000061035156
+    },
+    {
+      "text": " And it was determined that the information",
+      "start": 46.599998474121094,
+      "end": 51.599998474121094
+    },
+    {
+      "text": " that we're gonna put together in this class",
+      "start": 51.63999938964844,
+      "end": 55.040000915527344
+    },
+    {
+      "text": " wasn't finding its way to students",
+      "start": 55.040000915527344,
+      "end": 57.63999938964844
+    },
+    {
+      "text": " in all of the other classes.",
+      "start": 57.63999938964844,
+      "end": 59.47999954223633
+    },
+    {
+      "text": " It's easy to imagine why,",
+      "start": 59.47999954223633,
+      "end": 61.119998931884766
+    },
+    {
+      "text": " because AI kind of jumped on the scene",
+      "start": 61.119998931884766,
+      "end": 64.27999877929688
+    },
+    {
+      "text": " and everybody in every industry is reacting to it.",
+      "start": 64.27999877929688,
+      "end": 68.08000183105469
+    },
+    {
+      "text": " And education is no different than any other industry.",
+      "start": 68.08000183105469,
+      "end": 70.68000030517578
+    },
+    {
+      "text": " So we had to kind of watch and see how things played out",
+      "start": 70.68000030517578,
+      "end": 74.63999938964844
+    },
+    {
+      "text": " as AI came on the scene and we observed some patterns.",
+      "start": 74.63999938964844,
+      "end": 79.31999969482422
+    },
+    {
+      "text": " And one of the big patterns that I've observed",
+      "start": 79.31999969482422,
+      "end": 81.4800033569336
+    },
+    {
+      "text": " is people leveraging LLMs to build applications on top of.",
+      "start": 81.4800033569336,
+      "end": 86.4800033569336
+    },
+    {
+      "text": " And that's a major trend these days.",
+      "start": 86.5999984741211,
+      "end": 89.0
+    },
+    {
+      "text": " And actually it's what I would say",
+      "start": 89.0,
+      "end": 90.72000122070312
+    },
+    {
+      "text": " is the primary source of innovation",
+      "start": 90.72000122070312,
+      "end": 92.76000213623047
+    },
+    {
+      "text": " because there's only a few companies that can build the LLMs",
+      "start": 92.76000213623047,
+      "end": 95.5199966430664
+    },
+    {
+      "text": " because pre-training is incredibly expensive.",
+      "start": 95.5199966430664,
+      "end": 98.12000274658203
+    },
+    {
+      "text": " You have to buy the hardware and you have to do the training",
+      "start": 98.12000274658203,
+      "end": 101.04000091552734
+    },
+    {
+      "text": " and the training takes a long time",
+      "start": 101.04000091552734,
+      "end": 103.04000091552734
+    },
+    {
+      "text": " on very expensive hardware.",
+      "start": 103.04000091552734,
+      "end": 104.55999755859375
+    },
+    {
+      "text": " And so there's a handful of companies",
+      "start": 104.55999755859375,
+      "end": 105.95999908447266
+    },
+    {
+      "text": " that are building foundational and frontier models.",
+      "start": 105.95999908447266,
+      "end": 108.73999786376953
+    },
+    {
+      "text": " We know most of those company names,",
+      "start": 108.73999786376953,
+      "end": 110.55999755859375
+    },
+    {
+      "text": " Microsoft, Google, OpenAI, Claude, Anthropic.",
+      "start": 110.55999755859375,
+      "end": 114.41999816894531
+    },
+    {
+      "text": " And so there's a smaller set of groups",
+      "start": 115.41999816894531,
+      "end": 118.9800033569336
+    },
+    {
+      "text": " that are building the foundational models,",
+      "start": 118.9800033569336,
+      "end": 120.37999725341797
+    },
+    {
+      "text": " but there's many, many, many companies",
+      "start": 120.37999725341797,
+      "end": 123.33999633789062
+    },
+    {
+      "text": " building on top of those models,",
+      "start": 123.33999633789062,
+      "end": 124.87999725341797
+    },
+    {
+      "text": " taking advantage of the capabilities",
+      "start": 124.87999725341797,
+      "end": 126.41999816894531
+    },
+    {
+      "text": " that those models deliver to us.",
+      "start": 126.41999816894531,
+      "end": 128.4199981689453
+    },
+    {
+      "text": " So that's really what this course is all about",
+      "start": 128.4199981689453,
+      "end": 130.77999877929688
+    },
+    {
+      "text": " is to equip you guys with the knowledge",
+      "start": 130.77999877929688,
+      "end": 134.4199981689453
+    },
+    {
+      "text": " such that when you go into the marketplace",
+      "start": 134.4199981689453,
+      "end": 136.3800048828125
+    },
+    {
+      "text": " to find a job or start your own company,",
+      "start": 136.3800048828125,
+      "end": 138.94000244140625
+    },
+    {
+      "text": " as we chatted about,",
+      "start": 138.94000244140625,
+      "end": 140.5
+    },
+    {
+      "text": " that you'll know all of the concepts",
+      "start": 140.5,
+      "end": 143.25999450683594
+    },
+    {
+      "text": " and the capabilities and the tools and techniques",
+      "start": 143.25999450683594,
+      "end": 145.82000732421875
+    },
+    {
+      "text": " to build on top of AI LLMs.",
+      "start": 145.82000732421875,
+      "end": 149.25999450683594
+    },
+    {
+      "text": " Sound good?",
+      "start": 150.13999938964844,
+      "end": 150.97999572753906
+    },
+    {
+      "text": " You guys wanna learn that?",
+      "start": 150.97999572753906,
+      "end": 152.22000122070312
+    },
+    {
+      "text": " I didn't hear everybody.",
+      "start": 153.25999450683594,
+      "end": 154.25999450683594
+    },
+    {
+      "text": " Everybody wanna learn that?",
+      "start": 154.25999450683594,
+      "end": 156.22000122070312
+    },
+    {
+      "text": " Okay, cool.",
+      "start": 156.22000122070312,
+      "end": 157.05999755859375
+    },
+    {
+      "text": " Then you're in the right spot.",
+      "start": 157.05999755859375,
+      "end": 158.33999633789062
+    },
+    {
+      "text": " Okay, so one really cool thing that I'm super excited about",
+      "start": 158.33999633789062,
+      "end": 161.74000549316406
+    },
+    {
+      "text": " and hopefully you will be as well",
+      "start": 161.74000549316406,
+      "end": 163.5399932861328
+    },
+    {
+      "text": " is we're gonna be leveraging an AI powered tool",
+      "start": 163.5399932861328,
+      "end": 168.5399932861328
+    },
+    {
+      "text": " in this class, in our educational experience.",
+      "start": 169.05999755859375,
+      "end": 172.22000122070312
+    },
+    {
+      "text": " And in order to do that, well, so that's one thing.",
+      "start": 173.4600067138672,
+      "end": 178.10000610351562
+    },
+    {
+      "text": " The second thing is we're gonna have an external person",
+      "start": 178.10000610351562,
+      "end": 181.77999877929688
+    },
+    {
+      "text": " measure and collect quantitative and qualitative survey",
+      "start": 181.77999877929688,
+      "end": 186.77999877929688
+    },
+    {
+      "text": " and interview input from students",
+      "start": 187.74000549316406,
+      "end": 190.3800048828125
+    },
+    {
+      "text": " as well as the application to assess the impact",
+      "start": 190.3800048828125,
+      "end": 194.60000610351562
+    },
+    {
+      "text": " of that tool on our learning process.",
+      "start": 194.60000610351562,
+      "end": 198.8000030517578
+    },
+    {
+      "text": " That makes sense?",
+      "start": 198.8000030517578,
+      "end": 199.63999938964844
+    },
+    {
+      "text": " So we're gonna use a tool",
+      "start": 199.63999938964844,
+      "end": 201.33999633789062
+    },
+    {
+      "text": " and then we're gonna use a third party person",
+      "start": 201.33999633789062,
+      "end": 204.22000122070312
+    },
+    {
+      "text": " to measure the effectiveness on the tool",
+      "start": 204.22000122070312,
+      "end": 206.66000366210938
+    },
+    {
+      "text": " in our learning process.",
+      "start": 206.66000366210938,
+      "end": 208.3800048828125
+    },
+    {
+      "text": " Okay, so in order to allow those two things to happen,",
+      "start": 208.3800048828125,
+      "end": 213.22000122070312
+    },
+    {
+      "text": " I need to get some consent forms from you guys, okay?",
+      "start": 214.5,
+      "end": 218.8800048828125
+    },
+    {
+      "text": " And the consent forms basically say,",
+      "start": 218.8800048828125,
+      "end": 222.0
+    },
+    {
+      "text": " I'm okay using this new tool.",
+      "start": 222.94000244140625,
+      "end": 224.97999572753906
+    },
+    {
+      "text": " The tool is called ScholarStack.",
+      "start": 224.97999572753906,
+      "end": 226.66000366210938
+    },
+    {
+      "text": " It's actually a tool that I built.",
+      "start": 226.66000366210938,
+      "end": 228.74000549316406
+    },
+    {
+      "text": " So I know it very, very well.",
+      "start": 228.74000549316406,
+      "end": 230.6999969482422
+    },
+    {
+      "text": " Actually, Shreya helped me build it",
+      "start": 231.13999938964844,
+      "end": 232.77999877929688
+    },
+    {
+      "text": " over the last few months.",
+      "start": 232.77999877929688,
+      "end": 235.5
+    },
+    {
+      "text": " And I don't wanna kind of tell you too many things about it",
+      "start": 235.5,
+      "end": 240.0800018310547
+    },
+    {
+      "text": " because I want you to not be biased",
+      "start": 240.0800018310547,
+      "end": 242.3000030517578
+    },
+    {
+      "text": " when you take this original survey",
+      "start": 242.3000030517578,
+      "end": 243.86000061035156
+    },
+    {
+      "text": " that I'm gonna ask you to take right now.",
+      "start": 243.86000061035156,
+      "end": 245.86000061035156
+    },
+    {
+      "text": " And the survey kind of talks about how you use AI",
+      "start": 245.86000061035156,
+      "end": 248.94000244140625
+    },
+    {
+      "text": " in the past, what you think about AI,",
+      "start": 248.94000244140625,
+      "end": 251.5
+    },
+    {
+      "text": " and specifically it's focused on AI chatbot tools.",
+      "start": 251.5,
+      "end": 255.5
+    },
+    {
+      "text": " So think ChatGPT, think like Google Gemini,",
+      "start": 255.5,
+      "end": 260.5
+    },
+    {
+      "text": " think about the chatbot tools that we all use",
+      "start": 260.5799865722656,
+      "end": 262.94000244140625
+    },
+    {
+      "text": " pretty much every day or every week, right?",
+      "start": 262.94000244140625,
+      "end": 265.5400085449219
+    },
+    {
+      "text": " So my ask right now is to open your Canvas page.",
+      "start": 265.5400085449219,
+      "end": 268.6600036621094
+    },
+    {
+      "text": " Shreya sent an announcement to the class.",
+      "start": 268.6600036621094,
+      "end": 273.1400146484375
+    },
+    {
+      "text": " That announcement has a Qualtrics URL.",
+      "start": 273.1400146484375,
+      "end": 277.1000061035156
+    },
+    {
+      "text": " Qualtrics is similar to SurveyMonkey.",
+      "start": 277.1000061035156,
+      "end": 279.8599853515625
+    },
+    {
+      "text": " It's basically a survey tool",
+      "start": 279.8599853515625,
+      "end": 281.739990234375
+    },
+    {
+      "text": " that allows people to kind of like complete surveys.",
+      "start": 281.739990234375,
+      "end": 285.1400146484375
+    },
+    {
+      "text": " In the survey, it starts by asking",
+      "start": 285.1400146484375,
+      "end": 289.1000061035156
+    },
+    {
+      "text": " two general consents.",
+      "start": 289.1000061035156,
+      "end": 291.8999938964844
+    },
+    {
+      "text": " The first is I agree that I'm gonna use this tool",
+      "start": 291.8999938964844,
+      "end": 295.29998779296875
+    },
+    {
+      "text": " in my learning journey in this class.",
+      "start": 295.29998779296875,
+      "end": 297.70001220703125
+    },
+    {
+      "text": " And the second is a consent",
+      "start": 297.70001220703125,
+      "end": 300.29998779296875
+    },
+    {
+      "text": " that I'm gonna allow this woman, Sarah,",
+      "start": 300.29998779296875,
+      "end": 302.29998779296875
+    },
+    {
+      "text": " from the University of Michigan",
+      "start": 302.29998779296875,
+      "end": 304.1000061035156
+    },
+    {
+      "text": " to process information from the survey that follows.",
+      "start": 304.1000061035156,
+      "end": 309.1000061035156
+    },
+    {
+      "text": " So that's part of the survey.",
+      "start": 309.70001220703125,
+      "end": 310.8599853515625
+    },
+    {
+      "text": " The first two questions are consent.",
+      "start": 310.8599853515625,
+      "end": 312.6600036621094
+    },
+    {
+      "text": " And there's like, I don't know, eight survey questions.",
+      "start": 312.6600036621094,
+      "end": 315.3800048828125
+    },
+    {
+      "text": " It talks a bit about your use of AI.",
+      "start": 315.3800048828125,
+      "end": 317.8599853515625
+    },
+    {
+      "text": " So I'm asking you guys to do this now",
+      "start": 317.8599853515625,
+      "end": 320.3800048828125
+    },
+    {
+      "text": " before I talk about what the tool does,",
+      "start": 320.3800048828125,
+      "end": 323.260009765625
+    },
+    {
+      "text": " because again, I don't wanna influence your answers.",
+      "start": 323.260009765625,
+      "end": 325.7799987792969
+    },
+    {
+      "text": " I don't wanna bias your answers.",
+      "start": 325.7799987792969,
+      "end": 328.6600036621094
+    },
+    {
+      "text": " If for some reason you don't want to use the tool",
+      "start": 328.6600036621094,
+      "end": 331.94000244140625
+    },
+    {
+      "text": " or you don't want to have your learning measured,",
+      "start": 331.94000244140625,
+      "end": 336.4599914550781
+    },
+    {
+      "text": " you can opt out of both of those.",
+      "start": 338.5400085449219,
+      "end": 340.9800109863281
+    },
+    {
+      "text": " And then I will have to work with you",
+      "start": 340.9800109863281,
+      "end": 343.17999267578125
+    },
+    {
+      "text": " to find an alternate path through this course",
+      "start": 343.17999267578125,
+      "end": 347.4200134277344
+    },
+    {
+      "text": " to do other things.",
+      "start": 347.4200134277344,
+      "end": 348.94000244140625
+    },
+    {
+      "text": " If you have any hesitation or any reason",
+      "start": 350.05999755859375,
+      "end": 353.29998779296875
+    },
+    {
+      "text": " why you might not wanna participate,",
+      "start": 353.29998779296875,
+      "end": 355.82000732421875
+    },
+    {
+      "text": " please, you can ask me now",
+      "start": 355.82000732421875,
+      "end": 357.8999938964844
+    },
+    {
+      "text": " or you can kind of ask me after class.",
+      "start": 357.8999938964844,
+      "end": 360.6600036621094
+    },
+    {
+      "text": " But I don't think that there should be any reason.",
+      "start": 360.6600036621094,
+      "end": 364.05999755859375
+    },
+    {
+      "text": " It's a new tool.",
+      "start": 364.05999755859375,
+      "end": 365.8999938964844
+    },
+    {
+      "text": " It's very cool.",
+      "start": 365.8999938964844,
+      "end": 366.94000244140625
+    },
+    {
+      "text": " It's not collecting any personal or sensitive data.",
+      "start": 368.260009765625,
+      "end": 370.9800109863281
+    },
+    {
+      "text": " That's like the most important thing",
+      "start": 370.9800109863281,
+      "end": 372.3800048828125
+    },
+    {
+      "text": " that I would wanna ask if I was a student.",
+      "start": 372.3800048828125,
+      "end": 374.4599914550781
+    },
+    {
+      "text": " So it's not doing any of that.",
+      "start": 375.4200134277344,
+      "end": 378.3399963378906
+    },
+    {
+      "text": " So let me pause and allow you guys",
+      "start": 378.3399963378906,
+      "end": 380.82000732421875
+    },
+    {
+      "text": " to kind of work your way through the Qualtrics survey",
+      "start": 380.82000732421875,
+      "end": 385.05999755859375
+    },
+    {
+      "text": " right now.",
+      "start": 385.05999755859375,
+      "end": 385.8999938964844
+    },
+    {
+      "text": " And we'll give you five minutes.",
+      "start": 385.8999938964844,
+      "end": 387.29998779296875
+    },
+    {
+      "text": " It shouldn't take very long.",
+      "start": 387.29998779296875,
+      "end": 389.0199890136719
+    },
+    {
+      "text": " Okay.",
+      "start": 389.0199890136719,
+      "end": 389.8599853515625
+    },
+    {
+      "text": " It's very different than Canvas.",
+      "start": 403.4200134277344,
+      "end": 405.29998779296875
+    },
+    {
+      "text": " It's basically a learning assistant,",
+      "start": 408.17999267578125,
+      "end": 413.05999755859375
+    },
+    {
+      "text": " whereas Canvas is just kind of like a bulletin board",
+      "start": 413.05999755859375,
+      "end": 415.94000244140625
+    },
+    {
+      "text": " for information.",
+      "start": 415.94000244140625,
+      "end": 417.0199890136719
+    },
+    {
+      "text": " So we'll give it one more minute",
+      "start": 659.02001953125,
+      "end": 664.02001953125
+    },
+    {
+      "text": " and then I'll get started with the lecture.",
+      "start": 666.7000122070312,
+      "end": 668.8599853515625
+    },
+    {
+      "text": " Okay.",
+      "start": 720.02001953125,
+      "end": 720.8599853515625
+    },
+    {
+      "text": " Okay.",
+      "start": 722.260009765625,
+      "end": 723.0999755859375
+    },
+    {
+      "text": " Is that enough time?",
+      "start": 723.0999755859375,
+      "end": 723.9400024414062
+    },
+    {
+      "text": " Yeah.",
+      "start": 726.02001953125,
+      "end": 727.1799926757812
+    },
+    {
+      "text": " Okay, cool.",
+      "start": 727.1799926757812,
+      "end": 728.7000122070312
+    },
+    {
+      "text": " All right.",
+      "start": 728.7000122070312,
+      "end": 729.5399780273438
+    },
+    {
+      "text": " So in terms of the rest of our time together today,",
+      "start": 729.5399780273438,
+      "end": 733.7000122070312
+    },
+    {
+      "text": " I'm gonna structure it as follows.",
+      "start": 733.7000122070312,
+      "end": 735.5
+    },
+    {
+      "text": " I'm gonna do a short lecture",
+      "start": 735.5,
+      "end": 737.8599853515625
+    },
+    {
+      "text": " to introduce some of the topics for week one.",
+      "start": 737.8599853515625,
+      "end": 741.3400268554688
+    },
+    {
+      "text": " And I'm gonna talk about the readings",
+      "start": 741.3400268554688,
+      "end": 743.9000244140625
+    },
+    {
+      "text": " that we have got lined up for week one as well.",
+      "start": 743.9000244140625,
+      "end": 746.4199829101562
+    },
+    {
+      "text": " And then I'm gonna have Shreya come up",
+      "start": 746.4199829101562,
+      "end": 748.2999877929688
+    },
+    {
+      "text": " and she's gonna do a demo",
+      "start": 748.2999877929688,
+      "end": 749.8599853515625
+    },
+    {
+      "text": " and basically a training session on ScholarStack,",
+      "start": 749.8599853515625,
+      "end": 753.02001953125
+    },
+    {
+      "text": " which is this learning tool",
+      "start": 753.02001953125,
+      "end": 755.3400268554688
+    },
+    {
+      "text": " and talk about how it works",
+      "start": 755.3400268554688,
+      "end": 756.739990234375
+    },
+    {
+      "text": " and how we're gonna use it in the class.",
+      "start": 756.739990234375,
+      "end": 758.5
+    },
+    {
+      "text": " That sound good?",
+      "start": 758.5,
+      "end": 759.3400268554688
+    },
+    {
+      "text": " Cool.",
+      "start": 760.4600219726562,
+      "end": 761.3800048828125
+    },
+    {
+      "text": " Okay.",
+      "start": 761.3800048828125,
+      "end": 762.219970703125
+    },
+    {
+      "text": " So the first week of class",
+      "start": 762.219970703125,
+      "end": 765.780029296875
+    },
+    {
+      "text": " is gonna be focused on some of the most important",
+      "start": 765.780029296875,
+      "end": 770.5800170898438
+    },
+    {
+      "text": " foundational conceptual understanding",
+      "start": 770.5800170898438,
+      "end": 773.6599731445312
+    },
+    {
+      "text": " as it relates to AI and LLMs specifically.",
+      "start": 773.6599731445312,
+      "end": 778.6599731445312
+    },
+    {
+      "text": " This class doesn't talk too much about machine learning.",
+      "start": 780.6199951171875,
+      "end": 783.97998046875
+    },
+    {
+      "text": " It doesn't do a deep dive into neural networks.",
+      "start": 783.97998046875,
+      "end": 786.5
+    },
+    {
+      "text": " It kind of touches on them a little bit,",
+      "start": 786.5,
+      "end": 788.6599731445312
+    },
+    {
+      "text": " but the class is really focused",
+      "start": 788.6599731445312,
+      "end": 790.1799926757812
+    },
+    {
+      "text": " on understanding how LLMs work.",
+      "start": 790.1799926757812,
+      "end": 792.780029296875
+    },
+    {
+      "text": " And of course, LLMs are taking advantage of neural networks,",
+      "start": 792.780029296875,
+      "end": 796.02001953125
+    },
+    {
+      "text": " but it's really focused on kind of AI",
+      "start": 797.0599975585938,
+      "end": 799.97998046875
+    },
+    {
+      "text": " from an LLM perspective.",
+      "start": 799.97998046875,
+      "end": 802.3400268554688
+    },
+    {
+      "text": " And as I stated earlier about understanding how that works",
+      "start": 802.3400268554688,
+      "end": 806.5399780273438
+    },
+    {
+      "text": " so people can build applications",
+      "start": 806.5399780273438,
+      "end": 808.3400268554688
+    },
+    {
+      "text": " that take advantage of this powerful capability.",
+      "start": 808.3400268554688,
+      "end": 811.1799926757812
+    },
+    {
+      "text": " So the first thing that I wanna talk about today",
+      "start": 811.1799926757812,
+      "end": 816.1799926757812
+    },
+    {
+      "text": " is kind of how did we get to where we are in terms of AI?",
+      "start": 816.4199829101562,
+      "end": 821.4199829101562
+    },
+    {
+      "text": " In terms of LLM, it kind of blew up basically",
+      "start": 823.3400268554688,
+      "end": 826.7000122070312
+    },
+    {
+      "text": " when ChatGPT presented at Disrupt Conference",
+      "start": 826.7000122070312,
+      "end": 831.7000122070312
+    },
+    {
+      "text": " a few years ago and started talking about the availability",
+      "start": 832.5399780273438,
+      "end": 835.6599731445312
+    },
+    {
+      "text": " of their newest model.",
+      "start": 835.6599731445312,
+      "end": 837.5
+    },
+    {
+      "text": " But the AI research goes back decades",
+      "start": 837.5,
+      "end": 841.8200073242188
+    },
+    {
+      "text": " and Carnegie Mellon was actually a big contributor",
+      "start": 841.8200073242188,
+      "end": 844.2999877929688
+    },
+    {
+      "text": " to much of this research.",
+      "start": 844.2999877929688,
+      "end": 846.260009765625
+    },
+    {
+      "text": " And I wanna just kind of touch on some of the milestones",
+      "start": 846.260009765625,
+      "end": 851.219970703125
+    },
+    {
+      "text": " in the journey so that we're all grounded on them",
+      "start": 851.219970703125,
+      "end": 854.6599731445312
+    },
+    {
+      "text": " and we're familiar with kind of how we got",
+      "start": 854.6599731445312,
+      "end": 856.8599853515625
+    },
+    {
+      "text": " to where we are today",
+      "start": 856.8599853515625,
+      "end": 857.9000244140625
+    },
+    {
+      "text": " and what capabilities made it possible.",
+      "start": 857.9000244140625,
+      "end": 860.3400268554688
+    },
+    {
+      "text": " So early attempts at AI were really focused",
+      "start": 860.3800048828125,
+      "end": 863.4600219726562
+    },
+    {
+      "text": " on what we refer to as rules-based systems.",
+      "start": 863.4600219726562,
+      "end": 867.4199829101562
+    },
+    {
+      "text": " And this is basically, conceptually,",
+      "start": 867.4199829101562,
+      "end": 870.1400146484375
+    },
+    {
+      "text": " it's about humans trying to tell machines how to think.",
+      "start": 870.1400146484375,
+      "end": 875.1400146484375
+    },
+    {
+      "text": " It's a bunch of if-then statements",
+      "start": 876.5399780273438,
+      "end": 879.6199951171875
+    },
+    {
+      "text": " that we attempt to take our knowledge",
+      "start": 879.6199951171875,
+      "end": 882.1400146484375
+    },
+    {
+      "text": " and put it into the machine.",
+      "start": 882.1400146484375,
+      "end": 883.780029296875
+    },
+    {
+      "text": " Now that only gets you so far for a number of reasons.",
+      "start": 884.6199951171875,
+      "end": 888.5800170898438
+    },
+    {
+      "text": " Number one, it's brittle.",
+      "start": 888.5800170898438,
+      "end": 889.9400024414062
+    },
+    {
+      "text": " If there's an outlier, if there's a question that is asked",
+      "start": 889.9400024414062,
+      "end": 893.7000122070312
+    },
+    {
+      "text": " that you didn't really already tell it",
+      "start": 893.7000122070312,
+      "end": 895.5800170898438
+    },
+    {
+      "text": " what the answer would be, then it's gonna break.",
+      "start": 895.5800170898438,
+      "end": 898.1400146484375
+    },
+    {
+      "text": " And it always, it can't really learn on its own, right?",
+      "start": 899.3800048828125,
+      "end": 903.7000122070312
+    },
+    {
+      "text": " It's dependent on a human to kind of tell it the answer",
+      "start": 903.7000122070312,
+      "end": 906.9400024414062
+    },
+    {
+      "text": " so that it can then regurgitate the answers.",
+      "start": 906.9400024414062,
+      "end": 909.3800048828125
+    },
+    {
+      "text": " And we often tried to style teaching machines",
+      "start": 910.9400024414062,
+      "end": 915.9400024414062
+    },
+    {
+      "text": " after how we styled teaching ourselves.",
+      "start": 916.0999755859375,
+      "end": 919.02001953125
+    },
+    {
+      "text": " So as Omri stated out, education has often relied",
+      "start": 919.02001953125,
+      "end": 923.2999877929688
+    },
+    {
+      "text": " on kind of one person, the teacher,",
+      "start": 923.2999877929688,
+      "end": 925.0999755859375
+    },
+    {
+      "text": " to tell the class the truth.",
+      "start": 925.0999755859375,
+      "end": 927.4199829101562
+    },
+    {
+      "text": " And then the class kind of memorize it",
+      "start": 927.4199829101562,
+      "end": 929.739990234375
+    },
+    {
+      "text": " and combines it with some readings",
+      "start": 929.739990234375,
+      "end": 931.260009765625
+    },
+    {
+      "text": " and some homework and some exercises.",
+      "start": 931.260009765625,
+      "end": 933.4199829101562
+    },
+    {
+      "text": " And then the class knows what the teacher knows, right?",
+      "start": 933.4199829101562,
+      "end": 937.780029296875
+    },
+    {
+      "text": " So it's a very supervised transfer of knowledge.",
+      "start": 937.780029296875,
+      "end": 942.780029296875
+    },
+    {
+      "text": " And so it's very understandable",
+      "start": 943.780029296875,
+      "end": 947.260009765625
+    },
+    {
+      "text": " why early researchers thought that that was the technique",
+      "start": 947.260009765625,
+      "end": 951.4600219726562
+    },
+    {
+      "text": " that needed to happen to enable machine learning.",
+      "start": 951.4600219726562,
+      "end": 955.3800048828125
+    },
+    {
+      "text": " But again, it only got us so far.",
+      "start": 956.4600219726562,
+      "end": 959.1799926757812
+    },
+    {
+      "text": " And then we kind of went through this phase",
+      "start": 959.1799926757812,
+      "end": 961.6599731445312
+    },
+    {
+      "text": " where we started kind of learning patterns from data, right?",
+      "start": 961.6599731445312,
+      "end": 966.6599731445312
+    },
+    {
+      "text": " And this produced some very useful things,",
+      "start": 968.3800048828125,
+      "end": 971.1799926757812
+    },
+    {
+      "text": " spam filters, recommendation engines.",
+      "start": 971.219970703125,
+      "end": 973.3800048828125
+    },
+    {
+      "text": " If you've ever used Netflix, right?",
+      "start": 973.3800048828125,
+      "end": 975.3800048828125
+    },
+    {
+      "text": " We like it when it thinks it knows us, right?",
+      "start": 975.3800048828125,
+      "end": 979.1799926757812
+    },
+    {
+      "text": " Because it's looking at what we've watched",
+      "start": 979.1799926757812,
+      "end": 981.0999755859375
+    },
+    {
+      "text": " and what we've liked in the past",
+      "start": 981.0999755859375,
+      "end": 982.4199829101562
+    },
+    {
+      "text": " and it can recommend things.",
+      "start": 982.4199829101562,
+      "end": 983.9400024414062
+    },
+    {
+      "text": " And kind of this machine learning",
+      "start": 985.4199829101562,
+      "end": 988.3800048828125
+    },
+    {
+      "text": " kind of took us down the road a bit further as well",
+      "start": 988.3800048828125,
+      "end": 991.6599731445312
+    },
+    {
+      "text": " in the world of AI.",
+      "start": 991.6599731445312,
+      "end": 993.5800170898438
+    },
+    {
+      "text": " And it was heavily under the hood",
+      "start": 993.5800170898438,
+      "end": 996.219970703125
+    },
+    {
+      "text": " relying on statistical models.",
+      "start": 996.219970703125,
+      "end": 998.4600219726562
+    },
+    {
+      "text": " Now, neural networks really started",
+      "start": 999.3400268554688,
+      "end": 1003.1400146484375
+    },
+    {
+      "text": " kind of opening the floodgates to really with the hope",
+      "start": 1003.1400146484375,
+      "end": 1008.1400146484375
+    },
+    {
+      "text": " that machines could learn on their own.",
+      "start": 1008.5800170898438,
+      "end": 1012.0999755859375
+    },
+    {
+      "text": " And there were a number of things happening",
+      "start": 1012.0999755859375,
+      "end": 1014.4199829101562
+    },
+    {
+      "text": " during this process.",
+      "start": 1014.4199829101562,
+      "end": 1015.5800170898438
+    },
+    {
+      "text": " Number one was the availability of data",
+      "start": 1015.5800170898438,
+      "end": 1018.9400024414062
+    },
+    {
+      "text": " was becoming large, right?",
+      "start": 1018.9400024414062,
+      "end": 1023.02001953125
+    },
+    {
+      "text": " As well, the processing power of chips",
+      "start": 1023.02001953125,
+      "end": 1025.6199951171875
+    },
+    {
+      "text": " was becoming more and more powerful.",
+      "start": 1025.6199951171875,
+      "end": 1027.699951171875
+    },
+    {
+      "text": " So we had more data and we had powerful chips",
+      "start": 1027.739990234375,
+      "end": 1029.8199462890625
+    },
+    {
+      "text": " that could do more with that data.",
+      "start": 1029.8199462890625,
+      "end": 1032.02001953125
+    },
+    {
+      "text": " And in this kind of early,",
+      "start": 1032.02001953125,
+      "end": 1035.260009765625
+    },
+    {
+      "text": " still early phase of kind of neural networks,",
+      "start": 1035.260009765625,
+      "end": 1037.5
+    },
+    {
+      "text": " we were able to have machines learn on their own,",
+      "start": 1038.9000244140625,
+      "end": 1042.780029296875
+    },
+    {
+      "text": " which was very, very powerful.",
+      "start": 1042.780029296875,
+      "end": 1044.8199462890625
+    },
+    {
+      "text": " And because we basically realized",
+      "start": 1045.97998046875,
+      "end": 1050.1800537109375
+    },
+    {
+      "text": " that humans are not able to hard code the machines",
+      "start": 1050.1800537109375,
+      "end": 1053.5400390625
+    },
+    {
+      "text": " with all the permutations",
+      "start": 1053.5400390625,
+      "end": 1055.219970703125
+    },
+    {
+      "text": " of potentially what could happen.",
+      "start": 1055.4200439453125,
+      "end": 1058.1400146484375
+    },
+    {
+      "text": " And the other kind of learning element",
+      "start": 1058.1400146484375,
+      "end": 1061.0999755859375
+    },
+    {
+      "text": " that became evident in this phase",
+      "start": 1061.0999755859375,
+      "end": 1063.3800048828125
+    },
+    {
+      "text": " was this concept of prediction, right?",
+      "start": 1063.3800048828125,
+      "end": 1066.300048828125
+    },
+    {
+      "text": " So we've got kind of weights inside of a neural network.",
+      "start": 1066.300048828125,
+      "end": 1071.300048828125
+    },
+    {
+      "text": " And if we give it a corpus of information,",
+      "start": 1071.6600341796875,
+      "end": 1076.1800537109375
+    },
+    {
+      "text": " it can read on its own",
+      "start": 1076.1800537109375,
+      "end": 1079.219970703125
+    },
+    {
+      "text": " and it can predict the next word in the sentence.",
+      "start": 1079.219970703125,
+      "end": 1083.02001953125
+    },
+    {
+      "text": " And if it gets it wrong,",
+      "start": 1083.02001953125,
+      "end": 1084.5400390625
+    },
+    {
+      "text": " then it reveals what the right word was.",
+      "start": 1084.5400390625,
+      "end": 1087.3399658203125
+    },
+    {
+      "text": " And then it thinks for a sec, okay, I got it wrong.",
+      "start": 1087.3399658203125,
+      "end": 1090.780029296875
+    },
+    {
+      "text": " So that's a binary.",
+      "start": 1090.780029296875,
+      "end": 1091.8599853515625
+    },
+    {
+      "text": " Was it right or was it wrong?",
+      "start": 1091.8599853515625,
+      "end": 1093.02001953125
+    },
+    {
+      "text": " I got it wrong.",
+      "start": 1093.02001953125,
+      "end": 1094.02001953125
+    },
+    {
+      "text": " Okay, how far off was I?",
+      "start": 1094.02001953125,
+      "end": 1095.780029296875
+    },
+    {
+      "text": " That's measuring the loss.",
+      "start": 1095.780029296875,
+      "end": 1097.780029296875
+    },
+    {
+      "text": " And then gradient descent is pointing the machine",
+      "start": 1097.780029296875,
+      "end": 1102.699951171875
+    },
+    {
+      "text": " in the right direction to try and be more right",
+      "start": 1102.699951171875,
+      "end": 1105.93994140625
+    },
+    {
+      "text": " or less wrong the next time around, okay?",
+      "start": 1105.93994140625,
+      "end": 1110.219970703125
+    },
+    {
+      "text": " So this allowed learning to become kind of like a game",
+      "start": 1110.8599853515625,
+      "end": 1115.5400390625
+    },
+    {
+      "text": " that the machine could play with itself",
+      "start": 1115.5400390625,
+      "end": 1117.5
+    },
+    {
+      "text": " over and over and over again.",
+      "start": 1117.5,
+      "end": 1119.3399658203125
+    },
+    {
+      "text": " And this was one of the big breakthroughs",
+      "start": 1119.3399658203125,
+      "end": 1122.06005859375
+    },
+    {
+      "text": " because when humans are kind of like",
+      "start": 1122.06005859375,
+      "end": 1125.6600341796875
+    },
+    {
+      "text": " trying to teach the machine the truth as we know it,",
+      "start": 1125.6600341796875,
+      "end": 1129.5
+    },
+    {
+      "text": " it's not this game that can be played 24 seven, okay?",
+      "start": 1129.5,
+      "end": 1132.9000244140625
+    },
+    {
+      "text": " So with processors, with advanced processors,",
+      "start": 1132.9000244140625,
+      "end": 1136.1800537109375
+    },
+    {
+      "text": " with a large corpus of information,",
+      "start": 1136.1800537109375,
+      "end": 1139.06005859375
+    },
+    {
+      "text": " the machines can play this game by themselves 24 seven",
+      "start": 1139.06005859375,
+      "end": 1141.9000244140625
+    },
+    {
+      "text": " all day long and constantly expose their model",
+      "start": 1141.9000244140625,
+      "end": 1146.300048828125
+    },
+    {
+      "text": " and then measure how far off they were.",
+      "start": 1146.300048828125,
+      "end": 1149.02001953125
+    },
+    {
+      "text": " Gradient descent, again, tells us it's kind of like",
+      "start": 1149.93994140625,
+      "end": 1152.8599853515625
+    },
+    {
+      "text": " if you ever play the game kind of warm or cold,",
+      "start": 1152.8599853515625,
+      "end": 1155.0999755859375
+    },
+    {
+      "text": " like I'm thinking of a word and you guess,",
+      "start": 1155.0999755859375,
+      "end": 1157.780029296875
+    },
+    {
+      "text": " I'm like, you're cold, right?",
+      "start": 1157.780029296875,
+      "end": 1159.4599609375
+    },
+    {
+      "text": " Okay, you guess again.",
+      "start": 1159.4599609375,
+      "end": 1160.9000244140625
+    },
+    {
+      "text": " And then I might say you're warm.",
+      "start": 1160.9000244140625,
+      "end": 1162.260009765625
+    },
+    {
+      "text": " Okay, good, I'm going in the right direction.",
+      "start": 1162.260009765625,
+      "end": 1164.5400390625
+    },
+    {
+      "text": " That kind of thing.",
+      "start": 1164.5400390625,
+      "end": 1165.5799560546875
+    },
+    {
+      "text": " And so then this became a very powerful thing",
+      "start": 1166.5799560546875,
+      "end": 1170.8599853515625
+    },
+    {
+      "text": " that the machines could kind of learn on their own.",
+      "start": 1170.8599853515625,
+      "end": 1174.02001953125
+    },
+    {
+      "text": " And ultimately it's about predicting the next word.",
+      "start": 1174.02001953125,
+      "end": 1177.699951171875
+    },
+    {
+      "text": " I mean, that's kind of what LLMs do",
+      "start": 1177.699951171875,
+      "end": 1179.3399658203125
+    },
+    {
+      "text": " is they just predict the next word in a sentence,",
+      "start": 1179.3399658203125,
+      "end": 1182.5
+    },
+    {
+      "text": " but they do it so well, it appears that they're reasoning.",
+      "start": 1182.5,
+      "end": 1187.5
+    },
+    {
+      "text": " It appears that they have logic, right?",
+      "start": 1188.02001953125,
+      "end": 1190.6600341796875
+    },
+    {
+      "text": " Because the language that it studied had reasoning",
+      "start": 1191.1400146484375,
+      "end": 1195.6600341796875
+    },
+    {
+      "text": " and had logic.",
+      "start": 1195.6600341796875,
+      "end": 1196.8199462890625
+    },
+    {
+      "text": " So when they get so good at reproducing,",
+      "start": 1196.8199462890625,
+      "end": 1199.780029296875
+    },
+    {
+      "text": " it appears that they have the same capability,",
+      "start": 1199.780029296875,
+      "end": 1202.8199462890625
+    },
+    {
+      "text": " even though it's not really what's happening",
+      "start": 1202.8199462890625,
+      "end": 1205.260009765625
+    },
+    {
+      "text": " under the hood.",
+      "start": 1205.260009765625,
+      "end": 1206.6199951171875
+    },
+    {
+      "text": " And then there was a big breakthrough",
+      "start": 1207.8599853515625,
+      "end": 1210.06005859375
+    },
+    {
+      "text": " in the transformer architecture.",
+      "start": 1210.06005859375,
+      "end": 1212.260009765625
+    },
+    {
+      "text": " And this allowed the training to move faster",
+      "start": 1212.260009765625,
+      "end": 1216.93994140625
+    },
+    {
+      "text": " and the machines to have more contextual knowledge",
+      "start": 1216.93994140625,
+      "end": 1220.3399658203125
+    },
+    {
+      "text": " about the sentences that they were reading",
+      "start": 1221.02001953125,
+      "end": 1222.3399658203125
+    },
+    {
+      "text": " and they were understanding.",
+      "start": 1222.3399658203125,
+      "end": 1223.699951171875
+    },
+    {
+      "text": " So prior to transformer,",
+      "start": 1223.699951171875,
+      "end": 1225.93994140625
+    },
+    {
+      "text": " it was very sequential understanding of sentences.",
+      "start": 1225.93994140625,
+      "end": 1228.9000244140625
+    },
+    {
+      "text": " With the transformer architecture,",
+      "start": 1229.8199462890625,
+      "end": 1231.780029296875
+    },
+    {
+      "text": " machines could basically read the whole sentence by itself",
+      "start": 1231.780029296875,
+      "end": 1235.06005859375
+    },
+    {
+      "text": " and each word could give context forwards and backwards.",
+      "start": 1235.06005859375,
+      "end": 1240.06005859375
+    },
+    {
+      "text": " So a very rich contextual understanding",
+      "start": 1240.1800537109375,
+      "end": 1243.219970703125
+    },
+    {
+      "text": " of what is being stated in the sentence.",
+      "start": 1243.219970703125,
+      "end": 1246.4200439453125
+    },
+    {
+      "text": " And this was the big kind of breakthrough",
+      "start": 1246.4200439453125,
+      "end": 1249.5
+    },
+    {
+      "text": " with the transformer architecture.",
+      "start": 1249.5400390625,
+      "end": 1253.1800537109375
+    },
+    {
+      "text": " And this kind of gave way to large language models",
+      "start": 1254.1800537109375,
+      "end": 1258.0999755859375
+    },
+    {
+      "text": " as we know them today,",
+      "start": 1258.0999755859375,
+      "end": 1259.93994140625
+    },
+    {
+      "text": " that we've been living with over the past few years.",
+      "start": 1259.93994140625,
+      "end": 1264.0999755859375
+    },
+    {
+      "text": " Emergent capabilities is what we just talked about",
+      "start": 1264.0999755859375,
+      "end": 1266.9000244140625
+    },
+    {
+      "text": " a minute ago.",
+      "start": 1266.9000244140625,
+      "end": 1267.8599853515625
+    },
+    {
+      "text": " That's the appearance of reasoning,",
+      "start": 1267.8599853515625,
+      "end": 1270.5400390625
+    },
+    {
+      "text": " the appearance of logic,",
+      "start": 1270.5400390625,
+      "end": 1272.5400390625
+    },
+    {
+      "text": " the appearance of almost consciousness.",
+      "start": 1272.5400390625,
+      "end": 1275.260009765625
+    },
+    {
+      "text": " That is emergent capabilities.",
+      "start": 1276.260009765625,
+      "end": 1278.8199462890625
+    },
+    {
+      "text": " And we know that the machines don't have that ability.",
+      "start": 1278.8199462890625,
+      "end": 1282.93994140625
+    },
+    {
+      "text": " They're not conscious, of course,",
+      "start": 1282.93994140625,
+      "end": 1285.300048828125
+    },
+    {
+      "text": " but they appear that way because they've gotten so good",
+      "start": 1285.300048828125,
+      "end": 1288.6199951171875
+    },
+    {
+      "text": " at reproducing the patterns of words and sentences",
+      "start": 1288.6199951171875,
+      "end": 1293.6199951171875
+    },
+    {
+      "text": " and from all the material that they've been trained on,",
+      "start": 1294.1400146484375,
+      "end": 1296.5799560546875
+    },
+    {
+      "text": " which is basically everything that's ever been written",
+      "start": 1296.5799560546875,
+      "end": 1299.219970703125
+    },
+    {
+      "text": " in the history of the world,",
+      "start": 1299.219970703125,
+      "end": 1300.6600341796875
+    },
+    {
+      "text": " which is crazy to think about.",
+      "start": 1300.6600341796875,
+      "end": 1302.3399658203125
+    },
+    {
+      "text": " Okay, and then we have, you know, Gen AI,",
+      "start": 1302.93994140625,
+      "end": 1307.93994140625
+    },
+    {
+      "text": " which is systems that can create new content.",
+      "start": 1309.260009765625,
+      "end": 1313.02001953125
+    },
+    {
+      "text": " And that's really cool because whatever industry we look at,",
+      "start": 1313.02001953125,
+      "end": 1317.93994140625
+    },
+    {
+      "text": " they're doing amazing things.",
+      "start": 1317.93994140625,
+      "end": 1320.5
+    },
+    {
+      "text": " Software engineering, right?",
+      "start": 1320.5,
+      "end": 1322.300048828125
+    },
+    {
+      "text": " It's writing code.",
+      "start": 1322.300048828125,
+      "end": 1323.4599609375
+    },
+    {
+      "text": " In the medical field, it's giving diagnosis.",
+      "start": 1324.699951171875,
+      "end": 1328.260009765625
+    },
+    {
+      "text": " In the educational world,",
+      "start": 1328.260009765625,
+      "end": 1329.93994140625
+    },
+    {
+      "text": " as you're gonna see it with ScholarStack,",
+      "start": 1329.93994140625,
+      "end": 1331.6600341796875
+    },
+    {
+      "text": " it's also doing really, really cool things.",
+      "start": 1332.02001953125,
+      "end": 1334.1800537109375
+    },
+    {
+      "text": " So this is a quick virtual kind of representation",
+      "start": 1335.02001953125,
+      "end": 1339.699951171875
+    },
+    {
+      "text": " of how the neural network works.",
+      "start": 1339.699951171875,
+      "end": 1342.300048828125
+    },
+    {
+      "text": " And again, today I'm just introducing topics.",
+      "start": 1342.300048828125,
+      "end": 1345.1800537109375
+    },
+    {
+      "text": " The readings are gonna go much deeper",
+      "start": 1345.1800537109375,
+      "end": 1347.6600341796875
+    },
+    {
+      "text": " into all of the topics that I touch on today.",
+      "start": 1347.6600341796875,
+      "end": 1350.5
+    },
+    {
+      "text": " But again, my job today is to just kind of familiarize you",
+      "start": 1350.5,
+      "end": 1354.1800537109375
+    },
+    {
+      "text": " with some of these topics.",
+      "start": 1354.1800537109375,
+      "end": 1355.780029296875
+    },
+    {
+      "text": " So there's many layers to neural networks.",
+      "start": 1355.780029296875,
+      "end": 1358.6199951171875
+    },
+    {
+      "text": " There's input, there's output,",
+      "start": 1358.6199951171875,
+      "end": 1360.1800537109375
+    },
+    {
+      "text": " and then there's these hidden layers.",
+      "start": 1360.1800537109375,
+      "end": 1362.739990234375
+    },
+    {
+      "text": " And again, the readings are gonna go",
+      "start": 1362.739990234375,
+      "end": 1364.739990234375
+    },
+    {
+      "text": " really deep into this.",
+      "start": 1364.739990234375,
+      "end": 1366.739990234375
+    },
+    {
+      "text": " The thing that I always think is so interesting",
+      "start": 1366.739990234375,
+      "end": 1368.780029296875
+    },
+    {
+      "text": " about LLMs is machines do not understand words.",
+      "start": 1368.780029296875,
+      "end": 1373.5400390625
+    },
+    {
+      "text": " So we need to take words and turn it into numbers",
+      "start": 1374.5400390625,
+      "end": 1378.780029296875
+    },
+    {
+      "text": " so that the machine can understand numbers",
+      "start": 1378.780029296875,
+      "end": 1381.3399658203125
+    },
+    {
+      "text": " and then feed us back words.",
+      "start": 1381.3399658203125,
+      "end": 1384.3800048828125
+    },
+    {
+      "text": " So it's a very interesting game being played,",
+      "start": 1384.3800048828125,
+      "end": 1386.0999755859375
+    },
+    {
+      "text": " words being turned into numbers,",
+      "start": 1386.0999755859375,
+      "end": 1387.9000244140625
+    },
+    {
+      "text": " processing inside, coming back out,",
+      "start": 1387.9000244140625,
+      "end": 1390.8599853515625
+    },
+    {
+      "text": " being turned back into words that we can understand.",
+      "start": 1390.8599853515625,
+      "end": 1394.02001953125
+    },
+    {
+      "text": " So within the transformer model,",
+      "start": 1398.260009765625,
+      "end": 1401.8199462890625
+    },
+    {
+      "text": " we've got basically input tokens.",
+      "start": 1401.8199462890625,
+      "end": 1404.300048828125
+    },
+    {
+      "text": " Tokens take words, break them down into subparts.",
+      "start": 1404.300048828125,
+      "end": 1408.06005859375
+    },
+    {
+      "text": " And then we kind of use those subparts",
+      "start": 1408.06005859375,
+      "end": 1411.3399658203125
+    },
+    {
+      "text": " to assign numbers to.",
+      "start": 1411.3399658203125,
+      "end": 1413.300048828125
+    },
+    {
+      "text": " The numbers become embeddings,",
+      "start": 1413.300048828125,
+      "end": 1415.6600341796875
+    },
+    {
+      "text": " which exist inside of the model",
+      "start": 1415.6600341796875,
+      "end": 1418.3399658203125
+    },
+    {
+      "text": " in what is often referred to as an n-dimensional space.",
+      "start": 1418.3399658203125,
+      "end": 1422.8599853515625
+    },
+    {
+      "text": " I like to think of it like a 3D space,",
+      "start": 1422.8599853515625,
+      "end": 1425.3399658203125
+    },
+    {
+      "text": " but much more complicated than three dimensions.",
+      "start": 1425.3399658203125,
+      "end": 1428.5799560546875
+    },
+    {
+      "text": " As humans, it's kind of hard for us to visualize",
+      "start": 1428.5799560546875,
+      "end": 1430.8599853515625
+    },
+    {
+      "text": " more than three dimensions.",
+      "start": 1430.8599853515625,
+      "end": 1432.3399658203125
+    },
+    {
+      "text": " We can visualize space and where things exist in space,",
+      "start": 1432.3399658203125,
+      "end": 1436.8599853515625
+    },
+    {
+      "text": " but in an n-dimensional model,",
+      "start": 1436.8599853515625,
+      "end": 1438.4200439453125
+    },
+    {
+      "text": " it's actually very difficult to conceptualize",
+      "start": 1438.4200439453125,
+      "end": 1440.6600341796875
+    },
+    {
+      "text": " what that looks like.",
+      "start": 1440.6600341796875,
+      "end": 1441.8199462890625
+    },
+    {
+      "text": " But that's what's happening in the models.",
+      "start": 1441.8199462890625,
+      "end": 1444.1400146484375
+    },
+    {
+      "text": " And then they can kind of measure distances",
+      "start": 1444.1400146484375,
+      "end": 1447.1400146484375
+    },
+    {
+      "text": " between words and phrases from each other.",
+      "start": 1447.1400146484375,
+      "end": 1449.1400146484375
+    },
+    {
+      "text": " They can understand context and relevance",
+      "start": 1449.1400146484375,
+      "end": 1451.8199462890625
+    },
+    {
+      "text": " and do amazing things with it.",
+      "start": 1453.1800537109375,
+      "end": 1456.780029296875
+    },
+    {
+      "text": " So again, these are some of the concepts",
+      "start": 1456.780029296875,
+      "end": 1458.9000244140625
+    },
+    {
+      "text": " that we're going to cover more deeply in our readings.",
+      "start": 1458.9000244140625,
+      "end": 1462.8599853515625
+    },
+    {
+      "text": " And I can make this page available to you guys as well,",
+      "start": 1462.8599853515625,
+      "end": 1467.5799560546875
+    },
+    {
+      "text": " if that's helpful for you to go into more details.",
+      "start": 1467.5799560546875,
+      "end": 1471.5400390625
+    },
+    {
+      "text": " Tokenization, I think, is fascinating.",
+      "start": 1472.3800048828125,
+      "end": 1476.1400146484375
+    },
+    {
+      "text": " There's different tools out there to do tokenization,",
+      "start": 1476.1400146484375,
+      "end": 1479.219970703125
+    },
+    {
+      "text": " but again, that's taking words, breaking them down,",
+      "start": 1479.219970703125,
+      "end": 1481.93994140625
+    },
+    {
+      "text": " and then turning them into numbers.",
+      "start": 1481.93994140625,
+      "end": 1483.699951171875
+    },
+    {
+      "text": " And then this is a great example of kind of words",
+      "start": 1485.0999755859375,
+      "end": 1488.6199951171875
+    },
+    {
+      "text": " in this n-dimensional space.",
+      "start": 1488.6199951171875,
+      "end": 1490.93994140625
+    },
+    {
+      "text": " So it's got man, woman,",
+      "start": 1490.93994140625,
+      "end": 1493.02001953125
+    },
+    {
+      "text": " which are kind of close together in the space",
+      "start": 1493.02001953125,
+      "end": 1495.9000244140625
+    },
+    {
+      "text": " because they're two versions of a human.",
+      "start": 1495.9000244140625,
+      "end": 1498.3800048828125
+    },
+    {
+      "text": " You've got king and queen, which are close together.",
+      "start": 1498.3800048828125,
+      "end": 1501.06005859375
+    },
+    {
+      "text": " And then you can do these odd things",
+      "start": 1501.5799560546875,
+      "end": 1502.8599853515625
+    },
+    {
+      "text": " where you say king minus man plus woman equals queen,",
+      "start": 1502.8599853515625,
+      "end": 1507.5400390625
+    },
+    {
+      "text": " which is conceptually, I think,",
+      "start": 1507.5400390625,
+      "end": 1509.5400390625
+    },
+    {
+      "text": " very interesting to think about.",
+      "start": 1509.5400390625,
+      "end": 1510.97998046875
+    },
+    {
+      "text": " This is kind of how the machines",
+      "start": 1510.97998046875,
+      "end": 1512.3800048828125
+    },
+    {
+      "text": " are thinking about these words in the space",
+      "start": 1512.3800048828125,
+      "end": 1515.300048828125
+    },
+    {
+      "text": " and how they make sense of each other.",
+      "start": 1515.300048828125,
+      "end": 1517.1800537109375
+    },
+    {
+      "text": " Training, we talked a little bit about.",
+      "start": 1518.5,
+      "end": 1520.0999755859375
+    },
+    {
+      "text": " We take a massive text corpus.",
+      "start": 1520.0999755859375,
+      "end": 1522.5799560546875
+    },
+    {
+      "text": " We do tokenization,",
+      "start": 1523.5400390625,
+      "end": 1525.4599609375
+    },
+    {
+      "text": " and there's different tools that we can utilize for this.",
+      "start": 1525.4599609375,
+      "end": 1529.02001953125
+    },
+    {
+      "text": " We do training, right?",
+      "start": 1529.02001953125,
+      "end": 1530.739990234375
+    },
+    {
+      "text": " It's often referred to as pre-training.",
+      "start": 1531.4200439453125,
+      "end": 1532.8599853515625
+    },
+    {
+      "text": " This is very expensive,",
+      "start": 1532.8599853515625,
+      "end": 1534.3399658203125
+    },
+    {
+      "text": " and that's why only the biggest companies are doing this.",
+      "start": 1534.3399658203125,
+      "end": 1537.1800537109375
+    },
+    {
+      "text": " It takes very expensive hardware.",
+      "start": 1537.1800537109375,
+      "end": 1538.5400390625
+    },
+    {
+      "text": " It takes a lot of time, money, and energy.",
+      "start": 1538.5400390625,
+      "end": 1540.739990234375
+    },
+    {
+      "text": " And in the training process,",
+      "start": 1541.9000244140625,
+      "end": 1543.4599609375
+    },
+    {
+      "text": " basically weights are being adjusted",
+      "start": 1543.4599609375,
+      "end": 1546.06005859375
+    },
+    {
+      "text": " over and over and over again",
+      "start": 1546.06005859375,
+      "end": 1548.9000244140625
+    },
+    {
+      "text": " till we reach a point of convergence,",
+      "start": 1548.9000244140625,
+      "end": 1551.6199951171875
+    },
+    {
+      "text": " and convergence is the point in time",
+      "start": 1551.6199951171875,
+      "end": 1553.260009765625
+    },
+    {
+      "text": " at which further training doesn't really help",
+      "start": 1553.260009765625,
+      "end": 1556.4599609375
+    },
+    {
+      "text": " the weights adjust in a meaningful way,",
+      "start": 1556.4599609375,
+      "end": 1558.9000244140625
+    },
+    {
+      "text": " and that's when we can say we're done",
+      "start": 1558.9000244140625,
+      "end": 1560.300048828125
+    },
+    {
+      "text": " with our training run.",
+      "start": 1560.300048828125,
+      "end": 1561.4200439453125
+    },
+    {
+      "text": " Then we've got a pre-trained model,",
+      "start": 1563.8599853515625,
+      "end": 1565.6600341796875
+    },
+    {
+      "text": " and then we can do kind of like post-training",
+      "start": 1565.6600341796875,
+      "end": 1568.5799560546875
+    },
+    {
+      "text": " model adaptation.",
+      "start": 1568.5799560546875,
+      "end": 1569.739990234375
+    },
+    {
+      "text": " We're gonna get into that in a later section of class,",
+      "start": 1569.739990234375,
+      "end": 1572.1800537109375
+    },
+    {
+      "text": " all the different tools and techniques",
+      "start": 1572.1800537109375,
+      "end": 1574.219970703125
+    },
+    {
+      "text": " that we can use for model adaptation.",
+      "start": 1574.219970703125,
+      "end": 1577.02001953125
+    },
+    {
+      "text": " Then inference is basically using the model.",
+      "start": 1577.02001953125,
+      "end": 1580.5400390625
+    },
+    {
+      "text": " After the model is trained,",
+      "start": 1580.5400390625,
+      "end": 1582.5799560546875
+    },
+    {
+      "text": " you can ask questions, you get answers.",
+      "start": 1582.5799560546875,
+      "end": 1584.5799560546875
+    },
+    {
+      "text": " That's the inference process.",
+      "start": 1584.5799560546875,
+      "end": 1586.5
+    },
+    {
+      "text": " And I wanna actually skip ahead",
+      "start": 1587.5,
+      "end": 1590.6199951171875
+    },
+    {
+      "text": " just due to the time limitations here,",
+      "start": 1590.6199951171875,
+      "end": 1593.06005859375
+    },
+    {
+      "text": " and I wanna talk a little bit about our readings.",
+      "start": 1593.06005859375,
+      "end": 1596.260009765625
+    },
+    {
+      "text": " I'm super excited about our readings.",
+      "start": 1596.260009765625,
+      "end": 1597.5799560546875
+    },
+    {
+      "text": " There's a lot of potential things that we could get into,",
+      "start": 1597.5799560546875,
+      "end": 1601.06005859375
+    },
+    {
+      "text": " but I think the set of materials that I put together",
+      "start": 1601.06005859375,
+      "end": 1605.5799560546875
+    },
+    {
+      "text": " for week one is really a good group.",
+      "start": 1606.6199951171875,
+      "end": 1610.300048828125
+    },
+    {
+      "text": " So two of the books that we're using,",
+      "start": 1610.300048828125,
+      "end": 1612.260009765625
+    },
+    {
+      "text": " I've got my books kind of under my laptop here.",
+      "start": 1612.260009765625,
+      "end": 1614.5
+    },
+    {
+      "text": " I'll put them up after class",
+      "start": 1614.5,
+      "end": 1616.06005859375
+    },
+    {
+      "text": " if you wanna come and flip through",
+      "start": 1616.219970703125,
+      "end": 1617.3800048828125
+    },
+    {
+      "text": " and take a look at the books.",
+      "start": 1617.3800048828125,
+      "end": 1619.1400146484375
+    },
+    {
+      "text": " They're available through the CMU library,",
+      "start": 1619.1400146484375,
+      "end": 1621.260009765625
+    },
+    {
+      "text": " and they're actually loaded into ScholarStack,",
+      "start": 1622.3800048828125,
+      "end": 1625.1800537109375
+    },
+    {
+      "text": " which you will see very shortly.",
+      "start": 1625.1800537109375,
+      "end": 1626.9000244140625
+    },
+    {
+      "text": " So you can access the books through ScholarStack.",
+      "start": 1627.739990234375,
+      "end": 1630.5
+    },
+    {
+      "text": " But this book by Chip Hsuan",
+      "start": 1630.5,
+      "end": 1635.5
+    },
+    {
+      "text": " is, I think, a great book.",
+      "start": 1635.699951171875,
+      "end": 1638.5400390625
+    },
+    {
+      "text": " And this chapter, as a student, I always like why.",
+      "start": 1638.5400390625,
+      "end": 1642.739990234375
+    },
+    {
+      "text": " Why do I wanna read this?",
+      "start": 1642.739990234375,
+      "end": 1643.9000244140625
+    },
+    {
+      "text": " So I'm gonna focus on the why here.",
+      "start": 1643.9000244140625,
+      "end": 1645.8599853515625
+    },
+    {
+      "text": " Why it matters, this chapter frames the course",
+      "start": 1646.5799560546875,
+      "end": 1649.5400390625
+    },
+    {
+      "text": " by explaining how modern AI products are engineered",
+      "start": 1649.5400390625,
+      "end": 1652.8599853515625
+    },
+    {
+      "text": " and why foundation models",
+      "start": 1652.8599853515625,
+      "end": 1654.260009765625
+    },
+    {
+      "text": " are reshaping software development.",
+      "start": 1654.260009765625,
+      "end": 1656.3399658203125
+    },
+    {
+      "text": " So this first week, again,",
+      "start": 1656.3399658203125,
+      "end": 1659.300048828125
+    },
+    {
+      "text": " we're getting some of the basics under our belt",
+      "start": 1659.300048828125,
+      "end": 1661.93994140625
+    },
+    {
+      "text": " and into our head so that we can build on them",
+      "start": 1661.93994140625,
+      "end": 1664.780029296875
+    },
+    {
+      "text": " as the course proceeds.",
+      "start": 1664.780029296875,
+      "end": 1666.93994140625
+    },
+    {
+      "text": " So I would encourage you, minis go fast.",
+      "start": 1666.93994140625,
+      "end": 1670.300048828125
+    },
+    {
+      "text": " I was a student at CMU.",
+      "start": 1670.300048828125,
+      "end": 1672.300048828125
+    },
+    {
+      "text": " I'm alumni as well.",
+      "start": 1672.300048828125,
+      "end": 1673.739990234375
+    },
+    {
+      "text": " Minis go fast.",
+      "start": 1673.739990234375,
+      "end": 1675.6199951171875
+    },
+    {
+      "text": " My advice to you as a student,",
+      "start": 1676.3800048828125,
+      "end": 1678.260009765625
+    },
+    {
+      "text": " put the time in at the beginning of the mini",
+      "start": 1678.260009765625,
+      "end": 1681.260009765625
+    },
+    {
+      "text": " because then at the end of the mini, it'll be much easier",
+      "start": 1681.260009765625,
+      "end": 1684.260009765625
+    },
+    {
+      "text": " because you've got the foundational knowledge.",
+      "start": 1684.260009765625,
+      "end": 1686.739990234375
+    },
+    {
+      "text": " So I would encourage you, spend time in these readings,",
+      "start": 1686.739990234375,
+      "end": 1689.8599853515625
+    },
+    {
+      "text": " and we've got multiple ways to access",
+      "start": 1689.8599853515625,
+      "end": 1692.739990234375
+    },
+    {
+      "text": " and consume these readings",
+      "start": 1692.739990234375,
+      "end": 1694.8199462890625
+    },
+    {
+      "text": " as you're gonna see when Shreya does her presentation.",
+      "start": 1694.8199462890625,
+      "end": 1699.06005859375
+    },
+    {
+      "text": " So we've got chapter one of this book.",
+      "start": 1699.06005859375,
+      "end": 1700.9000244140625
+    },
+    {
+      "text": " We've got chapter one of building LLMs for production.",
+      "start": 1700.9000244140625,
+      "end": 1705.219970703125
+    },
+    {
+      "text": " Attention is all you need.",
+      "start": 1705.8199462890625,
+      "end": 1706.6600341796875
+    },
+    {
+      "text": " This is a famous paper",
+      "start": 1706.6600341796875,
+      "end": 1708.4200439453125
+    },
+    {
+      "text": " that talks about the evolution of the transformer model",
+      "start": 1708.4200439453125,
+      "end": 1712.93994140625
+    },
+    {
+      "text": " and kind of a breakthrough",
+      "start": 1712.93994140625,
+      "end": 1715.5
+    },
+    {
+      "text": " that these researchers kind of landed upon.",
+      "start": 1717.5,
+      "end": 1719.5799560546875
+    },
+    {
+      "text": " I think it's back in 2017",
+      "start": 1719.5799560546875,
+      "end": 1721.739990234375
+    },
+    {
+      "text": " that really laid the groundwork",
+      "start": 1721.739990234375,
+      "end": 1723.3399658203125
+    },
+    {
+      "text": " for what we now take advantage of",
+      "start": 1723.3399658203125,
+      "end": 1725.6199951171875
+    },
+    {
+      "text": " that we know as kind of LLMs.",
+      "start": 1726.8199462890625,
+      "end": 1729.3800048828125
+    },
+    {
+      "text": " A survey of large language models.",
+      "start": 1729.3800048828125,
+      "end": 1731.219970703125
+    },
+    {
+      "text": " This is a research paper.",
+      "start": 1731.219970703125,
+      "end": 1732.97998046875
+    },
+    {
+      "text": " It's dense, it's long,",
+      "start": 1732.97998046875,
+      "end": 1735.02001953125
+    },
+    {
+      "text": " but they look at a lot of different LLMs",
+      "start": 1735.8199462890625,
+      "end": 1737.5799560546875
+    },
+    {
+      "text": " and they compare and contrast.",
+      "start": 1737.5799560546875,
+      "end": 1739.3399658203125
+    },
+    {
+      "text": " So it's very, very interesting",
+      "start": 1739.3399658203125,
+      "end": 1740.5799560546875
+    },
+    {
+      "text": " because later in this course,",
+      "start": 1740.5799560546875,
+      "end": 1742.06005859375
+    },
+    {
+      "text": " we're also gonna do some of that as well.",
+      "start": 1742.06005859375,
+      "end": 1744.699951171875
+    },
+    {
+      "text": " We're gonna talk about many different LLMs,",
+      "start": 1744.699951171875,
+      "end": 1746.780029296875
+    },
+    {
+      "text": " not just the leading frontier models.",
+      "start": 1746.780029296875,
+      "end": 1749.5799560546875
+    },
+    {
+      "text": " We're gonna talk about a lot of different ones.",
+      "start": 1749.5799560546875,
+      "end": 1751.300048828125
+    },
+    {
+      "text": " The Bitter Lesson by Rich Sutton.",
+      "start": 1751.300048828125,
+      "end": 1754.0999755859375
+    },
+    {
+      "text": " This is cool because it talks about the shift",
+      "start": 1754.0999755859375,
+      "end": 1757.1400146484375
+    },
+    {
+      "text": " from rules-based learning",
+      "start": 1757.1400146484375,
+      "end": 1759.8599853515625
+    },
+    {
+      "text": " to the way that we allow machines to teach themselves",
+      "start": 1759.8599853515625,
+      "end": 1764.8599853515625
+    },
+    {
+      "text": " and this is the oldest piece that you're gonna read here.",
+      "start": 1766.02001953125,
+      "end": 1771.02001953125
+    },
+    {
+      "text": " It kind of dates back to kind of like what I would say early",
+      "start": 1772.5400390625,
+      "end": 1776.6600341796875
+    },
+    {
+      "text": " in the kind of AI journey.",
+      "start": 1776.6600341796875,
+      "end": 1778.6199951171875
+    },
+    {
+      "text": " And I actually, I put together an intro piece",
+      "start": 1779.9000244140625,
+      "end": 1784.0999755859375
+    },
+    {
+      "text": " to the Bitter Lesson that I would suggest you read",
+      "start": 1784.0999755859375,
+      "end": 1786.699951171875
+    },
+    {
+      "text": " before you read the Bitter Lesson,",
+      "start": 1786.699951171875,
+      "end": 1788.8199462890625
+    },
+    {
+      "text": " which will kind of frame it.",
+      "start": 1788.8199462890625,
+      "end": 1790.300048828125
+    },
+    {
+      "text": " And so, yeah, so this is kind of how they connect",
+      "start": 1791.219970703125,
+      "end": 1794.6199951171875
+    },
+    {
+      "text": " and this is, well, I don't actually like this order",
+      "start": 1795.6199951171875,
+      "end": 1798.5400390625
+    },
+    {
+      "text": " and I think Bitter Lesson comes later.",
+      "start": 1798.5400390625,
+      "end": 1801.9000244140625
+    },
+    {
+      "text": " I actually think you read it in reverse chronologically.",
+      "start": 1801.9000244140625,
+      "end": 1805.5400390625
+    },
+    {
+      "text": " That's how it happened,",
+      "start": 1805.5400390625,
+      "end": 1807.0999755859375
+    },
+    {
+      "text": " but I think you should read it in reverse is my advice.",
+      "start": 1807.0999755859375,
+      "end": 1811.97998046875
+    },
+    {
+      "text": " Okay, so that's a quick overview",
+      "start": 1811.97998046875,
+      "end": 1814.1800537109375
+    },
+    {
+      "text": " of the concepts for week one.",
+      "start": 1814.1800537109375,
+      "end": 1816.8199462890625
+    },
+    {
+      "text": " I'm so excited to get into all this stuff.",
+      "start": 1817.5,
+      "end": 1822.4200439453125
+    },
+    {
+      "text": " There's so much for you guys to take away from this class.",
+      "start": 1822.4200439453125,
+      "end": 1825.0999755859375
+    },
+    {
+      "text": " It's so timely and relevant.",
+      "start": 1825.0999755859375,
+      "end": 1827.6199951171875
+    },
+    {
+      "text": " And so, yeah, so basically this is the pattern.",
+      "start": 1827.6199951171875,
+      "end": 1832.300048828125
+    },
+    {
+      "text": " Each week, we're gonna have a guest speaker.",
+      "start": 1832.300048828125,
+      "end": 1834.1400146484375
+    },
+    {
+      "text": " We've got some amazing guest speakers lined up.",
+      "start": 1834.1400146484375,
+      "end": 1837.1400146484375
+    },
+    {
+      "text": " Each guest speaker kind of relates a bit",
+      "start": 1837.1400146484375,
+      "end": 1839.8599853515625
+    },
+    {
+      "text": " to the material at hand.",
+      "start": 1839.8599853515625,
+      "end": 1841.8199462890625
+    },
+    {
+      "text": " That will be more so in the future.",
+      "start": 1841.8199462890625,
+      "end": 1844.02001953125
+    },
+    {
+      "text": " This conversation today wasn't so related to this,",
+      "start": 1844.0999755859375,
+      "end": 1847.5799560546875
+    },
+    {
+      "text": " but I've attempted to kind of like",
+      "start": 1847.5799560546875,
+      "end": 1850.06005859375
+    },
+    {
+      "text": " have a good pairing in the future.",
+      "start": 1850.06005859375,
+      "end": 1853.5
+    },
+    {
+      "text": " So any questions on any of what we just covered?",
+      "start": 1853.5,
+      "end": 1856.6199951171875
+    },
+    {
+      "text": " Okay, Shreya, why don't you come on up?",
+      "start": 1861.3399658203125,
+      "end": 1864.1400146484375
+    },
+    {
+      "text": " And Shreya is gonna give you an overview of ScholarStack.",
+      "start": 1864.1400146484375,
+      "end": 1867.739990234375
+    },
+    {
+      "text": " So ScholarStack is what I believe to be",
+      "start": 1867.739990234375,
+      "end": 1871.5
+    },
+    {
+      "text": " the solution or part of the solution",
+      "start": 1872.3399658203125,
+      "end": 1876.3399658203125
+    },
+    {
+      "text": " for the future of education in the AI era.",
+      "start": 1876.3399658203125,
+      "end": 1880.4200439453125
+    },
+    {
+      "text": " And if this is a class on thinking about",
+      "start": 1881.6199951171875,
+      "end": 1884.0999755859375
+    },
+    {
+      "text": " how to build applications on top of LLMs,",
+      "start": 1884.0999755859375,
+      "end": 1886.6199951171875
+    },
+    {
+      "text": " then this tool is gonna be good for us to experiment with",
+      "start": 1886.6199951171875,
+      "end": 1889.8599853515625
+    },
+    {
+      "text": " because it's an application built on top of LLMs.",
+      "start": 1889.8599853515625,
+      "end": 1893.1400146484375
+    },
+    {
+      "text": " And so it's gonna really bring to life",
+      "start": 1893.1400146484375,
+      "end": 1895.8599853515625
+    },
+    {
+      "text": " many of the concepts that we're talking about,",
+      "start": 1895.8599853515625,
+      "end": 1898.780029296875
+    },
+    {
+      "text": " but it's also gonna give you a new paradigm to learn from.",
+      "start": 1898.8199462890625,
+      "end": 1903.8199462890625
+    },
+    {
+      "text": " So with that, let me pass it on.",
+      "start": 1904.3800048828125,
+      "end": 1907.06005859375
+    },
+    {
+      "text": " Well, wanna use that?",
+      "start": 1912.0999755859375,
+      "end": 1913.8599853515625
+    },
+    {
+      "text": " And I'm gonna give you my headset too.",
+      "start": 1922.4599609375,
+      "end": 1926.6600341796875
+    },
+    {
+      "text": " Okay, okay, that's fine.",
+      "start": 1926.6600341796875,
+      "end": 1927.9000244140625
+    },
+    {
+      "text": " Or if you wanna use this one.",
+      "start": 1929.1800537109375,
+      "end": 1930.6600341796875
+    },
+    {
+      "text": " Speak into it.",
+      "start": 1932.260009765625,
+      "end": 1933.0999755859375
+    },
+    {
+      "text": " Hello, okay.",
+      "start": 1934.739990234375,
+      "end": 1936.1800537109375
+    },
+    {
+      "text": " And folks online hear her on the mic?",
+      "start": 1937.97998046875,
+      "end": 1940.6199951171875
+    },
+    {
+      "text": " Good, okay.",
+      "start": 1941.8199462890625,
+      "end": 1942.6600341796875
+    },
+    {
+      "text": " All right, okay.",
+      "start": 1949.699951171875,
+      "end": 1950.93994140625
+    },
+    {
+      "text": " So welcome again to the course, everyone.",
+      "start": 1950.93994140625,
+      "end": 1953.1800537109375
+    },
+    {
+      "text": " I'm Shreya and I'm sure like most of you already know me.",
+      "start": 1954.02001953125,
+      "end": 1957.300048828125
+    },
+    {
+      "text": " I'm also a recent Carnegie Mellon MSSM graduate.",
+      "start": 1957.3399658203125,
+      "end": 1960.5400390625
+    },
+    {
+      "text": " And I'm so excited to be your TA for the course",
+      "start": 1960.5400390625,
+      "end": 1964.4200439453125
+    },
+    {
+      "text": " and to be supporting you as well as Professor David",
+      "start": 1964.4200439453125,
+      "end": 1967.93994140625
+    },
+    {
+      "text": " throughout the journey.",
+      "start": 1967.93994140625,
+      "end": 1969.260009765625
+    },
+    {
+      "text": " Now, as Professor talked about a lot of the core concepts",
+      "start": 1969.260009765625,
+      "end": 1973.8199462890625
+    },
+    {
+      "text": " that are really important for you to learn",
+      "start": 1973.8199462890625,
+      "end": 1976.699951171875
+    },
+    {
+      "text": " in this journey of becoming AI engineers,",
+      "start": 1976.699951171875,
+      "end": 1978.8199462890625
+    },
+    {
+      "text": " AI PMs, or even founders.",
+      "start": 1978.8199462890625,
+      "end": 1980.780029296875
+    },
+    {
+      "text": " Today, I'll be talking more about",
+      "start": 1981.9000244140625,
+      "end": 1983.8599853515625
+    },
+    {
+      "text": " the platform ScholarStack that we'll be using",
+      "start": 1983.8599853515625,
+      "end": 1986.1400146484375
+    },
+    {
+      "text": " apart from Canvas.",
+      "start": 1986.1800537109375,
+      "end": 1988.0999755859375
+    },
+    {
+      "text": " ScholarStack is ideated and developed by Professor himself.",
+      "start": 1988.0999755859375,
+      "end": 1992.02001953125
+    },
+    {
+      "text": " And it's a brilliant way to improve",
+      "start": 1992.02001953125,
+      "end": 1995.739990234375
+    },
+    {
+      "text": " how you learn and develop new skills.",
+      "start": 1995.739990234375,
+      "end": 1998.219970703125
+    },
+    {
+      "text": " And just before the demo,",
+      "start": 1998.219970703125,
+      "end": 2001.4599609375
+    },
+    {
+      "text": " I would like you guys to check your emails",
+      "start": 2001.4599609375,
+      "end": 2004.1400146484375
+    },
+    {
+      "text": " and you might have gotten an invite to join ScholarStack.",
+      "start": 2004.1400146484375,
+      "end": 2007.699951171875
+    },
+    {
+      "text": " And once you're logged in,",
+      "start": 2007.699951171875,
+      "end": 2010.06005859375
+    },
+    {
+      "text": " let me know so that I can continue with the demo.",
+      "start": 2010.06005859375,
+      "end": 2012.5
+    },
+    {
+      "text": " Do let me know if you have any questions",
+      "start": 2016.3800048828125,
+      "end": 2018.0999755859375
+    },
+    {
+      "text": " accessing the platform.",
+      "start": 2018.0999755859375,
+      "end": 2019.8599853515625
+    },
+    {
+      "text": " Your Andrew IDs should have the email.",
+      "start": 2027.9000244140625,
+      "end": 2030.3800048828125
+    },
+    {
+      "text": " Is anyone seeing it?",
+      "start": 2033.5400390625,
+      "end": 2035.4599609375
+    },
+    {
+      "text": " Yeah.",
+      "start": 2035.4599609375,
+      "end": 2036.300048828125
+    },
+    {
+      "text": " Okay, we got it.",
+      "start": 2037.3800048828125,
+      "end": 2039.260009765625
+    },
+    {
+      "text": " Online, I think we're getting...",
+      "start": 2039.260009765625,
+      "end": 2041.93994140625
+    },
+    {
+      "text": " Online, maybe.",
+      "start": 2044.219970703125,
+      "end": 2045.6600341796875
+    },
+    {
+      "text": " Yeah, I got it.",
+      "start": 2046.06005859375,
+      "end": 2046.9000244140625
+    },
+    {
+      "text": " Try to log in.",
+      "start": 2054.419921875,
+      "end": 2055.419921875
+    },
+    {
+      "text": " Once you see this page, let me know.",
+      "start": 2057.10009765625,
+      "end": 2059.139892578125
+    },
+    {
+      "text": " Okay, is this too small for you guys?",
+      "start": 2073.5400390625,
+      "end": 2075.5
+    },
+    {
+      "text": " Do I need to zoom in?",
+      "start": 2076.340087890625,
+      "end": 2077.179931640625
+    },
+    {
+      "text": " Okay.",
+      "start": 2080.260009765625,
+      "end": 2081.10009765625
+    },
+    {
+      "text": " Okay.",
+      "start": 2084.5400390625,
+      "end": 2085.5400390625
+    },
+    {
+      "text": " So, this is the main page where you get started",
+      "start": 2085.5400390625,
+      "end": 2090.4599609375
+    },
+    {
+      "text": " on ScholarStack.",
+      "start": 2090.4599609375,
+      "end": 2092.139892578125
+    },
+    {
+      "text": " You will see AI Engineering Fundamentals course right here",
+      "start": 2092.139892578125,
+      "end": 2094.6201171875
+    },
+    {
+      "text": " if you click on it.",
+      "start": 2094.6201171875,
+      "end": 2096.02001953125
+    },
+    {
+      "text": " Okay, this is how the main page looks like.",
+      "start": 2097.699951171875,
+      "end": 2101.3798828125
+    },
+    {
+      "text": " If you see on the right side of the panel,",
+      "start": 2101.3798828125,
+      "end": 2104.02001953125
+    },
+    {
+      "text": " there's a course overview.",
+      "start": 2104.02001953125,
+      "end": 2105.5400390625
+    },
+    {
+      "text": " It's the description of the engineering course",
+      "start": 2105.5400390625,
+      "end": 2108.89990234375
+    },
+    {
+      "text": " that you're taking.",
+      "start": 2108.89990234375,
+      "end": 2109.739990234375
+    },
+    {
+      "text": " It's also available on Canvas.",
+      "start": 2109.739990234375,
+      "end": 2111.6201171875
+    },
+    {
+      "text": " But once you go through it and you read it,",
+      "start": 2111.6201171875,
+      "end": 2116.10009765625
+    },
+    {
+      "text": " you can just maybe squeeze it a little bit",
+      "start": 2116.10009765625,
+      "end": 2119.3798828125
+    },
+    {
+      "text": " so you have more space here.",
+      "start": 2119.3798828125,
+      "end": 2121.06005859375
+    },
+    {
+      "text": " And focus on the three chatbot agents",
+      "start": 2121.06005859375,
+      "end": 2124.219970703125
+    },
+    {
+      "text": " right here for the course.",
+      "start": 2124.219970703125,
+      "end": 2125.5400390625
+    },
+    {
+      "text": " So, basically for each of the week,",
+      "start": 2127.06005859375,
+      "end": 2130.5
+    },
+    {
+      "text": " we'll have two assignments,",
+      "start": 2130.5,
+      "end": 2132.139892578125
+    },
+    {
+      "text": " which will be accounting for your chat interaction.",
+      "start": 2133.139892578125,
+      "end": 2136.179931640625
+    },
+    {
+      "text": " So, if you guys have gone through the syllabus",
+      "start": 2136.179931640625,
+      "end": 2138.139892578125
+    },
+    {
+      "text": " for this course, you will see there are rubric,",
+      "start": 2138.139892578125,
+      "end": 2140.97998046875
+    },
+    {
+      "text": " like points for interaction with the chatbot",
+      "start": 2140.97998046875,
+      "end": 2143.93994140625
+    },
+    {
+      "text": " on ScholarStack.",
+      "start": 2143.93994140625,
+      "end": 2144.780029296875
+    },
+    {
+      "text": " And that's part of your assignment.",
+      "start": 2144.780029296875,
+      "end": 2146.300048828125
+    },
+    {
+      "text": " So, each week, there'll be two assignments,",
+      "start": 2146.300048828125,
+      "end": 2148.699951171875
+    },
+    {
+      "text": " assignment one and two.",
+      "start": 2148.699951171875,
+      "end": 2150.820068359375
+    },
+    {
+      "text": " I'll talk a little bit about assignment one first.",
+      "start": 2150.820068359375,
+      "end": 2153.6201171875
+    },
+    {
+      "text": " So, assignment one will have you guys interact",
+      "start": 2153.6201171875,
+      "end": 2157.659912109375
+    },
+    {
+      "text": " with the first chatbot here.",
+      "start": 2157.659912109375,
+      "end": 2158.780029296875
+    },
+    {
+      "text": " It's called Concept Builder, week one.",
+      "start": 2158.780029296875,
+      "end": 2160.739990234375
+    },
+    {
+      "text": " Can you see it?",
+      "start": 2162.739990234375,
+      "end": 2163.97998046875
+    },
+    {
+      "text": " Yeah.",
+      "start": 2164.89990234375,
+      "end": 2165.739990234375
+    },
+    {
+      "text": " So, the concept behind this chatbot",
+      "start": 2165.739990234375,
+      "end": 2167.93994140625
+    },
+    {
+      "text": " is basically curiosity-driven discussion interaction",
+      "start": 2167.93994140625,
+      "end": 2171.179931640625
+    },
+    {
+      "text": " with the chatbot.",
+      "start": 2171.179931640625,
+      "end": 2172.340087890625
+    },
+    {
+      "text": " So, whatever learnings you've had",
+      "start": 2172.340087890625,
+      "end": 2174.89990234375
+    },
+    {
+      "text": " from different weeks' learning objectives,",
+      "start": 2174.89990234375,
+      "end": 2178.139892578125
+    },
+    {
+      "text": " the key concepts and the topics",
+      "start": 2178.139892578125,
+      "end": 2180.780029296875
+    },
+    {
+      "text": " will be covered during this discussion.",
+      "start": 2180.780029296875,
+      "end": 2182.97998046875
+    },
+    {
+      "text": " This is a guided journey.",
+      "start": 2182.97998046875,
+      "end": 2184.300048828125
+    },
+    {
+      "text": " And once you start with, for example,",
+      "start": 2184.300048828125,
+      "end": 2188.97998046875
+    },
+    {
+      "text": " help me with the next, it's too small, I feel.",
+      "start": 2188.97998046875,
+      "end": 2191.5
+    },
+    {
+      "text": " So, once you start the interaction",
+      "start": 2192.820068359375,
+      "end": 2197.820068359375
+    },
+    {
+      "text": " with help me with an assignment,",
+      "start": 2200.699951171875,
+      "end": 2202.659912109375
+    },
+    {
+      "text": " the chatbot will give you a task overview",
+      "start": 2202.659912109375,
+      "end": 2205.820068359375
+    },
+    {
+      "text": " of what the journey would look like.",
+      "start": 2205.820068359375,
+      "end": 2209.60009765625
+    },
+    {
+      "text": " You start interacting with it.",
+      "start": 2209.60009765625,
+      "end": 2211.139892578125
+    },
+    {
+      "text": " It's basically driven by your own curiosity at first.",
+      "start": 2213.260009765625,
+      "end": 2216.699951171875
+    },
+    {
+      "text": " But once you start exploring more key concepts",
+      "start": 2216.699951171875,
+      "end": 2218.93994140625
+    },
+    {
+      "text": " like the topics Professor talked about today,",
+      "start": 2218.93994140625,
+      "end": 2221.580078125
+    },
+    {
+      "text": " for week one, for example, transformers, embeddings,",
+      "start": 2221.93994140625,
+      "end": 2224.260009765625
+    },
+    {
+      "text": " and once you're curious and start learning",
+      "start": 2224.260009765625,
+      "end": 2225.780029296875
+    },
+    {
+      "text": " more about those concepts,",
+      "start": 2225.780029296875,
+      "end": 2227.139892578125
+    },
+    {
+      "text": " the chatbot will start asking you follow-up questions",
+      "start": 2228.179931640625,
+      "end": 2231.179931640625
+    },
+    {
+      "text": " to check your understanding.",
+      "start": 2231.179931640625,
+      "end": 2232.780029296875
+    },
+    {
+      "text": " And again, there are no right or wrong answers.",
+      "start": 2232.780029296875,
+      "end": 2235.239990234375
+    },
+    {
+      "text": " Of course, you might not be right",
+      "start": 2235.239990234375,
+      "end": 2237.300048828125
+    },
+    {
+      "text": " at the very first attempt, and that's the whole point.",
+      "start": 2237.300048828125,
+      "end": 2240.3798828125
+    },
+    {
+      "text": " Like, you need to start learning in an iterative manner.",
+      "start": 2240.3798828125,
+      "end": 2243.97998046875
+    },
+    {
+      "text": " So, once you get corrected by the chatbot,",
+      "start": 2243.97998046875,
+      "end": 2246.4599609375
+    },
+    {
+      "text": " okay, you might have missed some point,",
+      "start": 2246.4599609375,
+      "end": 2248.419921875
+    },
+    {
+      "text": " you take that feedback, give it back to the chatbot,",
+      "start": 2248.419921875,
+      "end": 2251.5
+    },
+    {
+      "text": " and that's how you minimize that error,",
+      "start": 2252.340087890625,
+      "end": 2253.739990234375
+    },
+    {
+      "text": " and that's how machines learn, right?",
+      "start": 2253.739990234375,
+      "end": 2255.5
+    },
+    {
+      "text": " So, you take that feedback in and interact with the chatbot,",
+      "start": 2255.5,
+      "end": 2259.89990234375
+    },
+    {
+      "text": " like, solidifying your core concepts for week one.",
+      "start": 2259.89990234375,
+      "end": 2263.06005859375
+    },
+    {
+      "text": " And this is how it'll go for week two till seven.",
+      "start": 2263.06005859375,
+      "end": 2265.5
+    },
+    {
+      "text": " To make it simpler, you can interact with the chatbot",
+      "start": 2266.580078125,
+      "end": 2269.820068359375
+    },
+    {
+      "text": " also by typing, but also by speaking.",
+      "start": 2269.820068359375,
+      "end": 2272.659912109375
+    },
+    {
+      "text": " So, there's a voice input right here.",
+      "start": 2272.659912109375,
+      "end": 2275.300048828125
+    },
+    {
+      "text": " So, if you can see, you can click on it and start speaking.",
+      "start": 2275.300048828125,
+      "end": 2280.300048828125
+    },
+    {
+      "text": " Now, the rubric for this assignment called Concept Builder,",
+      "start": 2283.4599609375,
+      "end": 2287.139892578125
+    },
+    {
+      "text": " it's going, it's not going to see",
+      "start": 2287.139892578125,
+      "end": 2289.300048828125
+    },
+    {
+      "text": " how many right answers you got,",
+      "start": 2289.300048828125,
+      "end": 2290.739990234375
+    },
+    {
+      "text": " it's going to see what's the quality of your interaction",
+      "start": 2290.739990234375,
+      "end": 2293.6201171875
+    },
+    {
+      "text": " and with the chatbot and the overall session, right?",
+      "start": 2293.6201171875,
+      "end": 2296.89990234375
+    },
+    {
+      "text": " So, at the end of the session,",
+      "start": 2296.89990234375,
+      "end": 2297.97998046875
+    },
+    {
+      "text": " you must have learned some of the core concepts.",
+      "start": 2297.97998046875,
+      "end": 2301.219970703125
+    },
+    {
+      "text": " So, just ask as many follow-up questions, I would say,",
+      "start": 2301.219970703125,
+      "end": 2304.5400390625
+    },
+    {
+      "text": " on your interested topics,",
+      "start": 2304.5400390625,
+      "end": 2306.3798828125
+    },
+    {
+      "text": " and also the topics that gets unfolded",
+      "start": 2306.3798828125,
+      "end": 2308.739990234375
+    },
+    {
+      "text": " during the discussion.",
+      "start": 2308.739990234375,
+      "end": 2310.340087890625
+    },
+    {
+      "text": " Feel free to use it for asking any kind of questions.",
+      "start": 2310.340087890625,
+      "end": 2313.93994140625
+    },
+    {
+      "text": " This assignment will be due every Friday, 12 a.m.,",
+      "start": 2316.179931640625,
+      "end": 2320.820068359375
+    },
+    {
+      "text": " actually, 11.59 p.m.",
+      "start": 2322.179931640625,
+      "end": 2323.5
+    },
+    {
+      "text": " Expect to also do your readings by that time,",
+      "start": 2325.4599609375,
+      "end": 2329.3798828125
+    },
+    {
+      "text": " because Wednesday, by evening, your class will be done.",
+      "start": 2329.3798828125,
+      "end": 2333.02001953125
+    },
+    {
+      "text": " So, feel free to take part in the readings as well,",
+      "start": 2333.02001953125,
+      "end": 2337.860107421875
+    },
+    {
+      "text": " because readings are very important for this course,",
+      "start": 2337.860107421875,
+      "end": 2339.860107421875
+    },
+    {
+      "text": " and they're a mandatory part of this course.",
+      "start": 2339.860107421875,
+      "end": 2341.97998046875
+    },
+    {
+      "text": " As Professor mentioned, all the readings,",
+      "start": 2341.97998046875,
+      "end": 2344.780029296875
+    },
+    {
+      "text": " you can actually find the readings right here, if you see.",
+      "start": 2344.780029296875,
+      "end": 2348.179931640625
+    },
+    {
+      "text": " Let me expand it a little bit.",
+      "start": 2353.10009765625,
+      "end": 2355.06005859375
+    },
+    {
+      "text": " So, here, you can find all the readings.",
+      "start": 2355.06005859375,
+      "end": 2358.93994140625
+    },
+    {
+      "text": " Feel free to go through these readings.",
+      "start": 2358.93994140625,
+      "end": 2362.3798828125
+    },
+    {
+      "text": " The chatbot will also cite these readings like this.",
+      "start": 2363.179931640625,
+      "end": 2366.4599609375
+    },
+    {
+      "text": " If you see this, it's a PDF preview.",
+      "start": 2368.97998046875,
+      "end": 2372.139892578125
+    },
+    {
+      "text": " So, whatever answer the chatbot is giving you,",
+      "start": 2372.139892578125,
+      "end": 2374.580078125
+    },
+    {
+      "text": " it'll also cite it directly from the readings,",
+      "start": 2374.580078125,
+      "end": 2376.5
+    },
+    {
+      "text": " so you can go back to the reading,",
+      "start": 2376.5,
+      "end": 2378.340087890625
+    },
+    {
+      "text": " understand the concepts a little bit more,",
+      "start": 2378.340087890625,
+      "end": 2379.93994140625
+    },
+    {
+      "text": " come back, and continue the discussion.",
+      "start": 2379.93994140625,
+      "end": 2382.580078125
+    },
+    {
+      "text": " One quick point, if you don't see those readings",
+      "start": 2382.580078125,
+      "end": 2384.780029296875
+    },
+    {
+      "text": " in the bottom left, zoom out on your browser,",
+      "start": 2384.780029296875,
+      "end": 2389.06005859375
+    },
+    {
+      "text": " because they're down there,",
+      "start": 2389.06005859375,
+      "end": 2389.97998046875
+    },
+    {
+      "text": " but if you're zoomed in, they might hide.",
+      "start": 2389.97998046875,
+      "end": 2392.10009765625
+    },
+    {
+      "text": " Yes, on laptops, you might need to zoom in",
+      "start": 2393.219970703125,
+      "end": 2394.97998046875
+    },
+    {
+      "text": " and out a little bit,",
+      "start": 2394.97998046875,
+      "end": 2396.139892578125
+    },
+    {
+      "text": " but here's where all your readings reside.",
+      "start": 2397.06005859375,
+      "end": 2399.89990234375
+    },
+    {
+      "text": " One cool thing about this reader as well is,",
+      "start": 2401.4599609375,
+      "end": 2404.260009765625
+    },
+    {
+      "text": " if you, for example, go to AI Engineering, Chapter 1,",
+      "start": 2404.260009765625,
+      "end": 2407.340087890625
+    },
+    {
+      "text": " and you continue your reading,",
+      "start": 2408.6201171875,
+      "end": 2411.6201171875
+    },
+    {
+      "text": " you find something interesting,",
+      "start": 2411.6201171875,
+      "end": 2412.89990234375
+    },
+    {
+      "text": " you can just select it, like this,",
+      "start": 2412.89990234375,
+      "end": 2416.89990234375
+    },
+    {
+      "text": " and you'll have some options.",
+      "start": 2416.89990234375,
+      "end": 2418.3798828125
+    },
+    {
+      "text": " So, you can either enhance the clarity of the wordings,",
+      "start": 2418.3798828125,
+      "end": 2422.179931640625
+    },
+    {
+      "text": " you can maybe make it more detailed,",
+      "start": 2422.179931640625,
+      "end": 2425.139892578125
+    },
+    {
+      "text": " maybe you can reduce the redundancy,",
+      "start": 2425.139892578125,
+      "end": 2427.659912109375
+    },
+    {
+      "text": " and also, it's editable.",
+      "start": 2427.659912109375,
+      "end": 2429.6201171875
+    },
+    {
+      "text": " So, you can just have your own notes here as well,",
+      "start": 2429.6201171875,
+      "end": 2434.02001953125
+    },
+    {
+      "text": " so that you can come back and refer to these.",
+      "start": 2436.860107421875,
+      "end": 2439.06005859375
+    },
+    {
+      "text": " So, it's for your understanding",
+      "start": 2439.06005859375,
+      "end": 2441.659912109375
+    },
+    {
+      "text": " and how you would like to learn.",
+      "start": 2441.659912109375,
+      "end": 2443.260009765625
+    },
+    {
+      "text": " We would love, we would really encourage you",
+      "start": 2444.5,
+      "end": 2446.580078125
+    },
+    {
+      "text": " to go back and forth from reading and discussion,",
+      "start": 2446.580078125,
+      "end": 2450.06005859375
+    },
+    {
+      "text": " so that you have a better understanding of the topics,",
+      "start": 2450.06005859375,
+      "end": 2452.4599609375
+    },
+    {
+      "text": " whenever you feel confused.",
+      "start": 2452.4599609375,
+      "end": 2453.89990234375
+    },
+    {
+      "text": " And in the middle of your chat,",
+      "start": 2453.89990234375,
+      "end": 2455.6201171875
+    },
+    {
+      "text": " you can showcase that you've got the PDF",
+      "start": 2455.6201171875,
+      "end": 2457.659912109375
+    },
+    {
+      "text": " that showed up right there.",
+      "start": 2457.659912109375,
+      "end": 2459.06005859375
+    },
+    {
+      "text": " Yep.",
+      "start": 2459.06005859375,
+      "end": 2459.89990234375
+    },
+    {
+      "text": " So, during the chat, the tool will reference readings,",
+      "start": 2461.699951171875,
+      "end": 2466.699951171875
+    },
+    {
+      "text": " and that allows you to go back and forth",
+      "start": 2467.340087890625,
+      "end": 2469.02001953125
+    },
+    {
+      "text": " from chat to reading or reading to chat.",
+      "start": 2469.02001953125,
+      "end": 2471.4599609375
+    },
+    {
+      "text": " The other capability on the left-hand side,",
+      "start": 2471.4599609375,
+      "end": 2473.699951171875
+    },
+    {
+      "text": " if you go all the way to the top,",
+      "start": 2473.699951171875,
+      "end": 2475.02001953125
+    },
+    {
+      "text": " is you've got the audio format.",
+      "start": 2475.02001953125,
+      "end": 2477.860107421875
+    },
+    {
+      "text": " So, it's kind of like an audio book.",
+      "start": 2477.860107421875,
+      "end": 2479.659912109375
+    },
+    {
+      "text": " It'll read for you.",
+      "start": 2480.5,
+      "end": 2482.419921875
+    },
+    {
+      "text": " Can you start that?",
+      "start": 2484.659912109375,
+      "end": 2485.860107421875
+    },
+    {
+      "text": " Yeah.",
+      "start": 2485.860107421875,
+      "end": 2486.699951171875
+    },
+    {
+      "text": " And you can speed it up.",
+      "start": 2490.3798828125,
+      "end": 2491.820068359375
+    },
+    {
+      "text": " You can do 1.25, 1.5, whatever.",
+      "start": 2491.820068359375,
+      "end": 2495.780029296875
+    },
+    {
+      "text": " So, many of the features that we find in podcasts,",
+      "start": 2495.780029296875,
+      "end": 2500.139892578125
+    },
+    {
+      "text": " you can do that sort of thing here too.",
+      "start": 2500.139892578125,
+      "end": 2503.02001953125
+    },
+    {
+      "text": " Yeah, so feel free to explore the platform.",
+      "start": 2503.02001953125,
+      "end": 2506.4599609375
+    },
+    {
+      "text": " This is just week one,",
+      "start": 2506.4599609375,
+      "end": 2507.4599609375
+    },
+    {
+      "text": " so we want you to get comfortable with the platform.",
+      "start": 2507.4599609375,
+      "end": 2510.4599609375
+    },
+    {
+      "text": " Some cool capabilities here as well are,",
+      "start": 2510.4599609375,
+      "end": 2513.780029296875
+    },
+    {
+      "text": " for example, if you see at the bottom,",
+      "start": 2513.780029296875,
+      "end": 2516.3798828125
+    },
+    {
+      "text": " there are many options to generate quiz, flashcards,",
+      "start": 2516.3798828125,
+      "end": 2519.860107421875
+    },
+    {
+      "text": " true, false, exercise, et cetera.",
+      "start": 2519.860107421875,
+      "end": 2522.02001953125
+    },
+    {
+      "text": " So, if you want to practice some of the concepts,",
+      "start": 2522.02001953125,
+      "end": 2525.659912109375
+    },
+    {
+      "text": " for example, that are new to you, for example, transformers,",
+      "start": 2525.659912109375,
+      "end": 2528.5400390625
+    },
+    {
+      "text": " you can write here, transformers,",
+      "start": 2528.5400390625,
+      "end": 2530.4599609375
+    },
+    {
+      "text": " and click on the quiz button.",
+      "start": 2530.4599609375,
+      "end": 2532.10009765625
+    },
+    {
+      "text": " Right, like this, and just send it.",
+      "start": 2533.97998046875,
+      "end": 2538.97998046875
+    },
+    {
+      "text": " So, it'll generate quiz on that topic,",
+      "start": 2544.300048828125,
+      "end": 2547.260009765625
+    },
+    {
+      "text": " and you can continue your practice.",
+      "start": 2547.260009765625,
+      "end": 2548.860107421875
+    },
+    {
+      "text": " You can do it as many times as you want.",
+      "start": 2548.860107421875,
+      "end": 2551.419921875
+    },
+    {
+      "text": " Now, this was concept builder week one.",
+      "start": 2551.419921875,
+      "end": 2554.139892578125
+    },
+    {
+      "text": " This was chatbot number one.",
+      "start": 2554.139892578125,
+      "end": 2556.139892578125
+    },
+    {
+      "text": " Chatbot number two is called practice exercise.",
+      "start": 2556.139892578125,
+      "end": 2559.639892578125
+    },
+    {
+      "text": " Now, once you're done solidifying your concepts",
+      "start": 2559.639892578125,
+      "end": 2562.419921875
+    },
+    {
+      "text": " through discussions with the first chatbot,",
+      "start": 2562.820068359375,
+      "end": 2565.02001953125
+    },
+    {
+      "text": " there's the next assignment where you apply those concepts.",
+      "start": 2566.340087890625,
+      "end": 2569.300048828125
+    },
+    {
+      "text": " Every week, there'll be, I would say,",
+      "start": 2570.300048828125,
+      "end": 2572.89990234375
+    },
+    {
+      "text": " more interactive and fun exercises",
+      "start": 2572.89990234375,
+      "end": 2575.300048828125
+    },
+    {
+      "text": " based on that topic particularly.",
+      "start": 2575.300048828125,
+      "end": 2577.340087890625
+    },
+    {
+      "text": " So, for this week, we have Mythbusters.",
+      "start": 2577.340087890625,
+      "end": 2579.93994140625
+    },
+    {
+      "text": " It's basically, we'll give you one statement,",
+      "start": 2579.93994140625,
+      "end": 2583.06005859375
+    },
+    {
+      "text": " and you have to tell it whether it's true, false,",
+      "start": 2583.06005859375,
+      "end": 2585.97998046875
+    },
+    {
+      "text": " or it depends, and you have to explain it in your own words,",
+      "start": 2585.97998046875,
+      "end": 2588.260009765625
+    },
+    {
+      "text": " in two to three sentences.",
+      "start": 2588.260009765625,
+      "end": 2589.860107421875
+    },
+    {
+      "text": " Again, the rubric does not want you",
+      "start": 2589.860107421875,
+      "end": 2592.89990234375
+    },
+    {
+      "text": " to answer correctly all the time.",
+      "start": 2592.89990234375,
+      "end": 2594.699951171875
+    },
+    {
+      "text": " We just want to see what kind of interaction you have",
+      "start": 2594.699951171875,
+      "end": 2597.3798828125
+    },
+    {
+      "text": " and what learnings you have at the end of the day.",
+      "start": 2597.3798828125,
+      "end": 2599.5
+    },
+    {
+      "text": " So, feel free to ask follow-up questions.",
+      "start": 2599.5,
+      "end": 2601.699951171875
+    },
+    {
+      "text": " If you do not agree with anything,",
+      "start": 2601.699951171875,
+      "end": 2603.06005859375
+    },
+    {
+      "text": " just ask and correct the LLM if you want.",
+      "start": 2603.06005859375,
+      "end": 2606.820068359375
+    },
+    {
+      "text": " So, and as the TA, I'll be going through your interactions",
+      "start": 2606.820068359375,
+      "end": 2611.699951171875
+    },
+    {
+      "text": " when you have submitted the assignment,",
+      "start": 2611.699951171875,
+      "end": 2613.89990234375
+    },
+    {
+      "text": " and look at the quality of the submission,",
+      "start": 2613.89990234375,
+      "end": 2617.3798828125
+    },
+    {
+      "text": " of the interaction, basically.",
+      "start": 2617.3798828125,
+      "end": 2618.860107421875
+    },
+    {
+      "text": " One other thing to add on that.",
+      "start": 2618.860107421875,
+      "end": 2620.780029296875
+    },
+    {
+      "text": " So, observability is one of the attributes of this platform",
+      "start": 2620.780029296875,
+      "end": 2625.780029296875
+    },
+    {
+      "text": " so that we can see your chats, okay?",
+      "start": 2626.89990234375,
+      "end": 2630.179931640625
+    },
+    {
+      "text": " I don't want it to be creepy",
+      "start": 2630.179931640625,
+      "end": 2632.139892578125
+    },
+    {
+      "text": " or feel like your privacy is invaded",
+      "start": 2632.139892578125,
+      "end": 2634.419921875
+    },
+    {
+      "text": " because you're not gonna be having your personal chats here.",
+      "start": 2634.419921875,
+      "end": 2639.419921875
+    },
+    {
+      "text": " This is only for course-related chats.",
+      "start": 2639.5400390625,
+      "end": 2641.659912109375
+    },
+    {
+      "text": " You're still gonna have your other tools",
+      "start": 2641.659912109375,
+      "end": 2643.699951171875
+    },
+    {
+      "text": " where you do your personal chats, right?",
+      "start": 2643.699951171875,
+      "end": 2646.52001953125
+    },
+    {
+      "text": " Also, as Shreya talked about earlier,",
+      "start": 2647.52001953125,
+      "end": 2649.679931640625
+    },
+    {
+      "text": " we're not grading anything based on right or wrong, right?",
+      "start": 2649.679931640625,
+      "end": 2653.360107421875
+    },
+    {
+      "text": " We're grading based on your involvement with the model,",
+      "start": 2653.360107421875,
+      "end": 2658.360107421875
+    },
+    {
+      "text": " with the tool, right?",
+      "start": 2660.679931640625,
+      "end": 2661.840087890625
+    },
+    {
+      "text": " We want to see conversations.",
+      "start": 2661.840087890625,
+      "end": 2663.320068359375
+    },
+    {
+      "text": " We want to see good conversations",
+      "start": 2663.320068359375,
+      "end": 2665.719970703125
+    },
+    {
+      "text": " that showcase your creativity, your curiosity,",
+      "start": 2665.719970703125,
+      "end": 2670.56005859375
+    },
+    {
+      "text": " things like that.",
+      "start": 2670.56005859375,
+      "end": 2671.39990234375
+    },
+    {
+      "text": " And so, as Shreya alluded to,",
+      "start": 2671.39990234375,
+      "end": 2674.9599609375
+    },
+    {
+      "text": " part of the design of this platform",
+      "start": 2674.9599609375,
+      "end": 2677.43994140625
+    },
+    {
+      "text": " comes from how machines learn.",
+      "start": 2678.39990234375,
+      "end": 2681.6201171875
+    },
+    {
+      "text": " Machines learn by exposing their knowledge,",
+      "start": 2681.6201171875,
+      "end": 2684.360107421875
+    },
+    {
+      "text": " exposing the model, and then the answer is revealed,",
+      "start": 2684.360107421875,
+      "end": 2689.360107421875
+    },
+    {
+      "text": " and you measure loss, how wrong or how far off you were.",
+      "start": 2689.56005859375,
+      "end": 2693.719970703125
+    },
+    {
+      "text": " Gradient descent points you in the right direction.",
+      "start": 2693.719970703125,
+      "end": 2696.719970703125
+    },
+    {
+      "text": " Weights are modified, and then you rerun, okay?",
+      "start": 2696.719970703125,
+      "end": 2701.719970703125
+    },
+    {
+      "text": " So, this tool, we attempt to replicate that process a bit.",
+      "start": 2701.719970703125,
+      "end": 2706.719970703125
+    },
+    {
+      "text": " So, if you're not sure of an answer, it's okay to just,",
+      "start": 2708.0,
+      "end": 2712.47998046875
+    },
+    {
+      "text": " I mean, you have to reveal your model.",
+      "start": 2712.47998046875,
+      "end": 2714.56005859375
+    },
+    {
+      "text": " Your model is your current understanding of a topic.",
+      "start": 2714.56005859375,
+      "end": 2716.840087890625
+    },
+    {
+      "text": " So, reveal your model to the platform, let it correct you,",
+      "start": 2716.840087890625,
+      "end": 2720.56005859375
+    },
+    {
+      "text": " and then you'll move towards convergence,",
+      "start": 2720.56005859375,
+      "end": 2723.139892578125
+    },
+    {
+      "text": " which we now know is the point of diminishing returns",
+      "start": 2723.139892578125,
+      "end": 2726.360107421875
+    },
+    {
+      "text": " where your model in your brain",
+      "start": 2726.360107421875,
+      "end": 2727.860107421875
+    },
+    {
+      "text": " is not really getting any better.",
+      "start": 2727.860107421875,
+      "end": 2729.179931640625
+    },
+    {
+      "text": " You've grasped the concept, and then you can move on.",
+      "start": 2729.179931640625,
+      "end": 2733.06005859375
+    },
+    {
+      "text": " Does that make sense?",
+      "start": 2733.06005859375,
+      "end": 2734.10009765625
+    },
+    {
+      "text": " Okay.",
+      "start": 2735.179931640625,
+      "end": 2736.02001953125
+    },
+    {
+      "text": " Okay.",
+      "start": 2737.10009765625,
+      "end": 2737.93994140625
+    },
+    {
+      "text": " Oh, a question online, Ifrah.",
+      "start": 2739.219970703125,
+      "end": 2740.860107421875
+    },
+    {
+      "text": " Just wondering, Shreya,",
+      "start": 2742.780029296875,
+      "end": 2743.659912109375
+    },
+    {
+      "text": " when you mentioned the first exercise,",
+      "start": 2743.659912109375,
+      "end": 2745.5400390625
+    },
+    {
+      "text": " you said that that depends on how we're interacting.",
+      "start": 2745.5400390625,
+      "end": 2749.820068359375
+    },
+    {
+      "text": " So, my interaction will be very different from,",
+      "start": 2749.820068359375,
+      "end": 2752.4599609375
+    },
+    {
+      "text": " maybe I just have a few questions,",
+      "start": 2752.4599609375,
+      "end": 2755.02001953125
+    },
+    {
+      "text": " and the concepts are clear, I'm good there,",
+      "start": 2755.02001953125,
+      "end": 2757.580078125
+    },
+    {
+      "text": " but somebody else might have a 30-minute long interaction.",
+      "start": 2757.6201171875,
+      "end": 2761.659912109375
+    },
+    {
+      "text": " Does that matter?",
+      "start": 2761.659912109375,
+      "end": 2762.580078125
+    },
+    {
+      "text": " I'm just trying to understand how that's being,",
+      "start": 2762.580078125,
+      "end": 2764.860107421875
+    },
+    {
+      "text": " is that like a graded assignment,",
+      "start": 2764.860107421875,
+      "end": 2766.4599609375
+    },
+    {
+      "text": " or we'll have a separate quiz?",
+      "start": 2766.4599609375,
+      "end": 2768.02001953125
+    },
+    {
+      "text": " Okay, so both of these interactions are going to be graded.",
+      "start": 2768.89990234375,
+      "end": 2772.43994140625
+    },
+    {
+      "text": " First is a discussion chatbot.",
+      "start": 2772.43994140625,
+      "end": 2773.93994140625
+    },
+    {
+      "text": " The second one is actually the practice exercise,",
+      "start": 2773.93994140625,
+      "end": 2776.320068359375
+    },
+    {
+      "text": " but both of these assignments are graded.",
+      "start": 2776.320068359375,
+      "end": 2778.3798828125
+    },
+    {
+      "text": " We definitely encourage you to have longer sessions",
+      "start": 2779.739990234375,
+      "end": 2782.260009765625
+    },
+    {
+      "text": " so that you are well-equipped with the concepts",
+      "start": 2782.260009765625,
+      "end": 2786.260009765625
+    },
+    {
+      "text": " that are assigned to you as your learning objectives",
+      "start": 2786.260009765625,
+      "end": 2789.260009765625
+    },
+    {
+      "text": " for weeks, for week one, two, until seven.",
+      "start": 2789.260009765625,
+      "end": 2791.739990234375
+    },
+    {
+      "text": " So, but if you are already aware of those topics,",
+      "start": 2791.739990234375,
+      "end": 2795.780029296875
+    },
+    {
+      "text": " it's okay, you can just answer that question.",
+      "start": 2795.780029296875,
+      "end": 2798.179931640625
+    },
+    {
+      "text": " It's basically a guided journey.",
+      "start": 2798.179931640625,
+      "end": 2799.89990234375
+    },
+    {
+      "text": " So, you will know when it ends, right?",
+      "start": 2799.89990234375,
+      "end": 2802.780029296875
+    },
+    {
+      "text": " So, if it asks you a question,",
+      "start": 2802.780029296875,
+      "end": 2804.739990234375
+    },
+    {
+      "text": " you give it the right answer,",
+      "start": 2804.739990234375,
+      "end": 2805.89990234375
+    },
+    {
+      "text": " there are nothing new points that it can add,",
+      "start": 2805.89990234375,
+      "end": 2808.6201171875
+    },
+    {
+      "text": " you can definitely move on to the next thing.",
+      "start": 2808.6201171875,
+      "end": 2810.820068359375
+    },
+    {
+      "text": " But if you give it like one word answer,",
+      "start": 2810.820068359375,
+      "end": 2815.179931640625
+    },
+    {
+      "text": " you're wrong, you're not trying to correct it,",
+      "start": 2815.179931640625,
+      "end": 2817.10009765625
+    },
+    {
+      "text": " but you just want to finish it,",
+      "start": 2817.10009765625,
+      "end": 2819.02001953125
+    },
+    {
+      "text": " we can see it through the chat.",
+      "start": 2819.02001953125,
+      "end": 2820.5
+    },
+    {
+      "text": " So, you will...",
+      "start": 2820.5,
+      "end": 2822.580078125
+    },
+    {
+      "text": " Yeah, we want rich engagement, Ifrah.",
+      "start": 2822.580078125,
+      "end": 2825.06005859375
+    },
+    {
+      "text": " So, if there's five concepts to go through,",
+      "start": 2825.06005859375,
+      "end": 2827.919921875
+    },
+    {
+      "text": " and maybe you know the first two concepts already,",
+      "start": 2827.919921875,
+      "end": 2831.10009765625
+    },
+    {
+      "text": " then we're not requiring you to spend equal amounts of time",
+      "start": 2831.10009765625,
+      "end": 2835.860107421875
+    },
+    {
+      "text": " in every concept.",
+      "start": 2835.860107421875,
+      "end": 2837.419921875
+    },
+    {
+      "text": " We also want it to be curiosity driven.",
+      "start": 2837.419921875,
+      "end": 2840.340087890625
+    },
+    {
+      "text": " So, if there are certain concepts",
+      "start": 2840.340087890625,
+      "end": 2842.219970703125
+    },
+    {
+      "text": " that you're really curious about, you can go much deeper.",
+      "start": 2842.219970703125,
+      "end": 2845.5400390625
+    },
+    {
+      "text": " So, the rubric is not like strict,",
+      "start": 2845.5400390625,
+      "end": 2849.89990234375
+    },
+    {
+      "text": " it's about rich engagement, right?",
+      "start": 2849.89990234375,
+      "end": 2853.739990234375
+    },
+    {
+      "text": " It's like, if you spent time with me",
+      "start": 2853.739990234375,
+      "end": 2856.5400390625
+    },
+    {
+      "text": " or one of our guest speakers,",
+      "start": 2856.5400390625,
+      "end": 2858.340087890625
+    },
+    {
+      "text": " would you have a rich conversation?",
+      "start": 2858.340087890625,
+      "end": 2860.699951171875
+    },
+    {
+      "text": " That's really what we're looking for.",
+      "start": 2860.699951171875,
+      "end": 2862.840087890625
+    },
+    {
+      "text": " Okay, and then another quick question.",
+      "start": 2864.6201171875,
+      "end": 2867.0
+    },
+    {
+      "text": " So, is this model just trained on the reading materials",
+      "start": 2868.340087890625,
+      "end": 2871.93994140625
+    },
+    {
+      "text": " or it's not limited to just the...",
+      "start": 2872.780029296875,
+      "end": 2875.139892578125
+    },
+    {
+      "text": " So, both of these boards,",
+      "start": 2877.5400390625,
+      "end": 2879.419921875
+    },
+    {
+      "text": " it has the rack materials for all the readings,",
+      "start": 2879.419921875,
+      "end": 2882.1201171875
+    },
+    {
+      "text": " the class slides and also the lectures that gets recorded.",
+      "start": 2882.1201171875,
+      "end": 2885.300048828125
+    },
+    {
+      "text": " So, the transcripts of the lectures.",
+      "start": 2885.300048828125,
+      "end": 2886.780029296875
+    },
+    {
+      "text": " So, it has context of what currently you're learning",
+      "start": 2886.780029296875,
+      "end": 2890.139892578125
+    },
+    {
+      "text": " and it'll guide you accordingly.",
+      "start": 2890.139892578125,
+      "end": 2891.89990234375
+    },
+    {
+      "text": " It just does not get everything",
+      "start": 2891.89990234375,
+      "end": 2893.97998046875
+    },
+    {
+      "text": " like randomly from the internet.",
+      "start": 2893.97998046875,
+      "end": 2895.419921875
+    },
+    {
+      "text": " Yeah. It is designed by us.",
+      "start": 2895.419921875,
+      "end": 2896.4599609375
+    },
+    {
+      "text": " So, that's another big part of this",
+      "start": 2896.4599609375,
+      "end": 2898.3798828125
+    },
+    {
+      "text": " is it's not just all of chat GPT, right?",
+      "start": 2898.3798828125,
+      "end": 2902.06005859375
+    },
+    {
+      "text": " It's not all of Gemini.",
+      "start": 2902.06005859375,
+      "end": 2904.419921875
+    },
+    {
+      "text": " We've got...",
+      "start": 2904.419921875,
+      "end": 2905.4599609375
+    },
+    {
+      "text": " So, RAG is a concept that we're gonna get to later",
+      "start": 2905.4599609375,
+      "end": 2908.6201171875
+    },
+    {
+      "text": " in this class.",
+      "start": 2908.6201171875,
+      "end": 2909.89990234375
+    },
+    {
+      "text": " But RAG allows you to have a certain knowledge base",
+      "start": 2909.89990234375,
+      "end": 2914.3798828125
+    },
+    {
+      "text": " that the model will look to first",
+      "start": 2914.3798828125,
+      "end": 2917.780029296875
+    },
+    {
+      "text": " and try and reference an answer from the knowledge base.",
+      "start": 2917.780029296875,
+      "end": 2920.739990234375
+    },
+    {
+      "text": " So, all of our readings are RAG materials",
+      "start": 2920.739990234375,
+      "end": 2924.89990234375
+    },
+    {
+      "text": " for this chat experience.",
+      "start": 2924.89990234375,
+      "end": 2927.60009765625
+    },
+    {
+      "text": " And that's why when you're working through it,",
+      "start": 2927.60009765625,
+      "end": 2929.47998046875
+    },
+    {
+      "text": " it'll reference the book.",
+      "start": 2929.47998046875,
+      "end": 2931.52001953125
+    },
+    {
+      "text": " And then you can switch over to the book",
+      "start": 2931.52001953125,
+      "end": 2933.1201171875
+    },
+    {
+      "text": " and read a little bit and then come back.",
+      "start": 2933.1201171875,
+      "end": 2935.280029296875
+    },
+    {
+      "text": " On the right-hand side,",
+      "start": 2935.280029296875,
+      "end": 2936.39990234375
+    },
+    {
+      "text": " you can see what model we're actually using.",
+      "start": 2936.39990234375,
+      "end": 2938.919921875
+    },
+    {
+      "text": " We're using Gemini 3 Flash.",
+      "start": 2938.919921875,
+      "end": 2941.5400390625
+    },
+    {
+      "text": " Okay.",
+      "start": 2943.47998046875,
+      "end": 2944.320068359375
+    },
+    {
+      "text": " And the session settings showcase to you a little bit",
+      "start": 2944.320068359375,
+      "end": 2948.320068359375
+    },
+    {
+      "text": " about the prompt engineering",
+      "start": 2948.320068359375,
+      "end": 2951.219970703125
+    },
+    {
+      "text": " that's going on behind the scenes.",
+      "start": 2951.219970703125,
+      "end": 2953.52001953125
+    },
+    {
+      "text": " Okay.",
+      "start": 2953.52001953125,
+      "end": 2955.1201171875
+    },
+    {
+      "text": " And if you zoom out a bit,",
+      "start": 2955.1201171875,
+      "end": 2956.719970703125
+    },
+    {
+      "text": " if you go up on the right panel,",
+      "start": 2956.719970703125,
+      "end": 2959.719970703125
+    },
+    {
+      "text": " it's got topics and then key concepts.",
+      "start": 2959.719970703125,
+      "end": 2963.159912109375
+    },
+    {
+      "text": " The key concepts are all clickable.",
+      "start": 2963.159912109375,
+      "end": 2965.840087890625
+    },
+    {
+      "text": " So, as you're going through this,",
+      "start": 2965.840087890625,
+      "end": 2967.60009765625
+    },
+    {
+      "text": " allow the key concepts to ground you",
+      "start": 2967.60009765625,
+      "end": 2970.9599609375
+    },
+    {
+      "text": " in the knowledge that we want you to cover",
+      "start": 2970.9599609375,
+      "end": 2974.699951171875
+    },
+    {
+      "text": " in your journey for that week.",
+      "start": 2974.699951171875,
+      "end": 2977.56005859375
+    },
+    {
+      "text": " So, you should click on all of those topics, really,",
+      "start": 2977.56005859375,
+      "end": 2981.760009765625
+    },
+    {
+      "text": " to really understand them.",
+      "start": 2981.760009765625,
+      "end": 2985.06005859375
+    },
+    {
+      "text": " And then the last thing I'll point out is the feedback.",
+      "start": 2985.89990234375,
+      "end": 2988.93994140625
+    },
+    {
+      "text": " Yes.",
+      "start": 2988.93994140625,
+      "end": 2989.780029296875
+    },
+    {
+      "text": " If there's any bugs or any questions you have,",
+      "start": 2989.780029296875,
+      "end": 2992.860107421875
+    },
+    {
+      "text": " of course you can email me or Shreya,",
+      "start": 2992.860107421875,
+      "end": 2996.139892578125
+    },
+    {
+      "text": " but there's also a feedback form that you can click.",
+      "start": 2996.139892578125,
+      "end": 3001.139892578125
+    },
+    {
+      "text": " If there's any buggy behavior or features",
+      "start": 3001.639892578125,
+      "end": 3003.9599609375
+    },
+    {
+      "text": " that you want to see or any feedback you want to give,",
+      "start": 3003.9599609375,
+      "end": 3007.5
+    },
+    {
+      "text": " 24-7, this goes straight to a Slack channel.",
+      "start": 3007.5,
+      "end": 3011.06005859375
+    },
+    {
+      "text": " So, that's available, that feedback.",
+      "start": 3012.179931640625,
+      "end": 3014.419921875
+    },
+    {
+      "text": " So, once you're done with your week one interaction,",
+      "start": 3014.419921875,
+      "end": 3016.739990234375
+    },
+    {
+      "text": " you've engaged enough with the platform,",
+      "start": 3016.739990234375,
+      "end": 3019.06005859375
+    },
+    {
+      "text": " all the chatbots, et cetera,",
+      "start": 3019.06005859375,
+      "end": 3020.179931640625
+    },
+    {
+      "text": " and you have anything to tell us that needs to be fixed,",
+      "start": 3020.179931640625,
+      "end": 3023.4599609375
+    },
+    {
+      "text": " maybe, or what kind of learning did you have",
+      "start": 3023.4599609375,
+      "end": 3026.10009765625
+    },
+    {
+      "text": " in that one week?",
+      "start": 3026.10009765625,
+      "end": 3027.02001953125
+    },
+    {
+      "text": " We would really appreciate it",
+      "start": 3027.02001953125,
+      "end": 3028.5
+    },
+    {
+      "text": " if you just quickly give us a feedback.",
+      "start": 3028.5,
+      "end": 3030.760009765625
+    },
+    {
+      "text": " Yes, I think, Professor, mostly everything is-",
+      "start": 3034.219970703125,
+      "end": 3036.179931640625
+    },
+    {
+      "text": " One last thing.",
+      "start": 3036.179931640625,
+      "end": 3037.02001953125
+    },
+    {
+      "text": " Of course, Professor.",
+      "start": 3037.02001953125,
+      "end": 3038.3798828125
+    },
+    {
+      "text": " So, go up top where you just were.",
+      "start": 3038.3798828125,
+      "end": 3041.02001953125
+    },
+    {
+      "text": " So, in terms of navigation, on the left,",
+      "start": 3041.02001953125,
+      "end": 3043.719970703125
+    },
+    {
+      "text": " we've got the reader, we covered that.",
+      "start": 3043.719970703125,
+      "end": 3045.840087890625
+    },
+    {
+      "text": " In the middle, you've got your chat experience.",
+      "start": 3045.840087890625,
+      "end": 3047.840087890625
+    },
+    {
+      "text": " On the right, you've got some settings.",
+      "start": 3047.840087890625,
+      "end": 3049.9599609375
+    },
+    {
+      "text": " And then, at the very top, you've got three different chat,",
+      "start": 3049.9599609375,
+      "end": 3054.9599609375
+    },
+    {
+      "text": " we call it like a chatbot agent.",
+      "start": 3056.580078125,
+      "end": 3058.97998046875
+    },
+    {
+      "text": " So, there's three different ones.",
+      "start": 3058.97998046875,
+      "end": 3060.320068359375
+    },
+    {
+      "text": " So, concept builder week one,",
+      "start": 3060.320068359375,
+      "end": 3062.679931640625
+    },
+    {
+      "text": " practice exercise week one, that will change.",
+      "start": 3062.679931640625,
+      "end": 3066.199951171875
+    },
+    {
+      "text": " In week two, we will have a specially curated journey",
+      "start": 3066.199951171875,
+      "end": 3070.320068359375
+    },
+    {
+      "text": " set up for you in week two.",
+      "start": 3070.320068359375,
+      "end": 3072.219970703125
+    },
+    {
+      "text": " But the course co-pilot will remain the same",
+      "start": 3072.219970703125,
+      "end": 3075.300048828125
+    },
+    {
+      "text": " throughout the whole course.",
+      "start": 3075.300048828125,
+      "end": 3076.719970703125
+    },
+    {
+      "text": " Course co-pilot is just for general Q&A.",
+      "start": 3077.580078125,
+      "end": 3079.780029296875
+    },
+    {
+      "text": " It's not a curated journey.",
+      "start": 3079.780029296875,
+      "end": 3082.179931640625
+    },
+    {
+      "text": " The other two will take you on a curated journey.",
+      "start": 3082.179931640625,
+      "end": 3084.919921875
+    },
+    {
+      "text": " Make sense?",
+      "start": 3086.4599609375,
+      "end": 3087.739990234375
+    },
+    {
+      "text": " Also, course co-pilot is not graded.",
+      "start": 3087.739990234375,
+      "end": 3089.4599609375
+    },
+    {
+      "text": " It's just your own personal assistant, like Tagipati,",
+      "start": 3089.4599609375,
+      "end": 3092.260009765625
+    },
+    {
+      "text": " but it has all the context of what you're learning.",
+      "start": 3092.260009765625,
+      "end": 3094.820068359375
+    },
+    {
+      "text": " So, feel free to ask it any question related to rubric,",
+      "start": 3094.820068359375,
+      "end": 3097.340087890625
+    },
+    {
+      "text": " probably assignment, anything, if you want.",
+      "start": 3097.340087890625,
+      "end": 3099.56005859375
+    },
+    {
+      "text": " If you do not find us available, you can just ask it.",
+      "start": 3100.47998046875,
+      "end": 3103.340087890625
+    },
+    {
+      "text": " It has all the context.",
+      "start": 3103.340087890625,
+      "end": 3104.5400390625
+    },
+    {
+      "text": " And, yeah, that's it.",
+      "start": 3106.320068359375,
+      "end": 3107.52001953125
+    },
+    {
+      "text": " I think, Professor, we covered everything.",
+      "start": 3107.52001953125,
+      "end": 3109.280029296875
+    },
+    {
+      "text": " Great, any questions?",
+      "start": 3109.280029296875,
+      "end": 3110.580078125
+    },
+    {
+      "text": " Push your button so everyone will hear you.",
+      "start": 3114.199951171875,
+      "end": 3116.360107421875
+    },
+    {
+      "text": " Yeah.",
+      "start": 3118.699951171875,
+      "end": 3119.5400390625
+    },
+    {
+      "text": " This language and the English, too,",
+      "start": 3123.320068359375,
+      "end": 3125.0400390625
+    },
+    {
+      "text": " for the questions and problems.",
+      "start": 3125.0400390625,
+      "end": 3126.860107421875
+    },
+    {
+      "text": " So, is that okay?",
+      "start": 3126.860107421875,
+      "end": 3127.699951171875
+    },
+    {
+      "text": " I use it on the course, right?",
+      "start": 3127.699951171875,
+      "end": 3130.02001953125
+    },
+    {
+      "text": " What do you mean, like?",
+      "start": 3132.659912109375,
+      "end": 3134.419921875
+    },
+    {
+      "text": " Sometimes for the efficiency,",
+      "start": 3134.419921875,
+      "end": 3136.699951171875
+    },
+    {
+      "text": " when I ask questions to the large-length models,",
+      "start": 3136.699951171875,
+      "end": 3140.419921875
+    },
+    {
+      "text": " mix use my...",
+      "start": 3140.419921875,
+      "end": 3141.5
+    },
+    {
+      "text": " Yeah?",
+      "start": 3142.93994140625,
+      "end": 3143.780029296875
+    },
+    {
+      "text": " What's your first language?",
+      "start": 3149.699951171875,
+      "end": 3151.179931640625
+    },
+    {
+      "text": " Okay, so, is the question,",
+      "start": 3152.3798828125,
+      "end": 3153.780029296875
+    },
+    {
+      "text": " can you put Chinese into the, in here?",
+      "start": 3153.780029296875,
+      "end": 3155.739990234375
+    },
+    {
+      "text": " I never tested that.",
+      "start": 3156.97998046875,
+      "end": 3158.580078125
+    },
+    {
+      "text": " I assume it can.",
+      "start": 3158.580078125,
+      "end": 3160.219970703125
+    },
+    {
+      "text": " Well, you can try it, and you can let us know.",
+      "start": 3162.179931640625,
+      "end": 3164.89990234375
+    },
+    {
+      "text": " And if it's not, then that's great feedback.",
+      "start": 3164.89990234375,
+      "end": 3167.340087890625
+    },
+    {
+      "text": " Got it.",
+      "start": 3167.340087890625,
+      "end": 3168.179931640625
+    },
+    {
+      "text": " But that's wonderful, yeah, good thought.",
+      "start": 3168.179931640625,
+      "end": 3171.06005859375
+    },
+    {
+      "text": " Any other questions?",
+      "start": 3171.06005859375,
+      "end": 3172.10009765625
+    },
+    {
+      "text": " Yes.",
+      "start": 3173.340087890625,
+      "end": 3174.159912109375
+    },
+    {
+      "text": " Yes, so, in the assignment",
+      "start": 3178.780029296875,
+      "end": 3181.3798828125
+    },
+    {
+      "text": " that I'll be posting on Canvas by tonight,",
+      "start": 3181.3798828125,
+      "end": 3183.8798828125
+    },
+    {
+      "text": " there'll be proper steps that you need to follow.",
+      "start": 3183.8798828125,
+      "end": 3186.6201171875
+    },
+    {
+      "text": " To start the assignment, but it's very simple.",
+      "start": 3186.97998046875,
+      "end": 3189.260009765625
+    },
+    {
+      "text": " You just need to, okay, for example,",
+      "start": 3189.260009765625,
+      "end": 3191.860107421875
+    },
+    {
+      "text": " this is the screen that you'll see.",
+      "start": 3191.860107421875,
+      "end": 3193.820068359375
+    },
+    {
+      "text": " If you click on Help Me with an Assignment,",
+      "start": 3193.820068359375,
+      "end": 3196.02001953125
+    },
+    {
+      "text": " it'll start the assignment for you.",
+      "start": 3197.580078125,
+      "end": 3199.300048828125
+    },
+    {
+      "text": " Oh, this is Course Copilot, sorry.",
+      "start": 3199.300048828125,
+      "end": 3201.0
+    },
+    {
+      "text": " Course Copilot is not guided, all right?",
+      "start": 3202.139892578125,
+      "end": 3204.93994140625
+    },
+    {
+      "text": " So, for Concept Builder, if you see...",
+      "start": 3204.93994140625,
+      "end": 3208.6201171875
+    },
+    {
+      "text": " Yeah, so it'll tell you the details,",
+      "start": 3212.659912109375,
+      "end": 3215.179931640625
+    },
+    {
+      "text": " the overview of the task that needs to be done.",
+      "start": 3215.179931640625,
+      "end": 3217.580078125
+    },
+    {
+      "text": " And once you start answering its questions,",
+      "start": 3217.580078125,
+      "end": 3220.02001953125
+    },
+    {
+      "text": " it'll move on to the next thing.",
+      "start": 3220.02001953125,
+      "end": 3222.219970703125
+    },
+    {
+      "text": " At the end of the interaction,",
+      "start": 3222.219970703125,
+      "end": 3223.659912109375
+    },
+    {
+      "text": " you'll find a summary, and that is it.",
+      "start": 3223.659912109375,
+      "end": 3226.179931640625
+    },
+    {
+      "text": " There's no special submission apart from it.",
+      "start": 3226.179931640625,
+      "end": 3228.820068359375
+    },
+    {
+      "text": " Once you get the summary, be rest assured, it's done.",
+      "start": 3228.820068359375,
+      "end": 3232.179931640625
+    },
+    {
+      "text": " The interaction is done, and it's noted.",
+      "start": 3232.179931640625,
+      "end": 3234.659912109375
+    },
+    {
+      "text": " So, from week to week,",
+      "start": 3234.659912109375,
+      "end": 3236.139892578125
+    },
+    {
+      "text": " I'm a big believer that repeatability is important,",
+      "start": 3236.97998046875,
+      "end": 3240.239990234375
+    },
+    {
+      "text": " so that the students can expect the same thing",
+      "start": 3240.239990234375,
+      "end": 3242.719970703125
+    },
+    {
+      "text": " from week to week.",
+      "start": 3242.719970703125,
+      "end": 3243.780029296875
+    },
+    {
+      "text": " So, each week, you're gonna get a new Concept Builder,",
+      "start": 3243.780029296875,
+      "end": 3247.300048828125
+    },
+    {
+      "text": " a new practice exercise.",
+      "start": 3247.300048828125,
+      "end": 3248.860107421875
+    },
+    {
+      "text": " It'll be due on the same days of the week, right?",
+      "start": 3248.860107421875,
+      "end": 3251.89990234375
+    },
+    {
+      "text": " So that you can get into a pattern for the many.",
+      "start": 3251.89990234375,
+      "end": 3255.179931640625
+    },
+    {
+      "text": " So, first assignment is due Friday night.",
+      "start": 3257.260009765625,
+      "end": 3260.300048828125
+    },
+    {
+      "text": " The next assignment, practice exercise, is due Monday night.",
+      "start": 3260.300048828125,
+      "end": 3263.659912109375
+    },
+    {
+      "text": " And there might be a quiz that will be on Tuesday,",
+      "start": 3263.659912109375,
+      "end": 3268.659912109375
+    },
+    {
+      "text": " but I'll let you know through Canvas.",
+      "start": 3269.4599609375,
+      "end": 3270.97998046875
+    },
+    {
+      "text": " Yeah, the other thing I would recommend is,",
+      "start": 3270.97998046875,
+      "end": 3272.93994140625
+    },
+    {
+      "text": " you can, this is mobile-friendly as well.",
+      "start": 3272.93994140625,
+      "end": 3276.820068359375
+    },
+    {
+      "text": " So, go to your phone, it's a web app,",
+      "start": 3276.820068359375,
+      "end": 3280.580078125
+    },
+    {
+      "text": " so it'll show up on your phone, looks like an app,",
+      "start": 3280.580078125,
+      "end": 3282.5400390625
+    },
+    {
+      "text": " but it does not come from the App Store.",
+      "start": 3282.5400390625,
+      "end": 3284.5400390625
+    },
+    {
+      "text": " So, what I have found myself at night in bed,",
+      "start": 3285.5400390625,
+      "end": 3288.860107421875
+    },
+    {
+      "text": " I wanna read some reading material.",
+      "start": 3288.860107421875,
+      "end": 3291.219970703125
+    },
+    {
+      "text": " It's there, it's in your phone.",
+      "start": 3291.219970703125,
+      "end": 3293.39990234375
+    },
+    {
+      "text": " So, any course material you wanna read, wherever you are,",
+      "start": 3293.39990234375,
+      "end": 3295.860107421875
+    },
+    {
+      "text": " bus stop, on the bus, on the train,",
+      "start": 3295.860107421875,
+      "end": 3298.239990234375
+    },
+    {
+      "text": " in an Uber, in bed at night,",
+      "start": 3298.239990234375,
+      "end": 3300.300048828125
+    },
+    {
+      "text": " you can access all of our reading material on your phone",
+      "start": 3300.300048828125,
+      "end": 3303.860107421875
+    },
+    {
+      "text": " and read it a bit here, a bit there, you know?",
+      "start": 3303.860107421875,
+      "end": 3307.580078125
+    },
+    {
+      "text": " So, that's one of the other nice benefits of this tool.",
+      "start": 3307.580078125,
+      "end": 3310.860107421875
+    },
+    {
+      "text": " Okay, I think we need to clear the room.",
+      "start": 3310.860107421875,
+      "end": 3312.5
+    },
+    {
+      "text": " Any other questions?",
+      "start": 3312.5,
+      "end": 3313.659912109375
+    },
+    {
+      "text": " If there are questions, email either one of us.",
+      "start": 3313.659912109375,
+      "end": 3317.300048828125
+    },
+    {
+      "text": " We're very eager to help you with this.",
+      "start": 3317.300048828125,
+      "end": 3320.260009765625
+    },
+    {
+      "text": " So, that's it for today.",
+      "start": 3322.139892578125,
+      "end": 3323.4599609375
+    },
+    {
+      "text": " Thanks a lot, class, look forward to seeing you next week.",
+      "start": 3323.4599609375,
+      "end": 3325.580078125
+    },
+    {
+      "text": " And again, don't be shy, reach out",
+      "start": 3325.580078125,
+      "end": 3328.06005859375
+    },
+    {
+      "text": " if there are any questions about anything.",
+      "start": 3328.06005859375,
+      "end": 3330.219970703125
+    },
+    {
+      "text": " Thank you.",
+      "start": 3331.93994140625,
+      "end": 3332.780029296875
+    }
+  ]
+}
