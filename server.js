@@ -111,6 +111,64 @@ wss.on("connection", (clientWs) => {
 
     if (
       msg.type === "response.function_call_arguments.done" &&
+      msg.name === "schedule_meeting"
+    ) {
+      console.log("[relay] Meeting tool call:", msg.arguments);
+      try {
+        const args = JSON.parse(msg.arguments);
+        if (clientWs.readyState === WebSocket.OPEN) {
+          clientWs.send(JSON.stringify({
+            type: "custom.schedule_meeting",
+            ...args,
+          }));
+        }
+
+        openaiWs.send(JSON.stringify({
+          type: "conversation.item.create",
+          item: {
+            type: "function_call_output",
+            call_id: msg.call_id,
+            output: JSON.stringify({ status: "Google Calendar opened with meeting details" }),
+          },
+        }));
+        openaiWs.send(JSON.stringify({ type: "response.create" }));
+      } catch (err) {
+        console.error("[relay] Meeting error:", err.message);
+      }
+    }
+
+    if (
+      msg.type === "response.function_call_arguments.done" &&
+      msg.name === "compose_email"
+    ) {
+      console.log("[relay] Email tool call:", msg.arguments);
+      try {
+        const args = JSON.parse(msg.arguments);
+        if (clientWs.readyState === WebSocket.OPEN) {
+          clientWs.send(JSON.stringify({
+            type: "custom.compose_email",
+            to: args.to,
+            subject: args.subject,
+            body: args.body,
+          }));
+        }
+
+        openaiWs.send(JSON.stringify({
+          type: "conversation.item.create",
+          item: {
+            type: "function_call_output",
+            call_id: msg.call_id,
+            output: JSON.stringify({ status: "Email draft opened in user's email client" }),
+          },
+        }));
+        openaiWs.send(JSON.stringify({ type: "response.create" }));
+      } catch (err) {
+        console.error("[relay] Email error:", err.message);
+      }
+    }
+
+    if (
+      msg.type === "response.function_call_arguments.done" &&
       msg.name === "search_course_materials"
     ) {
       console.log("[relay] RAG tool call:", msg.arguments);
@@ -206,6 +264,62 @@ wss.on("connection", (clientWs) => {
               },
             },
             required: ["query"],
+          },
+        },
+        {
+          type: "function",
+          name: "schedule_meeting",
+          description:
+            "Schedule a meeting by opening Google Calendar with pre-filled details. Use this when the student wants to set up a meeting, study session, or office hours with someone.",
+          parameters: {
+            type: "object",
+            properties: {
+              title: {
+                type: "string",
+                description: "Meeting title",
+              },
+              attendee_email: {
+                type: "string",
+                description: "Email address of the person to meet with",
+              },
+              date: {
+                type: "string",
+                description: "Date in YYYYMMDD format (e.g., 20260422)",
+              },
+              start_time: {
+                type: "string",
+                description: "Start time in HHMM 24-hour format (e.g., 1430 for 2:30 PM)",
+              },
+              duration_minutes: {
+                type: "number",
+                description: "Duration in minutes (default 30)",
+              },
+            },
+            required: ["title", "attendee_email"],
+          },
+        },
+        {
+          type: "function",
+          name: "compose_email",
+          description:
+            "Compose an email and open it in the student's email client, pre-filled and ready to send. Use this when the student wants to send an email to the professor, TA, or a classmate.",
+          parameters: {
+            type: "object",
+            properties: {
+              to: {
+                type: "string",
+                description: "Recipient email address",
+              },
+              subject: {
+                type: "string",
+                description: "Email subject line",
+              },
+              body: {
+                type: "string",
+                description: "Email body text",
+              },
+            },
+            required: ["to", "subject", "body"],
           },
         },
       ];
