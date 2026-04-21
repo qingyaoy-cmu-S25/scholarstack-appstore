@@ -26,3 +26,11 @@ dist-ssr
 # Environment variables
 .env
 .env.*
+
+# Large media files
+*.mp4
+*.mp3
+
+# PDF course materials (too large for git)
+src/data/course_material/*.pdf
+src/data/lecture/*.pdf
