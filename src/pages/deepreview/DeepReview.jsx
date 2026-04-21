@@ -1,113 +1,136 @@
 import { useNavigate } from "react-router-dom";
-import { ShellLayout, StudentSidebar } from "../../components/Layout.jsx";
 import {
-  BrainCircuit,
-  GraduationCap,
-  MessageCircle,
+  MessageSquare,
   HelpCircle,
+  Swords,
+  MessagesSquare,
   ArrowRight,
   Mic,
+  BookOpen,
+  Settings,
+  BarChart3,
+  History,
 } from "lucide-react";
 
 const MODES = [
   {
+    id: "general",
+    icon: MessageSquare,
+    title: "General",
+    desc: "Ask anything about the course — content, logistics, syllabus, professor info",
+    color: "bg-ink",
+  },
+  {
     id: "quiz",
     icon: HelpCircle,
     title: "Quiz Me",
-    desc: "Test your knowledge with targeted questions",
+    desc: "Test your knowledge — I'll ask questions and grade your answers",
     color: "bg-violet-500",
-    hint: "I'll ask you questions one at a time and give you feedback on your answers.",
   },
   {
-    id: "lecture",
-    icon: GraduationCap,
-    title: "Explain a Topic",
-    desc: "Get a clear, in-depth explanation you can interrupt",
-    color: "bg-blue-500",
-    hint: "Tell me a topic and I'll walk you through it. Jump in anytime with questions.",
+    id: "debate",
+    icon: Swords,
+    title: "Debate",
+    desc: "I'll take the opposing side — defend your position with evidence",
+    color: "bg-rose-500",
   },
   {
-    id: "tutor",
-    icon: BrainCircuit,
-    title: "Think It Through",
-    desc: "I'll guide you with questions — no direct answers",
-    color: "bg-emerald-500",
-    hint: "Socratic style. I'll ask leading questions until you get there yourself.",
-  },
-  {
-    id: "discussion",
-    icon: MessageCircle,
-    title: "Open Discussion",
-    desc: "Explore ideas freely, I'll challenge your thinking",
+    id: "discuss",
+    icon: MessagesSquare,
+    title: "Discussion",
+    desc: "Open conversation about any topic — I'll challenge your thinking",
     color: "bg-amber-500",
-    hint: "Let's talk through a concept. I'll push back when your reasoning has gaps.",
   },
 ];
+
+function Sidebar() {
+  return (
+    <aside className="w-56 border-r border-line bg-white flex flex-col shrink-0">
+      <div className="px-4 py-4 border-b border-line">
+        <div className="flex items-center gap-2 text-ink font-semibold">
+          <span className="text-lg leading-none">≋</span>
+          <span className="text-sm">DeepReview</span>
+        </div>
+      </div>
+      <nav className="flex-1 px-3 py-3 space-y-0.5">
+        <SidebarItem icon={Mic} active>New Session</SidebarItem>
+        <SidebarItem icon={History}>Session History</SidebarItem>
+        <SidebarItem icon={BookOpen}>Course Materials</SidebarItem>
+        <SidebarItem icon={BarChart3}>Progress</SidebarItem>
+      </nav>
+      <div className="border-t border-line px-3 py-3 space-y-0.5">
+        <SidebarItem icon={Settings}>Settings</SidebarItem>
+        <div className="flex items-center gap-2 px-3 py-2 mt-2">
+          <div className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-semibold">J</div>
+          <span className="text-sm text-ink">Jackey Yu</span>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function SidebarItem({ icon: Icon, children, active }) {
+  return (
+    <div className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm cursor-pointer transition ${active ? "bg-gray-100 text-ink font-medium" : "text-sub hover:bg-gray-50 hover:text-ink"}`}>
+      <Icon size={15} />
+      <span>{children}</span>
+    </div>
+  );
+}
 
 export default function DeepReview() {
   const navigate = useNavigate();
 
   return (
-    <ShellLayout
-      role="student"
-      sidebar={<StudentSidebar />}
-      breadcrumb={[
-        { label: "Student Portal" },
-        { label: "My Apps", to: "/student/apps" },
-        { label: "DeepReview" },
-      ]}
-    >
-      <div className="p-8 max-w-3xl mx-auto">
-        <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-full bg-ink text-white flex items-center justify-center">
-              <Mic size={18} />
+    <div className="h-screen flex flex-col">
+      <header className="h-12 border-b border-line bg-white flex items-center px-5 shrink-0">
+        <div className="flex items-center gap-2 text-sm">
+          <span className="text-lg leading-none">≋</span>
+          <span className="font-semibold text-ink">ScholarStack</span>
+          <span className="text-sub2 mx-1">›</span>
+          <span className="text-sub">Student Portal</span>
+          <span className="text-sub2 mx-1">›</span>
+          <span className="text-ink2 font-medium">DeepReview</span>
+        </div>
+      </header>
+
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar />
+
+        <div className="flex-1 flex items-center justify-center bg-white">
+          <div className="max-w-lg w-full px-6">
+            <div className="text-center mb-8">
+              <div className="w-14 h-14 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+                <Mic size={24} className="text-sub" />
+              </div>
+              <h1 className="text-2xl font-semibold text-ink mb-2">DeepReview</h1>
+              <p className="text-sub text-sm">Choose a session mode to get started</p>
             </div>
-            <div>
-              <h1 className="text-2xl font-semibold text-ink">DeepReview</h1>
-              <p className="text-sub text-sm">
-                Voice-powered study companion — pick how you want to learn
-              </p>
+
+            <div className="grid grid-cols-2 gap-3">
+              {MODES.map((mode) => {
+                const Icon = mode.icon;
+                return (
+                  <button
+                    key={mode.id}
+                    onClick={() => navigate(`/deepreview/session/${mode.id}`)}
+                    className="card card-hover p-4 text-left group"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <div className={`w-8 h-8 rounded-lg ${mode.color} text-white flex items-center justify-center`}>
+                        <Icon size={16} />
+                      </div>
+                      <ArrowRight size={12} className="text-sub2 opacity-0 group-hover:opacity-100 transition mt-1" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-ink mb-0.5">{mode.title}</h3>
+                    <p className="text-xs text-sub leading-relaxed">{mode.desc}</p>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          {MODES.map((mode) => {
-            const Icon = mode.icon;
-            return (
-              <button
-                key={mode.id}
-                onClick={() => navigate(`/deepreview/session/${mode.id}`)}
-                className="card card-hover p-5 text-left group"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div
-                    className={`w-9 h-9 rounded-lg ${mode.color} text-white flex items-center justify-center`}
-                  >
-                    <Icon size={18} />
-                  </div>
-                  <ArrowRight
-                    size={14}
-                    className="text-sub2 opacity-0 group-hover:opacity-100 transition mt-1"
-                  />
-                </div>
-                <h3 className="font-semibold text-ink mb-1">{mode.title}</h3>
-                <p className="text-xs text-sub leading-relaxed">{mode.desc}</p>
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="mt-6 card p-4 flex items-start gap-3">
-          <Mic size={14} className="text-sub2 mt-0.5 shrink-0" />
-          <p className="text-xs text-sub leading-relaxed">
-            DeepReview uses voice conversation to help you study. You'll speak
-            with an AI tutor in real time — just talk naturally. Make sure your
-            microphone is enabled.
-          </p>
-        </div>
       </div>
-    </ShellLayout>
+    </div>
   );
 }

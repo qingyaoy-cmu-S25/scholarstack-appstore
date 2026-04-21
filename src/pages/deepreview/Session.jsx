@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect, useMemo } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Mic,
   Phone,
@@ -14,6 +15,10 @@ import {
   Video,
   X,
   ChevronRight,
+  ArrowLeft,
+  HelpCircle,
+  Swords,
+  MessagesSquare,
 } from "lucide-react";
 
 function fmtTimestamp(seconds) {
@@ -23,9 +28,79 @@ function fmtTimestamp(seconds) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-const SYSTEM_PROMPT = `You are DeepReview, a voice-based AI study companion for a college AI Engineering course. You're a tough but fair tutor — you push students to think deeper. Socratic approach: guide rather than give answers. Encouraging but honest about gaps. Never write content on behalf of students. Keep responses concise — 2-3 sentences max. This is a spoken conversation. Start by greeting the student and asking what they'd like to study today.
+const COURSE_INFO = `
 
-IMPORTANT: You have access to a tool called "search_course_materials" that searches the student's actual course readings. Use it whenever the student asks about a course topic so your answers are grounded in real course content. When citing results, mention the source file and page number naturally (e.g., "According to the chapter on RAG and agents, page 12..."). Always prefer course material over your general knowledge.`;
+COURSE QUICK REFERENCE (from syllabus):
+- Course: AI Engineering Fundamentals (49-762)
+- Instructor: David Miller (dhmiller@andrew.cmu.edu)
+- TA: Shreya Nigam (shreyani@andrew.cmu.edu)
+- Class time: Wednesdays 3:30 - 5:20 PM
+- Location: SV 118 (in person) or Zoom
+- Office Hours: by appointment (email the instructor)
+- Teammate: Ifrah Aijaz (iaijaz@andrew.cmu.edu)`;
+
+const RAG_INSTRUCTION = `\n\nIMPORTANT: You have access to a tool called "search_course_materials" that searches the student's actual course readings, lecture transcripts, syllabus, and quizzes. Use it whenever the student asks about a course topic so your answers are grounded in real course content. When citing results, mention the source naturally (e.g., "According to the chapter on RAG and agents, page 12..." or "In Lecture 3 at around 15 minutes..."). Always prefer course material over your general knowledge.${COURSE_INFO}`;
+
+const MODE_CONFIG = {
+  general: {
+    icon: MessageSquare,
+    title: "General",
+    color: "bg-ink",
+    prompt: `You are DeepReview, a voice-based AI assistant for the course "AI Engineering Fundamentals." You help students with anything course-related: content questions, logistics, syllabus details, assignments, professor contact info, deadlines, grading policies — anything that might be in the course materials.
+
+Be helpful, friendly, and concise — 2-3 sentences max since this is a spoken conversation. Start by greeting the student and asking how you can help.` + RAG_INSTRUCTION,
+  },
+  quiz: {
+    icon: HelpCircle,
+    title: "Quiz Me",
+    color: "bg-violet-500",
+    prompt: `You are DeepReview in Quiz Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+
+Rules:
+- Ask the student ONE question at a time about AI engineering concepts
+- Wait for their verbal answer before continuing
+- Tell them clearly if they're right or wrong and briefly explain why
+- Then ask the next question, gradually increasing difficulty
+- Mix question types: definitions, comparisons, applications, "what would happen if..."
+- If they get something wrong, explain the correct answer before moving on
+- Track patterns and mention them: "You're strong on transformers but shaky on embeddings"
+- Keep responses SHORT — 2-3 sentences max. This is spoken, not written.
+- Start by asking what topics they want to be quizzed on, or offer to quiz them on everything.` + RAG_INSTRUCTION,
+  },
+  debate: {
+    icon: Swords,
+    title: "Debate",
+    color: "bg-rose-500",
+    prompt: `You are DeepReview in Debate Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+
+Rules:
+- The student will state a position on an AI engineering topic
+- You ALWAYS take the opposing side, even if you agree with them
+- Challenge their arguments: demand evidence, point out logical gaps, raise counterexamples
+- If they make a good point, acknowledge it but pivot to a new angle of attack
+- Use course materials to support your counterarguments
+- Stay respectful but firm — this is intellectual sparring, not a fight
+- Keep responses to 2-3 sentences. Make one sharp point at a time.
+- Start by asking the student to pick a topic and state their position, or suggest a debate topic like "Is fine-tuning worth the cost vs prompt engineering?" or "Should AI models be open-source?"` + RAG_INSTRUCTION,
+  },
+  discuss: {
+    icon: MessagesSquare,
+    title: "Discussion",
+    color: "bg-amber-500",
+    prompt: `You are DeepReview in Discussion Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+
+Rules:
+- Have a natural, open-ended conversation about AI engineering topics
+- The student may share opinions, ask speculative questions, or explore ideas
+- Engage genuinely — agree when they make good points, push back when they don't
+- Challenge weak reasoning: "That's interesting, but have you considered..."
+- Connect ideas across topics when relevant: "That relates to what we discussed about RAG..."
+- Ask follow-up questions to deepen the conversation
+- This should feel like talking with a smart study partner, not a teacher
+- Keep responses conversational — 2-3 sentences. Match their energy.
+- Start by asking what's on their mind or suggest an interesting topic from the course.` + RAG_INSTRUCTION,
+  },
+};
 
 function fmtClock(date) {
   return date.toLocaleTimeString("en-US", {
@@ -90,6 +165,11 @@ function SidebarItem({ icon: Icon, children, active }) {
 }
 
 export default function Session() {
+  const { mode } = useParams();
+  const navigate = useNavigate();
+  const config = MODE_CONFIG[mode] || MODE_CONFIG.general;
+  const ModeIcon = config.icon;
+
   const [phase, setPhase] = useState("mic-prompt");
   const [status, setStatus] = useState("idle");
   const [entries, setEntries] = useState([]);
@@ -183,7 +263,7 @@ export default function Session() {
           type: "session.update",
           session: {
             modalities: ["text", "audio"],
-            instructions: SYSTEM_PROMPT,
+            instructions: config.prompt,
             voice: "alloy",
             input_audio_transcription: { model: "whisper-1" },
             turn_detection: {
@@ -281,6 +361,26 @@ export default function Session() {
         case "custom.rag_results":
           pendingRagRef.current = msg.results;
           break;
+
+        case "custom.compose_email": {
+          const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(msg.to)}&su=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
+          window.open(gmailUrl, "_blank");
+          break;
+        }
+
+        case "custom.schedule_meeting": {
+          const date = msg.date || new Date().toISOString().slice(0, 10).replace(/-/g, "");
+          const startTime = msg.start_time || "1400";
+          const duration = msg.duration_minutes || 30;
+          const endH = Math.floor((parseInt(startTime.slice(0, 2)) * 60 + parseInt(startTime.slice(2)) + duration) / 60);
+          const endM = (parseInt(startTime.slice(0, 2)) * 60 + parseInt(startTime.slice(2)) + duration) % 60;
+          const endTime = `${String(endH).padStart(2, "0")}${String(endM).padStart(2, "0")}`;
+          const start = `${date}T${startTime}00`;
+          const end = `${date}T${endTime}00`;
+          const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(msg.title)}&dates=${start}/${end}&add=${encodeURIComponent(msg.attendee_email)}`;
+          window.open(calUrl, "_blank");
+          break;
+        }
 
         case "response.created":
           setAiSpeaking(true);
@@ -412,11 +512,15 @@ export default function Session() {
       <header className="h-12 border-b border-line bg-white flex items-center px-5 justify-between shrink-0">
         <div className="flex items-center gap-2 text-sm">
           <span className="text-lg leading-none">≋</span>
-          <span className="font-semibold text-ink">ScholarStack</span>
+          <button onClick={() => navigate("/deepreview")} className="hover:opacity-70 transition">
+            <ArrowLeft size={15} className="text-sub" />
+          </button>
+          <span className="font-semibold text-ink">DeepReview</span>
           <span className="text-sub2 mx-1">›</span>
-          <span className="text-sub">Student Portal</span>
-          <span className="text-sub2 mx-1">›</span>
-          <span className="text-ink2 font-medium">DeepReview</span>
+          <div className={`w-5 h-5 rounded ${config.color} text-white flex items-center justify-center`}>
+            <ModeIcon size={11} />
+          </div>
+          <span className="text-ink2 font-medium">{config.title}</span>
         </div>
         <div className="flex items-center gap-3 text-xs text-sub">
           {status === "active" && (

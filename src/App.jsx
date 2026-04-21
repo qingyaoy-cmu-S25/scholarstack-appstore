@@ -26,7 +26,8 @@ export default function App() {
       <Route path="/student/apps/:appId/chat" element={<StudentChat />} />
       <Route path="/voice-test" element={<VoiceTest />} />
 
-      <Route path="/deepreview" element={<DeepReviewSession />} />
+      <Route path="/deepreview" element={<DeepReview />} />
+      <Route path="/deepreview/session/:mode" element={<DeepReviewSession />} />
 
       <Route path="/developer" element={<Navigate to="/developer/dashboard" replace />} />
       <Route path="/developer/dashboard" element={<DeveloperDashboard />} />
