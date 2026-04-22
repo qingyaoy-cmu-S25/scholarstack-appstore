@@ -41,7 +41,7 @@ export default function StudentMyApps() {
                   <div className="text-xs text-sub">Last used 2 hours ago</div>
                 </div>
                 <Link
-                  to={app.id === "deepreview" ? "/deepreview" : `/student/apps/${app.id}/chat`}
+                  to={app.id === "stackvoice" ? "/deepreview" : `/student/apps/${app.id}/chat`}
                   className="link-arrow"
                 >
                   Open <ArrowRight size={14} />

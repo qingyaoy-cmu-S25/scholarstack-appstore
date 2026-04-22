@@ -1,5 +1,7 @@
 import { useState, useRef, useCallback, useEffect, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useStackVoiceSettings } from "./SettingsPage.jsx";
+import SharedSidebar from "./SharedSidebar.jsx";
 import {
   Mic,
   Phone,
@@ -37,7 +39,8 @@ COURSE QUICK REFERENCE (from syllabus):
 - Class time: Wednesdays 3:30 - 5:20 PM
 - Location: SV 118 (in person) or Zoom
 - Office Hours: by appointment (email the instructor)
-- Teammate: Ifrah Aijaz (iaijaz@andrew.cmu.edu)`;
+- Teammate: Ifrah Aijaz (iaijaz@andrew.cmu.edu)
+- Current student: Jackey Yu (qingyaoy@andrew.cmu.edu)`;
 
 const RAG_INSTRUCTION = `\n\nIMPORTANT: You have access to a tool called "search_course_materials" that searches the student's actual course readings, lecture transcripts, syllabus, and quizzes. Use it whenever the student asks about a course topic so your answers are grounded in real course content. When citing results, mention the source naturally (e.g., "According to the chapter on RAG and agents, page 12..." or "In Lecture 3 at around 15 minutes..."). Always prefer course material over your general knowledge.${COURSE_INFO}`;
 
@@ -46,7 +49,7 @@ const MODE_CONFIG = {
     icon: MessageSquare,
     title: "General",
     color: "bg-ink",
-    prompt: `You are DeepReview, a voice-based AI assistant for the course "AI Engineering Fundamentals." You help students with anything course-related: content questions, logistics, syllabus details, assignments, professor contact info, deadlines, grading policies — anything that might be in the course materials.
+    prompt: `You are StackVoice, a voice-based AI assistant for the course "AI Engineering Fundamentals." You help students with anything course-related: content questions, logistics, syllabus details, assignments, professor contact info, deadlines, grading policies — anything that might be in the course materials.
 
 Be helpful, friendly, and concise — 2-3 sentences max since this is a spoken conversation. Start by greeting the student and asking how you can help.` + RAG_INSTRUCTION,
   },
@@ -54,7 +57,7 @@ Be helpful, friendly, and concise — 2-3 sentences max since this is a spoken c
     icon: HelpCircle,
     title: "Quiz Me",
     color: "bg-violet-500",
-    prompt: `You are DeepReview in Quiz Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+    prompt: `You are StackVoice in Quiz Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
 
 Rules:
 - Ask the student ONE question at a time about AI engineering concepts
@@ -71,7 +74,7 @@ Rules:
     icon: Swords,
     title: "Debate",
     color: "bg-rose-500",
-    prompt: `You are DeepReview in Debate Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+    prompt: `You are StackVoice in Debate Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
 
 Rules:
 - The student will state a position on an AI engineering topic
@@ -87,7 +90,7 @@ Rules:
     icon: MessagesSquare,
     title: "Discussion",
     color: "bg-amber-500",
-    prompt: `You are DeepReview in Discussion Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
+    prompt: `You are StackVoice in Discussion Mode — a voice-based AI study companion for "AI Engineering Fundamentals."
 
 Rules:
 - Have a natural, open-ended conversation about AI engineering topics
@@ -123,52 +126,12 @@ function fmtDate(date) {
   );
 }
 
-function Sidebar() {
-  return (
-    <aside className="w-56 border-r border-line bg-white flex flex-col shrink-0">
-      <div className="px-4 py-4 border-b border-line">
-        <div className="flex items-center gap-2 text-ink font-semibold">
-          <span className="text-lg leading-none">≋</span>
-          <span className="text-sm">DeepReview</span>
-        </div>
-      </div>
-      <nav className="flex-1 px-3 py-3 space-y-0.5">
-        <SidebarItem icon={MessageSquare} active>
-          Playground
-        </SidebarItem>
-        <SidebarItem icon={History}>Session History</SidebarItem>
-        <SidebarItem icon={BookOpen}>Course Materials</SidebarItem>
-        <SidebarItem icon={BarChart3}>Progress</SidebarItem>
-      </nav>
-      <div className="border-t border-line px-3 py-3 space-y-0.5">
-        <SidebarItem icon={Settings}>Settings</SidebarItem>
-        <div className="flex items-center gap-2 px-3 py-2 mt-2">
-          <div className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-semibold">
-            J
-          </div>
-          <span className="text-sm text-ink">Jackey Yu</span>
-        </div>
-      </div>
-    </aside>
-  );
-}
-
-function SidebarItem({ icon: Icon, children, active }) {
-  return (
-    <div
-      className={`flex items-center gap-2 px-3 py-2 rounded-md text-sm cursor-pointer transition ${active ? "bg-gray-100 text-ink font-medium" : "text-sub hover:bg-gray-50 hover:text-ink"}`}
-    >
-      <Icon size={15} />
-      <span>{children}</span>
-    </div>
-  );
-}
-
 export default function Session() {
   const { mode } = useParams();
   const navigate = useNavigate();
   const config = MODE_CONFIG[mode] || MODE_CONFIG.general;
   const ModeIcon = config.icon;
+  const [settings] = useStackVoiceSettings();
 
   const [phase, setPhase] = useState("mic-prompt");
   const [status, setStatus] = useState("idle");
@@ -264,13 +227,13 @@ export default function Session() {
           session: {
             modalities: ["text", "audio"],
             instructions: config.prompt,
-            voice: "alloy",
+            voice: settings.voice,
             input_audio_transcription: { model: "whisper-1" },
             turn_detection: {
               type: "server_vad",
               threshold: 0.5,
               prefix_padding_ms: 300,
-              silence_duration_ms: 1200,
+              silence_duration_ms: settings.silenceDuration,
             },
           },
         }),
@@ -515,7 +478,7 @@ export default function Session() {
           <button onClick={() => navigate("/deepreview")} className="hover:opacity-70 transition">
             <ArrowLeft size={15} className="text-sub" />
           </button>
-          <span className="font-semibold text-ink">DeepReview</span>
+          <span className="font-semibold text-ink">StackVoice</span>
           <span className="text-sub2 mx-1">›</span>
           <div className={`w-5 h-5 rounded ${config.color} text-white flex items-center justify-center`}>
             <ModeIcon size={11} />
@@ -533,7 +496,7 @@ export default function Session() {
       </header>
 
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
+        <SharedSidebar active="session" />
 
         <div className="flex-1 flex flex-col bg-white">
           {/* Session header */}
@@ -600,7 +563,7 @@ export default function Session() {
                 </h2>
                 <p className="text-sub text-sm mb-5 max-w-xs">
                   Microphone access granted. Click "Start call" to begin your
-                  session with DeepReview.
+                  session with StackVoice.
                 </p>
               </div>
             )}

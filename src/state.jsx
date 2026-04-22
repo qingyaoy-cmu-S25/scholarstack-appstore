@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AppStateContext = createContext(null);
 
 export function AppStateProvider({ children }) {
-  const [installed, setInstalled] = useState(["deepreview", "citation-wizard", "socratic-math"]);
+  const [installed, setInstalled] = useState(["stackvoice", "citation-wizard", "socratic-math"]);
   const [role, setRole] = useState(null);
 
   const toggleInstall = (id) =>

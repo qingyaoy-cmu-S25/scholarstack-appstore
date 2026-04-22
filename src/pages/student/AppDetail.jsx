@@ -87,7 +87,7 @@ export default function StudentAppDetail() {
             <button
               onClick={() => {
                 if (!isInstalled) toggleInstall(app.id);
-                navigate(app.id === "deepreview" ? "/deepreview" : `/student/apps/${app.id}/chat`);
+                navigate(app.id === "stackvoice" ? "/deepreview" : `/student/apps/${app.id}/chat`);
               }}
               className="btn-primary w-full mb-4"
             >
@@ -173,8 +173,8 @@ function AppPreview({ app, variant }) {
 }
 
 const PREVIEWS = {
-  "deepreview": [
-    <PreviewFrame key="1" title="DeepReview · Voice session">
+  "stackvoice": [
+    <PreviewFrame key="1" title="StackVoice · Voice session">
       <div className="space-y-1">
         <div className="text-sub text-[8px] mb-0.5">Assistant</div>
         <div className="border border-line rounded px-1.5 py-1 text-ink2">
@@ -190,7 +190,7 @@ const PREVIEWS = {
         </div>
       </div>
     </PreviewFrame>,
-    <PreviewFrame key="2" title="DeepReview · Transcript">
+    <PreviewFrame key="2" title="StackVoice · Transcript">
       <div className="space-y-0.5">
         {[
           { t: "Attention mechanisms", d: "Apr 17" },
