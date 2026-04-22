@@ -7,6 +7,8 @@ import StudentChat from "./pages/student/Chat.jsx";
 import VoiceTest from "./pages/student/VoiceTest.jsx";
 import DeepReview from "./pages/deepreview/DeepReview.jsx";
 import DeepReviewSession from "./pages/deepreview/Session.jsx";
+import DeepReviewSettings from "./pages/deepreview/SettingsPage.jsx";
+import ScholarFiles from "./pages/deepreview/ScholarFiles.jsx";
 import DeveloperDashboard from "./pages/developer/Dashboard.jsx";
 import DeveloperSubmit from "./pages/developer/Submit.jsx";
 import DeveloperApps from "./pages/developer/MyApps.jsx";
@@ -28,6 +30,8 @@ export default function App() {
 
       <Route path="/deepreview" element={<DeepReview />} />
       <Route path="/deepreview/session/:mode" element={<DeepReviewSession />} />
+      <Route path="/deepreview/settings" element={<DeepReviewSettings />} />
+      <Route path="/deepreview/files" element={<ScholarFiles />} />
 
       <Route path="/developer" element={<Navigate to="/developer/dashboard" replace />} />
       <Route path="/developer/dashboard" element={<DeveloperDashboard />} />
